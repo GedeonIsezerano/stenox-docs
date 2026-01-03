@@ -1,0 +1,284 @@
+---
+title: "WhisperKit (Local)"
+description: "100% private, offline transcription with OpenAI Whisper"
+---
+
+<Warning>
+  This is a **TRANSCRIPTION** provider. It converts your speech to text.
+  For AI enhancement like grammar correction, see [AI Enhancement Providers](/providers/overview#ai-enhancement-providers).
+</Warning>
+
+## Overview
+
+WhisperKit is Apple's optimized implementation of OpenAI's Whisper model, designed to run locally on Apple Silicon Macs. It provides completely private, offline transcription without requiring an internet connection or API key.
+
+**Key Benefits:**
+- 🔒 **100% Private** - Audio never leaves your Mac
+- 🌐 **Offline** - Works without internet connection
+- 💰 **Free** - No API keys, no usage costs
+- 🚀 **Optimized** - Built for Apple Silicon
+
+## Privacy & Security
+
+WhisperKit processes everything locally on your Mac:
+
+- Audio is captured and transcribed on-device
+- No data sent to cloud services
+- No internet connection required
+- No API keys or accounts needed
+- Perfect for sensitive or confidential content
+
+<Tip>
+  WhisperKit is ideal for healthcare professionals, lawyers, journalists, or anyone handling confidential information.
+</Tip>
+
+## No API Key Required
+
+Unlike cloud providers, WhisperKit requires **no setup**:
+
+1. Select WhisperKit in Stenox Settings
+2. Download your preferred model
+3. Start dictating immediately
+
+No registration, no API keys, no authentication.
+
+## Available Models
+
+WhisperKit offers several model sizes with different trade-offs:
+
+| Model | Size | Speed | Accuracy | Recommended For |
+|-------|------|-------|----------|-----------------|
+| **base.en** | 142 MB | Fast | Good | English-only, quick setup |
+| **small.en** | 483 MB | Medium | Better | English-only, better accuracy |
+| **base** | 142 MB | Fast | Good | Multilingual (90+ languages) |
+| **small** | 483 MB | Medium | Better | Multilingual, better accuracy |
+
+<Note>
+  **Recommended for beginners:** `base.en` - Fastest download and processing with good accuracy for English.
+</Note>
+
+### Model Selection Guide
+
+<AccordionGroup>
+  <Accordion title="base.en - Fast and lightweight" icon="gauge-high">
+    **Best for:**
+    - Quick setup (smallest download)
+    - Fast processing (2-3 seconds)
+    - English-only dictation
+    - Limited disk space
+
+    **Processing time:** ~2-3 seconds for 10 seconds of audio
+  </Accordion>
+
+  <Accordion title="small.en - Better accuracy" icon="medal">
+    **Best for:**
+    - Higher accuracy needs
+    - Professional writing
+    - Technical terminology
+    - English-only dictation
+
+    **Processing time:** ~4-6 seconds for 10 seconds of audio
+  </Accordion>
+
+  <Accordion title="base / small (Multilingual)" icon="globe">
+    **Best for:**
+    - Non-English languages
+    - Multilingual dictation
+    - Code-switching between languages
+
+    **Supported:** 90+ languages including Spanish, French, German, Chinese, Japanese, Arabic, and more
+
+    Configure language in Profile settings.
+  </Accordion>
+</AccordionGroup>
+
+## Setup Instructions
+
+<Steps>
+  <Step title="Open Stenox Settings">
+    Click the Stenox icon in your menu bar and select **Settings**.
+  </Step>
+
+  <Step title="Navigate to Models tab">
+    Go to the **Models** tab in the Settings window.
+  </Step>
+
+  <Step title="Select WhisperKit">
+    Under **Transcription Provider**, select **WhisperKit** from the dropdown.
+  </Step>
+
+  <Step title="Choose a model">
+    Select your preferred model:
+    - **base.en** (recommended for beginners)
+    - **small.en** (better accuracy)
+    - **base** or **small** (multilingual)
+  </Step>
+
+  <Step title="Download the model">
+    Click **Download** and wait for the model to download.
+
+    **Download sizes:**
+    - base.en / base: ~142 MB
+    - small.en / small: ~483 MB
+
+    The model is stored in `~/stenox-models/whisper/` by default.
+  </Step>
+
+  <Step title="Start dictating">
+    Once download completes, you can start using WhisperKit immediately!
+  </Step>
+</Steps>
+
+## Performance
+
+WhisperKit performance depends on your Mac's hardware:
+
+### Apple Silicon Macs
+
+**Excellent performance:**
+- base.en: 2-3 seconds per 10 seconds of audio
+- small.en: 4-6 seconds per 10 seconds of audio
+- Optimized with CoreML and ANE (Apple Neural Engine)
+
+### Intel Macs
+
+**Slower performance:**
+- 2-3x slower than Apple Silicon
+- CPU-only processing
+- Consider cloud providers for faster results
+
+<Tip>
+  WhisperKit works best on Apple Silicon Macs. Intel Mac users may prefer cloud providers for faster transcription.
+</Tip>
+
+## Storage Requirements
+
+Models are stored locally on your Mac:
+
+- **Location:** `~/stenox-models/whisper/`
+- **base.en / base:** ~142 MB
+- **small.en / small:** ~483 MB
+- **medium:** ~1.5 GB (if you download it manually)
+
+You can delete models you're not using to free up space.
+
+## Language Support
+
+WhisperKit supports 90+ languages:
+
+<Tabs>
+  <Tab title="English Models (.en)">
+    - Optimized for English only
+    - Slightly faster and more accurate for English
+    - Use `base.en` or `small.en`
+  </Tab>
+
+  <Tab title="Multilingual Models">
+    Support for 90+ languages including:
+
+    - **European:** Spanish, French, German, Italian, Portuguese, Dutch, Polish, Turkish
+    - **Asian:** Chinese (Mandarin), Japanese, Korean, Hindi, Thai, Vietnamese
+    - **Middle Eastern:** Arabic, Hebrew, Farsi
+    - **Other:** Russian, Ukrainian, Indonesian, and many more
+
+    Configure language in Stenox Profile settings.
+  </Tab>
+</Tabs>
+
+## When to Use WhisperKit
+
+<CardGroup cols={2}>
+  <Card title="Privacy is critical" icon="lock">
+    Healthcare, legal, financial, or any sensitive content.
+  </Card>
+
+  <Card title="Working offline" icon="wifi-slash">
+    Airplanes, remote locations, or unstable internet.
+  </Card>
+
+  <Card title="No usage costs" icon="dollar-sign">
+    Unlimited transcription with no per-minute charges.
+  </Card>
+
+  <Card title="Learning or testing" icon="flask">
+    Try Stenox with zero setup or commitment.
+  </Card>
+</CardGroup>
+
+## When to Use Cloud Instead
+
+Consider cloud providers if you need:
+
+- **Faster processing** - Cloud is 5-10x faster (< 1 second vs 3-5 seconds)
+- **Higher accuracy** - DeepGram Nova-3 and AssemblyAI often outperform Whisper
+- **Intel Mac** - Cloud providers work equally well on all Macs
+
+<Note>
+  You can use **both** WhisperKit and cloud providers! Create different [Profiles](/profiles/creating-profiles) for different scenarios.
+</Note>
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="Model download fails" icon="cloud-arrow-down">
+    - Check your internet connection
+    - Ensure you have enough disk space (~500 MB free)
+    - Try downloading again
+    - Check `~/stenox-models/whisper/` for partial downloads and delete them
+  </Accordion>
+
+  <Accordion title="Transcription is very slow (> 10 seconds)" icon="hourglass">
+    - You may be on an Intel Mac (slower performance expected)
+    - Try `base.en` instead of `small.en` for faster processing
+    - Close other intensive applications
+    - Consider using a cloud provider for speed
+  </Accordion>
+
+  <Accordion title="Wrong language being transcribed" icon="language">
+    - For English, use `.en` models (base.en or small.en)
+    - For other languages, use multilingual models and set language in Profile settings
+    - Auto-detect may choose wrong language - specify explicitly
+  </Accordion>
+
+  <Accordion title="Poor accuracy for technical terms" icon="spell-check">
+    - Add terms to [Vocabulary](/setup/vocabulary) for custom replacements
+    - Try `small.en` for better accuracy
+    - Consider cloud providers (DeepGram, AssemblyAI) for specialized vocabulary
+  </Accordion>
+</AccordionGroup>
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card
+    title="Add AI Enhancement"
+    icon="sparkles"
+    href="/providers/llm/mlx-local"
+  >
+    Use MLX (local) for completely private grammar correction and formatting.
+  </Card>
+
+  <Card
+    title="Create Profiles"
+    icon="layer-group"
+    href="/profiles/creating-profiles"
+  >
+    Set up different profiles for different use cases.
+  </Card>
+
+  <Card
+    title="Privacy-First Setup"
+    icon="shield-check"
+    href="/guides/privacy-first-setup"
+  >
+    Complete guide to 100% local, offline Stenox configuration.
+  </Card>
+
+  <Card
+    title="Add Vocabulary"
+    icon="book"
+    href="/setup/vocabulary"
+  >
+    Teach WhisperKit custom words and technical terms.
+  </Card>
+</CardGroup>

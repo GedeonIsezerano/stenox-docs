@@ -1,0 +1,448 @@
+---
+title: "Groq LLMs"
+description: "Ultra-fast AI enhancement with Llama, Qwen, and DeepSeek on Groq infrastructure"
+---
+
+<Warning>
+  This is an **AI ENHANCEMENT** provider. It improves transcribed text with grammar correction and formatting.
+  For speech-to-text transcription, see [Transcription Providers](/providers/overview#transcription-providers).
+</Warning>
+
+## Overview
+
+Groq provides blazing-fast inference for open-source large language models using their LPU (Language Processing Unit) architecture. This enables some of the fastest AI enhancement available with excellent quality.
+
+**Key Benefits:**
+- ⚡ **Blazing fast** - Sub-second enhancement with Groq's LPU
+- 🎯 **High quality** - Llama 3.3/4, Qwen 3, DeepSeek R1 models
+- 🔄 **Same API key** - Use for both Groq Whisper and Groq LLMs
+- 🎁 **Free tier** - Generous free usage with rate limits
+
+<Tip>
+  **Perfect combo:** Use [Groq Whisper](/providers/transcription/groq-whisper) for transcription + Groq LLMs for enhancement with a **single API key**!
+</Tip>
+
+## Free Tier
+
+<Tip>
+  **Groq offers a generous free tier** with rate limits instead of credit limits.
+
+  **What you get:**
+  - **Free tier with rate limits** (varies by model)
+  - **All models included** - Llama, Qwen, DeepSeek R1
+  - **Same API for Whisper** - One key for transcription + enhancement
+  - **No expiration** - Free tier doesn't expire
+
+  Perfect for regular users who want fast, quality enhancement without costs.
+</Tip>
+
+### Free Tier Limits
+
+Groq's free tier varies by model. Generally:
+
+- **Rate limits** instead of credit limits
+- **Tokens per minute** limits per model
+- **Sufficient for personal use** and many professional use cases
+- **Check [console.groq.com](https://console.groq.com)** for current limits
+
+<Note>
+  When you hit rate limits, either wait a few minutes or use a fallback profile with [MLX (local)](/providers/llm/mlx-local).
+</Note>
+
+## Getting Your Free API Key
+
+<Steps>
+  <Step title="Visit Groq Console">
+    Go to [console.groq.com](https://console.groq.com) in your browser.
+  </Step>
+
+  <Step title="Sign up for free">
+    Click **Sign Up** and create an account with:
+    - Email and password
+    - Or sign in with Google/GitHub
+
+    **No credit card required!**
+  </Step>
+
+  <Step title="Verify your email">
+    Check your email for verification link from Groq and click it.
+  </Step>
+
+  <Step title="Create API key">
+    Once logged in:
+    1. Go to **API Keys** section
+    2. Click **Create API Key**
+    3. Give it a name (e.g., "Stenox")
+    4. Copy the key immediately (can't view again!)
+  </Step>
+
+  <Step title="Add key to Stenox">
+    1. Open Stenox Settings
+    2. Go to **AI Enhancement** tab
+    3. Select **Groq** as provider
+    4. Paste your API key
+    5. Choose your model (Llama 3.3 70B or DeepSeek R1 recommended)
+    6. Click **Save**
+  </Step>
+</Steps>
+
+<Note>
+  **One API key for everything:** This same key works for [Groq Whisper (transcription)](/providers/transcription/groq-whisper) and Groq LLMs (enhancement). Configure once!
+</Note>
+
+## Available Models
+
+Groq offers multiple open-source LLMs optimized for their LPU hardware:
+
+### Llama 3.3 70B Versatile (Recommended)
+
+**Best all-around model:**
+- Excellent grammar correction and formatting
+- Balanced speed and quality
+- Versatile for all use cases
+- Good context understanding
+
+**Best for:** Default choice, everyday enhancement
+
+### DeepSeek R1 Distill Llama 70B
+
+**Reasoning-focused model:**
+- Excellent for complex edits
+- Strong logical reasoning
+- Very good at restructuring
+- Slightly slower than Llama 3.3
+
+**Best for:** Complex text improvements, professional writing
+
+### Llama 4 Scout 17B
+
+**Faster, smaller model:**
+- Faster inference than 70B models
+- Good quality for size
+- Lower resource usage
+- Good for quick enhancement
+
+**Best for:** Speed-critical use cases
+
+### Qwen 3 72B
+
+**Multilingual specialist:**
+- Excellent for non-English languages
+- Good grammar correction
+- Strong formatting abilities
+
+**Best for:** Multilingual enhancement
+
+<Tip>
+  **Recommendation:** Start with **Llama 3.3 70B Versatile** for the best balance. Try **DeepSeek R1** for maximum quality.
+</Tip>
+
+## Configuration in Stenox
+
+<Steps>
+  <Step title="Open Stenox Settings">
+    Click Stenox menu bar icon → **Settings**
+  </Step>
+
+  <Step title="Go to AI Enhancement tab">
+    Select the **AI Enhancement** tab
+  </Step>
+
+  <Step title="Select Groq">
+    Choose **Groq** from the provider dropdown
+  </Step>
+
+  <Step title="Enter API key">
+    Paste your API key from console.groq.com
+
+    (Same key as Groq Whisper if you use it!)
+  </Step>
+
+  <Step title="Choose model">
+    Select **Llama 3.3 70B Versatile** (recommended)
+  </Step>
+
+  <Step title="Optional: Custom prompt">
+    Configure enhancement behavior (see Custom Prompts section)
+  </Step>
+
+  <Step title="Save">
+    Click **Save** to activate Groq LLMs
+  </Step>
+</Steps>
+
+## What Groq LLMs Do
+
+### Grammar Correction
+
+- Comprehensive grammar fixes
+- Subject-verb agreement
+- Tense consistency
+- Article and preposition corrections
+- Complex sentence structure improvements
+
+**Example:**
+- **Before:** "me and my team was working on the project all day yesterday and we finally finished it"
+- **After:** "My team and I were working on the project all day yesterday, and we finally finished it."
+
+### Formatting & Punctuation
+
+- Professional punctuation
+- Proper capitalization
+- Number and date formatting
+- List structuring
+- Paragraph organization
+
+**Example:**
+- **Before:** "our meeting is scheduled for march 15th at 2pm please bring the q4 reports"
+- **After:** "Our meeting is scheduled for March 15th at 2 PM. Please bring the Q4 reports."
+
+### Tone Adjustment
+
+With custom prompts, Groq LLMs excel at tone modification:
+
+- **Professional tone** - Formal, business-appropriate
+- **Casual tone** - Friendly, conversational
+- **Technical tone** - Precise, documentation-style
+- **Persuasive tone** - Engaging, convincing
+
+### Advanced Capabilities
+
+**DeepSeek R1** especially excels at:
+- Restructuring for clarity
+- Making implicit information explicit
+- Improving logical flow
+- Complex reasoning-based edits
+
+## Performance
+
+**Expected enhancement times with Groq LLMs:**
+
+| Transcription Length | Enhancement Time |
+|---------------------|------------------|
+| Short (1-2 sentences) | < 0.5 seconds |
+| Medium (paragraph) | < 1 second |
+| Long (multiple paragraphs) | 1-2 seconds |
+
+<Note>
+  Groq's LPU architecture makes enhancement nearly instantaneous, even for large models like 70B parameter LLMs.
+</Note>
+
+## Custom Prompts
+
+Configure how Groq LLMs enhance your text in Profile settings:
+
+<Tabs>
+  <Tab title="Default">
+    ```
+    Fix grammar and punctuation errors.
+    Keep the original meaning and tone.
+    ```
+
+    **Use for:** General dictation
+  </Tab>
+
+  <Tab title="Professional Email">
+    ```
+    Fix grammar and rewrite in a professional, business-appropriate tone.
+    Make it clear, concise, and action-oriented.
+    Remove filler words and redundancy.
+    ```
+
+    **Use for:** Work emails, business communications
+  </Tab>
+
+  <Tab title="Technical Documentation">
+    ```
+    Fix grammar and format for technical documentation.
+    Preserve all technical terms exactly as stated.
+    Use active voice, clear language, and proper formatting.
+    Add appropriate section breaks if needed.
+    ```
+
+    **Use for:** Code documentation, technical writing
+  </Tab>
+
+  <Tab title="Creative Writing">
+    ```
+    Fix grammar while preserving creative voice.
+    Enhance descriptive language where appropriate.
+    Maintain the author's style and tone.
+    ```
+
+    **Use for:** Blog posts, articles, creative content
+  </Tab>
+</Tabs>
+
+## Usage Tracking
+
+Monitor your Groq usage:
+
+1. Visit [console.groq.com](https://console.groq.com)
+2. Go to **Usage** section
+3. View:
+   - API calls made
+   - Tokens consumed
+   - Rate limit status
+   - Current tier
+
+<Note>
+  Stenox does not track Groq usage. Check console.groq.com for accurate statistics.
+</Note>
+
+## Privacy Considerations
+
+**What Groq sees:**
+- Your transcribed text is sent to Groq servers
+- Text may be logged for service improvement
+- Data is encrypted in transit (HTTPS)
+- Review Groq's privacy policy for details
+
+**For complete privacy:**
+- Use [MLX (local)](/providers/llm/mlx-local) for 100% offline enhancement
+
+## When to Use Groq LLMs
+
+<CardGroup cols={2}>
+  <Card title="Ultra-fast processing" icon="bolt">
+    LPU-accelerated inference for near-instant results.
+  </Card>
+
+  <Card title="High quality" icon="medal">
+    70B parameter models with excellent capabilities.
+  </Card>
+
+  <Card title="Groq ecosystem" icon="link">
+    Same API key as Groq Whisper - seamless integration.
+  </Card>
+
+  <Card title="Free tier" icon="gift">
+    Generous free usage for personal and professional use.
+  </Card>
+</CardGroup>
+
+## Groq Ecosystem: Full Pipeline
+
+Use Groq for **both** transcription and enhancement:
+
+### Complete Groq Setup
+
+<Steps>
+  <Step title="Sign up once">
+    Create one Groq account at console.groq.com
+  </Step>
+
+  <Step title="One API key">
+    Generate a single API key for all Groq services
+  </Step>
+
+  <Step title="Configure transcription">
+    Use Groq Whisper (whisper-large-v3-turbo) for transcription
+  </Step>
+
+  <Step title="Configure enhancement">
+    Use Groq LLMs (Llama 3.3 70B or DeepSeek R1) for enhancement
+  </Step>
+
+  <Step title="Done!">
+    One provider, one API key, complete pipeline
+  </Step>
+</Steps>
+
+**Benefits:**
+- Single account management
+- Unified billing/usage tracking
+- Ultra-fast end-to-end processing (~2 seconds total)
+- Simple configuration
+
+[Learn about Groq Whisper →](/providers/transcription/groq-whisper)
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="API key not working" icon="key">
+    - Ensure you copied the complete key (no spaces)
+    - Verify account is active (check email verification)
+    - Try creating a new API key
+    - Check for typos
+  </Accordion>
+
+  <Accordion title="Rate limit exceeded" icon="gauge-high">
+    - You've hit free tier rate limits
+    - Wait a few minutes and try again
+    - Use [MLX (local)](/providers/llm/mlx-local) as backup
+    - Create a profile without enhancement for quick notes
+    - Upgrade to paid tier for higher limits
+  </Accordion>
+
+  <Accordion title="Enhancement fails" icon="triangle-exclamation">
+    - Check internet connection
+    - Verify API key is valid in Groq console
+    - Check Groq status page for service issues
+    - Try a shorter test enhancement
+  </Accordion>
+
+  <Accordion title="Quality not as expected" icon="spell-check">
+    - Try DeepSeek R1 for better reasoning
+    - Adjust custom prompt in Profile settings
+    - Provide more specific enhancement instructions
+    - Ensure transcription quality is good (can't fix bad transcription)
+  </Accordion>
+</AccordionGroup>
+
+## Pricing After Free Tier
+
+Groq offers competitive pay-as-you-go pricing when you exceed free tier:
+
+- **Pricing varies by model** - Check [console.groq.com](https://console.groq.com)
+- **Very affordable** - Among the cheapest cloud LLM options
+- **No commitment** - Pay only for usage
+
+<Note>
+  Most users stay within free tier limits. Check Groq console for current pricing.
+</Note>
+
+## Model Comparison
+
+| Model | Speed | Quality | Best For |
+|-------|-------|---------|----------|
+| **Llama 3.3 70B** | Very Fast | Excellent | General use, balanced |
+| **DeepSeek R1 70B** | Fast | Superior | Complex edits, reasoning |
+| **Llama 4 Scout 17B** | Fastest | Very Good | Speed-critical |
+| **Qwen 3 72B** | Very Fast | Excellent | Multilingual |
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card
+    title="Groq Whisper"
+    icon="microphone"
+    href="/providers/transcription/groq-whisper"
+  >
+    Complete the Groq pipeline with Groq Whisper transcription.
+  </Card>
+
+  <Card
+    title="Create Profiles"
+    icon="layer-group"
+    href="/profiles/creating-profiles"
+  >
+    Different settings for different apps and use cases.
+  </Card>
+
+  <Card
+    title="Free Tier Guide"
+    icon="gift"
+    href="/guides/free-tier-providers"
+  >
+    Maximize free usage across all providers.
+  </Card>
+
+  <Card
+    title="Cloud Setup"
+    icon="cloud"
+    href="/guides/cloud-setup"
+  >
+    Recommended cloud configuration with Groq.
+  </Card>
+</CardGroup>

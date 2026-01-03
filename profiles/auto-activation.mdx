@@ -1,0 +1,251 @@
+---
+title: "Auto-Activation"
+description: "Automatically switch profiles based on active application"
+---
+
+## What is Auto-Activation?
+
+Auto-activation automatically switches to a specific profile when you're using certain applications. This eliminates manual profile switching.
+
+**How it works:**
+1. You're working in Gmail
+2. Your "Professional Email" profile activates automatically
+3. You switch to Notes app
+4. Your "Quick Notes" profile activates automatically
+
+## Trigger Rules
+
+Profiles can auto-activate based on:
+
+### App Bundle ID
+
+Activate when specific application is active.
+
+**Examples:**
+- `com.apple.mail` → Mail app
+- `com.microsoft.Outlook` → Outlook
+- `com.tinyspeck.slackmacgap` → Slack
+- `com.apple.Notes` → Notes
+
+**How to find Bundle ID:**
+1. Open app
+2. Use Activity Monitor
+3. Find app in list
+4. View "Bundle Identifier" column
+
+### Window Title
+
+Activate when window title contains specific text.
+
+**Examples:**
+- Title contains "Gmail" → Email profile
+- Title contains "Slack" → Chat profile
+- Title contains "Notion" → Documentation profile
+
+**Best for:**
+- Browser-based apps (Gmail, Google Docs)
+- Multiple workspaces in same app
+- Title-based context
+
+## Setting Up Auto-Activation
+
+<Steps>
+  <Step title="Create or edit profile">
+    Settings → Profiles tab → Select profile
+  </Step>
+
+  <Step title="Add trigger rule">
+    Click **Add Trigger Rule** button
+  </Step>
+
+  <Step title="Choose rule type">
+    Select:
+    - **App Bundle ID** for native apps
+    - **Window Title** for browser apps
+  </Step>
+
+  <Step title="Enter identifier">
+    **App Bundle ID:** e.g., `com.apple.mail`
+    **Window Title:** e.g., "Gmail"
+  </Step>
+
+  <Step title="Save profile">
+    Click Save to activate auto-switching
+  </Step>
+</Steps>
+
+## Rule Priority
+
+When multiple profiles match:
+
+1. **Most specific rule wins**
+2. **Window title** takes precedence over app bundle ID
+3. **Last matching rule** if tied
+
+**Example:**
+- Default profile: All apps
+- Gmail profile: Window title contains "Gmail"
+- Browser profile: App bundle ID `com.google.Chrome`
+
+**Result when in Gmail:** Gmail profile activates (most specific)
+
+## Common Auto-Activation Setups
+
+### Professional Email
+
+**Trigger:**
+- App Bundle ID: `com.apple.mail`
+- OR Window Title: "Gmail"
+- OR Window Title: "Outlook"
+
+**Profile:**
+- DeepGram Nova-3 + Gemini Professional
+
+### Quick Chat
+
+**Trigger:**
+- App Bundle ID: `com.tinyspeck.slackmacgap` (Slack)
+- OR App Bundle ID: `com.hnc.Discord` (Discord)
+- OR Window Title: "Messages"
+
+**Profile:**
+- Groq Whisper (fast, no enhancement)
+
+### Code Documentation
+
+**Trigger:**
+- App Bundle ID: `com.microsoft.VSCode`
+- OR App Bundle ID: `com.apple.dt.Xcode`
+- OR Window Title: "GitHub"
+
+**Profile:**
+- DeepGram + Gemini Technical
+
+### Personal Notes
+
+**Trigger:**
+- App Bundle ID: `com.apple.Notes`
+- OR App Bundle ID: `notion.id`
+- OR Window Title: "Obsidian"
+
+**Profile:**
+- WhisperKit + MLX (local, private)
+
+## Testing Auto-Activation
+
+<Steps>
+  <Step title="Set up trigger rule">
+    Configure profile with app bundle ID or window title
+  </Step>
+
+  <Step title="Switch to target app">
+    Open and activate the application
+  </Step>
+
+  <Step title="Check active profile">
+    Look at Stenox menu bar icon or check Profiles menu
+  </Step>
+
+  <Step title="Test dictation">
+    Verify correct profile is active and settings applied
+  </Step>
+</Steps>
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="Profile doesn't auto-activate" icon="triangle-exclamation">
+    - Verify app bundle ID is correct (check Activity Monitor)
+    - Ensure window title match is exact (case-sensitive)
+    - Check for conflicting rules in other profiles
+    - Make sure profile is enabled
+  </Accordion>
+
+  <Accordion title="Wrong profile activates" icon="arrows-rotate">
+    - Check rule priority (more specific should win)
+    - Remove conflicting rules from other profiles
+    - Test with only one rule active at a time
+  </Accordion>
+
+  <Accordion title="Frequent switching between profiles" icon="shuffle">
+    - May indicate overlapping rules
+    - Refine rules to be more specific
+    - Add delay before switching (if available in settings)
+  </Accordion>
+</AccordionGroup>
+
+## Finding App Bundle IDs
+
+### Method 1: Activity Monitor
+
+1. Open **Activity Monitor** (Applications → Utilities)
+2. Find your app in the list
+3. Right-click → **Sample Process**
+4. Look for "Identifier:" in the report
+
+### Method 2: Terminal
+
+```bash
+osascript -e 'id of app "Application Name"'
+```
+
+Replace "Application Name" with your app's name.
+
+**Example:**
+```bash
+osascript -e 'id of app "Mail"'
+# Output: com.apple.mail
+```
+
+### Method 3: Stenox Auto-Detect
+
+Some versions of Stenox can auto-detect the active app's bundle ID. Check Settings → Profiles for this feature.
+
+## Common App Bundle IDs
+
+| Application | Bundle ID |
+|-------------|-----------|
+| **Mail** | `com.apple.mail` |
+| **Safari** | `com.apple.Safari` |
+| **Chrome** | `com.google.Chrome` |
+| **Firefox** | `org.mozilla.firefox` |
+| **Slack** | `com.tinyspeck.slackmacgap` |
+| **Discord** | `com.hnc.Discord` |
+| **VSCode** | `com.microsoft.VSCode` |
+| **Xcode** | `com.apple.dt.Xcode` |
+| **Notes** | `com.apple.Notes` |
+| **Pages** | `com.apple.iWork.Pages` |
+| **Word** | `com.microsoft.Word` |
+| **Outlook** | `com.microsoft.Outlook` |
+
+## Best Practices
+
+<AccordionGroup>
+  <Accordion title="Use app bundle ID for native apps" icon="desktop">
+    More reliable than window title for native macOS apps.
+  </Accordion>
+
+  <Accordion title="Use window title for browser apps" icon="browser">
+    Essential for web apps (Gmail, Google Docs, Notion, etc.).
+  </Accordion>
+
+  <Accordion title="Keep rules simple" icon="circle">
+    Start with basic rules. Add complexity only if needed.
+  </Accordion>
+
+  <Accordion title="Test thoroughly" icon="vial">
+    Switch between apps to verify auto-activation works as expected.
+  </Accordion>
+</AccordionGroup>
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card title="Create Profiles" icon="plus" href="/profiles/creating-profiles">
+    Create profiles to auto-activate.
+  </Card>
+
+  <Card title="Profiles Overview" icon="layer-group" href="/profiles/overview">
+    Learn more about profile features.
+  </Card>
+</CardGroup>

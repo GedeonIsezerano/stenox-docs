@@ -1,0 +1,504 @@
+---
+title: "Troubleshooting"
+description: "Common issues and solutions for Stenox"
+---
+
+## Common Issues
+
+This guide covers the most common issues users encounter and how to solve them.
+
+<Tip>
+  **Quick fix for most issues:** Restart Stenox. Click menu bar icon → Quit Stenox → Relaunch from Applications.
+</Tip>
+
+## No Text Appears After Dictation
+
+### Symptoms
+- You speak and release the hotkey
+- Stenox processes (icon spins or shows activity)
+- But no text appears in your application
+
+### Solutions
+
+<AccordionGroup>
+  <Accordion title="Grant Accessibility permission" icon="universal-access">
+    **Most common cause**
+
+    1. Open **System Settings**
+    2. Go to **Privacy & Security** → **Accessibility**
+    3. Ensure **Stenox** is in the list and toggled ON
+    4. If not listed, click **+** and add Stenox from Applications folder
+    5. Restart Stenox
+
+    [See Installation guide →](/installation)
+  </Accordion>
+
+  <Accordion title="Click in a text field first" icon="cursor">
+    - Stenox inserts text where your cursor is
+    - Click in the text field/app before dictating
+    - Ensure the application is active (not in background)
+  </Accordion>
+
+  <Accordion title="Some fields are protected" icon="lock">
+    macOS protects certain fields from text insertion:
+    - Password fields
+    - Secure input fields
+    - Some system dialogs
+
+    **Workaround:** Stenox will copy text to clipboard if direct insertion fails. Paste with Cmd+V.
+  </Accordion>
+
+  <Accordion title="Check transcription provider" icon="microphone">
+    - Verify provider is configured (Settings → Transcription tab)
+    - Check API key is valid (for cloud providers)
+    - Test with WhisperKit (local) to isolate issue
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Hotkey Not Working
+
+### Symptoms
+- Pressing Option+Space (or your custom hotkey) does nothing
+- Stenox doesn't start recording
+
+### Solutions
+
+<AccordionGroup>
+  <Accordion title="Check for conflicting apps" icon="layer-group">
+    Another app may be using the same hotkey:
+
+    1. Open Stenox Settings → **Settings** tab
+    2. Try changing hotkey to something unique (e.g., Control+Space)
+    3. Common conflicts: Spotlight, Alfred, Raycast, Rectangle
+
+    **Tip:** Use Control (not Cmd or Option) as modifier for fewer conflicts
+  </Accordion>
+
+  <Accordion title="Verify Stenox is running" icon="circle-check">
+    - Check menu bar for Stenox icon
+    - If not visible, launch Stenox from Applications
+    - Check System Settings → Login Items if it should start at launch
+  </Accordion>
+
+  <Accordion title="Reinstall hotkey" icon="rotate">
+    1. Settings → **Settings** tab
+    2. Click hotkey field
+    3. Press Backspace to clear
+    4. Press your desired hotkey combination
+    5. Click Save
+  </Accordion>
+
+  <Accordion title="Try hold vs toggle mode" icon="hand">
+    1. Settings → **Settings** tab
+    2. Try switching between:
+       - **Hold mode** (press and hold entire time)
+       - **Toggle mode** (press once to start, again to stop)
+    3. See which works better for you
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Poor Transcription Accuracy
+
+### Symptoms
+- Wrong words transcribed
+- Missing words
+- Gibberish or nonsense output
+
+### Solutions
+
+<AccordionGroup>
+  <Accordion title="Improve audio quality" icon="waveform">
+    **Check microphone:**
+    - Use external microphone or headset (better than built-in)
+    - Position 6-12 inches from mouth
+    - Reduce background noise
+
+    **Check input device:**
+    1. Settings → **Audio** tab
+    2. Verify correct input device selected
+    3. Check input level (speak and watch meter)
+  </Accordion>
+
+  <Accordion title="Upgrade your model" icon="arrow-up">
+    **Local (WhisperKit):**
+    - Try small.en instead of base.en for better accuracy
+    - Download from Settings → Models tab
+
+    **Cloud:**
+    - Use DeepGram Nova-3 (best accuracy)
+    - Try AssemblyAI if you have strong accent
+  </Accordion>
+
+  <Accordion title="Speak clearly and naturally" icon="microphone">
+    - Don't speak too fast or too slow
+    - Enunciate clearly but naturally
+    - Avoid filler words ("um", "uh", "like")
+    - Speak in complete sentences when possible
+  </Accordion>
+
+  <Accordion title="Add custom vocabulary" icon="book">
+    For technical terms, names, or unusual words:
+
+    1. Settings → **Vocabulary** tab
+    2. Add replacements: "stenox" → "Stenox"
+    3. Save and test
+
+    [Learn about Vocabulary →](/setup/vocabulary)
+  </Accordion>
+
+  <Accordion title="Check language setting" icon="language">
+    - Ensure correct language selected in Profile settings
+    - Use English models (.en) for English-only dictation
+    - Don't use auto-detect for your primary language
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## API Key Errors
+
+### Symptoms
+- "Invalid API key" or "Authentication failed"
+- Transcription fails immediately
+- Error messages in Stenox
+
+### Solutions
+
+<AccordionGroup>
+  <Accordion title="Verify API key" icon="key">
+    1. Check you copied the COMPLETE key (no spaces or truncation)
+    2. Verify key is active in provider dashboard:
+       - DeepGram: console.deepgram.com
+       - AssemblyAI: assemblyai.com/dashboard
+       - Google Gemini: aistudio.google.com
+       - Groq: console.groq.com
+    3. Try creating a new API key
+    4. Paste again in Stenox Settings
+  </Accordion>
+
+  <Accordion title="Check account status" icon="user">
+    - Verify your account is active (check email verification)
+    - Ensure you haven't exceeded free tier limits
+    - Check provider status page for service issues
+  </Accordion>
+
+  <Accordion title="Remove extra characters" icon="eraser">
+    When pasting API key:
+    - No spaces before or after
+    - No quotation marks
+    - No line breaks
+    - Just the key itself
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Slow Processing / Long Wait Times
+
+### Symptoms
+- Takes 10+ seconds to get transcription
+- Spinning icon for extended period
+- App feels sluggish
+
+### Solutions
+
+<AccordionGroup>
+  <Accordion title="For cloud providers: Check internet" icon="wifi">
+    - Test internet speed (fast.com or speedtest.net)
+    - Ensure stable connection (not intermittent)
+    - Try switching to different Wi-Fi network
+    - Use Ethernet if possible
+  </Accordion>
+
+  <Accordion title="For WhisperKit: Use smaller model" icon="gauge-high">
+    - Switch from small.en to base.en (faster)
+    - Settings → Models tab
+    - Download base.en model
+    - Processing time will improve (3-4s vs 5-6s)
+  </Accordion>
+
+  <Accordion title="For MLX: Use smaller model" icon="microchip">
+    - Switch from Phi-3 to Qwen 1.5B (much faster)
+    - Settings → Models tab
+    - Download Qwen 1.5B model
+    - Processing time improves (2-3s vs 5-7s)
+  </Accordion>
+
+  <Accordion title="Skip AI enhancement" icon="forward">
+    For fastest processing:
+    - Settings → AI Enhancement tab
+    - Select **None** as provider
+    - Reduces total time by 1-5 seconds
+  </Accordion>
+
+  <Accordion title="Close other apps" icon="xmark">
+    - Free up system resources
+    - Close browsers with many tabs
+    - Quit unused applications
+    - Check Activity Monitor for high CPU usage
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Rate Limit or Quota Exceeded
+
+### Symptoms
+- "Rate limit exceeded" error
+- "Quota exceeded" message
+- Transcription fails after working previously
+
+### Solutions
+
+<AccordionGroup>
+  <Accordion title="Groq rate limits" icon="clock">
+    **Wait a few minutes:**
+    - Groq has per-minute rate limits
+    - Wait 1-2 minutes and try again
+    - Limits reset quickly
+
+    **Use fallback profile:**
+    - Create WhisperKit + MLX profile
+    - Switch when you hit limits
+  </Accordion>
+
+  <Accordion title="Gemini daily limit (1,500/day)" icon="calendar">
+    **Wait until next day:**
+    - Limit resets at midnight PST
+    - Check aistudio.google.com for usage
+
+    **Create no-enhancement profile:**
+    - Skip enhancement when you hit limit
+    - Or use MLX (local) instead
+  </Accordion>
+
+  <Accordion title="DeepGram/AssemblyAI credits exhausted" icon="credit-card">
+    **Check remaining credits:**
+    - DeepGram: console.deepgram.com/billing
+    - AssemblyAI: assemblyai.com/dashboard
+
+    **Options:**
+    - Switch to Groq or WhisperKit (free)
+    - Purchase more credits (pay-as-you-go)
+
+    [See Free Tier Guide →](/guides/free-tier-providers)
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Stenox Won't Launch or Crashes
+
+### Symptoms
+- App crashes on launch
+- Icon doesn't appear in menu bar
+- Unresponsive or frozen
+
+### Solutions
+
+<AccordionGroup>
+  <Accordion title="Restart Stenox" icon="rotate">
+    1. Force quit if necessary (Cmd+Option+Esc)
+    2. Relaunch from Applications folder
+    3. Check if issue persists
+  </Accordion>
+
+  <Accordion title="Check macOS version" icon="apple">
+    - Stenox requires macOS 13.0 (Ventura) or later
+    - Check: Apple menu → About This Mac
+    - Update macOS if needed
+  </Accordion>
+
+  <Accordion title="Reinstall Stenox" icon="arrow-down-to-line">
+    1. Quit Stenox completely
+    2. Move Stenox to Trash
+    3. Empty Trash
+    4. Download fresh copy from stenox.app/download
+    5. Install and relaunch
+  </Accordion>
+
+  <Accordion title="Check crash logs" icon="file-lines">
+    1. Open Console app (Applications → Utilities)
+    2. Search for "Stenox" in filter
+    3. Look for crash reports
+    4. Send to support@stenox.app if issue persists
+  </Accordion>
+
+  <Accordion title="Remove preferences (advanced)" icon="gear">
+    Reset Stenox settings:
+
+    1. Quit Stenox
+    2. Open Terminal
+    3. Run: `defaults delete com.gedeonapps.stenox`
+    4. Relaunch Stenox
+    5. Reconfigure settings
+
+    **Warning:** This removes all settings, API keys, and vocabulary
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Model Download Issues
+
+### Symptoms
+- Model download fails or hangs
+- "Download error" message
+- Incomplete model files
+
+### Solutions
+
+<AccordionGroup>
+  <Accordion title="Check disk space" icon="hard-drive">
+    - Ensure 5+ GB free space
+    - Models range from 142 MB to 3.8 GB
+    - Check: Apple menu → About This Mac → Storage
+  </Accordion>
+
+  <Accordion title="Check internet connection" icon="wifi">
+    - Stable connection required for downloads
+    - Downloads can be 1-4 GB
+    - Don't interrupt or sleep Mac during download
+  </Accordion>
+
+  <Accordion title="Delete partial downloads" icon="trash">
+    1. Quit Stenox
+    2. Open Finder → Go → Go to Folder
+    3. Enter: `~/stenox-models/`
+    4. Delete incomplete model folders
+    5. Relaunch Stenox and try again
+  </Accordion>
+
+  <Accordion title="Try different model" icon="shuffle">
+    - Start with smallest model first (base.en - 142 MB)
+    - Test if downloading works
+    - Then try larger models
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Microphone Not Working
+
+### Symptoms
+- No waveform during recording
+- Silent audio
+- "No input device" error
+
+### Solutions
+
+<AccordionGroup>
+  <Accordion title="Check microphone permission" icon="microphone">
+    1. Open **System Settings**
+    2. Go to **Privacy & Security** → **Microphone**
+    3. Ensure **Stenox** is toggled ON
+    4. Restart Stenox if you just granted permission
+  </Accordion>
+
+  <Accordion title="Select correct input device" icon="sliders">
+    1. Stenox Settings → **Audio** tab
+    2. Check **Input Device** dropdown
+    3. Select your microphone
+    4. Test by speaking (watch input level meter)
+  </Accordion>
+
+  <Accordion title="Test microphone in other apps" icon="vial">
+    - Open Voice Memos or QuickTime Player
+    - Test recording there
+    - If it doesn't work, issue is with microphone/macOS, not Stenox
+  </Accordion>
+
+  <Accordion title="Check physical connection" icon="plug">
+    - For external microphone: reconnect USB/cable
+    - Try different USB port
+    - Check if microphone works on another device
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## MLX Not Available (Intel Mac)
+
+### Symptoms
+- MLX option grayed out or not visible
+- "MLX requires Apple Silicon" message
+
+### Solution
+
+<Note>
+  **MLX requires Apple Silicon.** Intel Macs cannot use MLX models.
+</Note>
+
+**Alternatives for Intel Macs:**
+
+1. **Skip AI enhancement** - Use transcription only (faster)
+2. **Use cloud enhancement** - Google Gemini or Groq LLMs
+3. **Upgrade to Apple Silicon Mac**
+
+[See AI Enhancement options →](/providers/overview)
+
+---
+
+## Getting Additional Help
+
+If your issue isn't covered here:
+
+<CardGroup cols={2}>
+  <Card title="Email Support" icon="envelope">
+    Email: [support@stenox.app](mailto:support@stenox.app)
+
+    Include:
+    - Description of issue
+    - macOS version
+    - Stenox version
+    - Steps to reproduce
+  </Card>
+
+  <Card title="Check Documentation" icon="book">
+    Browse our comprehensive docs:
+    - [Getting Started](/installation)
+    - [Provider Guides](/providers/overview)
+    - [Features](/providers/overview)
+  </Card>
+
+  <Card title="Reset Settings" icon="rotate">
+    Last resort - reset Stenox:
+
+    1. Quit Stenox
+    2. Delete preferences (see above)
+    3. Reinstall app
+    4. Reconfigure from scratch
+  </Card>
+
+  <Card title="System Info" icon="circle-info">
+    Gather system info for support:
+
+    - macOS version (About This Mac)
+    - Stenox version (Settings → About)
+    - Console logs (Console app)
+    - Screenshot of issue
+  </Card>
+</CardGroup>
+
+## Quick Diagnostics Checklist
+
+Use this checklist to diagnose most issues:
+
+- ✅ **Permissions granted** (Accessibility + Microphone)
+- ✅ **Provider configured** (Transcription + optional Enhancement)
+- ✅ **API key valid** (for cloud providers)
+- ✅ **Internet working** (for cloud providers)
+- ✅ **Hotkey not conflicting** (try different key)
+- ✅ **Microphone working** (test in other apps)
+- ✅ **macOS 13.0+** (check About This Mac)
+- ✅ **Stenox running** (icon in menu bar)
+- ✅ **Cursor in text field** (before dictating)
+- ✅ **Enough disk space** (5+ GB for models)
+
+<Tip>
+  **Most issues are solved by:** Granting permissions, checking API keys, or restarting Stenox.
+</Tip>

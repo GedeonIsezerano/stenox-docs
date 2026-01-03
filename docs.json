@@ -1,68 +1,96 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Mint Starter Kit",
+  "name": "Stenox Docs",
   "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#15803D"
+    "primary": "#0066FF",
+    "light": "#3388FF",
+    "dark": "#0044CC"
   },
   "favicon": "/favicon.svg",
+  "mermaid": {},
   "navigation": {
     "tabs": [
       {
-        "tab": "Guides",
+        "tab": "Documentation",
         "groups": [
           {
-            "group": "Getting started",
+            "group": "Getting Started",
             "pages": [
               "index",
-              "quickstart",
-              "development"
+              "installation",
+              "first-dictation"
             ]
           },
           {
-            "group": "Customization",
+            "group": "Profiles",
             "pages": [
-              "essentials/settings",
-              "essentials/navigation"
+              "profiles/overview",
+              "profiles/creating-profiles",
+              "profiles/auto-activation",
+              "profiles/system-prompts"
             ]
           },
           {
-            "group": "Writing content",
+            "group": "Providers",
             "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/reusable-snippets"
+              "providers/overview",
+              "providers/local-privacy",
+              "providers/cloud-byok",
+              {
+                "group": "Transcription",
+                "pages": [
+                  "providers/transcription/whisperkit-local",
+                  "providers/transcription/deepgram",
+                  "providers/transcription/openai-whisper",
+                  "providers/transcription/assemblyai",
+                  "providers/transcription/groq-whisper",
+                  "providers/transcription/stenox-cloud"
+                ]
+              },
+              {
+                "group": "AI Enhancement",
+                "pages": [
+                  "providers/llm/mlx-local",
+                  "providers/llm/openai",
+                  "providers/llm/google-gemini",
+                  "providers/llm/groq-llms",
+                  "providers/llm/stenox-cloud-llm"
+                ]
+              }
             ]
           },
           {
-            "group": "AI tools",
+            "group": "Pricing",
             "pages": [
-              "ai-tools/cursor",
-              "ai-tools/claude-code",
-              "ai-tools/windsurf"
-            ]
-          }
-        ]
-      },
-      {
-        "tab": "API reference",
-        "groups": [
-          {
-            "group": "API documentation",
-            "pages": [
-              "api-reference/introduction"
+              "pricing/overview",
+              "pricing/free-tier",
+              "pricing/plus-subscription",
+              "pricing/lifetime"
             ]
           },
           {
-            "group": "Endpoint examples",
+            "group": "Stenox Setup",
             "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
+              "setup/license",
+              "setup/byok-configuration",
+              "setup/file-transcription",
+              "setup/vocabulary"
+            ]
+          },
+          {
+            "group": "Guides",
+            "pages": [
+              "guides/privacy-first-setup",
+              "guides/cloud-setup",
+              "guides/troubleshooting"
+            ]
+          },
+          {
+            "group": "Support",
+            "pages": [
+              "support/overview",
+              "support/feedback"
             ]
           }
         ]
@@ -71,52 +99,52 @@
     "global": {
       "anchors": [
         {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
+          "anchor": "Download",
+          "href": "https://stenox.app",
+          "icon": "download"
         },
         {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
+          "anchor": "Support",
+          "href": "https://stenox.app/support",
+          "icon": "life-ring"
         }
       ]
     }
   },
   "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
+    "light": "/logo/light.png",
+    "dark": "/logo/dark.png",
+    "href": "https://stenox.app"
   },
   "navbar": {
     "links": [
       {
         "label": "Support",
-        "href": "mailto:hi@mintlify.com"
+        "href": "https://stenox.app/support"
       }
     ],
     "primary": {
       "type": "button",
-      "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
+      "label": "Get Stenox",
+      "href": "https://stenox.app"
     }
   },
   "contextual": {
     "options": [
-     "copy",
-     "view",
-     "chatgpt",
-     "claude",
-     "perplexity",
-     "mcp",
-     "cursor",
-     "vscode"
-   ]
+      "copy",
+      "view",
+      "chatgpt",
+      "claude",
+      "perplexity",
+      "mcp",
+      "cursor",
+      "vscode"
+    ]
   },
   "footer": {
     "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
+      "x": "https://x.com/stenoxapp",
+      "github": "https://github.com/stenox/stenox"
     }
   }
 }

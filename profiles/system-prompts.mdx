@@ -1,0 +1,247 @@
+---
+title: "System Prompts"
+description: "Customize how AI enhances your text"
+---
+
+## What are System Prompts?
+
+System prompts tell the AI enhancement provider how to process your transcribed text. They control grammar correction, formatting, tone, and structure.
+
+<Tip>
+  Each profile can have its own system prompt — use professional tone for work emails and casual tone for personal notes.
+</Tip>
+
+## Default Enhancement
+
+Both Stenox Cloud and local providers come with fine-tuned enhancements that we continue to refine. No configuration needed — Stenox works great out of the box.
+
+<Note>
+  Custom prompts are optional for general use. However, **profiles with custom prompts** are powerful for users who want specific behavior per app — like professional tone in email clients or technical formatting in code editors.
+</Note>
+
+## Customizing Your Prompt
+
+<Steps>
+  <Step title="Open Profile Settings">
+    Settings → **Profiles** tab → Select your profile → Click **Edit**
+  </Step>
+
+  <Step title="Enable LLM Enhancement">
+    Toggle on **Enable LLM Enhancement** in the Post-Processing (LLM) section
+  </Step>
+
+  <Step title="Find System Prompt">
+    Scroll to the **System Prompt** field — labeled "Instructions for the AI on how to format text"
+  </Step>
+
+  <Step title="Edit Prompt">
+    Enter your custom instructions in the text box
+  </Step>
+
+  <Step title="Save Profile">
+    Click **Save Profile** to apply changes
+  </Step>
+</Steps>
+
+## Example Prompts
+
+### Professional Email
+
+```
+Fix grammar and punctuation.
+Rewrite in a professional, polished tone.
+Keep the message concise and clear.
+Format as a professional email.
+```
+
+### Casual Notes
+
+```
+Fix obvious grammar errors only.
+Keep the casual, conversational tone.
+Change as little as possible.
+```
+
+### Technical Documentation
+
+```
+Fix grammar and punctuation.
+Use clear, technical language.
+Format code terms in backticks.
+Structure with headers if appropriate.
+```
+
+### Meeting Notes
+
+```
+Fix grammar and punctuation.
+Format as bullet points.
+Highlight action items with "ACTION:" prefix.
+Keep it concise and scannable.
+```
+
+### Creative Writing
+
+```
+Fix spelling and grammar.
+Preserve the creative voice and style.
+Keep metaphors and expressive language.
+Don't make it sound corporate.
+```
+
+### Medical/Legal (Minimal)
+
+```
+Fix only clear grammar errors.
+Do not change medical/legal terminology.
+Preserve exact phrasing when possible.
+Format professionally.
+```
+
+## Prompt Tips
+
+<AccordionGroup>
+  <Accordion title="Be specific about tone" icon="palette">
+    Instead of just "improve this", specify the tone you want:
+    - "professional and formal"
+    - "friendly and conversational"
+    - "technical and precise"
+    - "casual and relaxed"
+  </Accordion>
+
+  <Accordion title="Specify what NOT to change" icon="ban">
+    Tell the AI what to preserve:
+    - "Keep technical terms as-is"
+    - "Don't change proper nouns"
+    - "Preserve my original phrasing when possible"
+  </Accordion>
+
+  <Accordion title="Include formatting instructions" icon="list">
+    Request specific formatting:
+    - "Format as bullet points"
+    - "Add paragraph breaks"
+    - "Use markdown headers"
+    - "Keep as a single paragraph"
+  </Accordion>
+
+  <Accordion title="Set boundaries" icon="scale-balanced">
+    Control how much the AI changes:
+    - "Make minimal changes" — Light touch
+    - "Polish and improve" — Moderate editing
+    - "Significantly rewrite for clarity" — Heavy editing
+  </Accordion>
+</AccordionGroup>
+
+## Prompt Patterns
+
+### Minimal Editing
+
+```
+Fix only obvious spelling and grammar errors.
+Change as little as possible.
+Keep my original voice and phrasing.
+```
+
+### Moderate Editing
+
+```
+Fix grammar, punctuation, and spelling.
+Improve sentence flow.
+Keep the original meaning and tone.
+```
+
+### Heavy Editing
+
+```
+Rewrite for maximum clarity and professionalism.
+Restructure sentences if needed.
+Improve word choice.
+Make it polished and publication-ready.
+```
+
+## Per-Profile Prompts
+
+Different contexts need different prompts:
+
+| Profile | Prompt Style | Example Use |
+|---------|--------------|-------------|
+| **Work Email** | Professional, polished | Client communication |
+| **Slack** | Casual, brief | Team chat |
+| **Documentation** | Technical, clear | Docs and guides |
+| **Notes** | Minimal changes | Personal capture |
+| **Creative** | Preserve voice | Blog posts, writing |
+
+[Learn about creating profiles →](/profiles/creating-profiles)
+
+## Provider Differences
+
+Different AI providers interpret prompts differently:
+
+| Provider | Behavior |
+|----------|----------|
+| **OpenAI GPT-4o** | Follows complex instructions well, nuanced |
+| **Google Gemini** | Good at formatting, fast responses |
+| **Groq LLMs** | Fast, good for simpler prompts |
+| **MLX (Local)** | Works best with simple, direct prompts |
+
+<Note>
+  **For local MLX models:** Keep prompts simple and direct. Complex multi-step instructions may not work as well as with larger cloud models.
+</Note>
+
+## Testing Your Prompts
+
+After changing a prompt:
+
+1. **Test with typical input** — Dictate something you'd normally say
+2. **Check the output** — Does it match your expectations?
+3. **Iterate** — Refine the prompt until it works consistently
+4. **Edge cases** — Test with unusual input to catch issues
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="AI changes too much" icon="pen-nib">
+    Add constraints:
+    ```
+    Fix only grammar errors.
+    Keep my exact wording when possible.
+    Make minimal changes.
+    ```
+  </Accordion>
+
+  <Accordion title="AI doesn't change enough" icon="circle-xmark">
+    Be more directive:
+    ```
+    Actively improve sentence structure.
+    Fix all errors including style issues.
+    Polish the text for professional use.
+    ```
+  </Accordion>
+
+  <Accordion title="Wrong formatting" icon="align-left">
+    Be explicit about format:
+    ```
+    Output as a single paragraph with no bullet points.
+    ```
+    Or:
+    ```
+    Format as bullet points, one idea per line.
+    ```
+  </Accordion>
+
+  <Accordion title="Prompt works with one provider but not another" icon="shuffle">
+    Different models have different capabilities. Simplify prompts for local MLX models, or create separate profiles for different providers.
+  </Accordion>
+</AccordionGroup>
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card title="Create Profiles" icon="sliders" href="/profiles/creating-profiles">
+    Set up different prompts for different contexts.
+  </Card>
+
+  <Card title="Choose Provider" icon="sparkles" href="/providers/overview#ai-enhancement-providers">
+    Pick the right AI provider for your needs.
+  </Card>
+</CardGroup>

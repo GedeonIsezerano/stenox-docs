@@ -1,0 +1,365 @@
+---
+title: "Groq Whisper"
+description: "Lightning-fast Whisper v3 on Groq's LPU infrastructure"
+---
+
+<Warning>
+  This is a **TRANSCRIPTION** provider. It converts your speech to text.
+  For AI enhancement like grammar correction, see [AI Enhancement Providers](/providers/overview#ai-enhancement-providers).
+</Warning>
+
+## Overview
+
+Groq provides ultra-fast inference for OpenAI's Whisper models using their LPU (Language Processing Unit) architecture. This results in some of the fastest cloud transcription available.
+
+**Key Benefits:**
+- ⚡ **Blazing fast** - Sub-second transcription with Groq's LPU technology
+- 🎯 **Whisper v3 accuracy** - Latest OpenAI Whisper models
+- 🌐 **90+ languages** - Full multilingual support
+- 🎁 **Free tier available** - Generous free usage limits
+
+<Tip>
+  **Bonus:** Use the same API key for both Groq Whisper (transcription) and [Groq LLMs](/providers/llm/groq-llms) (AI enhancement)!
+</Tip>
+
+## Free Tier
+
+<Tip>
+  **Groq offers a generous free tier** with rate limits instead of credit limits.
+
+  **Perfect for:** Regular users who don't need unlimited transcription. The free tier is sufficient for most personal and professional use.
+
+  **No credit card required** to sign up and start using.
+</Tip>
+
+### What You Get
+
+- **Free tier with rate limits** (exact limits vary, check Groq docs)
+- **All models included** - Whisper v3, v3-turbo
+- **Same API for LLMs** - Use for both transcription and AI enhancement
+- **No expiration** - Free tier doesn't expire
+
+When you need more capacity, Groq offers competitive pay-as-you-go pricing.
+
+## Getting Your Free API Key
+
+<Steps>
+  <Step title="Visit Groq Console">
+    Go to [console.groq.com](https://console.groq.com) in your browser.
+  </Step>
+
+  <Step title="Sign up for free">
+    Click **Sign Up** and create an account with:
+    - Email and password
+    - Or sign in with Google/GitHub
+
+    **No credit card required!**
+  </Step>
+
+  <Step title="Verify your email">
+    Check your email for a verification link from Groq and click it to activate your account.
+  </Step>
+
+  <Step title="Create an API key">
+    Once logged in:
+    1. Go to **API Keys** section
+    2. Click **Create API Key**
+    3. Give it a name (e.g., "Stenox")
+    4. Copy the API key immediately (you can't view it again!)
+  </Step>
+
+  <Step title="Add key to Stenox">
+    1. Open Stenox Settings
+    2. Go to **Transcription** tab
+    3. Select **Groq** as provider
+    4. Paste your API key
+    5. Choose your model (whisper-large-v3-turbo recommended)
+    6. Click **Save**
+  </Step>
+</Steps>
+
+<Note>
+  **One API key for everything:** This same key works for Groq Whisper (transcription) and [Groq LLMs](/providers/llm/groq-llms) (AI enhancement). Configure once, use for both!
+</Note>
+
+## Available Models
+
+Groq offers multiple Whisper variants optimized for their LPU hardware:
+
+### whisper-large-v3-turbo (Recommended)
+
+**Fastest and most efficient:**
+- Latest Whisper v3 turbo variant
+- Optimized for speed on Groq LPUs
+- Sub-second processing for most recordings
+- Best accuracy-to-speed ratio
+
+**Best for:** Default choice, everyday use
+
+### whisper-large-v3
+
+**Maximum accuracy:**
+- Full Whisper v3 model (largest size)
+- Slightly slower than turbo
+- Highest possible accuracy
+- Best for: Critical transcription where accuracy is paramount
+
+<Tip>
+  **Recommendation:** Start with **whisper-large-v3-turbo** for the best balance of speed and accuracy.
+</Tip>
+
+## Language Support
+
+Groq Whisper supports 90+ languages, same as OpenAI Whisper:
+
+**Popular languages:**
+- **European:** English, Spanish, French, German, Italian, Portuguese, Dutch, Polish, Russian
+- **Asian:** Chinese (Mandarin), Japanese, Korean, Hindi, Vietnamese, Thai, Indonesian
+- **Middle Eastern:** Arabic, Hebrew, Turkish, Farsi
+- **Other:** Ukrainian, Swedish, Norwegian, Finnish, and 70+ more
+
+**Auto-language detection:**
+- Enable in Stenox profile settings
+- Groq automatically identifies the language
+- Works across all supported languages
+
+Configure language in Stenox profile settings.
+
+## Configuration in Stenox
+
+<Steps>
+  <Step title="Open Stenox Settings">
+    Click Stenox menu bar icon → **Settings**
+  </Step>
+
+  <Step title="Go to Transcription tab">
+    Select the **Transcription** tab
+  </Step>
+
+  <Step title="Select Groq">
+    Choose **Groq** from the provider dropdown
+  </Step>
+
+  <Step title="Enter API key">
+    Paste your API key from console.groq.com
+  </Step>
+
+  <Step title="Choose model">
+    Select **whisper-large-v3-turbo** (recommended) or **whisper-large-v3**
+  </Step>
+
+  <Step title="Configure language">
+    - **English only:** Select `English`
+    - **Other languages:** Select your preferred language
+    - **Multiple languages:** Select `Auto-detect`
+  </Step>
+
+  <Step title="Save">
+    Click **Save** to activate Groq Whisper
+  </Step>
+</Steps>
+
+## Features
+
+### LPU-Accelerated Processing
+
+Groq's Language Processing Units (LPUs) deliver exceptional speed:
+
+- **Near-instant results** - Sub-second for most recordings
+- **Consistent performance** - No variability in processing time
+- **Scalable** - Same speed regardless of usage volume
+
+### File-Based Transcription
+
+Groq uses file-based transcription (not streaming):
+
+- Audio recorded completely, then sent
+- Processed as a single file
+- Results returned all at once
+- Slightly different from streaming providers (DeepGram, AssemblyAI)
+
+**What this means:**
+- You get the complete transcript at once (no partial results)
+- Slightly higher latency than streaming (~1-2 seconds)
+- Still very fast overall
+
+### Automatic Punctuation
+
+Whisper models include automatic punctuation:
+
+- Periods, commas, question marks, exclamation points
+- Capitalization of proper nouns
+- Natural sentence formatting
+
+## Performance
+
+**Expected processing times with Groq Whisper:**
+
+| Recording Length | Processing Time |
+|------------------|-----------------|
+| 5 seconds | < 1 second |
+| 10 seconds | 1-2 seconds |
+| 30 seconds | 2-3 seconds |
+| 60 seconds | 3-4 seconds |
+
+<Note>
+  Groq's LPU architecture makes it one of the fastest cloud transcription options available.
+</Note>
+
+## Usage Tracking
+
+Monitor your Groq usage in the console:
+
+1. Visit [console.groq.com](https://console.groq.com)
+2. Go to **Usage** or **Billing** section
+3. View:
+   - API calls made
+   - Rate limit status
+   - Current tier (free or paid)
+
+<Note>
+  Stenox does not track Groq usage. Check the Groq console for usage details and rate limits.
+</Note>
+
+## Privacy Considerations
+
+**What Groq sees:**
+- Your audio is sent to Groq servers for processing
+- Audio and transcripts may be logged for service improvement
+- Data is encrypted in transit (HTTPS)
+- Groq has data retention policies (review their docs)
+
+**For complete privacy:**
+- Use [WhisperKit (local)](/providers/transcription/whisperkit-local) for 100% offline transcription
+- Or review Groq's privacy policy for details
+
+## When to Use Groq Whisper
+
+<CardGroup cols={2}>
+  <Card title="Speed is critical" icon="bolt">
+    Near-instant processing with Groq's LPU technology.
+  </Card>
+
+  <Card title="Multilingual needs" icon="globe">
+    Support for 90+ languages with auto-detection.
+  </Card>
+
+  <Card title="Free tier usage" icon="gift">
+    Generous free tier perfect for regular use.
+  </Card>
+
+  <Card title="Whisper quality" icon="medal">
+    Latest OpenAI Whisper v3 models with excellent accuracy.
+  </Card>
+</CardGroup>
+
+## Groq Ecosystem Integration
+
+Use Groq for both transcription AND AI enhancement:
+
+<Steps>
+  <Step title="Transcription with Groq Whisper">
+    Convert speech to text using whisper-large-v3-turbo
+  </Step>
+  <Step title="Enhancement with Groq LLMs">
+    Use Llama, Qwen, or DeepSeek R1 for grammar correction and formatting
+  </Step>
+  <Step title="Same API key">
+    One API key, one provider, seamless integration
+  </Step>
+</Steps>
+
+[Learn about Groq LLMs →](/providers/llm/groq-llms)
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="API key not working" icon="key">
+    - Ensure you copied the complete API key (no spaces)
+    - Verify your Groq account is active (check email verification)
+    - Try creating a new API key in console.groq.com
+    - Check for typos or extra characters
+  </Accordion>
+
+  <Accordion title="Rate limit exceeded" icon="gauge-high">
+    - You've hit the free tier rate limit
+    - Wait a few minutes and try again
+    - Upgrade to paid tier for higher limits
+    - Use [WhisperKit (local)](/providers/transcription/whisperkit-local) as backup
+  </Accordion>
+
+  <Accordion title="Transcription fails" icon="triangle-exclamation">
+    - Check your internet connection
+    - Verify API key is valid in Groq console
+    - Ensure audio is being captured (check recording overlay)
+    - Try a shorter test recording
+  </Accordion>
+
+  <Accordion title="Wrong language transcribed" icon="language">
+    - Manually select language in Stenox profile (don't use auto-detect)
+    - Ensure you're speaking clearly in the selected language
+    - Try speaking longer phrases (short phrases confuse auto-detect)
+  </Accordion>
+</AccordionGroup>
+
+## Pricing After Free Tier
+
+Groq offers competitive pay-as-you-go pricing when you exceed free tier limits:
+
+- **Pricing varies by model** - Check [console.groq.com](https://console.groq.com) for current rates
+- **Generally very affordable** - Competitive with other cloud providers
+- **No commitment** - Pay only for what you use
+
+<Note>
+  Groq pricing is subject to change. Check their console for the most up-to-date pricing information.
+</Note>
+
+## Comparison: Groq vs Other Providers
+
+| Feature | Groq Whisper | DeepGram | WhisperKit |
+|---------|--------------|----------|------------|
+| **Free tier** | Rate-limited free tier | $200 credits | Unlimited (local) |
+| **Speed** | Very fast (1-2s) | Fastest (< 1s) | Medium (3-5s) |
+| **Accuracy** | Excellent (Whisper v3) | Excellent (Nova-3) | Good (Whisper base/small) |
+| **Languages** | 90+ | 30+ | 90+ |
+| **Privacy** | Cloud | Cloud | 100% local |
+
+<Tip>
+  **Strategy:** Start with Groq free tier, use DeepGram's $200 credits when you hit rate limits, then switch to WhisperKit (free forever) for unlimited use.
+</Tip>
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card
+    title="Groq LLMs"
+    icon="robot"
+    href="/providers/llm/groq-llms"
+  >
+    Use the same API key for AI enhancement with Groq's LLMs.
+  </Card>
+
+  <Card
+    title="Create Profiles"
+    icon="layer-group"
+    href="/profiles/creating-profiles"
+  >
+    Switch between Groq and local providers automatically.
+  </Card>
+
+  <Card
+    title="Free Tier Guide"
+    icon="gift"
+    href="/guides/free-tier-providers"
+  >
+    Maximize free usage across all cloud providers.
+  </Card>
+
+  <Card
+    title="Cloud Setup"
+    icon="cloud"
+    href="/guides/cloud-setup"
+  >
+    Recommended cloud provider configuration.
+  </Card>
+</CardGroup>

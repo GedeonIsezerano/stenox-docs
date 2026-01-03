@@ -1,0 +1,191 @@
+---
+title: "Cloud Providers & BYOK"
+description: "Use your own API keys with cloud providers"
+---
+
+## Bring Your Own Key (BYOK)
+
+Stenox supports **Bring Your Own Key** — use your personal API keys with cloud providers. This gives you full control over your data and costs.
+
+<Tip>
+  **Your API, Your Rules.** Stenox never sees your API keys or data. All communication goes directly from your Mac to your chosen provider using your credentials.
+</Tip>
+
+## How BYOK Works
+
+<Steps>
+  <Step title="Get API Key">
+    Create an account with your chosen provider (DeepGram, OpenAI, Gemini, etc.)
+  </Step>
+
+  <Step title="Add to Stenox">
+    Paste your API key in Stenox Settings
+  </Step>
+
+  <Step title="Stenox Uses Your Key">
+    All requests use your API key directly — no intermediary
+  </Step>
+
+  <Step title="Provider Policies Apply">
+    Your enterprise policies, privacy settings, and agreements are enforced
+  </Step>
+</Steps>
+
+## Security & Privacy
+
+<CardGroup cols={2}>
+  <Card title="Keychain Storage" icon="key">
+    API keys are stored securely in your **macOS Keychain**, the same system that protects your passwords.
+  </Card>
+
+  <Card title="Single Purpose" icon="lock-keyhole">
+    Keys are **only used** to access your chosen provider. No analytics, tracking, or secondary purposes.
+  </Card>
+
+  <Card title="Never Transmitted" icon="ban">
+    Your API keys never leave your Mac except to authenticate directly with your provider's API.
+  </Card>
+
+  <Card title="You Control Access" icon="user-shield">
+    View, modify, or delete your API keys at any time through Stenox settings or macOS Keychain Access.
+  </Card>
+</CardGroup>
+
+## Enterprise & Compliance
+
+If you have enterprise or business accounts with your cloud provider:
+
+- **Privacy policies are honored** — Your organization's data processing agreements apply
+- **Compliance certifications apply** — SOC 2, HIPAA, GDPR, etc. from your provider
+- **Direct communication** — No intermediary servers between you and your provider
+- **Audit trails** — All requests go through your account for full visibility
+
+<Note>
+  For maximum privacy with cloud quality, use business or enterprise API keys with your organization's data processing agreements in place.
+</Note>
+
+## Cloud Providers
+
+### Transcription
+
+<CardGroup cols={2}>
+  <Card title="DeepGram" icon="waveform" href="/providers/transcription/deepgram">
+    Industry-leading accuracy. **$200 free credits** for new accounts.
+  </Card>
+
+  <Card title="OpenAI Whisper" icon="microphone" href="/providers/transcription/openai-whisper">
+    Official OpenAI Whisper API. Excellent multi-language support.
+  </Card>
+
+  <Card title="AssemblyAI" icon="globe" href="/providers/transcription/assemblyai">
+    Enterprise-grade with EU data residency options.
+  </Card>
+
+  <Card title="Groq Whisper" icon="bolt" href="/providers/transcription/groq-whisper">
+    Ultra-fast transcription. **Free tier** with no credit card.
+  </Card>
+</CardGroup>
+
+### AI Enhancement
+
+<CardGroup cols={2}>
+  <Card title="OpenAI" icon="sparkles" href="/providers/llm/openai">
+    GPT-4o and other models. Premium quality.
+  </Card>
+
+  <Card title="Google Gemini" icon="stars" href="/providers/llm/google-gemini">
+    **1,500 free requests/day.** No credit card required.
+  </Card>
+
+  <Card title="Groq LLMs" icon="bolt" href="/providers/llm/groq-llms">
+    Ultra-fast processing. **Free tier** available.
+  </Card>
+</CardGroup>
+
+## Quick Setup Examples
+
+### Example 1: DeepGram (Transcription)
+
+<Steps>
+  <Step title="Create Account">
+    Visit [console.deepgram.com](https://console.deepgram.com) and sign up
+  </Step>
+
+  <Step title="Get API Key">
+    Go to **API Keys** → **Create Key** → Copy the key
+  </Step>
+
+  <Step title="Add to Stenox">
+    Settings → **Providers** tab → **DeepGram** → Paste key
+  </Step>
+</Steps>
+
+<Tip>
+  DeepGram offers **$200 in free credits** for new accounts — enough for ~100+ hours of transcription.
+</Tip>
+
+### Example 2: Google Gemini (AI Enhancement)
+
+<Steps>
+  <Step title="Get API Key">
+    Visit [aistudio.google.com](https://aistudio.google.com) and sign in with Google
+  </Step>
+
+  <Step title="Create Key">
+    Click **Get API Key** → **Create in new project** → Copy
+  </Step>
+
+  <Step title="Add to Stenox">
+    Settings → **Providers** tab → **Gemini** → Paste key
+  </Step>
+</Steps>
+
+<Tip>
+  Gemini has a **generous free tier** — 1,500 requests per day with no credit card required.
+</Tip>
+
+## Free Tier Providers
+
+Several cloud providers offer free tiers:
+
+| Provider | Type | Free Tier |
+|----------|------|-----------|
+| **Groq** | Transcription & LLM | Generous limits, no credit card |
+| **Google Gemini** | AI Enhancement | 1,500 requests/day |
+| **DeepGram** | Transcription | $200 credits (one-time) |
+| **AssemblyAI** | Transcription | Limited free hours |
+
+<Note>
+  Combine free tiers for a completely free cloud experience. Example: Groq Whisper + Google Gemini.
+</Note>
+
+## Local vs Cloud Trade-offs
+
+| Factor | Local (WhisperKit + MLX) | Cloud (BYOK) |
+|--------|--------------------------|--------------|
+| **Privacy** | Complete — nothing leaves Mac | Depends on provider policies |
+| **Speed** | 5-10 seconds | 1-3 seconds |
+| **Quality** | Good | Excellent |
+| **Offline** | Works without internet | Requires internet |
+| **Cost** | Free forever | Free tiers or usage-based |
+| **Requirements** | Apple Silicon (for MLX) | Any Mac |
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card title="BYOK Configuration" icon="gear" href="/setup/byok-configuration">
+    Step-by-step API key setup for each provider.
+  </Card>
+
+  <Card title="Free Tier Guide" icon="gift" href="/pricing/free-tier">
+    Maximize free tier providers.
+  </Card>
+
+  <Card title="100% Local" icon="lock" href="/providers/local-privacy">
+    Complete local privacy setup.
+  </Card>
+
+  <Card title="Compare Providers" icon="table" href="/providers/overview">
+    Side-by-side provider comparison.
+  </Card>
+</CardGroup>

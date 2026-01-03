@@ -1,0 +1,468 @@
+---
+title: "Privacy-First Setup"
+description: "Configure Stenox for 100% local, offline operation with complete privacy"
+---
+
+## Complete Privacy with Local Processing
+
+Stenox can operate completely offline using local models for both transcription and AI enhancement. This means your audio and text never leave your Mac - perfect for sensitive content, confidential work, or privacy-conscious users.
+
+<Tip>
+  **100% Private = WhisperKit (transcription) + MLX (AI enhancement)**
+
+  No internet connection required, no API keys, no cloud services, complete privacy.
+</Tip>
+
+## Why Privacy-First?
+
+<CardGroup cols={2}>
+  <Card title="Complete confidentiality" icon="lock">
+    Healthcare, legal, financial, or any sensitive content.
+  </Card>
+
+  <Card title="Offline functionality" icon="wifi-slash">
+    Works on airplanes, remote locations, or with no internet.
+  </Card>
+
+  <Card title="No third parties" icon="shield-check">
+    Your data never sent to external services.
+  </Card>
+
+  <Card title="Unlimited use" icon="infinity">
+    No usage costs, no API limits, no restrictions.
+  </Card>
+</CardGroup>
+
+## Privacy-First Setup Guide
+
+Follow these steps to configure Stenox for completely private operation.
+
+### Step 1: Configure WhisperKit (Local Transcription)
+
+<Steps>
+  <Step title="Open Stenox Settings">
+    Click the Stenox menu bar icon → **Settings**
+  </Step>
+
+  <Step title="Go to Models tab">
+    Select the **Models** tab
+  </Step>
+
+  <Step title="Select WhisperKit">
+    Under **Transcription Provider**, choose **WhisperKit**
+  </Step>
+
+  <Step title="Choose a model">
+    Select your preferred model:
+    - **base.en** (142 MB) - Fastest, English only
+    - **small.en** (483 MB) - Better accuracy, English only
+    - **base** (142 MB) - Multilingual (90+ languages)
+    - **small** (483 MB) - Better accuracy, multilingual
+
+    **Recommended:** base.en for beginners
+  </Step>
+
+  <Step title="Download model">
+    Click **Download** and wait for completion (~142 MB or ~483 MB)
+
+    Model saved to: `~/stenox-models/whisper/`
+  </Step>
+
+  <Step title="Verify offline mode">
+    Turn off Wi-Fi and test a dictation - it should work perfectly!
+  </Step>
+</Steps>
+
+[Learn more about WhisperKit →](/providers/transcription/whisperkit-local)
+
+### Step 2: Configure MLX (Local AI Enhancement)
+
+<Steps>
+  <Step title="In the same Models tab">
+    Under **AI Enhancement Provider**, select **MLX**
+  </Step>
+
+  <Step title="Choose a model">
+    Select based on your Mac's specifications:
+    - **Qwen 3 1.5B** (~1.5 GB) - Fast, 8GB RAM minimum
+    - **Gemma 3 2B** (~2 GB) - Better quality, 12GB RAM recommended
+    - **Phi-3 3.8B** (~3.8 GB) - Best quality, 16GB RAM recommended
+
+    **Recommended:** Qwen 3 1.5B for balanced speed and quality
+  </Step>
+
+  <Step title="Download model">
+    Click **Download** and wait for completion (~1.5-3.8 GB)
+
+    Model saved to: `~/stenox-models/mlx/`
+  </Step>
+
+  <Step title="Test enhancement">
+    Perform a dictation - it will be transcribed AND enhanced locally
+  </Step>
+</Steps>
+
+<Warning>
+  **MLX requires Apple Silicon.** Intel Mac users cannot use MLX and should skip AI enhancement or use cloud providers.
+</Warning>
+
+[Learn more about MLX →](/providers/llm/mlx-local)
+
+### Step 3: Verify Privacy Settings
+
+<Steps>
+  <Step title="Check active providers">
+    In Settings, verify:
+    - **Transcription:** WhisperKit
+    - **AI Enhancement:** MLX (or None)
+  </Step>
+
+  <Step title="Remove cloud API keys (optional)">
+    For complete privacy, remove any cloud API keys:
+    - Go to **Transcription** tab → Remove DeepGram/AssemblyAI/Groq keys
+    - Go to **AI Enhancement** tab → Remove Gemini/Groq keys
+  </Step>
+
+  <Step title="Test offline">
+    1. Disconnect from internet (turn off Wi-Fi)
+    2. Perform a dictation
+    3. Verify transcription and enhancement work
+  </Step>
+
+  <Step title="Done!">
+    Stenox now operates 100% locally with complete privacy.
+  </Step>
+</Steps>
+
+## What You Get
+
+### Complete Privacy
+
+- **Audio stays local** - Voice recordings never uploaded
+- **Text stays local** - Transcriptions processed on-device
+- **No internet required** - Works offline
+- **No logging** - Nothing tracked or stored externally
+- **No third parties** - No cloud providers see your data
+
+### Unlimited Use
+
+- **No usage costs** - Free forever
+- **No API limits** - Use as much as you want
+- **No rate limiting** - Dictate as often as needed
+- **No credit cards** - Zero payment required
+
+### Full Functionality
+
+- **All features work** - Transcription, enhancement, profiles, vocabulary
+- **Customizable** - Create profiles for different use cases
+- **Auto-activation** - Profiles switch based on active app
+
+## Performance Expectations
+
+### Processing Time
+
+With local processing, expect these speeds:
+
+| Configuration | Total Time | Breakdown |
+|---------------|------------|-----------|
+| **WhisperKit base.en only** | ~3-5 seconds | 3-5s transcription |
+| **WhisperKit + MLX Qwen 1.5B** | ~5-7 seconds | 3-4s transcription + 2-3s enhancement |
+| **WhisperKit small.en + MLX Phi-3** | ~10-12 seconds | 5-6s transcription + 5-6s enhancement |
+
+<Note>
+  Local processing is slower than cloud (which can be ~1-2 seconds total), but provides complete privacy.
+</Note>
+
+### Apple Silicon Note
+
+<Note>
+  **MLX requires Apple Silicon.** Intel Mac users can use WhisperKit for local transcription, but need cloud providers for AI enhancement.
+</Note>
+
+## Privacy Use Cases
+
+<AccordionGroup>
+  <Accordion title="Healthcare & Medical" icon="heart-pulse">
+    **Why private:** HIPAA compliance, patient confidentiality
+
+    **Setup:**
+    - WhisperKit for medical dictation
+    - MLX for note formatting
+    - Custom vocabulary for medical terms
+    - Profile for EMR/EHR applications
+  </Accordion>
+
+  <Accordion title="Legal Work" icon="scale-balanced">
+    **Why private:** Attorney-client privilege, confidential documents
+
+    **Setup:**
+    - WhisperKit for case notes, briefs
+    - MLX for professional formatting
+    - Vocabulary for legal terminology
+    - Profile for document management apps
+  </Accordion>
+
+  <Accordion title="Financial Services" icon="building-columns">
+    **Why private:** Client confidentiality, regulatory compliance
+
+    **Setup:**
+    - WhisperKit for financial analysis
+    - MLX for report formatting
+    - Profile for Excel, financial software
+  </Accordion>
+
+  <Accordion title="Journalism" icon="newspaper">
+    **Why private:** Source protection, sensitive investigations
+
+    **Setup:**
+    - WhisperKit for interview transcription
+    - MLX for article drafting
+    - Profiles for different publications
+  </Accordion>
+
+  <Accordion title="Personal Privacy" icon="user-lock">
+    **Why private:** Personal preference, data sovereignty
+
+    **Setup:**
+    - WhisperKit for all dictation
+    - MLX for text improvement
+    - Complete offline operation
+  </Accordion>
+</AccordionGroup>
+
+## Optional: Disable AI Enhancement
+
+If you want the fastest local processing or don't need enhancement:
+
+<Steps>
+  <Step title="Open Settings → AI Enhancement tab">
+    Go to the AI Enhancement settings
+  </Step>
+
+  <Step title="Select 'None'">
+    Choose **None** as the AI enhancement provider
+  </Step>
+
+  <Step title="Save">
+    Enhancement will be skipped, reducing processing time to ~3-5 seconds (WhisperKit only)
+  </Step>
+</Steps>
+
+**Benefits:**
+- Faster processing (3-5s vs 5-7s)
+- Less RAM usage
+- Still 100% private
+- Raw transcription without formatting
+
+## Advanced Privacy Configuration
+
+### Custom Model Storage Location
+
+Change where models are stored:
+
+<Tabs>
+  <Tab title="Default Location">
+    Models stored in `~/stenox-models/`
+  </Tab>
+
+  <Tab title="Custom Location">
+    1. Open Stenox Settings → **Models** tab
+    2. Click **Change Model Directory**
+    3. Select preferred location (e.g., external drive)
+  </Tab>
+</Tabs>
+
+### Encrypted Disk Image (Advanced)
+
+For maximum security, store models on encrypted disk image:
+
+<Steps>
+  <Step title="Create encrypted disk image">
+    Use macOS Disk Utility to create an encrypted APFS image
+  </Step>
+
+  <Step title="Mount the image">
+    Mount the encrypted disk and unlock with password
+  </Step>
+
+  <Step title="Change model directory">
+    Point Stenox model directory to encrypted disk
+  </Step>
+
+  <Step title="Download models">
+    Models are now stored encrypted at rest
+  </Step>
+</Steps>
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="Models won't download" icon="cloud-arrow-down">
+    - Models require internet to download (one-time)
+    - After download, they work offline forever
+    - Ensure sufficient disk space (2-5 GB)
+  </Accordion>
+
+  <Accordion title="Processing is too slow" icon="hourglass">
+    - Use base.en instead of small.en (faster)
+    - Use Qwen 1.5B instead of Phi-3 (faster)
+    - Skip AI enhancement (None) for fastest processing
+    - Consider hybrid approach (local transcription + cloud enhancement)
+  </Accordion>
+
+  <Accordion title="MLX not available (Intel Mac)" icon="ban">
+    - MLX requires Apple Silicon
+    - Options for Intel Macs:
+      1. Use WhisperKit alone (no enhancement)
+      2. Use cloud enhancement (Gemini/Groq)
+      3. Upgrade to Apple Silicon Mac
+  </Accordion>
+
+  <Accordion title="Out of disk space" icon="hard-drive">
+    - Delete unused models from `~/stenox-models/`
+    - Use smaller models (base instead of small)
+    - Skip AI enhancement to save 1.5-3.8 GB
+  </Accordion>
+</AccordionGroup>
+
+## Privacy Checklist
+
+✅ **Transcription:** WhisperKit (local)
+✅ **AI Enhancement:** MLX (local) or None
+✅ **Offline test:** Works with Wi-Fi off
+✅ **Cloud API keys:** Removed or not entered
+✅ **Internet not required:** All models downloaded
+✅ **Verified:** No data sent to cloud
+
+<Note>
+  With this configuration, Stenox operates entirely on your Mac with zero external communication.
+</Note>
+
+## Hybrid Approach (Alternative)
+
+If you want privacy for audio but cloud quality for text:
+
+**Setup:**
+- **Transcription:** WhisperKit (local) - Audio stays private
+- **Enhancement:** Google Gemini or Groq (cloud) - Text enhanced in cloud
+
+**Benefits:**
+- Most sensitive data (audio) stays local
+- High-quality enhancement via cloud
+- Faster than full local (4-5s vs 7-10s)
+
+[Learn about Hybrid Setup →](/guides/free-tier-providers#option-4-hybrid-privacy--quality)
+
+## Cloud API Keys & Privacy Policies
+
+When using cloud providers, Stenox supports bring-your-own-API-keys. This means **your data privacy is governed by your API provider's policies**, not Stenox.
+
+<Info>
+  **Your API, Your Rules:** Stenox never sees your API keys or data. All communication goes directly from your Mac to your chosen provider using your credentials.
+</Info>
+
+### Secure API Key Storage
+
+<CardGroup cols={2}>
+  <Card title="macOS Keychain Storage" icon="key">
+    API keys are stored securely in your **macOS Keychain**, the same system that protects your passwords and certificates.
+  </Card>
+
+  <Card title="Single Purpose Only" icon="lock-keyhole">
+    Keys are **only used to access your chosen provider**. Stenox has no other use for your API keys - no analytics, no tracking, no secondary purposes.
+  </Card>
+
+  <Card title="Never Transmitted" icon="ban">
+    Your API keys never leave your Mac except to authenticate directly with your provider's API.
+  </Card>
+
+  <Card title="You Control Access" icon="user-shield">
+    You can view, modify, or delete your API keys at any time through Stenox settings or macOS Keychain Access.
+  </Card>
+</CardGroup>
+
+### Privacy Governance
+
+Your API key's privacy settings are fully honored:
+
+<CardGroup cols={2}>
+  <Card title="Enterprise & Business Accounts" icon="building">
+    If you have enterprise or business accounts with your cloud provider (DeepGram, AssemblyAI, Groq, Google, etc.), your organization's privacy policies are automatically applied.
+  </Card>
+
+  <Card title="Private Policy Attachments" icon="file-contract">
+    Any private policies or data processing agreements attached to your API keys are fully honored and enforced by your provider.
+  </Card>
+
+  <Card title="Direct Communication" icon="arrow-right-arrow-left">
+    Stenox sends data directly to your provider using your API key - no intermediary servers.
+  </Card>
+
+  <Card title="Provider Compliance" icon="shield-check">
+    Your provider's security certifications (SOC 2, HIPAA, GDPR, etc.) apply to your API requests.
+  </Card>
+</CardGroup>
+
+### How It Works
+
+<Steps>
+  <Step title="You provide API key">
+    Enter your API key in Stenox settings
+  </Step>
+
+  <Step title="Stenox uses your credentials">
+    All requests use your API key directly
+  </Step>
+
+  <Step title="Provider applies your policies">
+    Your enterprise policies, privacy settings, and agreements are enforced
+  </Step>
+
+  <Step title="You maintain control">
+    Data processing follows your provider account's rules
+  </Step>
+</Steps>
+
+<Tip>
+  **For maximum privacy with cloud quality:** Use business/enterprise API keys with your organization's data processing agreements in place.
+</Tip>
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card
+    title="WhisperKit Guide"
+    icon="microphone"
+    href="/providers/transcription/whisperkit-local"
+  >
+    Complete guide to local transcription.
+  </Card>
+
+  <Card
+    title="MLX Guide"
+    icon="sparkles"
+    href="/providers/llm/mlx-local"
+  >
+    Complete guide to local AI enhancement.
+  </Card>
+
+  <Card
+    title="Create Profiles"
+    icon="sliders"
+    href="/profiles/creating-profiles"
+  >
+    Set up profiles for different privacy needs.
+  </Card>
+
+  <Card
+    title="Vocabulary"
+    icon="book"
+    href="/setup/vocabulary"
+  >
+    Add custom terms for better accuracy.
+  </Card>
+</CardGroup>
+
+<Tip>
+  **Perfect for sensitive work:** Privacy-first setup gives you complete control and confidentiality with zero cloud dependencies.
+</Tip>

@@ -1,0 +1,345 @@
+---
+title: "DeepGram"
+description: "Ultra-fast cloud transcription with Nova-3 models"
+---
+
+<Warning>
+  This is a **TRANSCRIPTION** provider. It converts your speech to text.
+  For AI enhancement like grammar correction, see [AI Enhancement Providers](/providers/overview#ai-enhancement-providers).
+</Warning>
+
+## Overview
+
+DeepGram is a leading speech-to-text API known for speed and accuracy. Their Nova-3 model delivers state-of-the-art transcription with sub-second processing times.
+
+**Key Benefits:**
+- ⚡ **Ultra-fast** - Sub-second transcription processing
+- 🎯 **High accuracy** - Nova-3 achieves industry-leading word error rates
+- 🌐 **30+ languages** - Auto-language detection included
+- 🎁 **$200 free credits** - Generous free tier for new users
+
+## Free Tier
+
+<Tip>
+  **New DeepGram users get $200 in free credits!**
+
+  That's approximately **15,000+ minutes** of transcription - enough for months of regular use.
+
+  **No credit card required** to sign up and claim your credits.
+</Tip>
+
+### What You Get
+
+- **$200 in credits** upon signup
+- **No credit card required** for free tier
+- **No expiration** on credits (for active accounts)
+- **All features included** - Nova-3, streaming, punctuation, etc.
+
+After credits are used, pay-as-you-go pricing starts at $0.0125 per minute.
+
+## Getting Your Free API Key
+
+<Steps>
+  <Step title="Visit DeepGram Console">
+    Go to [console.deepgram.com](https://console.deepgram.com) in your browser.
+  </Step>
+
+  <Step title="Sign up for free">
+    Click **Sign Up** and create an account with:
+    - Email address
+    - Password
+    - Or sign in with Google/GitHub
+
+    **No credit card required!**
+  </Step>
+
+  <Step title="Verify your email">
+    Check your email inbox for a verification link from DeepGram and click it to confirm your account.
+  </Step>
+
+  <Step title="Navigate to API Keys">
+    Once logged in:
+    1. Click on your project name (usually "Default Project")
+    2. Go to the **API Keys** section in the left sidebar
+  </Step>
+
+  <Step title="Create a new API key">
+    1. Click **Create New Key**
+    2. Give it a name (e.g., "Stenox")
+    3. Copy the API key - you won't be able to see it again!
+  </Step>
+
+  <Step title="Add key to Stenox">
+    1. Open Stenox Settings
+    2. Go to **Transcription** tab
+    3. Select **DeepGram** as provider
+    4. Paste your API key
+    5. Choose your model (Nova-3 recommended)
+    6. Click **Save**
+  </Step>
+</Steps>
+
+<Note>
+  **Keep your API key secure!** Treat it like a password. Don't share it publicly or commit it to version control.
+</Note>
+
+## Available Models
+
+DeepGram offers several model variants:
+
+### Nova-3 (Recommended)
+
+**Latest and best model:**
+- State-of-the-art accuracy
+- Fastest processing (< 1 second)
+- Best for: All use cases, default choice
+
+**Variants:**
+- `nova-3` - Standard, multilingual
+- `nova-3-english` - Optimized for English
+
+### Nova-2
+
+**Previous generation:**
+- Still excellent accuracy
+- Slightly cheaper than Nova-3
+- Best for: Budget-conscious users
+
+**Variants:**
+- `nova-2` - Standard, multilingual
+- `nova-2-english` - Optimized for English
+
+### Flux
+
+**Fast, cost-effective option:**
+- Good accuracy for general use
+- Cheaper than Nova models
+- Best for: High-volume, non-critical transcription
+
+<Tip>
+  **Recommendation:** Start with **Nova-3** for the best experience. Your $200 in credits will last a very long time.
+</Tip>
+
+## Language Support
+
+DeepGram supports 30+ languages with auto-detection:
+
+**Supported Languages:**
+- English (US, UK, Australian, Indian accents)
+- Spanish (Spain, Latin America)
+- French, German, Italian, Portuguese
+- Dutch, Polish, Russian, Turkish
+- Chinese (Mandarin), Japanese, Korean, Hindi
+- And many more...
+
+**Auto-Detection:**
+- Enable in Stenox profile settings
+- DeepGram automatically identifies the language being spoken
+- Works across all supported languages
+
+## Configuration in Stenox
+
+<Steps>
+  <Step title="Open Settings">
+    Click Stenox menu bar icon → **Settings**
+  </Step>
+
+  <Step title="Go to Transcription tab">
+    Select the **Transcription** tab
+  </Step>
+
+  <Step title="Select DeepGram">
+    Choose **DeepGram** from the provider dropdown
+  </Step>
+
+  <Step title="Enter API key">
+    Paste your API key (from console.deepgram.com)
+  </Step>
+
+  <Step title="Choose model">
+    Select **Nova-3** (recommended) or another model
+  </Step>
+
+  <Step title="Configure language">
+    - For English-only: Select `English`
+    - For multilingual: Select `Auto-detect` or specific language
+  </Step>
+
+  <Step title="Save settings">
+    Click **Save** to activate DeepGram
+  </Step>
+</Steps>
+
+## Features
+
+### Streaming Transcription
+
+DeepGram uses WebSocket streaming for real-time results:
+
+- Audio is sent as you speak
+- Transcription begins immediately
+- Results return in < 1 second after you stop speaking
+
+### Automatic Punctuation
+
+DeepGram automatically adds punctuation:
+
+- Periods, commas, question marks
+- Capitalization of proper nouns
+- Natural sentence structure
+
+No need to say "comma" or "period" - it's added automatically based on context.
+
+### Speaker Adaptation
+
+DeepGram adapts to your voice:
+
+- Learns your speaking patterns
+- Improves accuracy over time
+- Better recognition of frequently used terms
+
+## Performance
+
+**Expected processing times with DeepGram:**
+
+| Recording Length | Processing Time |
+|------------------|-----------------|
+| 5 seconds | < 0.5 seconds |
+| 10 seconds | < 1 second |
+| 30 seconds | 1-2 seconds |
+| 60 seconds | 2-3 seconds |
+
+<Tip>
+  DeepGram is typically **5-10x faster** than local WhisperKit processing.
+</Tip>
+
+## Usage Tracking
+
+Monitor your credit usage in the DeepGram console:
+
+1. Visit [console.deepgram.com](https://console.deepgram.com)
+2. Go to **Billing** in the sidebar
+3. View:
+   - Remaining credits ($200 initially)
+   - Usage this month
+   - Detailed usage logs
+
+<Note>
+  Stenox does not track your DeepGram usage. Check the DeepGram console for accurate credit balance.
+</Note>
+
+## Privacy Considerations
+
+**What DeepGram sees:**
+- Your audio is sent to DeepGram servers for processing
+- DeepGram may log audio and transcripts for quality improvement
+- Data is encrypted in transit (HTTPS/WSS)
+
+**If privacy is critical:**
+- Use [WhisperKit (local)](/providers/transcription/whisperkit-local) for 100% private transcription
+- Or review DeepGram's privacy policy and data retention settings
+
+## When to Use DeepGram
+
+<CardGroup cols={2}>
+  <Card title="Maximum accuracy" icon="bullseye">
+    Nova-3 delivers state-of-the-art transcription quality.
+  </Card>
+
+  <Card title="Speed matters" icon="bolt">
+    Sub-second processing for near-instant results.
+  </Card>
+
+  <Card title="Professional use" icon="briefcase">
+    Reliable for business emails, documents, and presentations.
+  </Card>
+
+  <Card title="Free cloud option" icon="gift">
+    $200 in credits provides generous free usage.
+  </Card>
+</CardGroup>
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="API key invalid or not working" icon="key">
+    - Ensure you copied the entire key (no spaces or extra characters)
+    - Check that the key is active in DeepGram console
+    - Try creating a new API key
+    - Verify your DeepGram account is verified (check email)
+  </Accordion>
+
+  <Accordion title="Transcription fails or times out" icon="clock">
+    - Check your internet connection
+    - Verify you have remaining credits in DeepGram console
+    - Try a different model (Nova-2 or Flux)
+    - Check Stenox logs for error messages
+  </Accordion>
+
+  <Accordion title="Poor accuracy or wrong words" icon="spell-check">
+    - Ensure you're using Nova-3 (best accuracy)
+    - Check language setting matches your speech
+    - Reduce background noise
+    - Speak more clearly or use a better microphone
+    - Add custom vocabulary in Stenox settings
+  </Accordion>
+
+  <Accordion title="Running out of credits quickly" icon="credit-card">
+    - Check usage in DeepGram console (Billing → Usage)
+    - Switch to Flux model for cheaper transcription
+    - Use WhisperKit (local) when privacy isn't critical to preserve credits
+    - Create profiles to automatically switch based on use case
+  </Accordion>
+</AccordionGroup>
+
+## Pricing After Free Credits
+
+Once your $200 in credits are used:
+
+| Model | Price per Minute | Price per Hour |
+|-------|------------------|----------------|
+| Nova-3 | $0.0125 | $0.75 |
+| Nova-2 | $0.0100 | $0.60 |
+| Flux | $0.0050 | $0.30 |
+
+**Example usage:**
+- 1 hour of dictation per day = ~$22.50/month (Nova-3)
+- 30 minutes per day = ~$11.25/month (Nova-3)
+
+[View full pricing →](https://deepgram.com/pricing)
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card
+    title="Add AI Enhancement"
+    icon="sparkles"
+    href="/providers/llm/google-gemini"
+  >
+    Combine with Google Gemini for grammar correction and formatting.
+  </Card>
+
+  <Card
+    title="Create Profiles"
+    icon="layer-group"
+    href="/profiles/creating-profiles"
+  >
+    Set up different profiles for different use cases.
+  </Card>
+
+  <Card
+    title="Free Tier Guide"
+    icon="gift"
+    href="/guides/free-tier-providers"
+  >
+    Maximize your free credits across all providers.
+  </Card>
+
+  <Card
+    title="Cloud Setup Guide"
+    icon="cloud"
+    href="/guides/cloud-setup"
+  >
+    Recommended cloud configuration for best results.
+  </Card>
+</CardGroup>

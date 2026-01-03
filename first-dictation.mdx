@@ -1,0 +1,271 @@
+---
+title: "Your First Dictation"
+description: "Step-by-step guide to using Stenox for the first time"
+---
+
+## Before You Begin
+
+Make sure you've completed these steps:
+
+- ✓ [Installed Stenox](/installation) and granted permissions
+- ✓ [Configured a transcription provider](/first-dictation#step-2-configure-a-transcription-provider)
+
+<Note>
+  If you haven't set up a provider yet, we recommend starting with [WhisperKit (local)](/transcription/whisperkit-local) for the easiest setup.
+</Note>
+
+## The Recording Process
+
+Stenox supports two recording modes. This guide uses **Push-to-Talk** (the default):
+
+1. **Activate** - Press and hold your hotkey
+2. **Record** - Speak your message while holding
+3. **Process** - Release the hotkey to stop recording
+4. **Insert** - Text appears at your cursor
+
+<Note>
+  **Toggle mode** is also available in Settings. With toggle mode, you press once to start recording and press again to stop—no need to hold the key.
+</Note>
+
+Let's walk through it step by step.
+
+## Step-by-Step: Your First Dictation
+
+<Steps>
+  <Step title="Open an application with a text field">
+    Start with a simple app like **Notes** or **TextEdit**:
+
+    1. Open the app from Spotlight (Cmd+Space, type "Notes")
+    2. Create a new note or document
+    3. Click in the text area to position your cursor
+  </Step>
+
+  <Step title="Check the Stenox menu bar icon">
+    Look for the Stenox icon in your menu bar (top right of your screen).
+
+    **Icon colors:**
+    - **Gray** - Idle, ready to record
+    - **Red** - Recording in progress
+    - **Spinning** - Processing your audio
+
+    Make sure it's gray (idle) before starting.
+  </Step>
+
+  <Step title="Press and hold Option+Space">
+    This is the default hotkey. Hold both keys down simultaneously.
+
+    **What you'll see:**
+    - Menu bar icon turns **red**
+    - Recording overlay appears on screen
+    - Audio waveform shows your voice input
+
+    <Tip>
+      The recording only happens while you're holding the keys. Release early and Stenox will process whatever you've said so far.
+    </Tip>
+  </Step>
+
+  <Step title="Speak your message clearly">
+    While holding the hotkey, speak naturally into your microphone.
+
+    **Try saying:**
+    > "Hello, this is my first voice dictation with Stenox. It's faster than typing!"
+
+    **Tips:**
+    - Speak at a normal conversational pace
+    - Don't over-enunciate or speak too slowly
+    - Stay about 6-12 inches from your microphone
+    - Watch the waveform to confirm audio is being captured
+  </Step>
+
+  <Step title="Release the hotkey when done">
+    Let go of Option+Space when you finish speaking.
+
+    **What happens next:**
+    - Recording overlay disappears
+    - Icon shows processing (spinning or animated)
+    - Stenox transcribes your audio (1-3 seconds typically)
+    - Text appears at your cursor position
+  </Step>
+
+  <Step title="Review the transcribed text">
+    Your spoken words should now appear as text!
+
+    Check the accuracy:
+    - Are the words correct?
+    - Is punctuation appropriate?
+    - Is capitalization correct?
+
+    <Note>
+      First-time accuracy depends on your provider, microphone quality, and speaking clarity. It improves with practice!
+    </Note>
+  </Step>
+</Steps>
+
+## Try It Again
+
+Practice makes perfect! Try a few more dictations:
+
+### Practice Dictations
+
+<AccordionGroup>
+  <Accordion title="Practice 1: A simple sentence">
+    **Say:** "The quick brown fox jumps over the lazy dog."
+
+    This tests basic transcription accuracy.
+  </Accordion>
+
+  <Accordion title="Practice 2: With punctuation">
+    **Say:** "Can you hear me? Yes, I can hear you! This is amazing."
+
+    Notice how the provider adds punctuation automatically.
+  </Accordion>
+
+  <Accordion title="Practice 3: Longer paragraph">
+    **Say:** "Stenox helps me work faster by converting my voice to text. I can dictate emails, messages, and documents without touching the keyboard. It's especially useful for long-form writing."
+
+    Test how well it handles longer content.
+  </Accordion>
+
+  <Accordion title="Practice 4: Technical terms">
+    **Say:** "Stenox uses WhisperKit for local transcription and supports cloud providers like DeepGram and AssemblyAI."
+
+    Test capitalization and technical terminology.
+  </Accordion>
+</AccordionGroup>
+
+## Understanding Visual Feedback
+
+Learn to read Stenox's indicators:
+
+### Menu Bar Icon States
+
+| Icon State | Meaning |
+|------------|---------|
+| Gray (idle) | Ready to record |
+| Red (solid) | Recording your voice |
+| Spinning/animated | Processing transcription |
+| Blue pulse | Text insertion in progress |
+
+### Recording Overlay
+
+The floating overlay shows:
+- **Waveform** - Visual representation of your voice input
+- **Timer** - Recording duration
+- **Model/Provider** - Currently active transcription provider
+
+<Tip>
+  If you don't see the overlay, check Stenox Settings → **Settings** tab → ensure "Show recording overlay" is enabled.
+</Tip>
+
+## Common First-Time Issues
+
+<AccordionGroup>
+  <Accordion title="No text appears after speaking" icon="triangle-exclamation">
+    **Possible causes:**
+    - Microphone not working (check System Settings → Sound → Input)
+    - No provider configured (go to Settings → Models)
+    - Accessibility permission not granted (go to Settings → check permissions)
+
+    **Solution:** Verify permissions and provider configuration in Stenox Settings.
+  </Accordion>
+
+  <Accordion title="Transcription is inaccurate" icon="spell-check">
+    **Possible causes:**
+    - Background noise
+    - Poor microphone quality
+    - Speaking too fast or unclear
+    - Wrong language selected
+
+    **Solution:** Try speaking more clearly in a quiet environment. Consider using a headset microphone.
+  </Accordion>
+
+  <Accordion title="Recording starts but immediately stops" icon="stop">
+    **Possible causes:**
+    - Not holding hotkey long enough
+    - Hotkey conflict with another app
+    - Audio input device not selected
+
+    **Solution:** Hold the hotkey for the entire duration of speaking. Check Settings → **Audio** tab for input device.
+  </Accordion>
+
+  <Accordion title="Hotkey doesn't work" icon="keyboard">
+    **Possible causes:**
+    - Another app is using the same hotkey
+    - Accessibility permission not granted
+    - Stenox not running in background
+
+    **Solution:** Change the hotkey in Settings or check for conflicting apps. Ensure Stenox icon appears in menu bar.
+  </Accordion>
+</AccordionGroup>
+
+## Tips for Success
+
+<CardGroup cols={2}>
+  <Card title="Speak naturally" icon="comments">
+    Don't robot-speak or over-enunciate. Use your normal speaking voice.
+  </Card>
+
+  <Card title="Hold the hotkey" icon="hand">
+    Keep holding Option+Space for the entire time you're speaking.
+  </Card>
+
+  <Card title="Watch the waveform" icon="waveform-lines">
+    The overlay waveform confirms your voice is being captured.
+  </Card>
+
+  <Card title="Practice regularly" icon="rotate">
+    Like any skill, you'll get better and faster with practice.
+  </Card>
+</CardGroup>
+
+## What's Next?
+
+Now that you've mastered basic dictation, enhance your Stenox experience:
+
+<CardGroup cols={2}>
+  <Card
+    title="Add AI Enhancement"
+    icon="sparkles"
+    href="/providers/overview"
+  >
+    Grammar correction, formatting, and text improvements.
+  </Card>
+
+  <Card
+    title="Create Profiles"
+    icon="layer-group"
+    href="/profiles/creating-profiles"
+  >
+    Different settings for different apps and use cases.
+  </Card>
+
+  <Card
+    title="Customize Hotkeys"
+    icon="gear"
+    href="/setup/hotkey-modes"
+  >
+    Change to toggle mode or use different key combinations.
+  </Card>
+
+  <Card
+    title="Add Vocabulary"
+    icon="book"
+    href="/setup/vocabulary"
+  >
+    Teach Stenox custom words, names, and technical terms.
+  </Card>
+</CardGroup>
+
+## Success!
+
+Congratulations on completing your first dictation! You're now ready to use Stenox for:
+
+- Writing emails and messages
+- Taking notes and meeting transcripts
+- Composing documents and articles
+- Coding comments and documentation
+- Searching and browsing
+
+<Note>
+  Remember: The more you use Stenox, the more natural it becomes. Soon you'll be dictating without thinking about it!
+</Note>

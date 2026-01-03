@@ -1,0 +1,444 @@
+---
+title: "Cloud Setup Guide"
+description: "Recommended cloud provider configuration for maximum speed and accuracy"
+---
+
+## Fast, High-Quality Cloud Setup
+
+Cloud providers offer the fastest processing and highest accuracy for Stenox dictation. This guide shows you the recommended configurations for optimal results.
+
+<Tip>
+  **Most recommended:** [Stenox Cloud](/providers/transcription/stenox-cloud) — fine-tuned for Stenox, zero configuration, fastest setup. Included with Plus and Lifetime Plus.
+</Tip>
+
+## Why Use Cloud Providers?
+
+<CardGroup cols={2}>
+  <Card title="Ultra-fast processing" icon="bolt">
+    Sub-second transcription and enhancement (5-10x faster than local).
+  </Card>
+
+  <Card title="Higher accuracy" icon="bullseye">
+    State-of-the-art models optimized for production use.
+  </Card>
+
+  <Card title="No local storage" icon="cloud">
+    No need to download multi-GB models.
+  </Card>
+
+  <Card title="Works on any Mac" icon="computer">
+    Intel and Apple Silicon, old and new.
+  </Card>
+</CardGroup>
+
+## Recommended Cloud Configurations
+
+### Option 1: Stenox Cloud (Most Recommended)
+
+**Best for:** Fastest setup, best out-of-the-box experience
+
+**Configuration:**
+- **Transcription:** Stenox Cloud Transcription
+- **Enhancement:** Stenox Cloud AI Enhancement
+
+**Setup time:** 2 minutes (just activate your license)
+**Processing time:** ~1-2 seconds total
+**Availability:** Plus and Lifetime Plus plans
+
+<Steps>
+  <Step title="Get Plus or Lifetime Plus">
+    Visit [stenox.app/pricing](https://stenox.app/pricing) and choose your plan
+  </Step>
+
+  <Step title="Activate License">
+    Settings → **License** → Sign in with your purchase email
+  </Step>
+
+  <Step title="Select Stenox Cloud">
+    Settings → **Transcription** → Provider: **Stenox Cloud**
+    Settings → **AI Enhancement** → Provider: **Stenox Cloud**
+  </Step>
+
+  <Step title="Start Dictating">
+    That's it — no API keys, no configuration, just works
+  </Step>
+</Steps>
+
+**Why Stenox Cloud?**
+- **Fine-tuned for Stenox** — optimized specifically for voice dictation workflows
+- **Zero configuration** — no API keys to manage, no accounts to create
+- **Consistent quality** — we maintain and update the models for best results
+- **Fast and accurate** — production-grade speed and accuracy
+
+<Card title="Learn More" icon="cloud" href="/providers/transcription/stenox-cloud">
+  Full Stenox Cloud details
+</Card>
+
+---
+
+### Option 2: Maximum Free Credits (BYOK)
+
+**Best for:** Getting started free, maximum free usage
+
+**Configuration:**
+- **Transcription:** DeepGram Nova-3 ($200 free credits)
+- **Enhancement:** Google Gemini 2.5 Flash (1,500/day free)
+
+**Setup time:** 10 minutes
+**Processing time:** ~1-2 seconds total
+**Free usage:** 6-12 months typical
+
+<Steps>
+  <Step title="Get DeepGram API key">
+    1. Visit [console.deepgram.com](https://console.deepgram.com)
+    2. Sign up (no credit card required)
+    3. Create API key
+    4. **Get $200 in free credits**
+  </Step>
+
+  <Step title="Configure DeepGram in Stenox">
+    1. Settings → **Transcription** tab
+    2. Provider: **DeepGram**
+    3. Paste API key
+    4. Model: **Nova-3** (best accuracy)
+  </Step>
+
+  <Step title="Get Google Gemini API key">
+    1. Visit [aistudio.google.com](https://aistudio.google.com)
+    2. Sign in with Google (no credit card)
+    3. Create API key
+    4. **Get 1,500 free requests/day**
+  </Step>
+
+  <Step title="Configure Gemini in Stenox">
+    1. Settings → **AI Enhancement** tab
+    2. Provider: **Google Gemini**
+    3. Paste API key
+    4. Model: **Gemini 2.5 Flash** (fastest)
+  </Step>
+</Steps>
+
+[Get detailed setup instructions →](/guides/free-tier-providers#option-3-maximum-free-credits)
+
+---
+
+### Option 3: Groq Stack (Single API Key)
+
+**Best for:** Simplicity, one account for everything
+
+**Configuration:**
+- **Transcription:** Groq Whisper v3-turbo
+- **Enhancement:** Groq Llama 3.3 70B or DeepSeek R1
+
+**Setup time:** 5 minutes
+**Processing time:** ~1-2 seconds total
+**Free usage:** Ongoing free tier with rate limits
+
+<Steps>
+  <Step title="Get Groq API key">
+    1. Visit [console.groq.com](https://console.groq.com)
+    2. Sign up (no credit card required)
+    3. Create API key
+    4. **One key for both transcription and enhancement!**
+  </Step>
+
+  <Step title="Configure Groq Transcription">
+    1. Settings → **Transcription** tab
+    2. Provider: **Groq**
+    3. Paste API key
+    4. Model: **whisper-large-v3-turbo**
+  </Step>
+
+  <Step title="Configure Groq Enhancement">
+    1. Settings → **AI Enhancement** tab
+    2. Provider: **Groq**
+    3. Paste same API key
+    4. Model: **Llama 3.3 70B Versatile**
+  </Step>
+</Steps>
+
+**Benefits:**
+- Single API key management
+- Ultra-fast LPU inference
+- Ongoing free tier (doesn't expire)
+- Simple setup
+
+[Get detailed setup instructions →](/guides/free-tier-providers#option-2-groq-stack-best-free-cloud)
+
+---
+
+### Option 4: Best Quality (Paid BYOK)
+
+**Best for:** Professional use, maximum accuracy
+
+**Configuration:**
+- **Transcription:** DeepGram Nova-3 or AssemblyAI Universal-1
+- **Enhancement:** Google Gemini 2.5 Pro
+
+**Cost:** ~$0.75-1.50 per hour of dictation
+**Processing time:** ~1-2 seconds total
+
+**When to use:**
+- Professional transcription services
+- Critical accuracy requirements
+- Business or enterprise use
+- After free credits are exhausted
+
+---
+
+## Performance Comparison
+
+| Configuration | Speed | Accuracy | Setup | Cost | Best For |
+|---------------|-------|----------|-------|------|----------|
+| **Stenox Cloud** | ⚡⚡⚡ | ⭐⭐⭐⭐⭐ | Instant | Plus/Lifetime Plus | Best experience, zero config |
+| **DeepGram + Gemini** | ⚡⚡⚡ | ⭐⭐⭐⭐ | 10 min | $$ after free | Maximum free credits |
+| **Groq Stack** | ⚡⚡⚡ | ⭐⭐⭐⭐ | 5 min | Free tier | One API key simplicity |
+| **AssemblyAI + Gemini** | ⚡⚡⚡ | ⭐⭐⭐⭐ | 10 min | $ | Accent optimization |
+| **Local (WhisperKit + MLX)** | ⚡ | ⭐⭐⭐ | 5 min | Free forever | Privacy, offline |
+
+## Detailed Provider Configurations
+
+### DeepGram Nova-3 Settings
+
+**Recommended configuration:**
+
+| Setting | Value | Why |
+|---------|-------|-----|
+| **Model** | Nova-3 | Latest, best accuracy |
+| **Language** | English (or auto-detect) | Optimize for your language |
+| **Streaming** | Enabled (automatic) | Fastest results |
+| **Punctuation** | Enabled (automatic) | Auto-punctuation |
+
+**In Stenox:**
+- Provider: DeepGram
+- Model: Nova-3 or Nova-3-English
+- Language: English or Auto-detect
+
+[DeepGram full guide →](/providers/transcription/deepgram)
+
+### Google Gemini 2.5 Flash Settings
+
+**Recommended configuration:**
+
+| Setting | Value | Why |
+|---------|-------|-----|
+| **Model** | Gemini 2.5 Flash | Fastest with excellent quality |
+| **Custom prompt** | Default or Professional | Based on use case |
+| **Temperature** | Default | Stenox handles this |
+
+**In Stenox:**
+- Provider: Google Gemini
+- Model: Gemini 2.5 Flash
+- Custom prompt: (optional, see below)
+
+[Google Gemini full guide →](/providers/llm/google-gemini)
+
+### Enhancement Prompts
+
+<Tip>
+  **Fine-tuned out of the box.** Both Stenox Cloud and local providers come with fine-tuned enhancements that we continue to refine — no configuration needed for most users.
+</Tip>
+
+For BYOK providers, you can configure custom enhancement behaviors:
+
+<Tabs>
+  <Tab title="Default (General Use)">
+    ```
+    Fix grammar and punctuation errors.
+    Keep the original meaning and tone unchanged.
+    ```
+
+    **Use for:** General dictation, notes
+  </Tab>
+
+  <Tab title="Professional Email">
+    ```
+    Fix grammar and rewrite in a professional, business-appropriate tone.
+    Format as a clear, concise email.
+    Remove filler words and make it direct.
+    Use proper email structure.
+    ```
+
+    **Use for:** Work emails, business communications
+  </Tab>
+
+  <Tab title="Technical Documentation">
+    ```
+    Fix grammar and format for technical documentation.
+    Preserve all technical terms and code exactly as stated.
+    Use active voice and clear, concise language.
+    Format code blocks appropriately.
+    ```
+
+    **Use for:** Code comments, documentation, technical writing
+  </Tab>
+</Tabs>
+
+## Multi-Profile Cloud Setup
+
+For maximum flexibility, create profiles for different scenarios:
+
+### Profile Strategy
+
+<Steps>
+  <Step title="Work Email Profile">
+    - **Name:** "Work Email"
+    - **Transcription:** DeepGram Nova-3
+    - **Enhancement:** Gemini 2.5 Flash
+    - **Custom prompt:** Professional email tone
+    - **Auto-activate:** When Gmail or Outlook is active
+  </Step>
+
+  <Step title="Quick Notes Profile">
+    - **Name:** "Quick Notes"
+    - **Transcription:** Groq Whisper (fastest)
+    - **Enhancement:** None (skip for speed)
+    - **Auto-activate:** When Notes app is active
+  </Step>
+
+  <Step title="Documentation Profile">
+    - **Name:** "Documentation"
+    - **Transcription:** DeepGram Nova-3
+    - **Enhancement:** Gemini 2.5 Flash
+    - **Custom prompt:** Technical documentation
+    - **Auto-activate:** When VSCode or similar is active
+  </Step>
+
+  <Step title="Fallback Local Profile">
+    - **Name:** "Offline"
+    - **Transcription:** WhisperKit
+    - **Enhancement:** MLX or None
+    - **Manual activation:** When internet unavailable
+  </Step>
+</Steps>
+
+[Learn about Profiles →](/profiles/creating-profiles)
+
+## Usage Optimization
+
+### Maximize Free Credits
+
+**DeepGram ($200 credits):**
+- Use for important dictation (work emails, documents)
+- Switch to Groq or local for casual notes
+- Track usage in DeepGram console
+
+**Google Gemini (1,500/day):**
+- More than enough for most users
+- If you hit limit, create "no enhancement" profile
+- Resets daily at midnight PST
+
+**Groq (free tier):**
+- Use as primary free option
+- Rate limits refresh quickly
+- Combine with local for unlimited fallback
+
+### Cost Control
+
+After free tiers, control costs:
+
+<AccordionGroup>
+  <Accordion title="Use Groq free tier as primary" icon="bolt">
+    Groq's ongoing free tier is sufficient for most personal use. Only upgrade if you consistently hit rate limits.
+  </Accordion>
+
+  <Accordion title="Skip enhancement for quick notes" icon="clock">
+    Create a profile without AI enhancement for quick personal notes. Saves on Gemini API calls.
+  </Accordion>
+
+  <Accordion title="Switch to local for high-volume" icon="computer">
+    If you dictate heavily (2+ hours/day), switch to WhisperKit + MLX to avoid costs.
+  </Accordion>
+
+  <Accordion title="Use AssemblyAI after DeepGram" icon="arrows-rotate">
+    AssemblyAI costs only $0.0009/min after free credits - very affordable for continued use.
+  </Accordion>
+</AccordionGroup>
+
+## Troubleshooting Cloud Setup
+
+<AccordionGroup>
+  <Accordion title="Slow processing despite cloud providers" icon="hourglass">
+    - Check your internet connection speed
+    - Try switching to different model (e.g., Flux instead of Nova-3)
+    - Check provider status pages for outages
+    - Test with local provider to isolate issue
+  </Accordion>
+
+  <Accordion title="Poor transcription accuracy" icon="spell-check">
+    - Ensure you're using Nova-3 or latest models
+    - Check microphone input device (Settings → Audio tab)
+    - Reduce background noise
+    - Speak more clearly or use better microphone
+    - Try AssemblyAI if you have strong accent
+  </Accordion>
+
+  <Accordion title="API errors or authentication failures" icon="triangle-exclamation">
+    - Verify API keys are correct (no extra spaces)
+    - Check API key status in provider dashboards
+    - Ensure you have remaining credits/quota
+    - Try creating new API keys
+  </Accordion>
+
+  <Accordion title="Hit rate limits frequently" icon="gauge-high">
+    - Create local fallback profile (WhisperKit + MLX)
+    - Set up multiple cloud providers and rotate
+    - Consider upgrading to paid tier if needed
+  </Accordion>
+</AccordionGroup>
+
+## Internet Connection Requirements
+
+**Minimum requirements:**
+- **Speed:** 1 Mbps upload, 1 Mbps download
+- **Latency:** < 100ms preferred
+- **Stability:** Consistent connection (not intermittent)
+
+**Optimal:**
+- **Speed:** 5+ Mbps upload/download
+- **Latency:** < 50ms
+- **Type:** Wi-Fi or Ethernet (not cellular for best results)
+
+<Note>
+  Cloud processing sends ~1 MB per minute of audio. Most home internet connections are more than sufficient.
+</Note>
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card
+    title="Free Tier Guide"
+    icon="gift"
+    href="/guides/free-tier-providers"
+  >
+    Maximize free usage across all cloud providers.
+  </Card>
+
+  <Card
+    title="Create Profiles"
+    icon="layer-group"
+    href="/profiles/creating-profiles"
+  >
+    Set up different profiles for different scenarios.
+  </Card>
+
+  <Card
+    title="DeepGram Setup"
+    icon="microphone"
+    href="/providers/transcription/deepgram"
+  >
+    Complete DeepGram configuration guide.
+  </Card>
+
+  <Card
+    title="Gemini Setup"
+    icon="sparkles"
+    href="/providers/llm/google-gemini"
+  >
+    Complete Google Gemini configuration guide.
+  </Card>
+</CardGroup>
+
+<Tip>
+  **Best setup:** Stenox Cloud — fine-tuned for Stenox, zero configuration, just works. Get started at [stenox.app/pricing](https://stenox.app/pricing).
+</Tip>

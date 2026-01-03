@@ -1,0 +1,136 @@
+---
+title: "OpenAI Whisper"
+description: "Official OpenAI Whisper API for cloud transcription"
+---
+
+<Warning>
+  This is a **TRANSCRIPTION** provider. It converts your speech to text.
+  For AI enhancement like grammar correction, see [AI Enhancement Providers](/providers/overview#ai-enhancement-providers).
+</Warning>
+
+## Overview
+
+OpenAI Whisper API is the official cloud transcription service from OpenAI. It provides high-quality speech-to-text using the same Whisper model architecture that powers WhisperKit, but processed on OpenAI's servers.
+
+**Key Benefits:**
+- High accuracy across 90+ languages
+- Automatic language detection
+- Official OpenAI support and reliability
+- Works on any Mac (no Apple Silicon required)
+
+## Setup Instructions
+
+<Steps>
+  <Step title="Create OpenAI Account">
+    Visit [platform.openai.com](https://platform.openai.com) and sign up or log in
+  </Step>
+
+  <Step title="Add Payment Method">
+    Go to **Settings** → **Billing** → Add a payment method
+
+    <Note>
+      OpenAI requires a payment method. Whisper API costs ~$0.006 per minute of audio.
+    </Note>
+  </Step>
+
+  <Step title="Generate API Key">
+    Go to **API Keys** → **Create new secret key** → Copy the key immediately
+
+    <Warning>
+      API keys are shown only once. Store it securely before continuing.
+    </Warning>
+  </Step>
+
+  <Step title="Add to Stenox">
+    Open Stenox Settings → **Providers** tab → **OpenAI** → Paste your API key
+  </Step>
+
+  <Step title="Select as Transcription Provider">
+    In your Profile settings, set **Transcription Provider** to **OpenAI Whisper**
+  </Step>
+</Steps>
+
+## Pricing
+
+OpenAI Whisper API is pay-per-use:
+
+| Audio Duration | Cost |
+|----------------|------|
+| 1 minute | ~$0.006 |
+| 10 minutes | ~$0.06 |
+| 1 hour | ~$0.36 |
+| 10 hours | ~$3.60 |
+
+<Tip>
+  For cost-effective cloud transcription, consider **Groq Whisper** (free tier) or **DeepGram** ($200 free credits).
+</Tip>
+
+## Language Support
+
+OpenAI Whisper supports 90+ languages:
+
+- **European:** English, Spanish, French, German, Italian, Portuguese, Dutch, Polish, Russian
+- **Asian:** Chinese (Mandarin), Japanese, Korean, Hindi, Thai, Vietnamese, Indonesian
+- **Middle Eastern:** Arabic, Hebrew, Turkish, Persian
+- **And many more...**
+
+Configure your preferred language in Profile settings, or use auto-detection.
+
+## When to Use OpenAI Whisper
+
+<CardGroup cols={2}>
+  <Card title="OpenAI Ecosystem" icon="layer-group">
+    Already using OpenAI for other services (GPT-4, DALL-E, etc.)
+  </Card>
+
+  <Card title="Multi-language" icon="globe">
+    Need high-quality transcription across multiple languages
+  </Card>
+
+  <Card title="Intel Mac" icon="desktop">
+    Running on Intel Mac where WhisperKit is slower
+  </Card>
+
+  <Card title="Official Support" icon="headset">
+    Want the reliability of official OpenAI infrastructure
+  </Card>
+</CardGroup>
+
+## When to Consider Alternatives
+
+- **Budget-conscious:** Groq Whisper offers free tier
+- **Maximum privacy:** WhisperKit runs locally
+- **Maximum accuracy:** DeepGram Nova-3 often outperforms
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="Invalid API key error" icon="key">
+    - Verify you copied the complete key
+    - Check the key is active in OpenAI dashboard
+    - Ensure billing is set up (required even for new accounts)
+  </Accordion>
+
+  <Accordion title="Rate limit exceeded" icon="clock">
+    - OpenAI has usage limits based on account tier
+    - Wait a few minutes or upgrade your account tier
+    - Consider using Groq Whisper as a fallback
+  </Accordion>
+
+  <Accordion title="Incorrect language" icon="language">
+    - Set specific language in Profile settings instead of auto-detect
+    - Ensure you're speaking clearly in the expected language
+  </Accordion>
+</AccordionGroup>
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card title="Add AI Enhancement" icon="sparkles" href="/providers/llm/openai">
+    Use OpenAI GPT-4o for text enhancement.
+  </Card>
+
+  <Card title="Create Profiles" icon="sliders" href="/profiles/creating-profiles">
+    Set up OpenAI for specific use cases.
+  </Card>
+</CardGroup>

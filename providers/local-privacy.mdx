@@ -1,0 +1,162 @@
+---
+title: "100% Local Privacy"
+description: "Complete privacy with local-only processing"
+---
+
+## Complete Privacy
+
+Stenox can operate **100% locally** on your Mac. When using local providers, your audio and text never leave your device — perfect for sensitive content, confidential work, or anywhere privacy matters.
+
+<Tip>
+  **100% Private = WhisperKit (transcription) + MLX (AI enhancement)**
+
+  No internet required. No API keys. No cloud services. Complete privacy.
+</Tip>
+
+## Local Providers
+
+<CardGroup cols={2}>
+  <Card title="WhisperKit" icon="microphone" href="/providers/transcription/whisperkit-local">
+    **Local Transcription**
+
+    Apple's optimized Whisper implementation. Runs on your Mac's Neural Engine for fast, private speech-to-text.
+  </Card>
+
+  <Card title="MLX" icon="sparkles" href="/providers/llm/mlx-local">
+    **Local AI Enhancement**
+
+    Apple's ML framework running efficient language models. Grammar correction and formatting without cloud.
+  </Card>
+</CardGroup>
+
+## Why Go Local?
+
+<CardGroup cols={2}>
+  <Card title="Complete Confidentiality" icon="lock">
+    Healthcare, legal, financial, or any sensitive content stays on your Mac.
+  </Card>
+
+  <Card title="Offline Functionality" icon="wifi-slash">
+    Works on airplanes, in remote locations, or when internet is unavailable.
+  </Card>
+
+  <Card title="No Third Parties" icon="shield-check">
+    Your data is never sent to external services or servers.
+  </Card>
+
+  <Card title="Unlimited Use" icon="infinity">
+    No usage costs, no API limits, no restrictions. Free forever.
+  </Card>
+</CardGroup>
+
+## Quick Setup
+
+<Steps>
+  <Step title="Open Stenox Settings">
+    Click the Stenox menu bar icon → **Settings**
+  </Step>
+
+  <Step title="Configure Transcription">
+    Go to **Models** tab → Set **Transcription Provider** to **WhisperKit** → Download a model (base.en recommended)
+  </Step>
+
+  <Step title="Configure AI Enhancement">
+    In the same tab → Set **AI Enhancement Provider** to **MLX** → Download a model (Qwen 3 1.5B recommended)
+  </Step>
+
+  <Step title="Verify Offline">
+    Turn off Wi-Fi → Test a dictation → It works!
+  </Step>
+</Steps>
+
+## Requirements
+
+<Note>
+  **MLX requires Apple Silicon.** Intel Mac users can still use WhisperKit for local transcription, but must use cloud providers for AI enhancement.
+</Note>
+
+## Model Options
+
+### WhisperKit (Transcription)
+
+| Model | Size | Speed | Best For |
+|-------|------|-------|----------|
+| **base.en** | 142 MB | Fast | English only, quick setup |
+| **small.en** | 483 MB | Medium | English, better accuracy |
+| **base** | 142 MB | Fast | Multilingual (90+ languages) |
+| **small** | 483 MB | Medium | Multilingual, better accuracy |
+
+### MLX (AI Enhancement)
+
+| Model | Size | Speed | Best For |
+|-------|------|-------|----------|
+| **Qwen 3 1.5B** | ~1.5 GB | Fast | Balanced speed and quality |
+| **Gemma 3 2B** | ~2 GB | Medium | Better quality |
+| **Phi-3 3.8B** | ~3.8 GB | Slower | Maximum quality |
+
+## Performance
+
+Processing times with local providers:
+
+| Configuration | Total Time |
+|---------------|------------|
+| WhisperKit base.en only | ~3-5 seconds |
+| WhisperKit + MLX Qwen 1.5B | ~5-7 seconds |
+| WhisperKit small.en + MLX Phi-3 | ~10-12 seconds |
+
+<Note>
+  Local processing is slower than cloud (which can be ~1-2 seconds), but provides complete privacy.
+</Note>
+
+## Privacy Use Cases
+
+<AccordionGroup>
+  <Accordion title="Healthcare & Medical" icon="heart-pulse">
+    HIPAA compliance, patient confidentiality. Use with EMR/EHR applications and custom medical vocabulary.
+  </Accordion>
+
+  <Accordion title="Legal Work" icon="scale-balanced">
+    Attorney-client privilege, confidential documents. Add legal terminology to vocabulary.
+  </Accordion>
+
+  <Accordion title="Financial Services" icon="building-columns">
+    Client confidentiality, regulatory compliance. Works offline for secure environments.
+  </Accordion>
+
+  <Accordion title="Journalism" icon="newspaper">
+    Source protection, sensitive investigations. No data leaves your device.
+  </Accordion>
+
+  <Accordion title="Personal Privacy" icon="user-lock">
+    Personal preference, data sovereignty. Complete control over your data.
+  </Accordion>
+</AccordionGroup>
+
+## Hybrid Approach
+
+Want privacy for audio but cloud quality for text enhancement?
+
+- **Transcription:** WhisperKit (local) — Audio stays private
+- **Enhancement:** Google Gemini or Groq (cloud) — Text enhanced with top-tier models
+
+This keeps your most sensitive data (audio recordings) local while leveraging cloud AI for better text quality.
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card title="WhisperKit Guide" icon="microphone" href="/providers/transcription/whisperkit-local">
+    Complete local transcription setup.
+  </Card>
+
+  <Card title="MLX Guide" icon="sparkles" href="/providers/llm/mlx-local">
+    Complete local AI enhancement setup.
+  </Card>
+
+  <Card title="Privacy-First Setup" icon="shield-check" href="/guides/privacy-first-setup">
+    Detailed privacy configuration guide.
+  </Card>
+
+  <Card title="Create Profiles" icon="sliders" href="/profiles/creating-profiles">
+    Different providers for different contexts.
+  </Card>
+</CardGroup>

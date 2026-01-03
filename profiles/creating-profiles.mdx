@@ -1,0 +1,312 @@
+---
+title: "Creating Profiles"
+description: "Step-by-step guide to creating custom Stenox profiles"
+---
+
+## Create Your First Profile
+
+Follow this guide to create a custom profile for specific use cases.
+
+## Step-by-Step: Create a Profile
+
+<Steps>
+  <Step title="Open Profile Settings">
+    1. Click Stenox menu bar icon
+    2. Go to **Settings**
+    3. Select **Profiles** tab
+  </Step>
+
+  <Step title="Click New Profile">
+    Click the **+ New Profile** button
+  </Step>
+
+  <Step title="Name your profile">
+    Enter a descriptive name (e.g., "Work Email Professional")
+  </Step>
+
+  <Step title="Choose transcription provider">
+    Select from:
+    - WhisperKit (local)
+    - DeepGram
+    - AssemblyAI
+    - Groq Whisper
+
+    [Compare providers →](/providers/overview)
+  </Step>
+
+  <Step title="Choose AI enhancement provider">
+    Select from:
+    - None (skip enhancement)
+    - MLX (local)
+    - Google Gemini
+    - Groq LLMs
+
+    [Compare providers →](/providers/overview)
+  </Step>
+
+  <Step title="Configure custom prompt (optional)">
+    Add custom enhancement instructions:
+
+    **Example for email:**
+    ```
+    Rewrite in professional, business-appropriate tone.
+    Format as clear, concise email.
+    ```
+  </Step>
+
+  <Step title="Add auto-activation rules (optional)">
+    - Click **Add Trigger Rule**
+    - Choose App Bundle ID or Window Title
+    - Enter identifier (e.g., `com.apple.mail` or "Gmail")
+
+    [Learn about auto-activation →](/profiles/auto-activation)
+  </Step>
+
+  <Step title="Choose profile color (optional)">
+    Select a color for easy visual identification
+  </Step>
+
+  <Step title="Save profile">
+    Click **Save** to create the profile
+  </Step>
+</Steps>
+
+## Example Profile Configurations
+
+### Professional Email Profile
+
+**Use case:** Business emails, formal communications
+
+**Configuration:**
+- **Name:** "Professional Email"
+- **Transcription:** DeepGram Nova-3
+- **Enhancement:** Google Gemini 2.5 Flash
+- **Custom prompt:**
+  ```
+  Rewrite in professional, business-appropriate tone.
+  Use formal language. Format as clear, concise email.
+  Remove filler words and make it direct.
+  ```
+- **Auto-activate:**
+  - Window title contains: "Gmail"
+  - App bundle: `com.apple.mail`
+  - Window title contains: "Outlook"
+- **Color:** Blue
+
+---
+
+### Quick Notes Profile
+
+**Use case:** Fast note-taking, personal notes
+
+**Configuration:**
+- **Name:** "Quick Notes"
+- **Transcription:** Groq Whisper v3-turbo
+- **Enhancement:** None (skip for speed)
+- **Custom prompt:** N/A
+- **Auto-activate:**
+  - App bundle: `com.apple.Notes`
+  - Window title contains: "Obsidian"
+- **Color:** Green
+
+---
+
+### Code Documentation Profile
+
+**Use case:** Code comments, technical documentation
+
+**Configuration:**
+- **Name:** "Code Documentation"
+- **Transcription:** DeepGram Nova-3
+- **Enhancement:** Google Gemini 2.5 Flash
+- **Custom prompt:**
+  ```
+  Format for technical documentation.
+  Preserve all code and technical terms exactly as stated.
+  Use active voice and clear, concise language.
+  Add appropriate formatting for code blocks if applicable.
+  ```
+- **Auto-activate:**
+  - App bundle: `com.microsoft.VSCode`
+  - App bundle: `com.apple.dt.Xcode`
+  - Window title contains: "GitHub"
+- **Color:** Purple
+
+---
+
+### Privacy-First Profile
+
+**Use case:** Sensitive work, confidential dictation
+
+**Configuration:**
+- **Name:** "Privacy (Offline)"
+- **Transcription:** WhisperKit base.en
+- **Enhancement:** MLX Qwen 3 1.5B
+- **Custom prompt:** Default
+- **Auto-activate:**
+  - Manual activation only (for privacy-sensitive moments)
+- **Color:** Red
+
+---
+
+### Casual Chat Profile
+
+**Use case:** Chat apps, informal messages
+
+**Configuration:**
+- **Name:** "Casual Chat"
+- **Transcription:** Groq Whisper v3-turbo
+- **Enhancement:** Google Gemini 2.5 Flash
+- **Custom prompt:**
+  ```
+  Fix grammar but keep casual, friendly tone.
+  Use contractions. Keep it conversational.
+  ```
+- **Auto-activate:**
+  - App bundle: `com.tinyspeck.slackmacgap` (Slack)
+  - App bundle: `com.hnc.Discord` (Discord)
+  - Window title contains: "Messages"
+- **Color:** Yellow
+
+## Profile Management
+
+### Editing Profiles
+
+1. Settings → Profiles tab
+2. Select profile from list
+3. Modify any settings
+4. Click **Save**
+
+### Duplicating Profiles
+
+1. Select existing profile
+2. Click **Duplicate** button
+3. Modify settings as needed
+4. Save with new name
+
+**Use case:** Create variations of existing profiles quickly
+
+### Deleting Profiles
+
+1. Select profile
+2. Click **Delete** button
+3. Confirm deletion
+
+**Note:** Cannot delete the Default profile
+
+### Setting Default Profile
+
+1. Select desired profile
+2. Click **Set as Default**
+3. This profile will be used when no auto-activation rules match
+
+## Custom Enhancement Prompts
+
+### Professional Tone
+
+```
+Rewrite in professional, business-appropriate tone.
+Use formal language and proper email structure.
+Remove filler words and make it clear and direct.
+```
+
+### Casual Tone
+
+```
+Fix grammar but keep casual, friendly tone.
+Use contractions (e.g., "don't" instead of "do not").
+Keep it conversational and natural.
+```
+
+### Technical Documentation
+
+```
+Format for technical documentation.
+Preserve all technical terms, code, and API names exactly as stated.
+Use active voice and clear, concise language.
+Add appropriate section breaks if needed.
+```
+
+### Creative Writing
+
+```
+Fix grammar while preserving creative voice and style.
+Enhance descriptive language where appropriate.
+Maintain the author's unique tone and perspective.
+```
+
+### Minimal Editing
+
+```
+Only fix obvious grammar and punctuation errors.
+Change as little as possible.
+Preserve the original phrasing and tone.
+```
+
+## Tips for Effective Profiles
+
+<AccordionGroup>
+  <Accordion title="Start simple" icon="seedling">
+    Begin with 2-3 profiles. Add more as you identify specific needs.
+  </Accordion>
+
+  <Accordion title="Name descriptively" icon="tag">
+    Include use case in the name: "Work Email - Professional" vs "Profile 1"
+  </Accordion>
+
+  <Accordion title="Test before relying" icon="vial">
+    Test each profile thoroughly before using for important work.
+  </Accordion>
+
+  <Accordion title="Use colors effectively" icon="palette">
+    Consistent color coding helps identify active profile quickly.
+  </Accordion>
+
+  <Accordion title="Include local fallback" icon="shield">
+    Always have one profile with WhisperKit + MLX for offline/privacy needs.
+  </Accordion>
+</AccordionGroup>
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="Profile not saving" icon="floppy-disk">
+    - Ensure all required fields filled
+    - Check API keys are valid (for cloud providers)
+    - Try saving without auto-activation rules first
+  </Accordion>
+
+  <Accordion title="Auto-activation not working" icon="wand-magic">
+    - Verify app bundle ID or window title is correct
+    - Test by manually activating profile first
+    - Check for conflicting rules in other profiles
+
+    [See auto-activation guide →](/profiles/auto-activation)
+  </Accordion>
+
+  <Accordion title="Poor enhancement results" icon="spell-check">
+    - Adjust custom prompt to be more specific
+    - Try different AI enhancement provider
+    - Test with and without enhancement to isolate issue
+  </Accordion>
+</AccordionGroup>
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card title="Auto-Activation" icon="wand-magic" href="/profiles/auto-activation">
+    Set up automatic profile switching.
+  </Card>
+
+  <Card title="Providers" icon="server" href="/providers/overview">
+    Choose the best providers for your profiles.
+  </Card>
+
+  <Card title="Free Tier Guide" icon="gift" href="/guides/free-tier-providers">
+    Optimize costs with free cloud providers.
+  </Card>
+
+  <Card title="Vocabulary" icon="book" href="/setup/vocabulary">
+    Add custom vocabulary to profiles.
+  </Card>
+</CardGroup>

@@ -1,97 +1,100 @@
 ---
-title: "Introduction"
-description: "Welcome to the new home for your documentation"
+title: "Welcome to Stenox"
+description: "Voice dictation for macOS with AI enhancement"
 ---
 
-## Setting up
+## Speed up your workflow with voice
 
-Get your documentation site up and running in minutes.
+Stenox is a native macOS menu bar app that turns your voice into perfectly formatted text. **Speak naturally at 150+ WPM** — Stenox handles transcription, formatting, and insertion automatically.
 
-<Card
-  title="Start here"
-  icon="rocket"
-  href="/quickstart"
-  horizontal
->
-  Follow our three step quickstart guide.
-</Card>
-
-## Make it yours
-
-Design a docs site that looks great and empowers your users.
-
-<Columns cols={2}>
-  <Card
-    title="Edit locally"
-    icon="pen-to-square"
-    href="/development"
-  >
-    Edit your docs locally and preview them in real time.
+<CardGroup cols={2}>
+  <Card title="Download Stenox" icon="download" href="/installation">
+    Install and set up in under 2 minutes.
   </Card>
-  <Card
-    title="Customize your site"
-    icon="palette"
-    href="/essentials/settings"
-  >
-    Customize the design and colors of your site to match your brand.
+  <Card title="First Dictation" icon="play" href="/first-dictation">
+    Try your first voice-to-text experience.
   </Card>
-    <Card
-    title="Set up navigation"
-    icon="map"
-    href="/essentials/navigation"
-  >
-    Organize your docs to help users find what they need and succeed with your product.
-  </Card>
-  <Card
-    title="API documentation"
-    icon="terminal"
-    href="/api-reference/introduction"
-  >
-    Auto-generate API documentation from OpenAPI specifications.
-  </Card>
-</Columns>
+</CardGroup>
 
-## Create beautiful pages
+## How Stenox Works
 
-Everything you need to create world-class documentation.
+```mermaid
+flowchart LR
+    A["🎤 Dictate"] --> B["📝 Transcribe"]
+    B --> C["✨ Enhance"]
+    C --> D["⌨️ Insert"]
+```
 
-<Columns cols={2}>
-  <Card
-    title="Write with MDX"
-    icon="pen-fancy"
-    href="/essentials/markdown"
-  >
-    Use MDX to style your docs pages.
-  </Card>
-  <Card
-    title="Code samples"
-    icon="code"
-    href="/essentials/code"
-  >
-    Add sample code to demonstrate how to use your product.
-  </Card>
-  <Card
-    title="Images"
-    icon="image"
-    href="/essentials/images"
-  >
-    Display images and other media.
-  </Card>
-  <Card
-    title="Reusable snippets"
-    icon="recycle"
-    href="/essentials/reusable-snippets"
-  >
-    Write once and reuse across your docs.
-  </Card>
-</Columns>
+<Steps>
+  <Step title="Dictate">
+    Hold your hotkey and speak naturally.
+  </Step>
+  <Step title="Transcribe">
+    WhisperKit (local) or cloud providers convert speech to text.
+  </Step>
+  <Step title="Enhance">
+    AI fixes grammar, formatting, and tone.
+  </Step>
+  <Step title="Insert">
+    Polished text appears at your cursor.
+  </Step>
+</Steps>
 
-## Need inspiration?
+<Note>
+  Stenox works in any application — email, chat, code editors, documents, and more.
+</Note>
 
-<Card
-  title="See complete examples"
-  icon="stars"
-  href="https://mintlify.com/customers"
->
-  Browse our showcase of exceptional documentation sites.
-</Card>
+## Why Stenox?
+
+<CardGroup cols={3}>
+  <Card title="Privacy First" icon="shield-halved">
+    100% local processing available — no internet required.
+  </Card>
+  <Card title="Smart Profiles" icon="sliders">
+    Auto-activate settings per app.
+  </Card>
+  <Card title="Your Providers" icon="key">
+    BYOK for full control over your data.
+  </Card>
+</CardGroup>
+
+## Get Started Free
+
+Stenox includes a free tier with 5 minutes per day. Combine with BYOK providers for unlimited use.
+
+<CardGroup cols={2}>
+  <Card title="100% Local (Free)" icon="lock" href="/providers/local-privacy">
+    WhisperKit + MLX — unlimited, private, offline.
+  </Card>
+  <Card title="Free Cloud Providers" icon="cloud" href="/pricing/free-tier">
+    Groq + Gemini — fast and free.
+  </Card>
+</CardGroup>
+
+## Explore
+
+<CardGroup cols={2}>
+  <Card title="Profiles" icon="user-gear" href="/profiles/overview">
+    Customize transcription and AI settings per context.
+  </Card>
+  <Card title="Providers" icon="server" href="/providers/overview">
+    Local and cloud options for transcription and AI.
+  </Card>
+  <Card title="Pricing" icon="credit-card" href="/pricing/overview">
+    Free tier, Plus, and Lifetime options.
+  </Card>
+  <Card title="Setup Guides" icon="gear" href="/setup/license">
+    License activation, BYOK, and more.
+  </Card>
+</CardGroup>
+
+## Need Help?
+
+<CardGroup cols={2}>
+  <Card title="Troubleshooting" icon="wrench" href="/guides/troubleshooting">
+    Common issues and solutions.
+  </Card>
+  <Card title="Support" icon="life-ring" href="/support/overview">
+    Contact our team — even by voice!
+  </Card>
+</CardGroup>

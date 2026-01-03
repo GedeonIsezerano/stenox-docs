@@ -1,0 +1,157 @@
+---
+title: "OpenAI"
+description: "GPT-4o and other OpenAI models for AI enhancement"
+---
+
+<Warning>
+  This is an **AI ENHANCEMENT** provider. It improves transcribed text with grammar correction and formatting.
+  For speech-to-text transcription, see [Transcription Providers](/providers/overview#transcription-providers).
+</Warning>
+
+## Overview
+
+OpenAI provides access to GPT-4o and other powerful language models for text enhancement. These models offer top-tier quality for grammar correction, formatting, and tone adjustment.
+
+**Key Benefits:**
+- GPT-4o for highest quality enhancement
+- Consistent, reliable results
+- Great for professional writing
+- Works on any Mac
+
+## Setup Instructions
+
+<Steps>
+  <Step title="Create OpenAI Account">
+    Visit [platform.openai.com](https://platform.openai.com) and sign up or log in
+  </Step>
+
+  <Step title="Add Payment Method">
+    Go to **Settings** → **Billing** → Add a payment method
+
+    <Note>
+      OpenAI requires a payment method for API access.
+    </Note>
+  </Step>
+
+  <Step title="Generate API Key">
+    Go to **API Keys** → **Create new secret key** → Copy the key immediately
+
+    <Warning>
+      API keys are shown only once. Store it securely before continuing.
+    </Warning>
+  </Step>
+
+  <Step title="Add to Stenox">
+    Open Stenox Settings → **Providers** tab → **OpenAI** → Paste your API key
+  </Step>
+
+  <Step title="Select as AI Enhancement Provider">
+    In your Profile settings, set **AI Enhancement Provider** to **OpenAI**
+  </Step>
+</Steps>
+
+## Models
+
+Stenox uses GPT-4o for AI enhancement:
+
+| Model | Quality | Speed | Best For |
+|-------|---------|-------|----------|
+| **GPT-4o** | Excellent | Fast | Professional writing, complex edits |
+
+<Tip>
+  GPT-4o offers the best balance of quality and speed for text enhancement.
+</Tip>
+
+## Pricing
+
+OpenAI API is pay-per-use. For typical dictation enhancement:
+
+| Usage | Approximate Cost |
+|-------|------------------|
+| Light (10 enhancements/day) | ~$0.01-0.02/day |
+| Moderate (50 enhancements/day) | ~$0.05-0.10/day |
+| Heavy (100+ enhancements/day) | ~$0.10-0.20/day |
+
+<Note>
+  For free AI enhancement, consider [Google Gemini](/providers/llm/google-gemini) (1,500 free/day) or [Groq](/providers/llm/groq-llms) (generous free tier).
+</Note>
+
+## What OpenAI Enhancement Does
+
+### Grammar & Punctuation
+- Fixes grammatical errors
+- Adds proper punctuation
+- Corrects tense and agreement
+
+### Professional Formatting
+- Proper capitalization
+- Number and date formatting
+- Structure and flow improvements
+
+### Tone Adjustment
+- Configure via custom prompts in Profile settings
+- Professional, casual, formal, or custom tones
+
+## When to Use OpenAI
+
+<CardGroup cols={2}>
+  <Card title="Best Quality" icon="crown">
+    When you need the highest quality text enhancement
+  </Card>
+
+  <Card title="Professional Writing" icon="briefcase">
+    For important emails, documents, and presentations
+  </Card>
+
+  <Card title="Complex Edits" icon="wand-magic-sparkles">
+    When text needs significant restructuring or improvement
+  </Card>
+
+  <Card title="OpenAI Ecosystem" icon="layer-group">
+    Already using OpenAI for other services
+  </Card>
+</CardGroup>
+
+## When to Consider Alternatives
+
+- **Budget-conscious:** Google Gemini or Groq offer free tiers
+- **Maximum privacy:** MLX runs locally on your Mac
+- **Maximum speed:** Groq offers sub-second responses
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="Invalid API key error" icon="key">
+    - Verify you copied the complete key
+    - Check the key is active in OpenAI dashboard
+    - Ensure billing is set up
+  </Accordion>
+
+  <Accordion title="Rate limit exceeded" icon="clock">
+    - OpenAI has usage limits based on account tier
+    - Wait a few minutes or upgrade your account
+    - Consider using Gemini or Groq as fallback
+  </Accordion>
+
+  <Accordion title="Enhancement quality not as expected" icon="message-question">
+    - Adjust custom prompt in Profile settings
+    - Try being more specific about desired output
+    - Check that the right model is selected
+  </Accordion>
+</AccordionGroup>
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card title="OpenAI Transcription" icon="microphone" href="/providers/transcription/openai-whisper">
+    Use OpenAI Whisper for transcription too.
+  </Card>
+
+  <Card title="Custom Prompts" icon="sliders" href="/profiles/system-prompts">
+    Customize how OpenAI enhances your text.
+  </Card>
+
+  <Card title="Create Profiles" icon="layer-group" href="/profiles/creating-profiles">
+    Set up OpenAI for specific use cases.
+  </Card>
+</CardGroup>

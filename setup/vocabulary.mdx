@@ -1,0 +1,168 @@
+---
+title: "Vocabulary"
+description: "Improve accuracy with custom word replacements"
+---
+
+## What is Vocabulary?
+
+Vocabulary allows you to define custom word replacements that Stenox applies after transcription. This is perfect for:
+
+- Technical terms
+- Proper names (people, companies, products)
+- Acronyms and abbreviations
+- Domain-specific jargon
+- Common corrections
+
+## How It Works
+
+**Process:**
+1. You dictate and audio is transcribed
+2. Stenox checks vocabulary list
+3. Matches are replaced with your custom text
+4. Result is enhanced (if AI enhancement enabled)
+5. Final text is inserted
+
+**Example:**
+- You say: "stenox"
+- Transcribed as: "stenox" (lowercase)
+- Vocabulary replaces: "Stenox" (capitalized)
+- Result: "Stenox"
+
+## Adding Vocabulary Entries
+
+<Steps>
+  <Step title="Open Vocabulary settings">
+    Settings → Vocabulary tab
+  </Step>
+
+  <Step title="Click Add Entry">
+    Click the + button or "Add Entry"
+  </Step>
+
+  <Step title="Enter the phrase">
+    **From:** What the transcription says (e.g., "gpt")
+  </Step>
+
+  <Step title="Enter the replacement">
+    **To:** What you want it to be (e.g., "GPT")
+  </Step>
+
+  <Step title="Save">
+    Click Save
+  </Step>
+</Steps>
+
+## Common Use Cases
+
+### Technical Terms
+
+| From | To | Use Case |
+|------|----| ---------|
+| "react" | "React" | Framework name |
+| "javascript" | "JavaScript" | Language name |
+| "gpt" | "GPT" | AI model |
+| "api" | "API" | Acronym |
+
+### Company & Product Names
+
+| From | To |
+|------|-----|
+| "stenox" | "Stenox" |
+| "apple" | "Apple" |
+| "google gemini" | "Google Gemini" |
+
+### Personal Names
+
+| From | To |
+|------|-----|
+| "john smith" | "John Smith" |
+| "maria garcia" | "Maria García" |
+
+### Medical Terms (Example)
+
+| From | To |
+|------|-----|
+| "hypertension" | "Hypertension" |
+| "diabetes mellitus" | "Diabetes Mellitus Type 2" |
+
+## Best Practices
+
+<AccordionGroup>
+  <Accordion title="Use lowercase for 'From' field" icon="a">
+    Most transcription providers return lowercase text. Match this in your "From" field.
+
+    **Good:** "stenox" → "Stenox"
+    **Bad:** "Stenox" → "Stenox" (won't match lowercase input)
+  </Accordion>
+
+  <Accordion title="Include spaces for multi-word phrases" icon="space">
+    For multi-word replacements, include spaces.
+
+    **Example:** "new york city" → "New York City"
+  </Accordion>
+
+  <Accordion title="Be specific" icon="crosshairs">
+    Specific phrases are less likely to cause unwanted replacements.
+
+    **Good:** "dr smith" → "Dr. Smith"
+    **Risky:** "dr" → "Doctor" (might replace "dr" in other contexts)
+  </Accordion>
+
+  <Accordion title="Test your entries" icon="vial">
+    After adding, test with dictation to ensure it works as expected.
+  </Accordion>
+</AccordionGroup>
+
+## Managing Entries
+
+**Edit entry:**
+- Click entry in list
+- Modify From or To field
+- Save changes
+
+**Delete entry:**
+- Select entry
+- Click Delete or - button
+- Confirm deletion
+
+**Import/Export:**
+- Export vocabulary for backup
+- Import vocabulary to new Mac
+- Share with team members
+
+## Per-Profile Vocabulary
+
+Advanced: Different profiles can have different vocabulary.
+
+**Example:**
+- **Medical profile:** Medical term vocabulary
+- **Coding profile:** Programming vocabulary
+- **Email profile:** Company name vocabulary
+
+Configure in Profile settings.
+
+[Learn about Profiles →](/profiles/overview)
+
+## Limitations
+
+**What vocabulary CAN'T do:**
+- Change pronunciation recognition (happens during transcription)
+- Fix poor audio quality
+- Replace phrases transcribed incorrectly
+
+**Solution:** For consistent misrecognition, try:
+- Better microphone
+- Speak more clearly
+- Upgrade transcription model
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card title="Create Profiles" icon="sliders" href="/profiles/overview">
+    Different vocabulary for different contexts.
+  </Card>
+
+  <Card title="Choose Provider" icon="server" href="/providers/overview">
+    Better transcription = fewer corrections needed.
+  </Card>
+</CardGroup>

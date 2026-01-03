@@ -1,0 +1,403 @@
+---
+title: "Google Gemini"
+description: "Fast, powerful AI enhancement with Google's Gemini models"
+---
+
+<Warning>
+  This is an **AI ENHANCEMENT** provider. It improves transcribed text with grammar correction and formatting.
+  For speech-to-text transcription, see [Transcription Providers](/providers/overview#transcription-providers).
+</Warning>
+
+## Overview
+
+Google Gemini is a state-of-the-art large language model that excels at grammar correction, formatting, and text improvement. It provides fast, high-quality enhancement for your transcribed text.
+
+**Key Benefits:**
+- ⚡ **Very fast** - Sub-second enhancement processing
+- 🎯 **High quality** - Excellent grammar correction and formatting
+- 🎨 **Versatile** - Handles complex edits, tone adjustments, and custom prompts
+- 🎁 **Generous free tier** - Free usage with rate limits
+
+## Free Tier
+
+<Tip>
+  **Google Gemini offers a generous free tier!**
+
+  **What you get:**
+  - **15 requests per minute** (Gemini 2.5 Flash)
+  - **1500 requests per day** (Gemini 2.5 Flash)
+  - **All features included**
+  - **No credit card required** to start using
+
+  Perfect for regular personal and professional use!
+</Tip>
+
+### Free Tier Limits
+
+| Model | Requests/Minute | Requests/Day |
+|-------|-----------------|--------------|
+| **Gemini 2.5 Flash** | 15 | 1500 |
+| **Gemini 2.5 Pro** | 2 | 50 |
+| **Gemini 3 Pro Preview** | 5 | Limited |
+
+<Note>
+  **1500 requests per day** means you can enhance approximately **1500 dictations** daily on the free tier. That's more than enough for most users!
+</Note>
+
+## Getting Your Free API Key
+
+<Steps>
+  <Step title="Visit Google AI Studio">
+    Go to [aistudio.google.com](https://aistudio.google.com) in your browser.
+  </Step>
+
+  <Step title="Sign in with Google">
+    Click **Get Started** or **Sign In** and use your Google account.
+
+    **No credit card required!**
+  </Step>
+
+  <Step title="Create an API key">
+    1. Click **Get API key** in the left sidebar or top navigation
+    2. Click **Create API key**
+    3. Choose a project or create a new one
+    4. Click **Create API key in new project** (or existing project)
+    5. Copy the generated API key immediately
+  </Step>
+
+  <Step title="Add key to Stenox">
+    1. Open Stenox Settings
+    2. Go to **AI Enhancement** tab
+    3. Select **Google Gemini** as provider
+    4. Paste your API key
+    5. Choose your model (Gemini 2.5 Flash recommended)
+    6. Click **Save**
+  </Step>
+</Steps>
+
+<Warning>
+  **Keep your API key secure!** Don't share it or commit it to public repositories. Treat it like a password.
+</Warning>
+
+## Available Models
+
+Google offers several Gemini model variants:
+
+### Gemini 2.5 Flash (Recommended)
+
+**Best balance of speed and quality:**
+- Ultra-fast processing (< 1 second)
+- Excellent grammar correction
+- Good at complex formatting
+- **15 requests/minute, 1500/day free**
+
+**Best for:** Default choice, everyday enhancement
+
+### Gemini 2.5 Pro
+
+**Maximum quality:**
+- Slightly slower than Flash
+- Best possible enhancement quality
+- Excellent for complex edits
+- **2 requests/minute, 50/day free**
+
+**Best for:** Critical writing where quality matters most
+
+### Gemini 3 Pro Preview
+
+**Latest experimental model:**
+- Cutting-edge capabilities
+- May have instabilities
+- Limited availability
+- **5 requests/minute free**
+
+**Best for:** Testing newest features
+
+<Tip>
+  **Recommendation:** Use **Gemini 2.5 Flash** for the best combination of speed, quality, and generous free tier limits.
+</Tip>
+
+## Configuration in Stenox
+
+<Steps>
+  <Step title="Open Stenox Settings">
+    Click Stenox menu bar icon → **Settings**
+  </Step>
+
+  <Step title="Go to AI Enhancement tab">
+    Select the **AI Enhancement** tab
+  </Step>
+
+  <Step title="Select Google Gemini">
+    Choose **Google Gemini** from the provider dropdown
+  </Step>
+
+  <Step title="Enter API key">
+    Paste your API key from aistudio.google.com
+  </Step>
+
+  <Step title="Choose model">
+    Select **Gemini 2.5 Flash** (recommended)
+  </Step>
+
+  <Step title="Optional: Add custom prompt">
+    Configure enhancement behavior (see Custom Prompts section below)
+  </Step>
+
+  <Step title="Save">
+    Click **Save** to activate Google Gemini
+  </Step>
+</Steps>
+
+## What Gemini Enhancement Does
+
+### Grammar Correction
+
+- Fixes all grammatical errors
+- Subject-verb agreement
+- Tense consistency
+- Article usage (a, an, the)
+- Sentence structure improvements
+
+**Example:**
+- **Before:** "me and john was going to the store yesterday and we seen sarah there"
+- **After:** "John and I were going to the store yesterday, and we saw Sarah there."
+
+### Formatting & Punctuation
+
+- Adds missing punctuation
+- Capitalizes proper nouns
+- Formats lists, numbers, dates
+- Structures paragraphs
+- Adds appropriate line breaks
+
+**Example:**
+- **Before:** "john smith lives at 123 main street springfield illinois 62701 his phone is 5551234567"
+- **After:** "John Smith lives at 123 Main Street, Springfield, Illinois 62701. His phone is (555) 123-4567."
+
+### Tone Adjustment
+
+With custom prompts, Gemini can adjust tone:
+
+- **Professional** - Business-appropriate language
+- **Casual** - Friendly, conversational tone
+- **Technical** - Formal documentation style
+- **Creative** - Engaging, descriptive writing
+
+**Example (Professional tone):**
+- **Before:** "hey just wanted to let u know the meeting got moved to tomorrow"
+- **After:** "I wanted to inform you that the meeting has been rescheduled to tomorrow."
+
+### Complex Edits
+
+Gemini handles advanced formatting:
+
+- Restructuring sentences for clarity
+- Combining or splitting paragraphs
+- Improving word choice
+- Making implicit information explicit
+
+## Performance
+
+**Expected enhancement times with Gemini:**
+
+| Transcription Length | Enhancement Time |
+|---------------------|------------------|
+| Short (1-2 sentences) | < 0.5 seconds |
+| Medium (paragraph) | < 1 second |
+| Long (multiple paragraphs) | 1-2 seconds |
+
+<Tip>
+  Gemini 2.5 Flash is one of the **fastest enhancement options** available, even faster than most local models.
+</Tip>
+
+## Custom Prompts
+
+Customize how Gemini enhances your text in Profile settings:
+
+<Tabs>
+  <Tab title="Default (Grammar only)">
+    ```
+    Fix grammar and punctuation errors.
+    Keep the original meaning and tone unchanged.
+    ```
+
+    **Use for:** General dictation, personal notes
+  </Tab>
+
+  <Tab title="Professional Email">
+    ```
+    Fix grammar and rewrite in a professional, business-appropriate tone.
+    Format as a clear, concise email.
+    Remove filler words and make it direct.
+    ```
+
+    **Use for:** Work emails, business communications
+  </Tab>
+
+  <Tab title="Casual Chat">
+    ```
+    Fix grammar but keep casual, friendly tone.
+    Use contractions (e.g., "don't" instead of "do not").
+    Keep it conversational.
+    ```
+
+    **Use for:** Chat messages, personal emails
+  </Tab>
+
+  <Tab title="Technical Documentation">
+    ```
+    Fix grammar and format for technical documentation.
+    Preserve all technical terms and code exactly as stated.
+    Use active voice and clear, concise language.
+    ```
+
+    **Use for:** Code comments, documentation
+  </Tab>
+</Tabs>
+
+## Usage Tracking
+
+Monitor your Gemini API usage:
+
+1. Visit [aistudio.google.com](https://aistudio.google.com)
+2. Go to **API keys** or **Usage** section
+3. View request counts and rate limits
+
+<Note>
+  Stenox does not track Gemini usage. Check Google AI Studio for accurate usage statistics.
+</Note>
+
+## Privacy Considerations
+
+**What Google sees:**
+- Your transcribed text is sent to Google servers
+- Google may use data to improve services (check their policies)
+- Data is encrypted in transit (HTTPS)
+- Review Google's privacy policy and data retention settings
+
+**For complete privacy:**
+- Use [MLX (local)](/providers/llm/mlx-local) for 100% offline enhancement
+- Or review and configure Google's data retention policies
+
+## When to Use Google Gemini
+
+<CardGroup cols={2}>
+  <Card title="Maximum quality" icon="medal">
+    Best-in-class grammar correction and formatting.
+  </Card>
+
+  <Card title="Speed + quality" icon="bolt">
+    Fast processing with excellent results.
+  </Card>
+
+  <Card title="Complex edits" icon="wand-magic-sparkles">
+    Tone adjustment, style changes, restructuring.
+  </Card>
+
+  <Card title="Free cloud option" icon="gift">
+    Generous free tier for personal and professional use.
+  </Card>
+</CardGroup>
+
+## Recommended Combinations
+
+### Best Free Cloud Setup
+
+**Transcription:** [Groq Whisper](/providers/transcription/groq-whisper) (free tier)
+**Enhancement:** Google Gemini 2.5 Flash (1500/day free)
+
+**Total time:** ~1-2 seconds
+**Cost:** Free!
+
+### Maximum Speed Setup
+
+**Transcription:** [DeepGram Nova-3](/providers/transcription/deepgram) (< 1 second)
+**Enhancement:** Gemini 2.5 Flash (< 1 second)
+
+**Total time:** ~1-2 seconds
+**Cost:** Uses DeepGram and Gemini credits
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="API key invalid or not working" icon="key">
+    - Ensure you copied the complete key (no spaces)
+    - Verify API key is active in Google AI Studio
+    - Try creating a new API key
+    - Check that Gemini API is enabled for your project
+  </Accordion>
+
+  <Accordion title="Rate limit exceeded" icon="gauge-high">
+    - You've hit the 15/minute or 1500/day limit
+    - Wait a few minutes (for per-minute limit)
+    - Wait until next day (for daily limit)
+    - Use [MLX (local)](/providers/llm/mlx-local) as backup
+    - Create a profile without enhancement for quick notes
+  </Accordion>
+
+  <Accordion title="Enhancement fails or times out" icon="clock">
+    - Check internet connection
+    - Verify API key is valid
+    - Check Google AI Studio for service status
+    - Try a shorter test transcription
+  </Accordion>
+
+  <Accordion title="Quality not as expected" icon="spell-check">
+    - Adjust custom prompt in Profile settings
+    - Try Gemini 2.5 Pro for better quality (lower rate limits)
+    - Provide more specific instructions in custom prompt
+    - Check that transcription quality is good (enhancement can't fix bad transcription)
+  </Accordion>
+</AccordionGroup>
+
+## Pricing After Free Tier
+
+If you need more than free tier limits, Gemini offers pay-as-you-go:
+
+| Model | Free Tier | Paid Pricing |
+|-------|-----------|--------------|
+| **Gemini 2.5 Flash** | 15/min, 1500/day | Very affordable per request |
+| **Gemini 2.5 Pro** | 2/min, 50/day | Higher cost per request |
+
+[Check current pricing →](https://ai.google.dev/pricing)
+
+<Note>
+  Most users never exceed the free tier limits (1500 enhancements per day is a lot!).
+</Note>
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card
+    title="DeepGram Transcription"
+    icon="microphone"
+    href="/providers/transcription/deepgram"
+  >
+    Combine with DeepGram for ultra-fast, high-quality results.
+  </Card>
+
+  <Card
+    title="Create Profiles"
+    icon="layer-group"
+    href="/profiles/creating-profiles"
+  >
+    Different enhancement settings for different apps.
+  </Card>
+
+  <Card
+    title="Free Tier Guide"
+    icon="gift"
+    href="/guides/free-tier-providers"
+  >
+    Maximize free usage across all providers.
+  </Card>
+
+  <Card
+    title="Cloud Setup Guide"
+    icon="cloud"
+    href="/guides/cloud-setup"
+  >
+    Recommended cloud configuration.
+  </Card>
+</CardGroup>

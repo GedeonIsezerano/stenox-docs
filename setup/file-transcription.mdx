@@ -1,0 +1,175 @@
+---
+title: "File Transcription"
+description: "Transcribe audio and video files"
+---
+
+## Transcribe Files
+
+Stenox can transcribe audio and video files — not just live dictation. Perfect for meetings, interviews, podcasts, or any recorded content.
+
+<Tip>
+  File transcription uses your configured transcription provider. For best results with long files, use a cloud provider like DeepGram or Groq.
+</Tip>
+
+## Supported Formats
+
+### Audio Files
+
+| Format | Extension |
+|--------|-----------|
+| MP3 | .mp3 |
+| WAV | .wav |
+| M4A | .m4a |
+| AAC | .aac |
+| FLAC | .flac |
+| OGG | .ogg |
+| WMA | .wma |
+| AIFF | .aiff |
+| CAF | .caf |
+
+### Video Files
+
+| Format | Extension |
+|--------|-----------|
+| MP4 | .mp4 |
+| MOV | .mov |
+| AVI | .avi |
+| M4V | .m4v |
+| WebM | .webm |
+| MKV | .mkv |
+
+<Note>
+  For video files, Stenox extracts and transcribes the audio track only.
+</Note>
+
+## How to Transcribe a File
+
+<Steps>
+  <Step title="Open Stenox">
+    Click the Stenox menu bar icon
+  </Step>
+
+  <Step title="Select Transcribe File">
+    Click **Transcribe File** in the dropdown menu
+  </Step>
+
+  <Step title="Choose Your File">
+    Select an audio or video file from Finder
+  </Step>
+
+  <Step title="Wait for Processing">
+    Stenox will transcribe and optionally enhance the text
+  </Step>
+
+  <Step title="Review Results">
+    The transcription appears in the Stenox window. Copy or save as needed.
+  </Step>
+</Steps>
+
+## Provider Considerations
+
+### For Short Files (< 5 minutes)
+
+Any provider works well:
+- **WhisperKit** — Local, private
+- **Groq Whisper** — Fast, free tier
+- **DeepGram** — Accurate
+
+### For Long Files (> 5 minutes)
+
+Cloud providers recommended:
+- **DeepGram** — Best for long-form content
+- **Groq Whisper** — Fast processing
+- **AssemblyAI** — Good for meetings
+
+<Warning>
+  WhisperKit can handle long files but processing time increases significantly. For a 30-minute file, expect 10-15 minutes of processing time locally.
+</Warning>
+
+## Tips for Best Results
+
+### Audio Quality
+
+- Use the highest quality recording available
+- Clear audio with minimal background noise transcribes best
+- Multiple speakers work best with DeepGram or AssemblyAI
+
+### File Size
+
+- Smaller file sizes upload and process faster
+- Consider compressing large files before transcription
+- MP3 is a good balance of quality and size
+
+### Language
+
+- Set the correct language in your Profile settings
+- Use multilingual models for non-English content
+- Auto-detect works but explicit setting is more accurate
+
+## AI Enhancement
+
+File transcriptions can be enhanced just like live dictation:
+
+- **Grammar correction** — Fix spoken language patterns
+- **Punctuation** — Add proper punctuation
+- **Formatting** — Clean up for readability
+
+<Tip>
+  For meeting transcripts, use a custom prompt like: "Format as meeting notes with bullet points for action items."
+</Tip>
+
+## Usage Limits
+
+File transcription counts against your plan limits:
+
+| Plan | Limit |
+|------|-------|
+| Free | 5 minutes/day total (including files) |
+| Plus | Unlimited |
+| Lifetime | Unlimited (with BYOK) |
+| Lifetime Plus | Unlimited |
+
+<Note>
+  Using BYOK providers bypasses Stenox limits. Only your provider's limits apply.
+</Note>
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="Transcription is very slow" icon="hourglass">
+    - Use a cloud provider for faster processing
+    - Switch from WhisperKit to Groq or DeepGram
+    - For local processing, use base.en instead of small.en
+  </Accordion>
+
+  <Accordion title="File format not supported" icon="file-circle-xmark">
+    Convert your file to a supported format:
+    - Use QuickTime (File → Export As) for video
+    - Use online converters for audio
+    - MP3 and MP4 are widely compatible
+  </Accordion>
+
+  <Accordion title="Poor transcription quality" icon="spell-check">
+    - Check audio quality in the original file
+    - Try a different provider (DeepGram often works best)
+    - Set explicit language instead of auto-detect
+    - Add technical terms to Vocabulary
+  </Accordion>
+
+  <Accordion title="File too large" icon="file-arrow-up">
+    - Compress the file before transcribing
+    - Split into smaller segments
+    - Use cloud providers for large files
+  </Accordion>
+</AccordionGroup>
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card title="BYOK Setup" icon="key" href="/setup/byok-configuration">
+    Configure cloud providers for file transcription.
+  </Card>
+  <Card title="Vocabulary" icon="book" href="/setup/vocabulary">
+    Add terms for better accuracy.
+  </Card>
+</CardGroup>

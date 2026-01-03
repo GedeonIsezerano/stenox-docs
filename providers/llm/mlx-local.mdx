@@ -1,0 +1,357 @@
+---
+title: "MLX (Local)"
+description: "100% private, offline AI enhancement with Apple MLX"
+---
+
+<Warning>
+  This is an **AI ENHANCEMENT** provider. It improves transcribed text with grammar correction and formatting.
+  For speech-to-text transcription, see [Transcription Providers](/providers/overview#transcription-providers).
+</Warning>
+
+## Overview
+
+MLX is Apple's machine learning framework optimized for Apple Silicon. Stenox uses MLX to run small, efficient language models locally on your Mac for completely private text enhancement.
+
+**Key Benefits:**
+- 🔒 **100% Private** - Text never leaves your Mac
+- 🌐 **Offline** - Works without internet connection
+- 💰 **Free** - No API keys, no usage costs
+- 🚀 **Optimized** - Built for Apple Silicon
+
+## Privacy & Security
+
+MLX processes everything locally on your Mac:
+
+- Transcribed text is enhanced on-device
+- No data sent to cloud services
+- No internet connection required
+- No API keys or accounts needed
+- Perfect for sensitive or confidential content
+
+<Tip>
+  Combine MLX with [WhisperKit (local transcription)](/providers/transcription/whisperkit-local) for **100% private, offline** voice dictation.
+</Tip>
+
+## No API Key Required
+
+Unlike cloud providers, MLX requires **no setup**:
+
+1. Select MLX in Stenox Settings
+2. Download your preferred model
+3. Start enhancing immediately
+
+No registration, no API keys, no authentication.
+
+## Available Models
+
+MLX offers several small language models optimized for Apple Silicon:
+
+| Model | Size | Speed | Quality | Recommended For |
+|-------|------|-------|---------|-----------------|
+| **Qwen 2.5 1.5B** | ~1.5 GB | Fast | Good | Quick enhancement, limited RAM |
+| **Qwen 3 1.5B** | ~1.5 GB | Fast | Good | Latest Qwen, balanced |
+| **Gemma 3 2B** | ~2 GB | Medium | Better | Higher quality, more RAM |
+| **Phi-3 3.8B** | ~3.8 GB | Slower | Best | Maximum quality, plenty of RAM |
+
+<Note>
+  **Recommended for beginners:** **Qwen 3 1.5B** - Good balance of speed, quality, and resource usage.
+</Note>
+
+### Model Selection Guide
+
+<AccordionGroup>
+  <Accordion title="Qwen 2.5/3 1.5B - Fast and lightweight" icon="gauge-high">
+    **Best for:**
+    - Quick enhancement (2-3 seconds)
+    - 8GB RAM Macs
+    - Everyday grammar correction
+    - Speed over maximum quality
+
+    **Processing time:** ~2-3 seconds per paragraph
+
+    **Quality:** Good grammar correction, basic formatting
+  </Accordion>
+
+  <Accordion title="Gemma 3 2B - Better quality" icon="medal">
+    **Best for:**
+    - Higher quality enhancement
+    - 16GB RAM Macs
+    - Professional writing
+    - Balanced speed and quality
+
+    **Processing time:** ~3-4 seconds per paragraph
+
+    **Quality:** Excellent grammar, better formatting and tone
+  </Accordion>
+
+  <Accordion title="Phi-3 3.8B - Maximum quality" icon="crown">
+    **Best for:**
+    - Best possible local quality
+    - 16GB+ RAM Macs
+    - Critical writing
+    - Quality over speed
+
+    **Processing time:** ~5-7 seconds per paragraph
+
+    **Quality:** Near-cloud quality, excellent at complex edits
+  </Accordion>
+</AccordionGroup>
+
+## Setup Instructions
+
+<Steps>
+  <Step title="Open Stenox Settings">
+    Click the Stenox icon in your menu bar and select **Settings**.
+  </Step>
+
+  <Step title="Navigate to Models tab">
+    Go to the **Models** tab in the Settings window.
+  </Step>
+
+  <Step title="Select MLX">
+    Under **AI Enhancement Provider**, select **MLX** from the dropdown.
+  </Step>
+
+  <Step title="Choose a model">
+    Select your preferred model:
+    - **Qwen 3 1.5B** (recommended for beginners)
+    - **Gemma 3 2B** (better quality)
+    - **Phi-3 3.8B** (maximum quality)
+  </Step>
+
+  <Step title="Download the model">
+    Click **Download** and wait for the model to download.
+
+    **Download sizes:**
+    - Qwen: ~1.5 GB
+    - Gemma: ~2 GB
+    - Phi: ~3.8 GB
+
+    Models are stored in `~/stenox-models/mlx/` by default.
+  </Step>
+
+  <Step title="Start enhancing">
+    Once download completes, your transcriptions will automatically be enhanced!
+  </Step>
+</Steps>
+
+## Performance
+
+MLX performance depends on your Mac's hardware and chosen model:
+
+### Apple Silicon Macs
+
+**Excellent performance:**
+- Qwen 1.5B: 2-3 seconds per paragraph
+- Gemma 2B: 3-4 seconds per paragraph
+- Phi-3 3.8B: 5-7 seconds per paragraph
+
+**Optimized with:**
+- Metal GPU acceleration
+- Apple Neural Engine (ANE)
+- Unified memory architecture
+
+### Intel Macs
+
+**Not supported:**
+- MLX requires Apple Silicon
+- Intel Mac users should use cloud providers ([Gemini](/providers/llm/google-gemini) or [Groq](/providers/llm/groq-llms))
+
+<Warning>
+  MLX models only work on Apple Silicon Macs. Intel Mac users must use cloud enhancement providers.
+</Warning>
+
+## Apple Silicon Required
+
+MLX models require Apple Silicon (M1/M2/M3/M4). Intel Mac users should use cloud providers like [Gemini](/providers/llm/google-gemini) or [Groq](/providers/llm/groq-llms).
+
+## What MLX Enhancement Does
+
+### Grammar Correction
+
+- Fixes grammatical errors
+- Subject-verb agreement
+- Tense corrections
+- Article usage (a, an, the)
+
+**Example:**
+- **Before:** "me and sarah was going to store"
+- **After:** "Sarah and I were going to the store."
+
+### Capitalization
+
+- Sentence beginnings
+- Proper nouns (names, places)
+- Acronyms and abbreviations
+
+**Example:**
+- **Before:** "john lives in new york city and works for ibm"
+- **After:** "John lives in New York City and works for IBM."
+
+### Punctuation
+
+- Adds missing commas, periods
+- Fixes run-on sentences
+- Improves readability
+
+**Example:**
+- **Before:** "hello how are you doing today its nice to meet you"
+- **After:** "Hello, how are you doing today? It's nice to meet you."
+
+### Light Formatting
+
+- Number formatting (spelled out → digits)
+- Date and time formatting
+- Basic list formatting
+
+<Note>
+  MLX models provide **basic to good** enhancement. For maximum quality, consider cloud providers like [Google Gemini](/providers/llm/google-gemini).
+</Note>
+
+## When to Use MLX
+
+<CardGroup cols={2}>
+  <Card title="Privacy is critical" icon="lock">
+    Healthcare, legal, financial, or sensitive content.
+  </Card>
+
+  <Card title="Working offline" icon="wifi-slash">
+    Airplanes, remote locations, or unreliable internet.
+  </Card>
+
+  <Card title="No usage costs" icon="dollar-sign">
+    Unlimited enhancement with no per-use charges.
+  </Card>
+
+  <Card title="100% local setup" icon="computer">
+    Combine with WhisperKit for completely offline dictation.
+  </Card>
+</CardGroup>
+
+## When to Use Cloud Instead
+
+Consider cloud providers if you need:
+
+- **Faster processing** - Cloud is 2-3x faster (< 1 second vs 2-5 seconds)
+- **Better quality** - Gemini 2.5 Flash and Groq LLMs often outperform small MLX models
+- **Intel Mac** - MLX requires Apple Silicon
+- **Complex edits** - Tone adjustment, style changes, formatting
+
+<Tip>
+  Use **both**! Create different [Profiles](/profiles/creating-profiles):
+  - MLX for personal notes (privacy)
+  - Gemini for work emails (quality)
+  - Auto-switch based on application
+</Tip>
+
+## Custom Prompts
+
+Configure how MLX enhances your text in Profile settings:
+
+<Tabs>
+  <Tab title="Default">
+    ```
+    Fix grammar and punctuation errors.
+    Keep the original meaning and tone.
+    ```
+  </Tab>
+
+  <Tab title="Professional">
+    ```
+    Fix grammar and rewrite in a professional tone.
+    Suitable for business emails.
+    ```
+  </Tab>
+
+  <Tab title="Minimal">
+    ```
+    Only fix obvious grammar errors.
+    Change as little as possible.
+    ```
+  </Tab>
+</Tabs>
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="Model download fails" icon="cloud-arrow-down">
+    - Check internet connection
+    - Ensure sufficient disk space (~2-4 GB per model)
+    - Try downloading again
+    - Check `~/stenox-models/mlx/` for partial downloads and delete them
+  </Accordion>
+
+  <Accordion title="Enhancement is very slow (> 10 seconds)" icon="hourglass">
+    - Try a smaller model (Qwen 1.5B instead of Phi-3)
+    - Close other intensive applications
+    - Check Activity Monitor for available RAM
+    - Your Mac may not have enough RAM for larger models
+  </Accordion>
+
+  <Accordion title="MLX option not available / grayed out" icon="ban">
+    - You're on an Intel Mac (MLX requires Apple Silicon)
+    - Use [Google Gemini](/providers/llm/google-gemini) or [Groq LLMs](/providers/llm/groq-llms) instead
+  </Accordion>
+
+  <Accordion title="Enhancement quality is poor" icon="spell-check">
+    - Try a larger model (Gemma or Phi-3)
+    - Adjust custom prompt in Profile settings
+    - For maximum quality, use cloud providers ([Gemini](/providers/llm/google-gemini))
+    - Add specific formatting instructions to your custom prompt
+  </Accordion>
+
+  <Accordion title="App crashes or runs out of memory" icon="memory">
+    - Your model is too large for available RAM
+    - Use Qwen 1.5B on 8GB Macs
+    - Upgrade to 16GB+ RAM for larger models
+    - Close other applications to free memory
+  </Accordion>
+</AccordionGroup>
+
+## Model Comparison
+
+| Model | RAM Required | Speed | Quality | Best Use Case |
+|-------|--------------|-------|---------|---------------|
+| **Qwen 3 1.5B** | 8GB+ | Fast | Good | Everyday use, 8GB Macs |
+| **Gemma 3 2B** | 12GB+ | Medium | Better | Professional writing, 16GB Macs |
+| **Phi-3 3.8B** | 16GB+ | Slower | Best | Critical writing, maximum quality |
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card
+    title="WhisperKit (Local)"
+    icon="microphone"
+    href="/providers/transcription/whisperkit-local"
+  >
+    Combine with WhisperKit for 100% private, offline dictation.
+  </Card>
+
+  <Card
+    title="Create Profiles"
+    icon="layer-group"
+    href="/profiles/creating-profiles"
+  >
+    Different providers for different scenarios.
+  </Card>
+
+  <Card
+    title="Privacy-First Setup"
+    icon="shield-check"
+    href="/guides/privacy-first-setup"
+  >
+    Complete guide to local-only Stenox configuration.
+  </Card>
+
+  <Card
+    title="Cloud Enhancement"
+    icon="cloud"
+    href="/providers/llm/google-gemini"
+  >
+    Try cloud enhancement for comparison.
+  </Card>
+</CardGroup>
+
+<Note>
+  **Perfect for privacy:** MLX + WhisperKit = No cloud providers, no API keys, no internet required, complete privacy.
+</Note>

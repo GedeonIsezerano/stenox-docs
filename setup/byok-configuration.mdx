@@ -1,0 +1,288 @@
+---
+title: "BYOK Configuration"
+description: "Set up your own API keys for cloud providers"
+---
+
+## Bring Your Own Key
+
+Stenox supports Bring Your Own Key (BYOK) — use your personal API keys with cloud providers. This gives you full control over your accounts and often access to free tiers.
+
+<Tip>
+  API keys are stored securely in your **macOS Keychain** and never leave your Mac except to authenticate with your provider.
+</Tip>
+
+## Transcription Providers
+
+### DeepGram
+
+**Best for:** High accuracy, real-time transcription
+
+<Steps>
+  <Step title="Create Account">
+    Visit [console.deepgram.com](https://console.deepgram.com) and sign up
+  </Step>
+
+  <Step title="Get Free Credits">
+    New accounts receive **$200 in free credits** — no credit card required initially
+  </Step>
+
+  <Step title="Create API Key">
+    Go to **API Keys** → **Create Key** → Copy the key
+  </Step>
+
+  <Step title="Add to Stenox">
+    Settings → **Providers** tab → **DeepGram** → Paste key → Save
+  </Step>
+</Steps>
+
+[Learn more about DeepGram →](/providers/transcription/deepgram)
+
+---
+
+### Groq Whisper
+
+**Best for:** Ultra-fast, free tier
+
+<Steps>
+  <Step title="Create Account">
+    Visit [console.groq.com](https://console.groq.com) and sign up with Google or GitHub
+  </Step>
+
+  <Step title="Generate API Key">
+    Go to **API Keys** → **Create API Key** → Copy the key
+  </Step>
+
+  <Step title="Add to Stenox">
+    Settings → **Providers** tab → **Groq** → Paste key → Save
+  </Step>
+</Steps>
+
+<Note>
+  Groq has a generous **free tier** with no credit card required.
+</Note>
+
+[Learn more about Groq Whisper →](/providers/transcription/groq-whisper)
+
+---
+
+### OpenAI Whisper
+
+**Best for:** Official OpenAI, multi-language
+
+<Steps>
+  <Step title="Create Account">
+    Visit [platform.openai.com](https://platform.openai.com) and sign up
+  </Step>
+
+  <Step title="Add Payment">
+    Go to **Settings** → **Billing** → Add payment method
+  </Step>
+
+  <Step title="Create API Key">
+    Go to **API Keys** → **Create new secret key** → Copy immediately
+  </Step>
+
+  <Step title="Add to Stenox">
+    Settings → **Providers** tab → **OpenAI** → Paste key → Save
+  </Step>
+</Steps>
+
+<Warning>
+  OpenAI API keys are shown only once. Copy and store securely before closing the dialog.
+</Warning>
+
+[Learn more about OpenAI Whisper →](/providers/transcription/openai-whisper)
+
+---
+
+### AssemblyAI
+
+**Best for:** Enterprise, EU compliance
+
+<Steps>
+  <Step title="Create Account">
+    Visit [assemblyai.com](https://assemblyai.com) and sign up
+  </Step>
+
+  <Step title="Get API Key">
+    Your API key is shown on the dashboard after sign-up
+  </Step>
+
+  <Step title="Add to Stenox">
+    Settings → **Providers** tab → **AssemblyAI** → Paste key → Save
+  </Step>
+</Steps>
+
+[Learn more about AssemblyAI →](/providers/transcription/assemblyai)
+
+---
+
+## AI Enhancement Providers
+
+### Google Gemini
+
+**Best for:** Free tier, excellent quality
+
+<Steps>
+  <Step title="Get API Key">
+    Visit [aistudio.google.com](https://aistudio.google.com) and sign in with Google
+  </Step>
+
+  <Step title="Create Key">
+    Click **Get API Key** → **Create API key in new project** → Copy
+  </Step>
+
+  <Step title="Add to Stenox">
+    Settings → **Providers** tab → **Gemini** → Paste key → Save
+  </Step>
+</Steps>
+
+<Tip>
+  Gemini offers **1,500 free requests per day** — no credit card required!
+</Tip>
+
+[Learn more about Google Gemini →](/providers/llm/google-gemini)
+
+---
+
+### OpenAI (GPT-4o)
+
+**Best for:** Premium quality enhancement
+
+<Steps>
+  <Step title="Create Account">
+    Visit [platform.openai.com](https://platform.openai.com) (same as Whisper above)
+  </Step>
+
+  <Step title="Create API Key">
+    Go to **API Keys** → **Create new secret key** → Copy
+  </Step>
+
+  <Step title="Add to Stenox">
+    Settings → **Providers** tab → **OpenAI** → Paste key → Save
+  </Step>
+</Steps>
+
+<Note>
+  One OpenAI API key works for both Whisper (transcription) and GPT-4o (enhancement).
+</Note>
+
+[Learn more about OpenAI →](/providers/llm/openai)
+
+---
+
+### Groq LLMs
+
+**Best for:** Ultra-fast, free tier
+
+<Steps>
+  <Step title="Create Account">
+    Visit [console.groq.com](https://console.groq.com) (same as Groq Whisper above)
+  </Step>
+
+  <Step title="Create API Key">
+    Go to **API Keys** → **Create API Key** → Copy
+  </Step>
+
+  <Step title="Add to Stenox">
+    Settings → **Providers** tab → **Groq** → Paste key → Save
+  </Step>
+</Steps>
+
+<Note>
+  One Groq API key works for both Whisper (transcription) and LLMs (enhancement).
+</Note>
+
+[Learn more about Groq LLMs →](/providers/llm/groq-llms)
+
+---
+
+## Local Providers (No Key Required)
+
+### WhisperKit (Transcription)
+
+<Steps>
+  <Step title="Open Settings">
+    Settings → **Models** tab
+  </Step>
+
+  <Step title="Select WhisperKit">
+    Set **Transcription Provider** to **WhisperKit**
+  </Step>
+
+  <Step title="Download Model">
+    Choose a model (base.en recommended) and click **Download**
+  </Step>
+</Steps>
+
+No API key needed. Runs entirely on your Mac.
+
+[Learn more about WhisperKit →](/providers/transcription/whisperkit-local)
+
+---
+
+### MLX (AI Enhancement)
+
+<Steps>
+  <Step title="Open Settings">
+    Settings → **Models** tab
+  </Step>
+
+  <Step title="Select MLX">
+    Set **AI Enhancement Provider** to **MLX**
+  </Step>
+
+  <Step title="Download Model">
+    Choose a model (Qwen 3 1.5B recommended) and click **Download**
+  </Step>
+</Steps>
+
+<Warning>
+  MLX requires Apple Silicon. Intel Mac users must use cloud providers.
+</Warning>
+
+[Learn more about MLX →](/providers/llm/mlx-local)
+
+---
+
+## Free Tier Combinations
+
+Maximize free usage with these provider combinations:
+
+| Setup | Transcription | Enhancement | Cost |
+|-------|---------------|-------------|------|
+| **100% Free Cloud** | Groq Whisper | Google Gemini | $0 |
+| **100% Local** | WhisperKit | MLX | $0 |
+| **Hybrid** | Groq Whisper | MLX (local) | $0 |
+| **Quality Focus** | DeepGram ($200 credit) | Google Gemini | $0 initially |
+
+## Security Notes
+
+<CardGroup cols={2}>
+  <Card title="Keychain Storage" icon="key">
+    All API keys are stored in macOS Keychain — the same secure storage used for passwords.
+  </Card>
+
+  <Card title="Direct Connection" icon="arrow-right-arrow-left">
+    Keys are sent directly to your provider. No intermediary servers.
+  </Card>
+
+  <Card title="View/Delete Keys" icon="eye">
+    Manage keys anytime in Stenox Settings or macOS Keychain Access.
+  </Card>
+
+  <Card title="Provider Policies" icon="file-contract">
+    Your provider's privacy policies and enterprise agreements apply to all requests.
+  </Card>
+</CardGroup>
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card title="Create Profiles" icon="sliders" href="/profiles/creating-profiles">
+    Set different providers for different use cases.
+  </Card>
+  <Card title="Local Setup" icon="lock" href="/providers/local-privacy">
+    Go 100% local for complete privacy.
+  </Card>
+</CardGroup>
