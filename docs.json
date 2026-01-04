@@ -2,8 +2,13 @@
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
   "name": "Stenox Docs",
+  "seo": {
+    "indexHiddenPages": true
+  },
   "metadata": {
-    "og:title": "Stenox Docs"
+    "og:site_name": "Stenox Docs",
+    "og:title": "Stenox Docs",
+    "og:description": "Documentation for Stenox - AI-powered voice to text for macOS"
   },
   "colors": {
     "primary": "#121212",
