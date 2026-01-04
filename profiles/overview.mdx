@@ -1,7 +1,7 @@
 ---
 "og:title": "Stenox Docs"
 title: "Profiles Overview"
-description: "Configure different settings for different use cases"
+description: "Fine-tune how Stenox formats text for each of your apps"
 ---
 
 <div style={{textAlign: 'center', margin: '2rem 0'}}>
@@ -16,234 +16,155 @@ description: "Configure different settings for different use cases"
 
 ## What are Profiles?
 
-Profiles let you create different Stenox configurations for different scenarios. Each profile can have:
+Stenox works great out of the box. It transcribes your speech, cleans up filler words, and formats your text beautifully.
 
-- Different transcription provider
-- Different AI enhancement provider
-- Custom enhancement prompts
-- Auto-activation rules
+**Profiles let you go the extra mile.**
 
-<Tip>
-  **Example:** Professional email profile with DeepGram + Gemini, and quick notes profile with WhisperKit only.
-</Tip>
+When you want more control over how your text is formatted in specific apps, profiles give you that precision. Each profile can have:
+
+- Custom formatting instructions
+- Auto-activation rules for specific apps
+- Different provider configurations
 
 ---
 
 ## Why Use Profiles?
 
 <CardGroup cols={2}>
-  <Card title="Different Apps, Different Settings" icon="window">
-    Email needs professional tone, chat needs casual tone.
+  <Card title="Tailored Output for Every App" icon="sliders">
+    Control exactly how your text appears in each application you use daily.
   </Card>
 
-  <Card title="Balance Privacy & Quality" icon="scale-balanced">
-    Local for sensitive work, cloud for general use.
+  <Card title="Set It Once, Forget It" icon="wand-magic-sparkles">
+    Profiles activate automatically when you switch apps. No manual adjustments needed.
   </Card>
 
-  <Card title="Optimize Speed or Accuracy" icon="gauge">
-    Fast for quick notes, accurate for important documents.
+  <Card title="Add Your Personal Touch" icon="signature">
+    Include signatures, greetings, or specific formatting that you'd otherwise type manually.
   </Card>
 
-  <Card title="Manage Costs" icon="dollar-sign">
-    Free local for high volume, paid cloud for critical work.
+  <Card title="Effortless Consistency" icon="check-double">
+    Every email, message, or document follows your preferred style automatically.
   </Card>
 </CardGroup>
 
----
-
-## Default Profile
-
-Stenox includes a **Default** profile used when no other profile is active.
-
-**Default settings:**
-- Transcription: Your last configured provider
-- AI Enhancement: Your last configured provider
-- Auto-activation: None (manual only)
+<Note>
+  **Profiles are optional.** Stenox's default behavior handles most use cases well. Profiles exist for when you want that extra bit of control.
+</Note>
 
 ---
 
-## Common Profile Setups
+## What Can Profiles Do?
 
-### Work Email Profile
+Profiles shine when you want app-specific formatting that goes beyond basic cleanup.
 
-**Configuration:**
-- **Transcription:** DeepGram Nova-3 (accurate)
-- **Enhancement:** Google Gemini 2.5 Flash
-- **Custom prompt:** "Professional business tone"
-- **Auto-activate:** When Gmail or Outlook is active
+### Add Structure to Your Output
 
-### Quick Notes Profile
+- **Email signatures** — Automatically append your sign-off
+- **Greetings** — Start emails with "Hi [name]," or your preferred opener
+- **Formatting preferences** — Bullet points for notes, paragraphs for emails
 
-**Configuration:**
-- **Transcription:** Groq Whisper (fast)
-- **Enhancement:** None (skip for speed)
-- **Auto-activate:** When Notes app is active
+### Match the Context
 
-### Privacy Profile
+- **Formal tone** for client communications
+- **Casual tone** for team chat
+- **Technical formatting** for documentation
 
-**Configuration:**
-- **Transcription:** WhisperKit (local)
-- **Enhancement:** MLX (local)
-- **Auto-activate:** When specific confidential apps are active
+### Automate the Repetitive
 
-### Code Documentation Profile
-
-**Configuration:**
-- **Transcription:** DeepGram Nova-3
-- **Enhancement:** Gemini 2.5 Flash
-- **Custom prompt:** "Technical documentation style, preserve code terms"
-- **Auto-activate:** When VSCode or IDE is active
+Instead of manually adding "Best regards, [Your name]" to every email, let your email profile handle it. Speak naturally, and Stenox formats the output exactly how you want it.
 
 ---
 
-## Profile Features
+## How Profiles Work
 
-### Custom Enhancement Prompts
+### Default Behavior
 
-Each profile can have a unique enhancement prompt:
+Without any custom profiles, Stenox uses your default settings everywhere. This works well for most people.
 
-**Professional:**
-```
-Rewrite in professional, business-appropriate tone.
-Use formal language. Format as clear email.
-```
+### With Profiles
 
-**Casual:**
-```
-Fix grammar but keep casual, friendly tone.
-Use contractions. Keep it conversational.
-```
-
-**Technical:**
-```
-Format for technical documentation.
-Preserve all code and technical terms exactly.
-Use active voice and clear language.
-```
-
-### Color Coding
-
-Assign colors to profiles for easy identification in the menu bar.
+1. **Create a profile** for a specific app or use case
+2. **Set activation rules** (which apps trigger this profile)
+3. **Define your formatting** instructions
+4. **Use Stenox normally** — profiles activate automatically
 
 ---
 
 ## Switching Profiles
 
-### Manual Switching
+### Automatic (Recommended)
 
-1. Click Stenox menu bar icon
-2. Hover over "Profiles"
-3. Select desired profile
+Profiles activate based on:
+- **Active application** — Profile triggers when you're in a specific app
+- **Window title** — Profile triggers based on what's in the window title
 
-Active profile shows checkmark.
-
-### Auto-Activation
-
-Profiles can automatically activate based on:
-- Active application (app bundle ID)
-- Window title (e.g., "Gmail" in browser title)
+This means you never have to think about it. Open Gmail, and your email profile kicks in. Switch to Slack, and your chat profile takes over.
 
 [Learn about auto-activation →](/profiles/auto-activation)
 
----
+### Manual
 
-## Creating Profiles
+If you prefer manual control:
 
-[Step-by-step guide →](/profiles/creating-profiles)
+1. Click Stenox menu bar icon
+2. Hover over "Profiles"
+3. Select the profile you want
 
 ---
 
 ## Profile Management
 
-**Edit profile:**
-- Settings → Profiles tab
-- Select profile
-- Modify settings
-- Save changes
+### Creating Profiles
 
-**Delete profile:**
-- Select profile
-- Click Delete
-- Confirm deletion
-- (Cannot delete Default profile)
+[Step-by-step guide →](/profiles/creating-profiles)
 
-**Duplicate profile:**
-- Select existing profile
-- Click Duplicate
-- Modify as needed
-- Save with new name
+### Editing & Deleting
+
+- **Settings → Profiles tab** to manage all profiles
+- Select any profile to edit its settings
+- Delete profiles you no longer need (except the Default profile)
+
+### Color Coding
+
+Assign colors to profiles for quick visual identification in the menu bar.
 
 ---
 
-## Best Practices
+## Tips
 
 <AccordionGroup>
-  <Accordion title="Start with 2-3 profiles" icon="layer-group">
-    Don't create too many at once. Start with:
-    1. Default (general use)
-    2. Work/Professional
-    3. Personal/Quick notes
-
-    Add more as needed.
+  <Accordion title="Start with one profile" icon="seedling">
+    Pick the app where you dictate most often. Create a profile for it. See how it feels before adding more.
   </Accordion>
 
   <Accordion title="Use descriptive names" icon="tag">
-    **Good:** "Work Email - Professional"
-    **Bad:** "Profile 2"
-
-    Clear names help when manually switching.
+    Name profiles after their purpose: "Work Email", "Slack Chat", "Meeting Notes". You'll thank yourself later.
   </Accordion>
 
-  <Accordion title="Set up auto-activation" icon="wand-magic-sparkles">
-    Reduces need for manual switching. Let Stenox handle it automatically.
-  </Accordion>
-
-  <Accordion title="Include fallback local profile" icon="shield">
-    Create one profile with WhisperKit + MLX for when:
-    - Internet is down
-    - Rate limits hit
-    - Privacy needed
+  <Accordion title="Let auto-activation do the work" icon="wand-magic-sparkles">
+    The real power of profiles is hands-free switching. Set up activation rules and forget about manual switching.
   </Accordion>
 </AccordionGroup>
-
----
-
-## Example Profile Strategy
-
-**Beginner (2 profiles):**
-1. **Default:** DeepGram + Gemini (cloud, quality)
-2. **Offline:** WhisperKit + MLX (local, fallback)
-
-**Intermediate (4 profiles):**
-1. **Work Email:** DeepGram + Gemini Professional
-2. **Quick Notes:** Groq (no enhancement, fast)
-3. **Documentation:** DeepGram + Gemini Technical
-4. **Offline:** WhisperKit + MLX (fallback)
-
-**Advanced (6+ profiles):**
-- Per-application profiles with auto-activation
-- Different languages
-- Privacy vs quality trade-offs
-- Cost optimization profiles
 
 ---
 
 ## Next Steps
 
 <CardGroup cols={2}>
-  <Card title="Create Your First Profile" icon="plus" href="/profiles/creating-profiles">
-    Step-by-step guide to creating profiles.
+  <Card title="Create a Profile" icon="plus" href="/profiles/creating-profiles">
+    Step-by-step guide to creating your first profile.
   </Card>
 
   <Card title="Auto-Activation" icon="wand-magic" href="/profiles/auto-activation">
-    Automatically switch profiles based on app.
+    Set up automatic profile switching.
+  </Card>
+
+  <Card title="System Prompts" icon="message" href="/profiles/system-prompts">
+    Craft effective formatting instructions.
   </Card>
 
   <Card title="Providers" icon="server" href="/providers/overview">
-    Choose providers for your profiles.
-  </Card>
-
-  <Card title="Free Tier Guide" icon="gift" href="/pricing/free-tier">
-    Optimize profile costs with free tiers.
+    Explore transcription and AI options.
   </Card>
 </CardGroup>
