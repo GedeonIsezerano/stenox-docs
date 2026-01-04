@@ -1,0 +1,493 @@
+/* ==========================================================================
+   Stenox Docs — Smooth Page Transitions & Micro-interactions
+   Aesthetic: Refined minimalism with subtle, natural motion
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   CSS Custom Properties
+   -------------------------------------------------------------------------- */
+:root {
+  --transition-swift: 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --transition-smooth: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-natural: 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out-quint: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* --------------------------------------------------------------------------
+   Main Content Entrance Animation
+   Subtle fade + lift effect when page content loads
+   -------------------------------------------------------------------------- */
+@keyframes contentReveal {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Main article/content area entrance */
+article,
+main > div > div {
+  animation: contentReveal 0.5s var(--ease-out-expo) forwards;
+}
+
+/* Prose content sections */
+.prose {
+  animation: contentReveal 0.45s var(--ease-out-expo) 0.05s both;
+}
+
+/* --------------------------------------------------------------------------
+   Staggered Card Animations
+   Cards reveal sequentially for a polished feel
+   -------------------------------------------------------------------------- */
+@keyframes cardReveal {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Card Component — Comprehensive Overflow & Clipping Fix
+   Targets all Mintlify card structures to prevent icon clipping
+   -------------------------------------------------------------------------- */
+
+/* Card group containers - ensure visible overflow for animations */
+[class*="CardGroup"],
+[class*="card-group"],
+[class*="cardgroup"],
+div:has(> [class*="Card"]),
+div:has(> a[class*="Card"]) {
+  overflow: visible !important;
+}
+
+/* All card variants - comprehensive selector coverage */
+[class*="Card"],
+[class*="card"],
+a[class*="Card"],
+a[class*="card"],
+[data-component="card"],
+[data-testid*="card"] {
+  overflow: visible !important;
+}
+
+/* Card inner containers - prevent nested clipping */
+[class*="Card"] > *,
+[class*="card"] > *,
+a[class*="Card"] > *,
+a[class*="card"] > * {
+  overflow: visible !important;
+}
+
+/* Icon containers - explicit overflow handling */
+[class*="Card"] [class*="icon"],
+[class*="Card"] [class*="Icon"],
+[class*="card"] [class*="icon"],
+[class*="card"] [class*="Icon"],
+[data-component-part="card-icon"],
+[class*="Card"] svg,
+[class*="card"] svg {
+  overflow: visible !important;
+  flex-shrink: 0;
+}
+
+/* Ensure SVG icons have proper dimensions and don't clip */
+[class*="Card"] svg,
+[class*="card"] svg,
+a[class*="Card"] svg,
+a[class*="card"] svg {
+  overflow: visible !important;
+  display: block;
+}
+
+/* Card group animation */
+[class*="CardGroup"],
+[class*="card-group"] {
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* Individual cards with stagger - broader selectors */
+[class*="CardGroup"] > *:nth-child(1),
+[class*="card-group"] > *:nth-child(1) { animation: cardReveal 0.5s var(--ease-out-expo) 0.1s both; }
+[class*="CardGroup"] > *:nth-child(2),
+[class*="card-group"] > *:nth-child(2) { animation: cardReveal 0.5s var(--ease-out-expo) 0.15s both; }
+[class*="CardGroup"] > *:nth-child(3),
+[class*="card-group"] > *:nth-child(3) { animation: cardReveal 0.5s var(--ease-out-expo) 0.2s both; }
+[class*="CardGroup"] > *:nth-child(4),
+[class*="card-group"] > *:nth-child(4) { animation: cardReveal 0.5s var(--ease-out-expo) 0.25s both; }
+[class*="CardGroup"] > *:nth-child(5),
+[class*="card-group"] > *:nth-child(5) { animation: cardReveal 0.5s var(--ease-out-expo) 0.3s both; }
+[class*="CardGroup"] > *:nth-child(6),
+[class*="card-group"] > *:nth-child(6) { animation: cardReveal 0.5s var(--ease-out-expo) 0.35s both; }
+
+/* --------------------------------------------------------------------------
+   Card Hover Interactions
+   Smooth, responsive feedback on hover
+   -------------------------------------------------------------------------- */
+[class*="Card"],
+[class*="card"],
+a[class*="Card"],
+a[class*="card"] {
+  transition:
+    transform var(--transition-swift),
+    box-shadow var(--transition-swift),
+    border-color var(--transition-swift);
+  will-change: transform;
+}
+
+[class*="Card"]:hover,
+[class*="card"]:hover,
+a[class*="Card"]:hover,
+a[class*="card"]:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    0 8px 24px -8px rgba(0, 0, 0, 0.12),
+    0 4px 8px -4px rgba(0, 0, 0, 0.08);
+}
+
+/* Dark mode card shadows */
+.dark [class*="Card"]:hover,
+.dark [class*="card"]:hover,
+.dark a[class*="Card"]:hover,
+.dark a[class*="card"]:hover {
+  box-shadow:
+    0 8px 24px -8px rgba(0, 0, 0, 0.4),
+    0 4px 8px -4px rgba(0, 0, 0, 0.3);
+}
+
+/* Card icon micro-interaction */
+[class*="Card"] [class*="icon"] svg,
+[class*="card"] [class*="icon"] svg,
+[data-component-part="card-icon"] svg {
+  transition: transform var(--transition-swift);
+}
+
+[class*="Card"]:hover [class*="icon"] svg,
+[class*="card"]:hover [class*="icon"] svg,
+[class*="Card"]:hover [data-component-part="card-icon"] svg,
+[class*="card"]:hover [data-component-part="card-icon"] svg {
+  transform: scale(1.1);
+}
+
+/* --------------------------------------------------------------------------
+   Sidebar Navigation Transitions
+   Smooth active states and hover effects
+   -------------------------------------------------------------------------- */
+nav a,
+[class*="sidebar"] a {
+  transition:
+    color var(--transition-swift),
+    background-color var(--transition-swift),
+    padding-left var(--transition-swift),
+    opacity var(--transition-swift);
+}
+
+nav a:hover,
+[class*="sidebar"] a:hover {
+  opacity: 1;
+}
+
+/* Active nav item indicator */
+nav a[aria-current="page"],
+[class*="sidebar"] a[aria-current="page"] {
+  transition: all var(--transition-smooth);
+}
+
+/* Expandable sections */
+[class*="accordion"],
+details {
+  transition: all var(--transition-smooth);
+}
+
+details[open] summary ~ * {
+  animation: contentReveal 0.35s var(--ease-out-expo);
+}
+
+/* --------------------------------------------------------------------------
+   Steps Component Animation
+   Sequential reveal for step-by-step guides
+   -------------------------------------------------------------------------- */
+@keyframes stepReveal {
+  from {
+    opacity: 0;
+    transform: translateX(-12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+[class*="step"]:nth-child(1) { animation: stepReveal 0.4s var(--ease-out-expo) 0.1s both; }
+[class*="step"]:nth-child(2) { animation: stepReveal 0.4s var(--ease-out-expo) 0.2s both; }
+[class*="step"]:nth-child(3) { animation: stepReveal 0.4s var(--ease-out-expo) 0.3s both; }
+[class*="step"]:nth-child(4) { animation: stepReveal 0.4s var(--ease-out-expo) 0.4s both; }
+[class*="step"]:nth-child(5) { animation: stepReveal 0.4s var(--ease-out-expo) 0.5s both; }
+
+/* --------------------------------------------------------------------------
+   Callout Boxes (Tip, Note, Warning)
+   Subtle entrance animation
+   -------------------------------------------------------------------------- */
+@keyframes calloutReveal {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+[class*="callout"],
+.tip,
+.note,
+.warning,
+[class*="Tip"],
+[class*="Note"],
+[class*="Warning"] {
+  animation: calloutReveal 0.4s var(--ease-out-expo) 0.15s both;
+}
+
+/* --------------------------------------------------------------------------
+   Code Blocks
+   Smooth transitions for copy button and focus states
+   -------------------------------------------------------------------------- */
+pre {
+  transition: box-shadow var(--transition-swift);
+}
+
+pre:focus-within {
+  box-shadow: 0 0 0 2px var(--primary, #121212);
+}
+
+/* Copy button hover */
+pre button,
+[class*="code"] button {
+  transition:
+    opacity var(--transition-swift),
+    transform var(--transition-swift);
+}
+
+pre button:hover,
+[class*="code"] button:hover {
+  transform: scale(1.05);
+}
+
+/* --------------------------------------------------------------------------
+   Table of Contents (Right Sidebar)
+   Smooth scroll indicator and hover states
+   -------------------------------------------------------------------------- */
+[class*="toc"] a,
+[class*="table-of-contents"] a {
+  transition:
+    color var(--transition-swift),
+    transform var(--transition-swift);
+}
+
+[class*="toc"] a:hover,
+[class*="table-of-contents"] a:hover {
+  transform: translateX(2px);
+}
+
+/* Active TOC item */
+[class*="toc"] a[aria-current],
+[class*="toc"] a.active {
+  transition: all var(--transition-smooth);
+}
+
+/* --------------------------------------------------------------------------
+   Buttons & Interactive Elements
+   Refined hover and click feedback
+   -------------------------------------------------------------------------- */
+button,
+[role="button"],
+a[class*="button"] {
+  transition:
+    transform var(--transition-swift),
+    box-shadow var(--transition-swift),
+    background-color var(--transition-swift),
+    border-color var(--transition-swift);
+}
+
+button:hover,
+[role="button"]:hover,
+a[class*="button"]:hover {
+  transform: translateY(-1px);
+}
+
+button:active,
+[role="button"]:active,
+a[class*="button"]:active {
+  transform: translateY(0) scale(0.98);
+  transition-duration: 0.1s;
+}
+
+/* --------------------------------------------------------------------------
+   Search Modal
+   Smooth entrance and exit
+   -------------------------------------------------------------------------- */
+@keyframes modalReveal {
+  from {
+    opacity: 0;
+    transform: scale(0.96) translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes backdropReveal {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+[class*="modal"],
+[class*="dialog"],
+[role="dialog"] {
+  animation: modalReveal 0.25s var(--ease-out-expo);
+}
+
+[class*="backdrop"],
+[class*="overlay"] {
+  animation: backdropReveal 0.2s ease-out;
+}
+
+/* --------------------------------------------------------------------------
+   Page Pagination (Previous/Next)
+   Smooth hover transitions
+   -------------------------------------------------------------------------- */
+#pagination a,
+[class*="pagination"] a {
+  transition:
+    color var(--transition-swift),
+    transform var(--transition-swift);
+}
+
+#pagination a:hover,
+[class*="pagination"] a:hover {
+  transform: translateX(4px);
+}
+
+#pagination a:first-child:hover {
+  transform: translateX(-4px);
+}
+
+/* --------------------------------------------------------------------------
+   Anchor Links
+   Smooth scroll behavior
+   -------------------------------------------------------------------------- */
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Heading anchor links */
+h1 a,
+h2 a,
+h3 a,
+h4 a {
+  transition: opacity var(--transition-swift);
+}
+
+/* --------------------------------------------------------------------------
+   Image & Media Transitions
+   Smooth loading and hover states
+   -------------------------------------------------------------------------- */
+img {
+  transition:
+    opacity var(--transition-smooth),
+    transform var(--transition-swift);
+}
+
+article img:hover {
+  transform: scale(1.01);
+}
+
+/* --------------------------------------------------------------------------
+   Footer
+   Subtle entrance
+   -------------------------------------------------------------------------- */
+footer,
+#footer {
+  animation: fadeIn 0.5s ease-out 0.3s both;
+}
+
+footer a,
+#footer a {
+  transition:
+    color var(--transition-swift),
+    opacity var(--transition-swift);
+}
+
+/* --------------------------------------------------------------------------
+   Focus States
+   Accessible focus indicators with smooth transitions
+   -------------------------------------------------------------------------- */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--primary, #121212);
+  outline-offset: 2px;
+  transition: outline-offset var(--transition-swift);
+}
+
+/* --------------------------------------------------------------------------
+   Loading States
+   Skeleton pulse animation
+   -------------------------------------------------------------------------- */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+[class*="skeleton"],
+[class*="loading"] {
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.06) 25%,
+    rgba(0, 0, 0, 0.12) 50%,
+    rgba(0, 0, 0, 0.06) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+.dark [class*="skeleton"],
+.dark [class*="loading"] {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.06) 25%,
+    rgba(255, 255, 255, 0.12) 50%,
+    rgba(255, 255, 255, 0.06) 75%
+  );
+  background-size: 200% 100%;
+}

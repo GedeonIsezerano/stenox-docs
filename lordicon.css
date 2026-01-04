@@ -1,0 +1,314 @@
+/**
+ * Lordicon Animated Icons - Stenox Docs Styling
+ *
+ * Dark, sophisticated aesthetic matching Stenox brand
+ */
+
+/* ===== Base Icon Styles ===== */
+
+lord-icon {
+  --lord-icon-primary: #121212;
+  --lord-icon-secondary: #666666;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+}
+
+/* Light mode adjustments */
+[data-theme="light"] lord-icon,
+.light lord-icon {
+  --lord-icon-primary: #121212;
+  --lord-icon-secondary: #888888;
+}
+
+/* Dark mode adjustments */
+[data-theme="dark"] lord-icon,
+.dark lord-icon {
+  --lord-icon-primary: #ffffff;
+  --lord-icon-secondary: #a0a0a0;
+}
+
+/* ===== Feature Icon Grid ===== */
+
+.stenox-feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  margin: 2rem 0;
+}
+
+@media (max-width: 900px) {
+  .stenox-feature-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .stenox-feature-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.stenox-feature-card {
+  background: linear-gradient(135deg, rgba(18, 18, 18, 0.03) 0%, rgba(18, 18, 18, 0.08) 100%);
+  border: 1px solid rgba(18, 18, 18, 0.1);
+  border-radius: 12px;
+  padding: 1.25rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.stenox-feature-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px -8px rgba(0, 0, 0, 0.12);
+  border-color: rgba(18, 18, 18, 0.2);
+}
+
+[data-theme="dark"] .stenox-feature-card,
+.dark .stenox-feature-card {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0.06) 100%);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .stenox-feature-card:hover,
+.dark .stenox-feature-card:hover {
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 24px -8px rgba(0, 0, 0, 0.3);
+}
+
+.stenox-feature-icon {
+  margin-bottom: 0.75rem;
+}
+
+.stenox-feature-icon lord-icon {
+  width: 40px !important;
+  height: 40px !important;
+}
+
+.stenox-feature-title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.375rem;
+  color: #121212;
+}
+
+[data-theme="dark"] .stenox-feature-title,
+.dark .stenox-feature-title {
+  color: #ffffff;
+}
+
+.stenox-feature-desc {
+  font-size: 0.8125rem;
+  color: #666666;
+  line-height: 1.5;
+  margin: 0;
+}
+
+[data-theme="dark"] .stenox-feature-desc,
+.dark .stenox-feature-desc {
+  color: #a0a0a0;
+}
+
+/* ===== Hero Section Icons ===== */
+
+.stenox-hero-icon {
+  width: 80px;
+  height: 80px;
+}
+
+.stenox-hero-icon-lg {
+  width: 120px;
+  height: 120px;
+}
+
+/* ===== Pipeline/Steps Section ===== */
+
+.stenox-pipeline {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 0.5rem;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem 0;
+  overflow-x: auto;
+}
+
+.stenox-pipeline-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 1rem;
+  min-width: 100px;
+  flex-shrink: 0;
+  background: linear-gradient(180deg, rgba(18, 18, 18, 0.02) 0%, rgba(18, 18, 18, 0.05) 100%);
+  border-radius: 10px;
+  transition: transform 0.2s ease;
+}
+
+.stenox-pipeline-step:hover {
+  transform: scale(1.05);
+}
+
+[data-theme="dark"] .stenox-pipeline-step,
+.dark .stenox-pipeline-step {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0.05) 100%);
+}
+
+.stenox-pipeline-step lord-icon {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 0.5rem;
+}
+
+.stenox-pipeline-label {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #333333;
+  white-space: nowrap;
+}
+
+[data-theme="dark"] .stenox-pipeline-label,
+.dark .stenox-pipeline-label {
+  color: #e0e0e0;
+}
+
+.stenox-pipeline-arrow {
+  font-size: 1.25rem;
+  color: #999999;
+  margin: 0 0.25rem;
+  flex-shrink: 0;
+}
+
+[data-theme="dark"] .stenox-pipeline-arrow,
+.dark .stenox-pipeline-arrow {
+  color: #666666;
+}
+
+@media (max-width: 600px) {
+  .stenox-pipeline {
+    flex-wrap: wrap;
+  }
+
+  .stenox-pipeline-arrow {
+    display: none;
+  }
+
+  .stenox-pipeline-step {
+    min-width: 80px;
+    padding: 0.75rem;
+  }
+}
+
+/* ===== Icon Sizes ===== */
+
+.icon-xs lord-icon,
+lord-icon.icon-xs {
+  width: 24px;
+  height: 24px;
+}
+
+.icon-sm lord-icon,
+lord-icon.icon-sm {
+  width: 32px;
+  height: 32px;
+}
+
+.icon-md lord-icon,
+lord-icon.icon-md {
+  width: 48px;
+  height: 48px;
+}
+
+.icon-lg lord-icon,
+lord-icon.icon-lg {
+  width: 64px;
+  height: 64px;
+}
+
+.icon-xl lord-icon,
+lord-icon.icon-xl {
+  width: 96px;
+  height: 96px;
+}
+
+/* ===== Inline Icons ===== */
+
+.stenox-inline-icon {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.stenox-inline-icon lord-icon {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+/* ===== Accent Colors ===== */
+
+.accent-voice lord-icon {
+  --lord-icon-primary: #3b82f6;
+  --lord-icon-secondary: #93c5fd;
+}
+
+.accent-ai lord-icon {
+  --lord-icon-primary: #8b5cf6;
+  --lord-icon-secondary: #c4b5fd;
+}
+
+.accent-privacy lord-icon {
+  --lord-icon-primary: #10b981;
+  --lord-icon-secondary: #6ee7b7;
+}
+
+.accent-speed lord-icon {
+  --lord-icon-primary: #f59e0b;
+  --lord-icon-secondary: #fcd34d;
+}
+
+.accent-cloud lord-icon {
+  --lord-icon-primary: #0ea5e9;
+  --lord-icon-secondary: #7dd3fc;
+}
+
+/* ===== Hover Effects ===== */
+
+.icon-hover-lift:hover lord-icon,
+lord-icon.icon-hover-lift:hover {
+  transform: translateY(-2px);
+  transition: transform 0.2s ease;
+}
+
+.icon-hover-scale:hover lord-icon,
+lord-icon.icon-hover-scale:hover {
+  transform: scale(1.1);
+  transition: transform 0.2s ease;
+}
+
+.icon-hover-glow:hover lord-icon,
+lord-icon.icon-hover-glow:hover {
+  filter: drop-shadow(0 0 8px rgba(18, 18, 18, 0.3));
+  transition: filter 0.2s ease;
+}
+
+[data-theme="dark"] .icon-hover-glow:hover lord-icon,
+.dark lord-icon.icon-hover-glow:hover {
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.3));
+}
+
+/* ===== Reduced Motion ===== */
+
+@media (prefers-reduced-motion: reduce) {
+  lord-icon {
+    --lord-icon-trigger: none !important;
+  }
+
+  .stenox-feature-card,
+  .stenox-pipeline-step,
+  lord-icon {
+    transition: none !important;
+    transform: none !important;
+  }
+}

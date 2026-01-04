@@ -1,4 +1,5 @@
 ---
+"og:title": "Stenox Docs"
 title: "Providers"
 description: "Choose your transcription and AI enhancement providers"
 ---
@@ -7,32 +8,75 @@ description: "Choose your transcription and AI enhancement providers"
 
 Your voice goes through two stages:
 
-<Steps>
-  <Step title="Transcription">
-    Speech → Text (WhisperKit, DeepGram, etc.)
-  </Step>
-  <Step title="AI Enhancement">
-    Raw text → Polished output (MLX, Gemini, etc.)
-  </Step>
-</Steps>
+<div className="stenox-pipeline">
+  <div className="stenox-pipeline-step">
+    <lord-icon
+      src="https://cdn.lordicon.com/laqlvddb.json"
+      trigger="loop"
+      delay="2000"
+      colors="primary:#3b82f6,secondary:#93c5fd"
+    />
+    <span className="stenox-pipeline-label">Speech</span>
+  </div>
+
+  <span className="stenox-pipeline-arrow">→</span>
+
+  <div className="stenox-pipeline-step">
+    <lord-icon
+      src="https://cdn.lordicon.com/egmlnyku.json"
+      trigger="loop"
+      delay="2200"
+      colors="primary:#8b5cf6,secondary:#c4b5fd"
+    />
+    <span className="stenox-pipeline-label">Transcribe</span>
+  </div>
+
+  <span className="stenox-pipeline-arrow">→</span>
+
+  <div className="stenox-pipeline-step">
+    <lord-icon
+      src="https://cdn.lordicon.com/bmlkvhui.json"
+      trigger="loop"
+      delay="2400"
+      colors="primary:#f59e0b,secondary:#fcd34d"
+    />
+    <span className="stenox-pipeline-label">Enhance</span>
+  </div>
+
+  <span className="stenox-pipeline-arrow">→</span>
+
+  <div className="stenox-pipeline-step">
+    <lord-icon
+      src="https://cdn.lordicon.com/aqrzgjfy.json"
+      trigger="loop"
+      delay="2600"
+      colors="primary:#10b981,secondary:#6ee7b7"
+    />
+    <span className="stenox-pipeline-label">Output</span>
+  </div>
+</div>
 
 <Tip>
   Each stage is **independent** — mix local and cloud providers however you like. Use WhisperKit (local) for transcription and Gemini (cloud) for enhancement, or go fully local with WhisperKit + MLX.
 </Tip>
 
+---
+
 ## Privacy Options
 
 <CardGroup cols={3}>
   <Card title="100% Local" icon="lock" href="/providers/local-privacy">
-    Complete privacy — nothing leaves your Mac
+    Complete privacy — nothing leaves your Mac.
   </Card>
   <Card title="Cloud + BYOK" icon="key" href="/providers/cloud-byok">
-    Use your own API keys with cloud providers
+    Use your own API keys for full control.
   </Card>
   <Card title="Stenox Cloud" icon="cloud" href="/providers/transcription/stenox-cloud">
-    Managed service included with Plus/Lifetime Plus
+    Managed service — no API keys needed.
   </Card>
 </CardGroup>
+
+---
 
 ## Transcription Providers
 
@@ -67,6 +111,8 @@ Convert your speech to text.
   </Accordion>
 </AccordionGroup>
 
+---
+
 ## AI Enhancement Providers
 
 Improve your transcribed text with grammar correction, formatting, and tone adjustment.
@@ -99,6 +145,8 @@ Improve your transcribed text with grammar correction, formatting, and tone adju
   </Accordion>
 </AccordionGroup>
 
+---
+
 ## Skip AI Enhancement
 
 Don't need grammar correction? Set AI Enhancement to **None** in your profile settings. This:
@@ -111,35 +159,31 @@ Don't need grammar correction? Set AI Enhancement to **None** in your profile se
   Raw transcription is great for quick notes or when you'll edit the text anyway.
 </Note>
 
+---
+
 ## Provider Combinations
 
 Here are popular setups:
 
 <CardGroup cols={2}>
   <Card title="100% Private" icon="lock">
-    **WhisperKit + MLX**
-
-    Everything local. No internet. Complete privacy.
+    **WhisperKit + MLX** — Everything local. No internet. Complete privacy.
   </Card>
 
   <Card title="Maximum Speed" icon="bolt">
-    **Groq Whisper + Groq LLMs**
-
-    Sub-second total processing. Free tier available.
+    **Groq Whisper + Groq LLMs** — Sub-second processing. Free tier available.
   </Card>
 
   <Card title="Best Quality" icon="crown">
-    **DeepGram + OpenAI GPT-4o**
-
-    Top-tier accuracy and enhancement.
+    **DeepGram + OpenAI GPT-4o** — Top-tier accuracy and enhancement.
   </Card>
 
   <Card title="Balanced Free" icon="scale-balanced">
-    **Groq Whisper + Google Gemini**
-
-    Fast and high-quality. Both have free tiers.
+    **Groq Whisper + Gemini** — Fast and high-quality. Both have free tiers.
   </Card>
 </CardGroup>
+
+---
 
 ## Next Steps
 

@@ -1,100 +1,148 @@
 ---
 title: "Welcome to Stenox"
+sidebarTitle: "Home"
+"og:title": "Stenox Docs"
 description: "Voice dictation for macOS with AI enhancement"
 ---
+
+<div className="stenox-hero" style={{textAlign: 'center', margin: '2rem 0 3rem'}}>
+  <lord-icon
+    src="https://cdn.lordicon.com/rehjpyyh.json"
+    trigger="loop"
+    delay="1500"
+    colors="primary:#121212,secondary:#666666"
+    style={{width: '100px', height: '100px'}}
+  />
+</div>
 
 ## Speed up your workflow with voice
 
 Stenox is a native macOS menu bar app that turns your voice into perfectly formatted text. **Speak naturally at 150+ WPM** — Stenox handles transcription, formatting, and insertion automatically.
 
 <CardGroup cols={2}>
-  <Card title="Download Stenox" icon="download" href="/installation">
+  <Card title="Download Stenox" icon="arrow-down-to-bracket" href="/installation">
     Install and set up in under 2 minutes.
   </Card>
-  <Card title="First Dictation" icon="play" href="/first-dictation">
+  <Card title="First Dictation" icon="circle-play" href="/first-dictation">
     Try your first voice-to-text experience.
   </Card>
 </CardGroup>
 
+---
+
 ## How Stenox Works
 
-```mermaid
-flowchart LR
-    A["🎤 Dictate"] --> B["📝 Transcribe"]
-    B --> C["✨ Enhance"]
-    C --> D["⌨️ Insert"]
-```
+<div className="stenox-pipeline">
+  <div className="stenox-pipeline-step">
+    <lord-icon
+      src="https://cdn.lordicon.com/laqlvddb.json"
+      trigger="loop"
+      delay="2000"
+      colors="primary:#3b82f6,secondary:#93c5fd"
+    />
+    <span className="stenox-pipeline-label">Dictate</span>
+  </div>
 
-<Steps>
-  <Step title="Dictate">
-    Hold your hotkey and speak naturally.
-  </Step>
-  <Step title="Transcribe">
-    WhisperKit (local) or cloud providers convert speech to text.
-  </Step>
-  <Step title="Enhance">
-    AI fixes grammar, formatting, and tone.
-  </Step>
-  <Step title="Insert">
-    Polished text appears at your cursor.
-  </Step>
-</Steps>
+  <span className="stenox-pipeline-arrow">→</span>
 
-<Note>
-  Stenox works in any application — email, chat, code editors, documents, and more.
-</Note>
+  <div className="stenox-pipeline-step">
+    <lord-icon
+      src="https://cdn.lordicon.com/egmlnyku.json"
+      trigger="loop"
+      delay="2200"
+      colors="primary:#8b5cf6,secondary:#c4b5fd"
+    />
+    <span className="stenox-pipeline-label">Transcribe</span>
+  </div>
+
+  <span className="stenox-pipeline-arrow">→</span>
+
+  <div className="stenox-pipeline-step">
+    <lord-icon
+      src="https://cdn.lordicon.com/bmlkvhui.json"
+      trigger="loop"
+      delay="2400"
+      colors="primary:#f59e0b,secondary:#fcd34d"
+    />
+    <span className="stenox-pipeline-label">Enhance</span>
+  </div>
+
+  <span className="stenox-pipeline-arrow">→</span>
+
+  <div className="stenox-pipeline-step">
+    <lord-icon
+      src="https://cdn.lordicon.com/aqrzgjfy.json"
+      trigger="loop"
+      delay="2600"
+      colors="primary:#10b981,secondary:#6ee7b7"
+    />
+    <span className="stenox-pipeline-label">Insert</span>
+  </div>
+</div>
+
+<Tip>
+  Stenox works in **any application** — email, chat, code editors, documents, and more.
+</Tip>
+
+---
 
 ## Why Stenox?
 
 <CardGroup cols={3}>
-  <Card title="Privacy First" icon="shield-halved">
-    100% local processing available — no internet required.
+  <Card title="Privacy First" icon="shield-check" href="/providers/local-privacy">
+    100% local processing — no internet required.
   </Card>
-  <Card title="Smart Profiles" icon="sliders">
-    Auto-activate settings per app.
+  <Card title="Smart Profiles" icon="rectangles-mixed" href="/profiles/overview">
+    Auto-activate settings per app context.
   </Card>
-  <Card title="Your Providers" icon="key">
+  <Card title="Your Providers" icon="key-skeleton" href="/providers/cloud-byok">
     BYOK for full control over your data.
   </Card>
 </CardGroup>
+
+---
 
 ## Get Started Free
 
 Stenox includes a free tier with 5 minutes per day. Combine with BYOK providers for unlimited use.
 
 <CardGroup cols={2}>
-  <Card title="100% Local (Free)" icon="lock" href="/providers/local-privacy">
+  <Card title="100% Local (Free)" icon="lock-keyhole" href="/providers/local-privacy">
     WhisperKit + MLX — unlimited, private, offline.
   </Card>
-  <Card title="Free Cloud Providers" icon="cloud" href="/pricing/free-tier">
+  <Card title="Free Cloud Providers" icon="cloud-bolt" href="/pricing/free-tier">
     Groq + Gemini — fast and free.
   </Card>
 </CardGroup>
 
+---
+
 ## Explore
 
 <CardGroup cols={2}>
-  <Card title="Profiles" icon="user-gear" href="/profiles/overview">
+  <Card title="Profiles" icon="user-pen" href="/profiles/overview">
     Customize transcription and AI settings per context.
   </Card>
-  <Card title="Providers" icon="server" href="/providers/overview">
+  <Card title="Providers" icon="diagram-project" href="/providers/overview">
     Local and cloud options for transcription and AI.
   </Card>
-  <Card title="Pricing" icon="credit-card" href="/pricing/overview">
+  <Card title="Pricing" icon="receipt" href="/pricing/overview">
     Free tier, Plus, and Lifetime options.
   </Card>
-  <Card title="Setup Guides" icon="gear" href="/setup/license">
+  <Card title="Setup Guides" icon="screwdriver-wrench" href="/setup/license">
     License activation, BYOK, and more.
   </Card>
 </CardGroup>
 
+---
+
 ## Need Help?
 
 <CardGroup cols={2}>
-  <Card title="Troubleshooting" icon="wrench" href="/guides/troubleshooting">
+  <Card title="Troubleshooting" icon="toolbox" href="/guides/troubleshooting">
     Common issues and solutions.
   </Card>
-  <Card title="Support" icon="life-ring" href="/support/overview">
+  <Card title="Support" icon="comments-question" href="/support/overview">
     Contact our team — even by voice!
   </Card>
 </CardGroup>

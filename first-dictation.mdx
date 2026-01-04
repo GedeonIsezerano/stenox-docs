@@ -1,17 +1,44 @@
 ---
+"og:title": "Stenox Docs"
 title: "Your First Dictation"
 description: "Step-by-step guide to using Stenox for the first time"
 ---
+"og:title": "Stenox Docs"
 
 ## Before You Begin
 
-Make sure you've completed these steps:
+Make sure you've completed this step:
 
 - ✓ [Installed Stenox](/installation) and granted permissions
-- ✓ [Configured a transcription provider](/first-dictation#step-2-configure-a-transcription-provider)
+
+<Tip>
+  **Good news!** Stenox Cloud is already preset as your default transcription provider—no configuration needed. You can start dictating right away.
+</Tip>
+
+## Default Settings
+
+Stenox comes pre-configured for the best out-of-the-box experience:
+
+- **Transcription Provider**: Stenox Cloud (preset)
+- **Post-Processing**: Enabled by default (AI enhancement for grammar, punctuation, and formatting)
 
 <Note>
-  If you haven't set up a provider yet, we recommend starting with [WhisperKit (local)](/transcription/whisperkit-local) for the easiest setup.
+  To adjust post-processing settings, navigate to **Settings → Processing** tab in the Stenox app.
+</Note>
+
+### About Stenox Cloud Credits
+
+Your plan determines how Stenox Cloud works for you:
+
+| Plan | Stenox Cloud Access |
+|------|---------------------|
+| **Free Tier** | Included with limited usage (5 min/day) |
+| **Plus Subscription** | Always available |
+| **Lifetime Plus** | Always available |
+| **Lifetime** | Uses credits; top up when depleted or [configure your own provider](/providers/overview) |
+
+<Note>
+  All plans can configure their own transcription and AI providers if preferred. See [Providers Overview](/providers/overview) to explore your options.
 </Note>
 
 ## The Recording Process
@@ -41,48 +68,38 @@ Let's walk through it step by step.
   </Step>
 
   <Step title="Check the Stenox menu bar icon">
-    Look for the Stenox icon in your menu bar (top right of your screen).
-
-    **Icon colors:**
-    - **Gray** - Idle, ready to record
-    - **Red** - Recording in progress
-    - **Spinning** - Processing your audio
-
-    Make sure it's gray (idle) before starting.
+    Look for the Stenox microphone icon in your menu bar (top right of your screen). This confirms Stenox is running and ready.
   </Step>
 
-  <Step title="Press and hold Option+Space">
-    This is the default hotkey. Hold both keys down simultaneously.
+  <Step title="Press and hold fn">
+    This is the default hotkey.
 
     **What you'll see:**
-    - Menu bar icon turns **red**
-    - Recording overlay appears on screen
+    - A recording overlay appears on screen
     - Audio waveform shows your voice input
 
+    <img src="/images/recording-overlay.png" alt="Stenox recording overlay" style={{width: '12.5%', display: 'block', margin: '0 auto'}} />
+
     <Tip>
-      The recording only happens while you're holding the keys. Release early and Stenox will process whatever you've said so far.
+      The recording only happens while you're holding the key. Release early and Stenox will process whatever you've said so far.
     </Tip>
   </Step>
 
-  <Step title="Speak your message clearly">
+  <Step title="Speak your mind">
     While holding the hotkey, speak naturally into your microphone.
 
     **Try saying:**
     > "Hello, this is my first voice dictation with Stenox. It's faster than typing!"
 
-    **Tips:**
-    - Speak at a normal conversational pace
-    - Don't over-enunciate or speak too slowly
-    - Stay about 6-12 inches from your microphone
-    - Watch the waveform to confirm audio is being captured
+    <Tip>
+      Don't worry about filler words like "umm", "uhh", or "like"—Stenox automatically cleans them up for you.
+    </Tip>
   </Step>
 
   <Step title="Release the hotkey when done">
-    Let go of Option+Space when you finish speaking.
+    Let go of fn when you finish speaking.
 
     **What happens next:**
-    - Recording overlay disappears
-    - Icon shows processing (spinning or animated)
     - Stenox transcribes your audio (1-3 seconds typically)
     - Text appears at your cursor position
   </Step>
@@ -135,23 +152,13 @@ Practice makes perfect! Try a few more dictations:
 
 ## Understanding Visual Feedback
 
-Learn to read Stenox's indicators:
-
-### Menu Bar Icon States
-
-| Icon State | Meaning |
-|------------|---------|
-| Gray (idle) | Ready to record |
-| Red (solid) | Recording your voice |
-| Spinning/animated | Processing transcription |
-| Blue pulse | Text insertion in progress |
+The recording overlay is your primary visual indicator. It appears automatically when you start recording.
 
 ### Recording Overlay
 
 The floating overlay shows:
 - **Waveform** - Visual representation of your voice input
 - **Timer** - Recording duration
-- **Model/Provider** - Currently active transcription provider
 
 <Tip>
   If you don't see the overlay, check Stenox Settings → **Settings** tab → ensure "Show recording overlay" is enabled.
@@ -163,10 +170,10 @@ The floating overlay shows:
   <Accordion title="No text appears after speaking" icon="triangle-exclamation">
     **Possible causes:**
     - Microphone not working (check System Settings → Sound → Input)
-    - No provider configured (go to Settings → Models)
     - Accessibility permission not granted (go to Settings → check permissions)
+    - Stenox Cloud credits depleted (check Settings → Account)
 
-    **Solution:** Verify permissions and provider configuration in Stenox Settings.
+    **Solution:** Verify permissions in Stenox Settings. If you're out of credits, [top up your account](/pricing/overview) or [configure an alternative provider](/providers/overview).
   </Accordion>
 
   <Accordion title="Transcription is inaccurate" icon="spell-check">
@@ -193,8 +200,13 @@ The floating overlay shows:
     - Another app is using the same hotkey
     - Accessibility permission not granted
     - Stenox not running in background
+    - Using fn with a custom (non-Apple) keyboard
 
     **Solution:** Change the hotkey in Settings or check for conflicting apps. Ensure Stenox icon appears in menu bar.
+
+    <Note>
+      If you're using a non-Apple keyboard, macOS will not detect the fn key. Use a different key combination instead.
+    </Note>
   </Accordion>
 </AccordionGroup>
 
@@ -205,8 +217,8 @@ The floating overlay shows:
     Don't robot-speak or over-enunciate. Use your normal speaking voice.
   </Card>
 
-  <Card title="Hold the hotkey" icon="hand">
-    Keep holding Option+Space for the entire time you're speaking.
+  <Card title="Hold the fn key" icon="hand">
+    Keep holding fn for the entire time you're speaking.
   </Card>
 
   <Card title="Watch the waveform" icon="waveform-lines">

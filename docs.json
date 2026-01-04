@@ -2,13 +2,15 @@
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
   "name": "Stenox Docs",
-  "colors": {
-    "primary": "#0066FF",
-    "light": "#3388FF",
-    "dark": "#0044CC"
+  "metadata": {
+    "og:title": "Stenox Docs"
   },
-  "favicon": "/favicon.svg",
-  "mermaid": {},
+  "colors": {
+    "primary": "#121212",
+    "light": "#333333",
+    "dark": "#000000"
+  },
+  "favicon": "/favicon.ico",
   "navigation": {
     "tabs": [
       {
