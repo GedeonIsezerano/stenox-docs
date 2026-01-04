@@ -75,6 +75,7 @@
             "group": "Stenox Setup",
             "pages": [
               "setup/license",
+              "setup/hotkeys",
               "setup/byok-configuration",
               "setup/file-transcription",
               "setup/vocabulary"

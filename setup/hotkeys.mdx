@@ -1,0 +1,258 @@
+---
+"og:title": "Stenox Docs"
+title: "Hotkeys & Recording Modes"
+description: "Configure keyboard shortcuts and recording modes"
+---
+"og:title": "Stenox Docs"
+
+## Default Hotkeys
+
+Stenox comes with four configurable hotkeys for different actions:
+
+| Action | Default Hotkey | Description |
+|--------|----------------|-------------|
+| **Hold-to-Record** | `fn` (Globe key) | Hold to record, release to process |
+| **Toggle Recording** | `Option + Space` | Press to start, press again to stop |
+| **Cancel Recording** | `Escape` | Cancel the current recording |
+| **Feedback** | `Right ⌘ + Right ⌥` | Send feedback directly to the team |
+
+<Note>
+  All hotkeys can be customized in **Settings → Hotkeys**.
+</Note>
+
+## Recording Modes
+
+Stenox supports two recording modes:
+
+### Push-to-Talk (Default)
+
+Hold the hotkey while speaking, release when done.
+
+**How it works:**
+1. Press and **hold** the hotkey (default: `fn`)
+2. Speak your message while holding
+3. **Release** the hotkey to stop recording
+4. Stenox processes and inserts the text
+
+**Best for:**
+- Quick dictations
+- Precise control over recording duration
+- Preventing accidental recordings
+
+### Toggle Mode
+
+Press once to start recording, press again to stop.
+
+**How it works:**
+1. **Press** the hotkey once to start recording
+2. Speak your message (hands-free)
+3. **Press** the hotkey again to stop
+4. Stenox processes and inserts the text
+
+**Best for:**
+- Longer dictations
+- Hands-free operation
+- When you can't hold a key continuously
+
+<Tip>
+  Enable Toggle Mode in **Settings → Hotkeys** by toggling "Toggle Mode" on.
+</Tip>
+
+## Hotkey Details
+
+### Hold-to-Record Hotkey
+
+The primary hotkey for starting recordings.
+
+**Default:** `fn` (Globe key on Apple keyboards)
+
+**Behavior:**
+- **Push-to-Talk mode:** Hold to record, release to process
+- **Toggle mode:** Press to start/stop recording
+
+**Customization options:**
+- Single modifier key (fn, Control, Option, Command)
+- Modifier + key combination (e.g., `Control + R`)
+
+<Warning>
+  The `fn` key only works on Apple keyboards. If you're using a non-Apple keyboard, configure a different hotkey in Settings.
+</Warning>
+
+### Toggle Recording Hotkey
+
+An alternative hotkey that always uses toggle behavior.
+
+**Default:** `Option + Space`
+
+**Behavior:**
+- Press once to start recording
+- Press again to stop recording
+- Works regardless of your main recording mode setting
+
+**Use case:** Quick toggle access even when Push-to-Talk is your primary mode.
+
+### Cancel Recording Hotkey
+
+Immediately cancel the current recording without processing.
+
+**Default:** `Escape`
+
+**Behavior:**
+- Stops recording immediately
+- Discards the audio (no transcription)
+- Returns to idle state
+
+**Use case:** Made a mistake or changed your mind mid-recording.
+
+### Feedback Hotkey
+
+Send feedback directly to the Stenox team using voice.
+
+**Default:** `Right ⌘ + Right ⌥` (Right Command + Right Option)
+
+**Behavior:**
+- Opens the feedback interface
+- Record your feedback with voice
+- Automatically transcribed and sent
+
+<Tip>
+  Use the feedback hotkey to report bugs, suggest features, or share your experience. Your voice feedback is transcribed and sent directly to the team.
+</Tip>
+
+## Customizing Hotkeys
+
+<Steps>
+  <Step title="Open Stenox Settings">
+    Click the Stenox menu bar icon → **Settings**
+  </Step>
+
+  <Step title="Navigate to Hotkeys">
+    Select the **Hotkeys** tab
+  </Step>
+
+  <Step title="Click on a hotkey to change it">
+    Click the hotkey field you want to customize
+  </Step>
+
+  <Step title="Press your new key combination">
+    Press the key or combination you want to use
+  </Step>
+
+  <Step title="Save">
+    The hotkey is saved automatically
+  </Step>
+</Steps>
+
+## Hotkey Tips
+
+<CardGroup cols={2}>
+  <Card title="Avoid conflicts" icon="triangle-exclamation">
+    Check that your hotkey doesn't conflict with other apps or system shortcuts.
+  </Card>
+
+  <Card title="Use modifiers" icon="keyboard">
+    Modifier combinations (like `Control + R`) are less likely to conflict.
+  </Card>
+
+  <Card title="Left vs Right modifiers" icon="left-right">
+    Stenox can distinguish between left and right modifier keys for more options.
+  </Card>
+
+  <Card title="Test in different apps" icon="window">
+    Make sure your hotkey works in all the apps you use for dictation.
+  </Card>
+</CardGroup>
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="Hotkey doesn't work" icon="keyboard">
+    **Possible causes:**
+    - Another app is using the same hotkey
+    - Accessibility permission not granted
+    - Stenox not running in background
+    - Using fn with a non-Apple keyboard
+
+    **Solutions:**
+    - Try a different hotkey combination
+    - Check **System Settings → Privacy & Security → Accessibility** for Stenox
+    - Ensure Stenox icon appears in menu bar
+    - Use `Option + Space` instead of `fn` for non-Apple keyboards
+  </Accordion>
+
+  <Accordion title="fn key not detected" icon="globe">
+    The `fn` (Globe) key is specific to Apple keyboards and may not work with:
+    - Third-party keyboards
+    - Some external Apple keyboards
+    - Keyboards with fn mapped to other functions
+
+    **Solution:** Use `Option + Space` or another key combination instead.
+  </Accordion>
+
+  <Accordion title="Hotkey works in some apps but not others" icon="window">
+    Some apps capture hotkeys before Stenox can receive them.
+
+    **Solutions:**
+    - Try a different hotkey combination
+    - Check the app's keyboard shortcuts settings
+    - Use a more unique combination (e.g., `Control + Shift + R`)
+  </Accordion>
+
+  <Accordion title="Cancel hotkey doesn't work" icon="xmark">
+    Ensure you're pressing the cancel hotkey **during** an active recording.
+
+    **Note:** The cancel hotkey only works while recording is in progress. If you're in idle state, there's nothing to cancel.
+  </Accordion>
+</AccordionGroup>
+
+## Recommended Setups
+
+<AccordionGroup>
+  <Accordion title="Quick notes (Push-to-Talk)" icon="bolt">
+    **Hotkey:** `fn` (default)
+    **Mode:** Push-to-Talk
+
+    Hold fn, speak briefly, release. Perfect for short messages and quick notes.
+  </Accordion>
+
+  <Accordion title="Long dictation (Toggle)" icon="file-lines">
+    **Hotkey:** `Option + Space`
+    **Mode:** Toggle
+
+    Press to start, speak at length, press to stop. Ideal for paragraphs and longer content.
+  </Accordion>
+
+  <Accordion title="Coding & terminals" icon="code">
+    **Hotkey:** `Control + Shift + R`
+    **Mode:** Push-to-Talk
+
+    Avoids conflicts with common IDE shortcuts. Hold while dictating comments or documentation.
+  </Accordion>
+
+  <Accordion title="Non-Apple keyboard" icon="keyboard">
+    **Hotkey:** `Option + Space` or `Control + Space`
+    **Mode:** Either
+
+    Works reliably across all keyboard types.
+  </Accordion>
+</AccordionGroup>
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card title="Your First Dictation" icon="microphone" href="/first-dictation">
+    Practice using your hotkeys with step-by-step guidance.
+  </Card>
+
+  <Card title="Create Profiles" icon="layer-group" href="/profiles/creating-profiles">
+    Set up different hotkeys for different apps.
+  </Card>
+
+  <Card title="Add Vocabulary" icon="book" href="/setup/vocabulary">
+    Improve transcription accuracy with custom terms.
+  </Card>
+
+  <Card title="Troubleshooting" icon="wrench" href="/guides/troubleshooting">
+    Solve common issues with hotkeys and recording.
+  </Card>
+</CardGroup>

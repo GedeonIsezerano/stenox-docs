@@ -58,7 +58,7 @@ Follow these steps to configure Stenox for completely private operation.
     Select your preferred model:
     - **base.en** (142 MB) - Fastest, English only
     - **small.en** (483 MB) - Better accuracy, English only
-    - **base** (142 MB) - Multilingual (90+ languages)
+    - **base** (142 MB) - Multilingual (100+ languages)
     - **small** (483 MB) - Better accuracy, multilingual
 
     **Recommended:** base.en for beginners
@@ -86,15 +86,16 @@ Follow these steps to configure Stenox for completely private operation.
 
   <Step title="Choose a model">
     Select based on your Mac's specifications:
-    - **Qwen 3 1.5B** (~1.5 GB) - Fast, 8GB RAM minimum
-    - **Gemma 3 2B** (~2 GB) - Better quality, 12GB RAM recommended
-    - **Phi-3 3.8B** (~3.8 GB) - Best quality, 16GB RAM recommended
+    - **Gemma 3n 2B** (~1.2 GB) - Best accuracy, recommended
+    - **Qwen 2.5 1.5B** (~1 GB) - Fastest, 8GB RAM minimum
+    - **Phi-3 Mini** (~2.4 GB) - Balanced quality, 12GB RAM recommended
+    - **Gemma 3n 4B** (~2.5 GB) - Higher quality, 16GB RAM recommended
 
-    **Recommended:** Qwen 3 1.5B for balanced speed and quality
+    **Recommended:** Gemma 3n 2B for best accuracy with fast processing
   </Step>
 
   <Step title="Download model">
-    Click **Download** and wait for completion (~1.5-3.8 GB)
+    Click **Download** and wait for completion (~1-2.5 GB)
 
     Model saved to: `~/stenox-models/mlx/`
   </Step>
@@ -167,8 +168,8 @@ With local processing, expect these speeds:
 | Configuration | Total Time | Breakdown |
 |---------------|------------|-----------|
 | **WhisperKit base.en only** | ~3-5 seconds | 3-5s transcription |
-| **WhisperKit + MLX Qwen 1.5B** | ~5-7 seconds | 3-4s transcription + 2-3s enhancement |
-| **WhisperKit small.en + MLX Phi-3** | ~10-12 seconds | 5-6s transcription + 5-6s enhancement |
+| **WhisperKit + MLX Gemma 3n 2B** | ~5-7 seconds | 3-4s transcription + 2-3s enhancement |
+| **WhisperKit small.en + MLX Gemma 3n 4B** | ~8-10 seconds | 5-6s transcription + 3-4s enhancement |
 
 <Note>
   Local processing is slower than cloud (which can be ~1-2 seconds total), but provides complete privacy.
@@ -306,7 +307,7 @@ For maximum security, store models on encrypted disk image:
 
   <Accordion title="Processing is too slow" icon="hourglass">
     - Use base.en instead of small.en (faster)
-    - Use Qwen 1.5B instead of Phi-3 (faster)
+    - Use Qwen 2.5 1.5B or Gemma 3n 2B instead of larger models (faster)
     - Skip AI enhancement (None) for fastest processing
     - Consider hybrid approach (local transcription + cloud enhancement)
   </Accordion>
@@ -322,7 +323,7 @@ For maximum security, store models on encrypted disk image:
   <Accordion title="Out of disk space" icon="hard-drive">
     - Delete unused models from `~/stenox-models/`
     - Use smaller models (base instead of small)
-    - Skip AI enhancement to save 1.5-3.8 GB
+    - Skip AI enhancement to save 1-2.5 GB
   </Accordion>
 </AccordionGroup>
 

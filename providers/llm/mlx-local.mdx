@@ -50,19 +50,20 @@ MLX offers several small language models optimized for Apple Silicon:
 
 | Model | Size | Speed | Quality | Recommended For |
 |-------|------|-------|---------|-----------------|
-| **Qwen 2.5 1.5B** | ~1.5 GB | Fast | Good | Quick enhancement, limited RAM |
-| **Qwen 3 1.5B** | ~1.5 GB | Fast | Good | Latest Qwen, balanced |
-| **Gemma 3 2B** | ~2 GB | Medium | Better | Higher quality, more RAM |
-| **Phi-3 3.8B** | ~3.8 GB | Slower | Best | Maximum quality, plenty of RAM |
+| **Qwen 2.5 1.5B** | ~1 GB | Fastest | Good | Quick enhancement, limited RAM |
+| **Gemma 3n 2B** | ~1.2 GB | Fast | Excellent | Best accuracy, recommended |
+| **Phi-3 Mini** | ~2.4 GB | Medium | Very Good | Balanced quality and speed |
+| **Gemma 3n 4B** | ~2.5 GB | Slower | Very Good | Higher quality, more RAM |
+| **Qwen 3 4B** | ~2.5 GB | Slower | Good | Alternative to Gemma 3n 4B |
 
 <Note>
-  **Recommended for beginners:** **Qwen 3 1.5B** - Good balance of speed, quality, and resource usage.
+  **Recommended for beginners:** **Gemma 3n 2B** - Best accuracy with fast processing and reasonable size.
 </Note>
 
 ### Model Selection Guide
 
 <AccordionGroup>
-  <Accordion title="Qwen 2.5/3 1.5B - Fast and lightweight" icon="gauge-high">
+  <Accordion title="Qwen 2.5 1.5B - Fastest and smallest" icon="gauge-high">
     **Best for:**
     - Quick enhancement (2-3 seconds)
     - 8GB RAM Macs
@@ -74,26 +75,38 @@ MLX offers several small language models optimized for Apple Silicon:
     **Quality:** Good grammar correction, basic formatting
   </Accordion>
 
-  <Accordion title="Gemma 3 2B - Better quality" icon="medal">
+  <Accordion title="Gemma 3n 2B - Best accuracy (Recommended)" icon="crown">
+    **Best for:**
+    - Best accuracy for its size
+    - 8GB+ RAM Macs
+    - Professional writing
+    - Best balance of speed, size, and quality
+
+    **Processing time:** ~2-3 seconds per paragraph
+
+    **Quality:** Excellent grammar, great formatting and tone
+  </Accordion>
+
+  <Accordion title="Phi-3 Mini - Balanced quality" icon="medal">
     **Best for:**
     - Higher quality enhancement
-    - 16GB RAM Macs
-    - Professional writing
-    - Balanced speed and quality
+    - 12GB+ RAM Macs
+    - More complex edits
+    - Good balance of speed and quality
 
     **Processing time:** ~3-4 seconds per paragraph
 
-    **Quality:** Excellent grammar, better formatting and tone
+    **Quality:** Very good grammar, reliable formatting
   </Accordion>
 
-  <Accordion title="Phi-3 3.8B - Maximum quality" icon="crown">
+  <Accordion title="Gemma 3n 4B / Qwen 3 4B - Larger models" icon="memory">
     **Best for:**
-    - Best possible local quality
+    - Maximum local quality
     - 16GB+ RAM Macs
     - Critical writing
     - Quality over speed
 
-    **Processing time:** ~5-7 seconds per paragraph
+    **Processing time:** ~4-6 seconds per paragraph
 
     **Quality:** Near-cloud quality, excellent at complex edits
   </Accordion>
@@ -116,18 +129,20 @@ MLX offers several small language models optimized for Apple Silicon:
 
   <Step title="Choose a model">
     Select your preferred model:
-    - **Qwen 3 1.5B** (recommended for beginners)
-    - **Gemma 3 2B** (better quality)
-    - **Phi-3 3.8B** (maximum quality)
+    - **Gemma 3n 2B** (recommended - best accuracy)
+    - **Qwen 2.5 1.5B** (fastest, smallest)
+    - **Phi-3 Mini** (balanced quality)
+    - **Gemma 3n 4B** or **Qwen 3 4B** (maximum quality)
   </Step>
 
   <Step title="Download the model">
     Click **Download** and wait for the model to download.
 
     **Download sizes:**
-    - Qwen: ~1.5 GB
-    - Gemma: ~2 GB
-    - Phi: ~3.8 GB
+    - Qwen 2.5 1.5B: ~1 GB
+    - Gemma 3n 2B: ~1.2 GB
+    - Phi-3 Mini: ~2.4 GB
+    - Gemma 3n 4B / Qwen 3 4B: ~2.5 GB
 
     Models are stored in `~/stenox-models/mlx/` by default.
   </Step>
@@ -284,7 +299,7 @@ Configure how MLX enhances your text in Profile settings:
   </Accordion>
 
   <Accordion title="Enhancement is very slow (> 10 seconds)" icon="hourglass">
-    - Try a smaller model (Qwen 1.5B instead of Phi-3)
+    - Try a smaller model (Qwen 2.5 1.5B or Gemma 3n 2B instead of larger models)
     - Close other intensive applications
     - Check Activity Monitor for available RAM
     - Your Mac may not have enough RAM for larger models
@@ -296,7 +311,7 @@ Configure how MLX enhances your text in Profile settings:
   </Accordion>
 
   <Accordion title="Enhancement quality is poor" icon="spell-check">
-    - Try a larger model (Gemma or Phi-3)
+    - Try Gemma 3n 2B (best accuracy) or a larger model
     - Adjust custom prompt in Profile settings
     - For maximum quality, use cloud providers ([Gemini](/providers/llm/google-gemini))
     - Add specific formatting instructions to your custom prompt
@@ -304,7 +319,7 @@ Configure how MLX enhances your text in Profile settings:
 
   <Accordion title="App crashes or runs out of memory" icon="memory">
     - Your model is too large for available RAM
-    - Use Qwen 1.5B on 8GB Macs
+    - Use Qwen 2.5 1.5B or Gemma 3n 2B on 8GB Macs
     - Upgrade to 16GB+ RAM for larger models
     - Close other applications to free memory
   </Accordion>
@@ -314,9 +329,11 @@ Configure how MLX enhances your text in Profile settings:
 
 | Model | RAM Required | Speed | Quality | Best Use Case |
 |-------|--------------|-------|---------|---------------|
-| **Qwen 3 1.5B** | 8GB+ | Fast | Good | Everyday use, 8GB Macs |
-| **Gemma 3 2B** | 12GB+ | Medium | Better | Professional writing, 16GB Macs |
-| **Phi-3 3.8B** | 16GB+ | Slower | Best | Critical writing, maximum quality |
+| **Qwen 2.5 1.5B** | 8GB+ | Fastest | Good | Quick tasks, 8GB Macs |
+| **Gemma 3n 2B** | 8GB+ | Fast | Excellent | Recommended for most users |
+| **Phi-3 Mini** | 12GB+ | Medium | Very Good | Balanced quality and speed |
+| **Gemma 3n 4B** | 16GB+ | Slower | Very Good | Higher quality, 16GB Macs |
+| **Qwen 3 4B** | 16GB+ | Slower | Good | Alternative larger model |
 
 ## Next Steps
 
