@@ -57,7 +57,7 @@ Your voice goes through two stages:
 </div>
 
 <Tip>
-  Each stage is **independent** — mix local and cloud providers however you like. Use WhisperKit (local) for transcription and Gemini (cloud) for enhancement, or go fully local with WhisperKit + MLX.
+  Each stage is **independent** — mix local and cloud providers however you like. Use WhisperKit or Parakeet (local) for transcription and Gemini (cloud) for enhancement, or go fully local with Parakeet + MLX.
 </Tip>
 
 ---
@@ -85,6 +85,7 @@ Convert your speech to text.
 | Provider | Type | Speed | Best For |
 |----------|------|-------|----------|
 | [WhisperKit](/providers/transcription/whisperkit-local) | Local | Fast | Privacy, offline use |
+| [Parakeet](/providers/transcription/parakeet-local) | Local | Very Fast | Best accuracy, multilingual |
 | [DeepGram](/providers/transcription/deepgram) | Cloud | Very Fast | Real-time, high accuracy |
 | [OpenAI Whisper](/providers/transcription/openai-whisper) | Cloud | Fast | Multi-language support |
 | [AssemblyAI](/providers/transcription/assemblyai) | Cloud | Fast | Enterprise, EU compliance |
@@ -95,11 +96,11 @@ Convert your speech to text.
 
 <AccordionGroup>
   <Accordion title="Best for privacy" icon="shield-halved">
-    **WhisperKit** — Runs entirely on your Mac. Audio never leaves your device. No internet required.
+    **WhisperKit** or **Parakeet** — Run entirely on your Mac. Audio never leaves your device. No internet required.
   </Accordion>
 
   <Accordion title="Best accuracy" icon="bullseye">
-    **DeepGram Nova-3** — Industry-leading accuracy with real-time processing. Great for professional use.
+    **Parakeet** — NVIDIA's Parakeet TDT achieves state-of-the-art accuracy (6% WER), running locally on your Mac's Neural Engine. For cloud, **DeepGram Nova-3** offers industry-leading accuracy with real-time processing.
   </Accordion>
 
   <Accordion title="Best free option" icon="gift">
@@ -107,7 +108,7 @@ Convert your speech to text.
   </Accordion>
 
   <Accordion title="Best for multiple languages" icon="globe">
-    **OpenAI Whisper** or **WhisperKit (multilingual)** — Support 100+ languages with automatic detection.
+    **Parakeet v3** (local, 25+ languages), **OpenAI Whisper**, or **WhisperKit (multilingual)** — Support multiple languages with automatic detection.
   </Accordion>
 </AccordionGroup>
 
@@ -167,7 +168,7 @@ Here are popular setups:
 
 <CardGroup cols={2}>
   <Card title="100% Private" icon="lock">
-    **WhisperKit + MLX** — Everything local. No internet. Complete privacy.
+    **Parakeet + MLX** — Everything local. Best accuracy. No internet. Complete privacy.
   </Card>
 
   <Card title="Maximum Speed" icon="bolt">

@@ -10,18 +10,24 @@ description: "Complete privacy with local-only processing"
 Stenox can operate **100% locally** on your Mac. When using local providers, your audio and text never leave your device — perfect for sensitive content, confidential work, or anywhere privacy matters.
 
 <Tip>
-  **100% Private = WhisperKit (transcription) + MLX (AI enhancement)**
+  **100% Private = Parakeet or WhisperKit (transcription) + MLX (AI enhancement)**
 
   No internet required. No API keys. No cloud services. Complete privacy.
 </Tip>
 
 ## Local Providers
 
-<CardGroup cols={2}>
+<CardGroup cols={3}>
+  <Card title="Parakeet" icon="microphone" href="/providers/transcription/parakeet-local">
+    **Local Transcription**
+
+    NVIDIA's state-of-the-art speech model. Best accuracy with CoreML optimization on Apple Neural Engine.
+  </Card>
+
   <Card title="WhisperKit" icon="microphone" href="/providers/transcription/whisperkit-local">
     **Local Transcription**
 
-    Apple's optimized Whisper implementation. Runs on your Mac's Neural Engine for fast, private speech-to-text.
+    Apple's optimized Whisper implementation. Lightweight models for fast, private speech-to-text.
   </Card>
 
   <Card title="MLX" icon="sparkles" href="/providers/llm/mlx-local">
@@ -59,7 +65,7 @@ Stenox can operate **100% locally** on your Mac. When using local providers, you
   </Step>
 
   <Step title="Configure Transcription">
-    Go to **Models** tab → Set **Transcription Provider** to **WhisperKit** → Download a model (base.en recommended)
+    Go to **Models** tab → Set **Transcription Provider** to **Parakeet** (recommended) or **WhisperKit** → Download a model
   </Step>
 
   <Step title="Configure AI Enhancement">
@@ -78,6 +84,13 @@ Stenox can operate **100% locally** on your Mac. When using local providers, you
 </Note>
 
 ## Model Options
+
+### Parakeet (Transcription) — Recommended
+
+| Model | Size | Speed | Best For |
+|-------|------|-------|----------|
+| **Parakeet v2** | ~2.5 GB | Very Fast | English only, best accuracy |
+| **Parakeet v3** | ~2.5 GB | Very Fast | Multilingual (25+ languages) |
 
 ### WhisperKit (Transcription)
 
@@ -103,6 +116,8 @@ Processing times with local providers:
 
 | Configuration | Total Time |
 |---------------|------------|
+| Parakeet v2 only | ~2-3 seconds |
+| Parakeet v2 + MLX Qwen 1.5B | ~4-6 seconds |
 | WhisperKit base.en only | ~3-5 seconds |
 | WhisperKit + MLX Qwen 1.5B | ~5-7 seconds |
 | WhisperKit small.en + MLX Phi-3 | ~10-12 seconds |
@@ -139,7 +154,7 @@ Processing times with local providers:
 
 Want privacy for audio but cloud quality for text enhancement?
 
-- **Transcription:** WhisperKit (local) — Audio stays private
+- **Transcription:** Parakeet or WhisperKit (local) — Audio stays private
 - **Enhancement:** Google Gemini or Groq (cloud) — Text enhanced with top-tier models
 
 This keeps your most sensitive data (audio recordings) local while leveraging cloud AI for better text quality.
@@ -147,16 +162,16 @@ This keeps your most sensitive data (audio recordings) local while leveraging cl
 ## Next Steps
 
 <CardGroup cols={2}>
+  <Card title="Parakeet Guide" icon="microphone" href="/providers/transcription/parakeet-local">
+    Best accuracy local transcription setup.
+  </Card>
+
   <Card title="WhisperKit Guide" icon="microphone" href="/providers/transcription/whisperkit-local">
-    Complete local transcription setup.
+    Lightweight local transcription setup.
   </Card>
 
   <Card title="MLX Guide" icon="sparkles" href="/providers/llm/mlx-local">
     Complete local AI enhancement setup.
-  </Card>
-
-  <Card title="Privacy-First Setup" icon="shield-check" href="/guides/privacy-first-setup">
-    Detailed privacy configuration guide.
   </Card>
 
   <Card title="Create Profiles" icon="sliders" href="/profiles/creating-profiles">

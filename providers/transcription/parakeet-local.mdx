@@ -1,0 +1,226 @@
+---
+"og:title": "Stenox Docs"
+title: "Parakeet (Local)"
+description: "State-of-the-art local transcription with NVIDIA Parakeet"
+---
+"og:title": "Stenox Docs"
+
+<Warning>
+  This is a **TRANSCRIPTION** provider. It converts your speech to text.
+  For AI enhancement like grammar correction, see [AI Enhancement Providers](/providers/overview#ai-enhancement-providers).
+</Warning>
+
+## Overview
+
+Parakeet is NVIDIA's state-of-the-art speech recognition model, optimized for Apple Silicon via CoreML. It achieves significantly better accuracy than Whisper while running locally on your Mac's Neural Engine — no internet required.
+
+**Key Benefits:**
+- **Best Accuracy** — 6% word error rate (vs Whisper's 7.4%)
+- **100% Private** — Audio never leaves your Mac
+- **Offline** — Works without internet connection
+- **Free** — No API keys, no usage costs
+- **Fast** — Optimized for Apple Neural Engine
+
+## Privacy & Security
+
+Parakeet processes everything locally on your Mac:
+
+- Audio is captured and transcribed on-device
+- No data sent to cloud services
+- No internet connection required
+- No API keys or accounts needed
+- Perfect for sensitive or confidential content
+
+<Tip>
+  Parakeet is ideal for anyone who wants the best transcription accuracy without compromising privacy.
+</Tip>
+
+## No API Key Required
+
+Like WhisperKit, Parakeet requires **no setup**:
+
+1. Select Parakeet in Stenox Settings
+2. Download your preferred model
+3. Start dictating immediately
+
+No registration, no API keys, no authentication.
+
+## Available Models
+
+| Model | Size | Speed | Accuracy | Languages |
+|-------|------|-------|----------|-----------|
+| **Parakeet v2** | ~2.5 GB | Very Fast | Best | English only |
+| **Parakeet v3** | ~2.5 GB | Very Fast | Best | 25+ languages |
+
+<Note>
+  **Recommended:** Parakeet v2 for English-only use. Parakeet v3 if you need multilingual support.
+</Note>
+
+### Model Selection Guide
+
+<AccordionGroup>
+  <Accordion title="Parakeet v2 - Best for English" icon="medal">
+    **Best for:**
+    - English-only dictation
+    - Highest accuracy available
+    - Professional writing and technical content
+
+    NVIDIA's TDT (Token-and-Duration Transducer) architecture provides state-of-the-art English transcription.
+  </Accordion>
+
+  <Accordion title="Parakeet v3 - Multilingual" icon="globe">
+    **Best for:**
+    - Non-English languages (25+ supported)
+    - Multilingual dictation
+    - Same accuracy as v2 with language flexibility
+
+    Supports languages including Spanish, French, German, Chinese, Japanese, Korean, Hindi, and more.
+  </Accordion>
+</AccordionGroup>
+
+## Setup Instructions
+
+<Steps>
+  <Step title="Open Stenox Settings">
+    Click the Stenox icon in your menu bar and select **Settings**.
+  </Step>
+
+  <Step title="Navigate to Models tab">
+    Go to the **Models** tab in the Settings window.
+  </Step>
+
+  <Step title="Select Parakeet">
+    Under **Transcription Provider**, select **Parakeet** from the dropdown.
+  </Step>
+
+  <Step title="Choose a model">
+    Select your preferred model:
+    - **Parakeet v2** (recommended for English)
+    - **Parakeet v3** (multilingual)
+  </Step>
+
+  <Step title="Download the model">
+    Click **Download** and wait for the model to download (~2.5 GB).
+
+    The model is stored locally and optimized for CoreML on first use.
+  </Step>
+
+  <Step title="Start dictating">
+    Once download completes, you can start using Parakeet immediately!
+  </Step>
+</Steps>
+
+## Performance
+
+Parakeet runs on your Mac's Apple Neural Engine for fast, efficient processing:
+
+- **Processing speed:** ~190x real-time on Apple Silicon (M-series chips)
+- **Typical latency:** 2-3 seconds for 10 seconds of audio
+- **First use:** May take a minute to compile the CoreML model (one-time)
+
+<Note>
+  **Apple Silicon required.** Parakeet uses CoreML and the Apple Neural Engine, which are only available on M1 and later Macs.
+</Note>
+
+## Storage Requirements
+
+- **Model size:** ~2.5 GB per model
+- **Location:** Managed by FluidAudio framework
+
+You can delete models you're not using to free up space via the Models tab in Settings.
+
+## Parakeet vs WhisperKit
+
+| Feature | Parakeet | WhisperKit |
+|---------|----------|------------|
+| Accuracy | Best (6% WER) | Good (7.4% WER) |
+| Speed | Very Fast | Fast |
+| Model Size | ~2.5 GB | 142 MB - 483 MB |
+| Languages | English + 25+ | 100+ |
+| Intel Mac | No | Yes |
+| Neural Engine | Yes (CoreML) | Yes (CoreML) |
+
+**Choose Parakeet** when you want the best accuracy and have an Apple Silicon Mac.
+**Choose WhisperKit** when you need smaller models, Intel Mac support, or 100+ language coverage.
+
+## When to Use Parakeet
+
+<CardGroup cols={2}>
+  <Card title="Best local accuracy" icon="medal">
+    State-of-the-art transcription running entirely on your Mac.
+  </Card>
+
+  <Card title="Privacy is critical" icon="lock">
+    Healthcare, legal, financial, or any sensitive content.
+  </Card>
+
+  <Card title="Working offline" icon="wifi-slash">
+    Airplanes, remote locations, or unstable internet.
+  </Card>
+
+  <Card title="Professional use" icon="briefcase">
+    High-accuracy transcription for professional writing and documentation.
+  </Card>
+</CardGroup>
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="Model download fails" icon="cloud-arrow-down">
+    - Check your internet connection
+    - Ensure you have at least 3 GB of free disk space
+    - Try downloading again — downloads support resuming
+  </Accordion>
+
+  <Accordion title="First transcription is slow" icon="hourglass">
+    - The CoreML model needs to compile on first use — this is a one-time process
+    - Subsequent transcriptions will be much faster
+    - You'll see a "Compiling model" toast while this happens
+  </Accordion>
+
+  <Accordion title="Wrong language being transcribed" icon="language">
+    - For English, use **Parakeet v2** (English-optimized)
+    - For other languages, use **Parakeet v3** and set language in Profile settings
+  </Accordion>
+
+  <Accordion title="Poor accuracy for technical terms" icon="spell-check">
+    - Add terms to [Vocabulary](/setup/vocabulary) for custom replacements
+    - Parakeet v2 generally handles technical terms well for English
+  </Accordion>
+</AccordionGroup>
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card
+    title="Add AI Enhancement"
+    icon="sparkles"
+    href="/providers/llm/mlx-local"
+  >
+    Use MLX (local) for completely private grammar correction and formatting.
+  </Card>
+
+  <Card
+    title="Create Profiles"
+    icon="layer-group"
+    href="/profiles/creating-profiles"
+  >
+    Set up different profiles for different use cases.
+  </Card>
+
+  <Card
+    title="Compare with WhisperKit"
+    icon="scale-balanced"
+    href="/providers/transcription/whisperkit-local"
+  >
+    See how WhisperKit compares for your needs.
+  </Card>
+
+  <Card
+    title="Add Vocabulary"
+    icon="book"
+    href="/setup/vocabulary"
+  >
+    Add custom words and technical terms for better accuracy.
+  </Card>
+</CardGroup>

@@ -48,6 +48,7 @@
                 "group": "Transcription",
                 "pages": [
                   "providers/transcription/whisperkit-local",
+                  "providers/transcription/parakeet-local",
                   "providers/transcription/deepgram",
                   "providers/transcription/openai-whisper",
                   "providers/transcription/assemblyai",
