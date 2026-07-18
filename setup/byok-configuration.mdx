@@ -147,32 +147,6 @@ Stenox supports Bring Your Own Key (BYOK) — use your personal API keys with cl
 
 ---
 
-### OpenAI (GPT-4o)
-
-**Best for:** Premium quality enhancement
-
-<Steps>
-  <Step title="Create Account">
-    Visit [platform.openai.com](https://platform.openai.com) (same as Whisper above)
-  </Step>
-
-  <Step title="Create API Key">
-    Go to **API Keys** → **Create new secret key** → Copy
-  </Step>
-
-  <Step title="Add to Stenox">
-    Settings → **Providers** tab → **OpenAI** → Paste key → Save
-  </Step>
-</Steps>
-
-<Note>
-  One OpenAI API key works for both Whisper (transcription) and GPT-4o (enhancement).
-</Note>
-
-[Learn more about OpenAI →](/providers/llm/openai)
-
----
-
 ### Groq LLMs
 
 **Best for:** Ultra-fast, free tier
@@ -253,9 +227,8 @@ Maximize free usage with these provider combinations:
 
 | Setup | Transcription | Enhancement | Cost |
 |-------|---------------|-------------|------|
-| **Stenox Cloud** | Stenox Cloud | Stenox Cloud | $0 ($5 credit) |
 | **100% Free Cloud** | Groq Whisper | Google Gemini | $0 |
-| **100% Local** | WhisperKit | MLX | $0 |
+| **100% Local** | Parakeet | Gemma on MLX | $0 |
 | **Hybrid** | Groq Whisper | MLX (local) | $0 |
 | **Quality Focus** | DeepGram ($200 credit) | Google Gemini | $0 initially |
 

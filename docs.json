@@ -52,35 +52,28 @@
                   "providers/transcription/deepgram",
                   "providers/transcription/openai-whisper",
                   "providers/transcription/assemblyai",
-                  "providers/transcription/groq-whisper",
-                  "providers/transcription/stenox-cloud"
+                  "providers/transcription/groq-whisper"
                 ]
               },
               {
                 "group": "AI Enhancement",
                 "pages": [
                   "providers/llm/mlx-local",
-                  "providers/llm/openai",
                   "providers/llm/google-gemini",
-                  "providers/llm/groq-llms",
-                  "providers/llm/stenox-cloud-llm"
+                  "providers/llm/groq-llms"
                 ]
               }
             ]
           },
           {
-            "group": "Pricing",
+            "group": "Access",
             "pages": [
-              "pricing/overview",
-              "pricing/free-tier",
-              "pricing/plus-subscription",
-              "pricing/lifetime"
+              "pricing/overview"
             ]
           },
           {
             "group": "Stenox Setup",
             "pages": [
-              "setup/license",
               "setup/hotkeys",
               "setup/byok-configuration",
               "setup/file-transcription",

@@ -1,139 +1,61 @@
 ---
-"og:title": "Stenox Docs"
-title: "Pricing"
-description: "Stenox pricing plans and tiers"
+title: "Free Access"
+sidebarTitle: "Free Access"
+description: "Stenox is free with no license or usage limits"
 ---
-"og:title": "Stenox Docs"
 
-## Choose Your Plan
+## Stenox is free
 
-Stenox offers flexible pricing to fit your needs — from free tier for casual use to lifetime purchases for power users.
+Starting with version 1.0.0, Stenox has no paid plans, license activation, free-tier restrictions, or recording time limits.
 
-<CardGroup cols={2}>
-  <Card title="Free" icon="gift">
-    **$5 Stenox Cloud credit**
-
-    Full access to all features. Upgrade to Lifetime anytime.
+<CardGroup cols={3}>
+  <Card title="No license" icon="key">
+    Download and use Stenox without an account, purchase, or activation key.
   </Card>
-  <Card title="Plus" icon="star">
-    **Unlimited** — Monthly subscription
-
-    Unlimited dictation with Stenox Cloud.
+  <Card title="No time limit" icon="timer">
+    Built-in dictation and file transcription are not limited by a Stenox plan.
   </Card>
-  <Card title="Lifetime" icon="infinity">
-    **Unlimited** — One-time purchase
-
-    Pay once, use forever with BYOK and local.
-  </Card>
-  <Card title="Lifetime Plus" icon="crown">
-    **Unlimited** — One-time purchase
-
-    Everything + unlimited Stenox Cloud.
+  <Card title="All features" icon="sparkles">
+    Local models, profiles, vocabulary, and every built-in workflow are included.
   </Card>
 </CardGroup>
 
-## Compare Plans
+## Why the change?
 
-| Feature | Free | Plus | Lifetime | Lifetime Plus |
-|---------|------|------|----------|---------------|
-| Daily dictation limit | 5 min | Unlimited | Unlimited | Unlimited |
-| Local providers (WhisperKit, MLX) | ✓ | ✓ | ✓ | ✓ |
-| BYOK cloud providers | ✓ | ✓ | ✓ | ✓ |
-| Stenox Cloud | $5 credit | ✓ | $5 credit | ✓ |
-| File transcription | ✓ | ✓ | ✓ | ✓ |
-| Profiles & auto-activation | ✓ | ✓ | ✓ | ✓ |
-| Custom vocabulary | ✓ | ✓ | ✓ | ✓ |
-
-## Which Plan Is Right For You?
-
-<AccordionGroup>
-  <Accordion title="I want to try Stenox first" icon="flask">
-    **Start with Free**
-
-    Get 5 minutes of dictation per day with full access to all features and a $5 Stenox Cloud credit.
-
-    [Get Started Free →](/installation)
-  </Accordion>
-
-  <Accordion title="I want the simplest setup" icon="wand-magic-sparkles">
-    **Choose Plus or Lifetime Plus**
-
-    Stenox Cloud is included — no API keys to configure. Just install and start dictating.
-
-    [See Plus →](/pricing/plus-subscription) | [See Lifetime Plus →](/pricing/lifetime)
-  </Accordion>
-
-  <Accordion title="I already have API keys" icon="key">
-    **Choose Lifetime**
-
-    Use your existing DeepGram, OpenAI, Gemini, or Groq API keys with unlimited daily use.
-
-    [BYOK Setup →](/setup/byok-configuration)
-  </Accordion>
-
-  <Accordion title="I want complete privacy" icon="lock">
-    **Choose Lifetime**
-
-    WhisperKit and MLX process everything locally on your Mac. Lifetime gives you unlimited private use.
-
-    [Privacy Setup →](/providers/local-privacy)
-  </Accordion>
-
-  <Accordion title="I want to pay once and never again" icon="infinity">
-    **Choose Lifetime or Lifetime Plus**
-
-    One-time purchase with unlimited use forever. Lifetime Plus includes Stenox Cloud.
-
-    [See Lifetime Options →](/pricing/lifetime)
-  </Accordion>
-</AccordionGroup>
-
-## Free Tier Details
-
-The free tier includes:
-
-- **$5 Stenox Cloud credit** to get started
-- **5 minutes of dictation per day** (resets at midnight)
-- **All features** — profiles, vocabulary, file transcription
-- **All providers** — local, BYOK, and Stenox Cloud
-- **Upgrade to Lifetime anytime**
-
-[Learn more about Free Tier →](/pricing/free-tier)
-
-## Stenox Cloud
-
-Stenox Cloud is our managed service that eliminates API key management:
-
-- **Stenox Cloud Transcription** — Fast, accurate speech-to-text
-- **Stenox Cloud AI Enhancement** — High-quality grammar and formatting
-
-Included with **Plus** and **Lifetime Plus** plans.
+Local speech and language models have improved substantially in both quality and efficiency. Stenox now uses those advances to provide a fast local-first experience without operating a paid managed model service.
 
 <Note>
-  Stenox Cloud is optional. You can always use local providers (WhisperKit, MLX) or BYOK cloud providers with any plan.
+  **Developer's note:** Local speech and language models have advanced significantly in both quality and efficiency. Because of that progress, I have decided to move Stenox toward a local-first future and retire Stenox Cloud. From now on, Stenox will take advantage of on-device models such as Gemma for language processing and Parakeet for transcription, while continuing to adopt promising new models as they become available.
 </Note>
 
-## Upgrade Anytime
+## Local-first defaults
 
-Start with Free and upgrade whenever you're ready:
+| Stage | Default | Where it runs |
+|---|---|---|
+| Transcription | Parakeet | On your Apple Silicon Mac |
+| Language processing | Gemma on MLX | On your Apple Silicon Mac |
 
-- **Free → Plus**: Monthly subscription with unlimited Stenox Cloud
-- **Free → Lifetime**: One-time purchase for unlimited BYOK and local use
-- **Free → Lifetime Plus**: One-time purchase with unlimited Stenox Cloud included
+During onboarding, Stenox downloads and loads the required local models before your first recording. An internet connection is needed for that initial download; local use can then continue without sending your audio or text to Stenox.
 
-No pressure. Your $5 credit and all features work great for getting started.
+## Stenox Cloud retirement
+
+Stenox Cloud transcription, language processing, credits, and subscriptions are retired. They are no longer selectable in the app.
+
+Existing receipts from purchases made before July 17, 2026 remain available through the legacy billing portal on the Stenox website. A previous purchase or license key is not required to use version 1.0.0 or later.
+
+## Bring your own API keys
+
+Supported third-party providers remain available. Add your own API key in Stenox settings when you want to use one.
+
+<Warning>
+  Third-party providers may apply their own prices, quotas, data policies, and terms. Stenox does not include or resell third-party usage.
+</Warning>
 
 <CardGroup cols={2}>
-  <Card title="Free Tier" icon="gift" href="/pricing/free-tier">
-    Details on the free tier and how to maximize it.
+  <Card title="Local privacy" icon="shield" href="/providers/local-privacy">
+    Keep transcription and language processing on your Mac.
   </Card>
-  <Card title="Plus Subscription" icon="star" href="/pricing/plus-subscription">
-    Monthly subscription with Stenox Cloud.
-  </Card>
-  <Card title="Lifetime Options" icon="infinity" href="/pricing/lifetime">
-    One-time purchase options.
-  </Card>
-  <Card title="Activate License" icon="key" href="/setup/license">
-    How to activate your license.
+  <Card title="BYOK setup" icon="key" href="/setup/byok-configuration">
+    Connect a supported provider using your own account.
   </Card>
 </CardGroup>

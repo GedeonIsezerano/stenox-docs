@@ -64,15 +64,12 @@ Your voice goes through two stages:
 
 ## Privacy Options
 
-<CardGroup cols={3}>
+<CardGroup cols={2}>
   <Card title="100% Local" icon="lock" href="/providers/local-privacy">
     Complete privacy — nothing leaves your Mac.
   </Card>
   <Card title="Cloud + BYOK" icon="key" href="/providers/cloud-byok">
     Use your own API keys for full control.
-  </Card>
-  <Card title="Stenox Cloud" icon="cloud" href="/providers/transcription/stenox-cloud">
-    Managed service — no API keys needed.
   </Card>
 </CardGroup>
 
@@ -90,7 +87,6 @@ Convert your speech to text.
 | [OpenAI Whisper](/providers/transcription/openai-whisper) | Cloud | Fast | Multi-language support |
 | [AssemblyAI](/providers/transcription/assemblyai) | Cloud | Fast | Enterprise, EU compliance |
 | [Groq Whisper](/providers/transcription/groq-whisper) | Cloud | Very Fast | Ultra-fast, free tier |
-| [Stenox Cloud](/providers/transcription/stenox-cloud) | Managed | Fast | Simplicity, no API keys |
 
 ### Choosing a Transcription Provider
 
@@ -104,7 +100,7 @@ Convert your speech to text.
   </Accordion>
 
   <Accordion title="Best free option" icon="gift">
-    **Groq Whisper** — Extremely fast with generous free tier. No credit card required.
+    **Parakeet** — Included with Stenox, runs locally, and has no provider quota or per-minute charge.
   </Accordion>
 
   <Accordion title="Best for multiple languages" icon="globe">
@@ -121,10 +117,8 @@ Improve your transcribed text with grammar correction, formatting, and tone adju
 | Provider | Type | Speed | Best For |
 |----------|------|-------|----------|
 | [MLX](/providers/llm/mlx-local) | Local | Fast | Privacy, offline use |
-| [OpenAI](/providers/llm/openai) | Cloud | Fast | Quality, GPT-4o |
 | [Google Gemini](/providers/llm/google-gemini) | Cloud | Very Fast | Free tier, excellent quality |
 | [Groq LLMs](/providers/llm/groq-llms) | Cloud | Very Fast | Ultra-fast processing |
-| [Stenox Cloud](/providers/llm/stenox-cloud-llm) | Managed | Fast | Simplicity, no API keys |
 
 ### Choosing an AI Enhancement Provider
 
@@ -133,8 +127,8 @@ Improve your transcribed text with grammar correction, formatting, and tone adju
     **MLX** — Runs locally on Apple Silicon. Text never leaves your Mac.
   </Accordion>
 
-  <Accordion title="Best quality" icon="sparkles">
-    **OpenAI GPT-4o** or **Google Gemini** — Top-tier language models for professional writing.
+  <Accordion title="Best local default" icon="sparkles">
+    **Gemma on MLX** — Included, private, and optimized for Apple Silicon.
   </Accordion>
 
   <Accordion title="Best free option" icon="gift">
@@ -176,7 +170,7 @@ Here are popular setups:
   </Card>
 
   <Card title="Best Quality" icon="crown">
-    **DeepGram + OpenAI GPT-4o** — Top-tier accuracy and enhancement.
+    **DeepGram + Gemini** — High-quality cloud transcription and enhancement using your own API keys.
   </Card>
 
   <Card title="Balanced Free" icon="scale-balanced">
@@ -198,7 +192,7 @@ Here are popular setups:
   <Card title="Create Profiles" icon="sliders" href="/profiles/creating-profiles">
     Different providers for different contexts.
   </Card>
-  <Card title="Pricing" icon="credit-card" href="/pricing/overview">
-    Compare Free, Plus, and Lifetime options.
+  <Card title="Free Access" icon="gift" href="/pricing/overview">
+    No license, subscription, or built-in usage limit.
   </Card>
 </CardGroup>
