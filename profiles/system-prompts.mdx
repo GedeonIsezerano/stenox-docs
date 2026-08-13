@@ -17,6 +17,16 @@ System prompts tell the AI enhancement provider how to process your transcribed 
 
 The local Gemma provider comes with fine-tuned enhancements that we continue to refine. No configuration is needed for the default local-first experience.
 
+## Polish with AI
+
+Stenox 1.1 includes a **Polish** preset for users who want clearer wording rather than grammar correction alone. Enable **Polish with AI**, choose **Use Polish preset**, and Stenox may restructure sentences while preserving the original facts, intent, tone, names, numbers, links, file paths, email addresses, identifiers, and commands.
+
+The preset works with supported local and cloud language models. Qwen3.5 4B is the new local option evaluated specifically for this preservation-focused rewrite. If polishing fails its safety checks or the model fails to respond, Stenox falls back to the unpolished transcription.
+
+<Note>
+  **Remove filler words** is a separate option and does not require an AI model. You can enable filler cleanup, Polish with AI, both, or neither.
+</Note>
+
 <Note>
   Custom prompts are optional for general use. However, **profiles with custom prompts** are powerful for users who want specific behavior per app — like professional tone in email clients or technical formatting in code editors.
 </Note>

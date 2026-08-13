@@ -45,6 +45,17 @@ Like WhisperKit, Parakeet requires **no setup**:
 
 No registration, no API keys, no authentication.
 
+## Filler-word cleanup
+
+Stenox 1.1 adds a separate **Remove filler words** option under **Settings → Post-Processing**. It removes clear hesitations such as English “um,” “uh,” and “erm” after Parakeet transcribes them. This cleanup is deterministic and does not require an AI language model.
+
+- The option is independent from **Polish with AI**.
+- Parakeet v2 uses the English filler list.
+- Parakeet v3 uses English in Auto mode and language-specific lists for explicit French or Spanish selection.
+- Ambiguous words are preserved instead of being removed aggressively.
+
+When a removed filler begins a sentence, Stenox capitalizes the next ordinary word while preserving paths, links, email addresses, and identifiers exactly.
+
 ## Available Models
 
 | Model | Size | Speed | Accuracy | Languages |

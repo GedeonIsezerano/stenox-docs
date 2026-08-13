@@ -8,7 +8,7 @@ description: "Download local models and complete your first Stenox dictation"
 Make sure you have:
 
 - Installed Stenox and granted microphone and accessibility permissions
-- An Apple Silicon Mac running macOS 14 or later
+- An Apple Silicon Mac running macOS 15 Sequoia or later
 - An internet connection and free storage for the initial local model download
 
 <Tip>
@@ -20,7 +20,7 @@ Make sure you have:
 The default experience uses:
 
 - **Parakeet** for local transcription
-- **Gemma on MLX** for local language processing
+- **Gemma on MLX** for local language processing, with Qwen3.5 4B available as an additional local model
 
 Onboarding downloads and loads the required models before it enables the first recording. Keep Stenox open until setup reports that the models are ready.
 
@@ -47,6 +47,15 @@ Onboarding downloads and loads the required models before it enables the first r
     Release the hotkey. Parakeet transcribes the audio, Gemma applies the selected processing, and Stenox inserts the result at your cursor.
   </Step>
 </Steps>
+
+## Choose how Stenox cleans up speech
+
+In **Settings → Post-Processing**, Stenox 1.1 separates two cleanup options:
+
+- **Remove filler words** removes clear hesitations such as “um,” “uh,” and “erm” without using an AI model.
+- **Polish with AI** uses your selected language model to improve wording and formatting. Use the Polish preset when you want a clearer rewrite that still preserves names, numbers, links, paths, and intent.
+
+You can enable either option independently. If optional AI polishing fails, Stenox inserts the unpolished transcription instead of blocking dictation.
 
 ## Optional providers
 

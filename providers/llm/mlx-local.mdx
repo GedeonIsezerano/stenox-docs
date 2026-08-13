@@ -50,65 +50,49 @@ MLX offers several small language models optimized for Apple Silicon:
 
 | Model | Size | Speed | Quality | Recommended For |
 |-------|------|-------|---------|-----------------|
-| **Qwen 2.5 1.5B** | ~1 GB | Fastest | Good | Quick enhancement, limited RAM |
-| **Gemma 3n 2B** | ~1.2 GB | Fast | Excellent | Best accuracy, recommended |
-| **Phi-3 Mini** | ~2.4 GB | Medium | Very Good | Balanced quality and speed |
-| **Gemma 3n 4B** | ~2.5 GB | Slower | Very Good | Higher quality, more RAM |
-| **Qwen 3 4B** | ~2.5 GB | Slower | Good | Alternative to Gemma 3n 4B |
+| **Qwen3.5 4B** | ~3.1 GB | Fast | Excellent | Clear, preservation-focused Polish rewrites |
+| **Gemma 4 E2B** | ~1.2 GB | Fastest | Very Good | Lightweight everyday cleanup |
+| **Gemma 4 E4B** | ~2.5 GB | Fast | Excellent | Default local processing |
+| **Gemma 4 12B** | ~7 GB | Slower | Excellent | Maximum local quality on higher-memory Macs |
 
 <Note>
-  **Recommended for beginners:** **Gemma 3n 2B** - Best accuracy with fast processing and reasonable size.
+  **Recommended for most users:** **Gemma 4 E4B** for general processing. Choose **Qwen3.5 4B** when you want the Polish preset to rewrite dictation more clearly.
 </Note>
 
 ### Model Selection Guide
 
 <AccordionGroup>
-  <Accordion title="Qwen 2.5 1.5B - Fastest and smallest" icon="gauge-high">
+  <Accordion title="Qwen3.5 4B - Polish rewrites" icon="wand-magic-sparkles">
     **Best for:**
-    - Quick enhancement (2-3 seconds)
-    - 8GB RAM Macs
-    - Everyday grammar correction
+    - Rewording dictation clearly with the Polish preset
+    - Preserving names, numbers, links, paths, and identifiers
+    - 16GB Apple Silicon Macs
+
+    **Measured warm latency:** About 1.3 seconds for short Polish benchmark cases on a 16GB test Mac
+
+    **Quality:** Passed Stenox's 12-case preservation and rewrite accuracy gate.
+  </Accordion>
+
+  <Accordion title="Gemma 4 E2B - Smallest current option" icon="gauge-high">
+    **Best for:**
+    - Lightweight grammar and punctuation cleanup
+    - Lower memory use
     - Speed over maximum quality
-
-    **Processing time:** ~2-3 seconds per paragraph
-
-    **Quality:** Good grammar correction, basic formatting
   </Accordion>
 
-  <Accordion title="Gemma 3n 2B - Best accuracy (Recommended)" icon="crown">
+  <Accordion title="Gemma 4 E4B - Recommended default" icon="crown">
     **Best for:**
-    - Best accuracy for its size
-    - 8GB+ RAM Macs
+    - General grammar, punctuation, and formatting
     - Professional writing
-    - Best balance of speed, size, and quality
-
-    **Processing time:** ~2-3 seconds per paragraph
-
-    **Quality:** Excellent grammar, great formatting and tone
+    - The best balance of local quality and model size
   </Accordion>
 
-  <Accordion title="Phi-3 Mini - Balanced quality" icon="medal">
-    **Best for:**
-    - Higher quality enhancement
-    - 12GB+ RAM Macs
-    - More complex edits
-    - Good balance of speed and quality
-
-    **Processing time:** ~3-4 seconds per paragraph
-
-    **Quality:** Very good grammar, reliable formatting
-  </Accordion>
-
-  <Accordion title="Gemma 3n 4B / Qwen 3 4B - Larger models" icon="memory">
+  <Accordion title="Gemma 4 12B - Largest current option" icon="memory">
     **Best for:**
     - Maximum local quality
-    - 16GB+ RAM Macs
+    - Higher-memory Macs
     - Critical writing
     - Quality over speed
-
-    **Processing time:** ~4-6 seconds per paragraph
-
-    **Quality:** Near-cloud quality, excellent at complex edits
   </Accordion>
 </AccordionGroup>
 
@@ -129,20 +113,20 @@ MLX offers several small language models optimized for Apple Silicon:
 
   <Step title="Choose a model">
     Select your preferred model:
-    - **Gemma 3n 2B** (recommended - best accuracy)
-    - **Qwen 2.5 1.5B** (fastest, smallest)
-    - **Phi-3 Mini** (balanced quality)
-    - **Gemma 3n 4B** or **Qwen 3 4B** (maximum quality)
+    - **Gemma 4 E4B** (recommended for general processing)
+    - **Qwen3.5 4B** (recommended for Polish rewrites)
+    - **Gemma 4 E2B** (smallest current option)
+    - **Gemma 4 12B** (largest, highest-memory option)
   </Step>
 
   <Step title="Download the model">
     Click **Download** and wait for the model to download.
 
     **Download sizes:**
-    - Qwen 2.5 1.5B: ~1 GB
-    - Gemma 3n 2B: ~1.2 GB
-    - Phi-3 Mini: ~2.4 GB
-    - Gemma 3n 4B / Qwen 3 4B: ~2.5 GB
+    - Gemma 4 E2B: ~1.2 GB
+    - Gemma 4 E4B: ~2.5 GB
+    - Qwen3.5 4B: ~3.1 GB
+    - Gemma 4 12B: ~7 GB
 
     Models are stored in `~/stenox-models/mlx/` by default.
   </Step>
