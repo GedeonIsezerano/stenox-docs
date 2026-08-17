@@ -3,12 +3,10 @@
   "theme": "mint",
   "name": "Stenox Docs",
   "seo": {
-    "indexHiddenPages": true
-  },
-  "metadata": {
-    "og:site_name": "Stenox Docs",
-    "og:title": "Stenox Docs",
-    "og:description": "Documentation for Stenox - AI-powered voice to text for macOS"
+    "metatags": {
+      "og:site_name": "Stenox Docs",
+      "og:description": "Documentation for Stenox - local-first voice dictation for macOS"
+    }
   },
   "colors": {
     "primary": "#121212",
@@ -143,6 +141,32 @@
       "vscode"
     ]
   },
+  "redirects": [
+    {
+      "source": "/pricing/free-tier",
+      "destination": "/pricing/overview"
+    },
+    {
+      "source": "/pricing/plus-subscription",
+      "destination": "/pricing/overview"
+    },
+    {
+      "source": "/pricing/lifetime",
+      "destination": "/pricing/overview"
+    },
+    {
+      "source": "/setup/license",
+      "destination": "/pricing/overview"
+    },
+    {
+      "source": "/providers/transcription/stenox-cloud",
+      "destination": "/providers/overview"
+    },
+    {
+      "source": "/providers/llm/stenox-cloud-llm",
+      "destination": "/providers/overview"
+    }
+  ],
   "footer": {
     "socials": {
       "x": "https://x.com/stenoxapp",
