@@ -1,12 +1,20 @@
 {
   "reviewed_on": "2026-10-01",
-  "app_commit": "8e46e4f400855354e07c2c1d848f77150fb86528",
+  "app_commit": "58583d57a7892ae1856e7ecfb45f9137e0517e64",
   "app_source": "local main (committed source, not working-tree edits)",
+  "app_build_commit": "8e46e4f400855354e07c2c1d848f77150fb86528",
+  "release_tooling_commit": "58583d57a7892ae1856e7ecfb45f9137e0517e64",
   "origin_main_at_initial_fetch": "67ef44d69b80c3cd2403a52b56c511838837bac8",
-  "website_reference": "committed lib/commerce.ts and Cloudflare build/deploy offer selection; consolidated theme retained",
+  "website_reference": "committed commerce terms, V2-only manifest and release controls; consolidated theme retained",
   "mint_cli": "4.2.964",
   "keygen_commit": "12c5f8f901782bd79f84dc01a17f6d83ab9c4bc2",
-  "website_commit": "93b8b6101e1eb67d9b8c6423c7adfbf7eaaac289",
-  "release_status": "V2 unpublished; signed candidate and production custom-host smoke verified; notarization, native migration, provider webhook delivery and paid fulfillment pending",
+  "website_commit": "c5e0b5dddbab661bf3f483da23c60eeb1264617c",
+  "publication_policy": "candidate-only",
+  "public_release_assets": [
+    "Stenox-2.0.0.dmg",
+    "Stenox-2.0.0.html",
+    "appcast.xml"
+  ],
+  "release_status": "V2 unpublished; signed candidate preserved and V2-only staging closed; notarization, native migration, provider webhook delivery and paid fulfillment pending",
   "audit_report": "maintenance/v2-readiness-2026-10-01.md"
 }
