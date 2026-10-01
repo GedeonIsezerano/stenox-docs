@@ -5,8 +5,8 @@
   "origin_main_at_initial_fetch": "67ef44d69b80c3cd2403a52b56c511838837bac8",
   "website_reference": "committed lib/commerce.ts and Cloudflare build/deploy offer selection; consolidated theme retained",
   "mint_cli": "4.2.964",
-  "keygen_commit": "6d5b2435a41c867fde80db6a03313639978b8ea9",
+  "keygen_commit": "12c5f8f901782bd79f84dc01a17f6d83ab9c4bc2",
   "website_commit": "93b8b6101e1eb67d9b8c6423c7adfbf7eaaac289",
-  "release_status": "V2 unpublished; signed candidate and production backend smoke verified; notarization, native migration, provider webhook delivery and paid fulfillment pending",
+  "release_status": "V2 unpublished; signed candidate and production custom-host smoke verified; notarization, native migration, provider webhook delivery and paid fulfillment pending",
   "audit_report": "maintenance/v2-readiness-2026-10-01.md"
 }
