@@ -5,16 +5,16 @@
   "app_build_commit": "8e46e4f400855354e07c2c1d848f77150fb86528",
   "release_tooling_commit": "58583d57a7892ae1856e7ecfb45f9137e0517e64",
   "origin_main_at_initial_fetch": "67ef44d69b80c3cd2403a52b56c511838837bac8",
-  "website_reference": "committed commerce terms, V2-only manifest and release controls; consolidated theme retained",
+  "website_reference": "committed commerce terms, V2-only release controls and closed site-only recovery mode; consolidated theme retained",
   "mint_cli": "4.2.964",
   "keygen_commit": "12c5f8f901782bd79f84dc01a17f6d83ab9c4bc2",
-  "website_commit": "c5e0b5dddbab661bf3f483da23c60eeb1264617c",
+  "website_commit": "359e9fd8aabbf729b4c818c527cab41e461ef603",
   "publication_policy": "candidate-only",
   "public_release_assets": [
     "Stenox-2.0.0.dmg",
     "Stenox-2.0.0.html",
     "appcast.xml"
   ],
-  "release_status": "V2 unpublished; signed candidate preserved and V2-only staging closed; notarization, native migration, provider webhook delivery and paid fulfillment pending",
+  "release_status": "V2 unpublished; final candidate notarized, stapled, Gatekeeper accepted and Sparkle verified; native migration, native licensing, provider webhook delivery and paid fulfillment pending; site-only website recovery awaits domain attachment",
   "audit_report": "maintenance/v2-readiness-2026-10-01.md"
 }

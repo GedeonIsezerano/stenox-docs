@@ -216,7 +216,7 @@
     }
   },
   "banner": {
-    "content": "V2 preview docs \u00b7 V2 is unpublished; free V1.1 remains available. See [release and access](/pricing/overview).",
+    "content": "V2 preview docs \u00b7 V2 is unpublished; downloads are temporarily unavailable. See [release and access](/pricing/overview).",
     "dismissible": false
   },
   "ignore": [
