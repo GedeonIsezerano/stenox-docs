@@ -1,43 +1,31 @@
-# Mintlify Starter Kit
+# Stenox documentation
 
-Use the starter kit to get your docs deployed and ready to customize.
+Mintlify documentation for Stenox dictation, local models, meeting capture, and notes. Public pages are MDX; navigation, appearance, redirects, and branding live in `docs.json`. `style.css` extends Mintlify with the current website's warm surfaces and typography.
 
-Click the green **Use this template** button at the top of this repo to copy the Mintlify starter kit. The starter kit contains examples with
+## Preview and validate
 
-- Guide pages
-- Navigation
-- Customizations
-- API reference pages
-- Use of popular components
+Use Node.js and the reviewed Mintlify CLI version:
 
-**[Follow the full quickstart guide](https://starter.mintlify.com/quickstart)**
-
-## Development
-
-Install the [Mintlify CLI](https://www.npmjs.com/package/mint) to preview your documentation changes locally. To install, use the following command:
-
-```
-npm i -g mint
+```sh
+npx --yes mint@4.2.964 dev --no-open --port 3022 --telemetry false
+npx --yes mint@4.2.964 validate --telemetry false
+npx --yes mint@4.2.964 broken-links --telemetry false
+npx --yes mint@4.2.964 a11y --telemetry false
+python3 scripts/check-docs.py
 ```
 
-Run the following command at the root of your documentation, where your `docs.json` is located:
+The preview is at `http://127.0.0.1:3022`. Local search requires a separate Mintlify CLI login; a working preview does not establish search service readiness. No login is needed for the build, route, or catalog checks above.
 
-```
-mint dev
-```
+## Source of truth
 
-View your local preview at `http://localhost:3000`.
+See [the source audit](maintenance/source-audit.md) and [recorded snapshot](maintenance/source-snapshot.json). App claims come from committed local `main`, not uncommitted experiments or synthetic UI demos. Website styling follows its working tree. Model download sizes are catalog estimates, not RAM guarantees.
 
-## Publishing changes
+`check-docs.py` checks the documented local model IDs against that exact app commit, navigation and local targets, and whether app `main` advanced. By default it expects the app repo at `../app`; use `--app-dir /path/to/app` elsewhere. If main advances, inspect the delta before updating the recorded snapshot. `--allow-newer-main` checks the old snapshot deliberately without accepting new behavior.
 
-Install our GitHub app from your [dashboard](https://dashboard.mintlify.com/settings/organization/github-app) to propagate changes from your repo to your deployment. Changes are deployed to production automatically after pushing to the default branch.
+The [local consolidation report](maintenance/consolidation-2026-10-01.md) records the retained work and validation. Final V2 alignment awaits the coordinator's final app baseline; the recorded source snapshot has not been advanced during consolidation.
 
-## Need help?
+## Release boundary
 
-### Troubleshooting
+The docs describe development capabilities. The banner and release page distinguish those from the public download and staged paid offer. Do not claim that a paid build or checkout is live based on source or a local preview. Committing, pushing, and publishing require their own authorization.
 
-- If your dev environment isn't running: Run `mint update` to ensure you have the most recent version of the CLI.
-- If a page loads as a 404: Make sure you are running in a folder with a valid `docs.json`.
-
-### Resources
-- [Mintlify documentation](https://mintlify.com/docs)
+Maintenance evidence and scripts are excluded from public docs through `docs.json`. Historical image files remain in the repository, but the active guides do not use the old screenshots or animated mock UI. Replace them only with verified current imagery.

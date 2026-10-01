@@ -1,169 +1,30 @@
 ---
-title: "Profiles Overview"
-description: "Fine-tune how Stenox formats text for each of your apps"
+title: "Profiles"
+description: "Save speech and cleanup settings for different apps and kinds of work."
 ---
 
-<div style={{textAlign: 'center', margin: '2rem 0'}}>
-  <lord-icon
-    src="https://cdn.lordicon.com/rehjpyyh.json"
-    trigger="loop"
-    delay="2000"
-    colors="primary:#121212,secondary:#666666"
-    style={{width: '80px', height: '80px'}}
-  />
-</div>
+A profile combines a speech provider, model, language, filler-removal setting, and optional Polish configuration. Use separate profiles when your language or writing needs change between apps.
 
-## What are Profiles?
+## Default and custom profiles
 
-Stenox works great out of the box. It transcribes your speech, cleans up filler words, and formats your text beautifully.
+**Default** reflects the app's current settings. It is not a separate stored preset that you can delete. Custom profiles save their own choices, including provider/model, language, whether Polish is enabled, and supported instructions.
 
-**Profiles let you go the extra mile.**
+Open **Profiles** to create or edit a profile. Pick a profile manually when you want it to stay selected. Choose automatic mode when you want matching trigger rules to select it for you.
 
-When you want more control over how your text is formatted in specific apps, profiles give you that precision. Each profile can have:
+## What a profile changes
 
-- Custom formatting instructions
-- Auto-activation rules for specific apps
-- Different provider configurations
+| Setting | Effect |
+| --- | --- |
+| Speech provider, model, language | How audio becomes text. |
+| Remove filler words | Applies deterministic filler removal independently of AI. |
+| Polish settings | Chooses the provider/model and applicable instructions for an explicit Polish action. |
+| Trigger rules | Match an app bundle ID or a browser window-title keyword in automatic mode. |
 
----
+Profiles do not make AI cleanup automatic. Stenox delivers dictation first, then you choose **Polish**. Fixed-purpose models such as S1-mini have their own instruction limits.
 
-## Why Use Profiles?
+Notetaker follows the active speech selection, including a profile. Its insight provider remains separate. Changing a speech model is guarded while a meeting is using it.
 
 <CardGroup cols={2}>
-  <Card title="Tailored Output for Every App" icon="sliders">
-    Control exactly how your text appears in each application you use daily.
-  </Card>
-
-  <Card title="Set It Once, Forget It" icon="wand-magic-sparkles">
-    Profiles activate automatically when you switch apps. No manual adjustments needed.
-  </Card>
-
-  <Card title="Add Your Personal Touch" icon="signature">
-    Include signatures, greetings, or specific formatting that you'd otherwise type manually.
-  </Card>
-
-  <Card title="Effortless Consistency" icon="check-double">
-    Every email, message, or document follows your preferred style automatically.
-  </Card>
-</CardGroup>
-
-<Note>
-  **Profiles are optional.** Stenox's default behavior handles most use cases well. Profiles exist for when you want that extra bit of control.
-</Note>
-
----
-
-## What Can Profiles Do?
-
-Profiles shine when you want app-specific formatting that goes beyond basic cleanup.
-
-### Add Structure to Your Output
-
-- **Email signatures** — Automatically append your sign-off
-- **Greetings** — Start emails with "Hi [name]," or your preferred opener
-- **Formatting preferences** — Bullet points for notes, paragraphs for emails
-
-### Match the Context
-
-- **Formal tone** for client communications
-- **Casual tone** for team chat
-- **Technical formatting** for documentation
-
-### Automate the Repetitive
-
-Instead of manually adding "Best regards, [Your name]" to every email, let your email profile handle it. Speak naturally, and Stenox formats the output exactly how you want it.
-
----
-
-## How Profiles Work
-
-### Default Behavior
-
-Without any custom profiles, Stenox uses your default settings everywhere. This works well for most people.
-
-### With Profiles
-
-1. **Create a profile** for a specific app or use case
-2. **Set activation rules** (which apps trigger this profile)
-3. **Define your formatting** instructions
-4. **Use Stenox normally** — profiles activate automatically
-
----
-
-## Switching Profiles
-
-### Automatic (Recommended)
-
-Profiles activate based on:
-- **Active application** — Profile triggers when you're in a specific app
-- **Window title** — Profile triggers based on what's in the window title
-
-This means you never have to think about it. Open Gmail, and your email profile kicks in. Switch to Slack, and your chat profile takes over.
-
-[Learn about auto-activation →](/profiles/auto-activation)
-
-### Manual
-
-If you prefer manual control:
-
-1. Click Stenox menu bar icon
-2. Hover over "Profiles"
-3. Select the profile you want
-
----
-
-## Profile Management
-
-### Creating Profiles
-
-[Step-by-step guide →](/profiles/creating-profiles)
-
-### Editing & Deleting
-
-- **Settings → Profiles tab** to manage all profiles
-- Select any profile to edit its settings
-- Delete profiles you no longer need (except the Default profile)
-
-### Color Coding
-
-Assign colors to profiles for quick visual identification in the menu bar.
-
----
-
-## Tips
-
-<AccordionGroup>
-  <Accordion title="Start with one profile" icon="seedling">
-    Pick the app where you dictate most often. Create a profile for it. See how it feels before adding more.
-  </Accordion>
-
-  <Accordion title="Use descriptive names" icon="tag">
-    Name profiles after their purpose: "Work Email", "Slack Chat", "Meeting Notes". You'll thank yourself later.
-  </Accordion>
-
-  <Accordion title="Let auto-activation do the work" icon="wand-magic-sparkles">
-    The real power of profiles is hands-free switching. Set up activation rules and forget about manual switching.
-  </Accordion>
-</AccordionGroup>
-
----
-
-## Next Steps
-
-<CardGroup cols={2}>
-  <Card title="Create a Profile" icon="plus" href="/profiles/creating-profiles">
-    Step-by-step guide to creating your first profile.
-  </Card>
-
-  <Card title="Auto-Activation" icon="wand-magic" href="/profiles/auto-activation">
-    Set up automatic profile switching.
-  </Card>
-
-  <Card title="System Prompts" icon="message" href="/profiles/system-prompts">
-    Craft effective formatting instructions.
-  </Card>
-
-  <Card title="Providers" icon="server" href="/providers/overview">
-    Explore transcription and AI options.
-  </Card>
+  <Card title="Create a profile" icon="sliders" href="/profiles/creating-profiles">Choose providers and prepare the models you need.</Card>
+  <Card title="Automatic selection" icon="window-maximize" href="/profiles/auto-activation">Match apps and browser titles deliberately.</Card>
 </CardGroup>

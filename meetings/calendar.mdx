@@ -1,0 +1,36 @@
+---
+title: "Calendar context"
+description: "Connect Google Calendar and bring an event’s agenda and invitees into a session."
+---
+
+## Connect Google Calendar
+
+Open **Settings → Notetaker** and connect Google Calendar through the browser sign-in flow. The integration reads events; it does not create or edit calendar entries.
+
+The default calendar is your primary calendar. To add another calendar you can access, enter its **Calendar ID** from Google Calendar settings. Stenox does not request a full calendar-list permission.
+
+No connection is required to start a meeting. Manual sessions remain available.
+
+## Choose an event
+
+In **New session**, browse or search ongoing and upcoming events. The picker starts with a seven-day window and can load more. Select an event to bring its title, agenda, times, organizer, invitees, and available links into the session.
+
+The event description stays in its own context section and does not overwrite Personal notes. Starting consumes the draft event selection, so the next shortcut recording does not silently reuse it. A blocked start preserves the draft.
+
+Invitee names can help you label speakers manually. They do not prove attendance or identify voices automatically.
+
+## Processing restrictions
+
+<Warning>
+  Google-linked meetings and saved Google-derived context require **On-device** insights. Stenox blocks cloud insight, refined-note, and Ask requests for this context before sending it. Choose On-device in Notetaker settings.
+</Warning>
+
+The speech provider is a separate choice. Select local speech too if you want meeting audio to remain on your Mac. Calendar context is background for the model, not evidence that someone said or agreed to an item.
+
+Attachment links can be opened in the browser. Stenox's Calendar permission does not include Drive file downloads. Download a file yourself and use [Add files](/meetings/references-and-ask) to import readable text.
+
+## Reconnect and saved sessions
+
+Saved event snapshots remain with the session after disconnecting. Reconnecting creates a new local connection identity and resets calendar selection. Older, broader grants may require reconnection; the app checks the returned scopes before use.
+
+**Outlook is not available in normal launches of this build.** Its implementation remains hidden pending publisher verification. A development acceptance switch is not public availability.

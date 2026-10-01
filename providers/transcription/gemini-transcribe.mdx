@@ -1,0 +1,20 @@
+---
+title: "Gemini Transcribe"
+description: "Use Gemini speech with the same configured Gemini key and separate insight choices."
+---
+
+**Gemini Transcribe** is an optional cloud speech provider. It uses **Gemini 3.5 Transcribe** (`gemini-3.5-transcribe`) in the reviewed app build.
+
+Add your Gemini key in **Settings → API Keys**, then choose **Gemini Transcribe** in a speech profile. This is the same key used by Gemini dictation Polish, but selecting one feature does not select the other.
+
+## Dictation and meetings
+
+Regular dictation uses the file speech adapter without requesting speaker labels. Notetaker adds its timed speaker request through that adapter. Audio is sent to Gemini; results arrive after processing the relevant audio window.
+
+The adapter disables Interactions storage (`store=false`). Provider abuse-monitoring and account policies still apply, so this does not promise zero retention. Check [Gemini API documentation](https://ai.google.dev/gemini-api/docs) and your account for current access, limits, and billing.
+
+The Gemini API speech integration is separate from the **Google Antigravity** subscription choice for meeting insights. Google Calendar context requires on-device insights regardless of which speech provider you select.
+
+## Diarized files
+
+In **Transcribe file**, choose **Speakers & timestamps** to request a timed, speaker-labeled result from this provider. This mode preserves wording and disables cleanup/Polish; TXT, Markdown, JSON, SRT, and VTT exports are available. Gemini supports this mode for files up to 30 minutes. See [file transcription](/setup/file-transcription) for limits and recovery.

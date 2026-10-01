@@ -1,0 +1,50 @@
+---
+title: "Meeting models and processing"
+description: "Configure shared speech, local speaker separation, and independent insight providers."
+---
+
+## Three jobs, separate choices
+
+| Job | Current behavior |
+| --- | --- |
+| Speech to text | Uses the active dictation provider and model, including profile selection. |
+| Speaker separation | Local Nemotron where needed, or timed speaker labels from supported cloud speech adapters. |
+| Insights, refined notes, Ask | On-device Qwen 3.5 4B, or a selected subscription integration. |
+
+Quick setup's speech menu changes the shared speech model; there is no separate meeting-only speech override. A ready local speech runtime is reused. While a meeting holds it, competing jobs and model changes are guarded. Pause retains it; ending releases the meeting reservation without unloading dictation's selected speech model.
+
+## Local meeting models
+
+**On-device** insights use **Qwen 3.5 4B** (`qwen3_5_4b_4bit`, catalog estimate ~3.1 GB). This is independent of the model selected for dictation Polish and uses a separate inference instance.
+
+For local speech and providers without speaker labels, Stenox loads **Nemotron-3-Diarization-8bit** for meeting-local speaker separation. It is not a dictation cleanup model and does not appear as an interchangeable speech model. Its state is scoped to one meeting and is released when that meeting finishes.
+
+Initial preparation may download these files. No fixed RAM minimum or processing speed is guaranteed. Local speech, diarization, and insights together need more resources than speech alone. Turning automatic insights off reduces the work while retaining transcription and personal notes.
+
+## Cloud speech behavior
+
+Deepgram, AssemblyAI, and Gemini use timed meeting transcription with speaker requests. Other adapters use their normal file transcription path, with local speaker handling where needed.
+
+- **Deepgram** follows the selected Nova model and language. Streaming-only Flux uses Nova 3 for meeting audio windows, as it does for file transcription. Requests opt out of model improvement.
+- **AssemblyAI** uses Universal-3.5 Pro with its Universal-2 fallback and selected region/language. Stenox requests deletion of completed jobs.
+- **Gemini Transcribe** uses Gemini 3.5 Transcribe with Interactions storage disabled.
+
+These request settings do not promise zero provider retention. Cloud speech sends audio to that provider. Local windows are approximately ten seconds; cloud windows are approximately thirty seconds, with overlap. Transcription is not instantaneous and speaker identity may be uncertain across requests.
+
+## Subscription insights
+
+In **Settings → Notetaker**, choose **Codex**, **Claude Code**, or **Google Antigravity**. Use **Sign in** if needed, then choose an available model and reasoning level. Models come from the connected runtime; Stenox does not promise a fixed list or silently replace a missing saved model.
+
+Codex and Claude Code use bundled runtimes; they do not require a separate Node, Bun, or CLI installation. Existing eligible coding-runtime sign-ins can be reused. These integrations require subscription authentication, not an API key. Provider limits and usage apply.
+
+Google Antigravity requires its official `agy` CLI installed separately. This adapter accepts 1.2 releases starting at 1.2.12. Its UI identifies the active CLI login source, not a verified email address. Real-account Antigravity sign-in and inference remain an acceptance limitation for this development integration.
+
+Selecting another insights provider or turning insights off does not sign you out of the external provider. Stenox does not expose a separate Sign out or Disconnect control for these subscription accounts.
+
+## Context and failures
+
+Cloud insights send conversation and included reference context. Codex and Claude can continue a conversation across Insights, refinement, and Ask for the same session and selection; provider caching is not guaranteed. Antigravity sends the selected context afresh each time. [Calendar restrictions](/meetings/calendar) still apply.
+
+Automatic insight reviews use bounded changed/recent conversation and existing outcomes. Personal notes are excluded. Invalid output, account errors, timeouts, or usage limits preserve recording and saved text. They may pause automatic reviews until an explicit retry. There is no silent switch to another provider or paid API account.
+
+An audio capture or processing overrun can end a session; completed text is preserved. Check the status, export what is available, and resolve the input or resource problem before starting again.

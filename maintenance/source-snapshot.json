@@ -1,0 +1,8 @@
+{
+  "reviewed_on": "2026-10-01",
+  "app_commit": "9545cffb2f19f5677a98c6801cd6c0504c3d170a",
+  "app_source": "local main (committed source, not working-tree edits)",
+  "origin_main_at_initial_fetch": "67ef44d69b80c3cd2403a52b56c511838837bac8",
+  "website_reference": "working tree: app/globals.css, app/layout.tsx, lib/commerce.ts, docs/paid-relaunch-brief.md; rendered at http://127.0.0.1:3011/",
+  "mint_cli": "4.2.964"
+}

@@ -1,0 +1,50 @@
+---
+title: "Meetings with Notetaker"
+description: "Start a session, capture microphone and system audio, and return to saved meetings."
+---
+
+Notetaker keeps the conversation, generated insights, and your personal notes together. It is part of the [development experience](/pricing/overview) described by these guides.
+
+## Start a session
+
+<Steps>
+  <Step title="Open Notetaker">
+    Open **Notetaker** in the main window. When idle, it shows session history. Choose **New session** for quick setup.
+  </Step>
+  <Step title="Prepare the session">
+    Check the speech model and insights provider. Optionally select a calendar event, add reference files, or write Personal notes. Speech follows the active dictation model; insights have their own selection.
+  </Step>
+  <Step title="Start capture">
+    Choose **Start session**. Grant Microphone and Screen & System Audio Recording access if prompted. Stenox prepares speech and speaker processing, opens the session tracker, and minimizes the main window.
+  </Step>
+  <Step title="Follow the conversation">
+    Use **Conversation**, **Insights**, and **Personal notes** as the meeting progresses. Set or edit the title in the tracker. Wear headphones on calls to reduce duplicate microphone and system audio.
+  </Step>
+</Steps>
+
+The default **Control–Option–M** shortcut starts or ends a session from another app. It can start directly without opening quick setup. Change it in **Settings → General**. Dictation and meeting capture are mutually exclusive.
+
+<Note>
+  Current session setup records **microphone + system audio** together. Stenox does not join a call as a bot or read participant names from the call app. Make sure participants understand that you are recording.
+</Note>
+
+## Pause, return, and finish
+
+**Pause** stops both audio sources and commits queued speech. It retains the session, speaker names, and processing state. **Resume** continues the same recording clock without counting the pause. Preparation and finalization cannot be paused.
+
+Closing the tracker window leaves capture running. Reopen Notetaker to return to it. The window can sit alongside another app; clicking that app does not end the session.
+
+End the session with its stop control or the meeting shortcut. Stenox finishes pending transcription, performs a final insight review when enabled, and prepares refined notes when possible. A preparation or AI failure is shown in the session; review the status before assuming notes are complete.
+
+## Find an earlier session
+
+History searches titles, conversation, insights, personal notes, and extracted reference text. Double-click a row or press Return to open it. During active capture, an older session opens as a read-only snapshot; when idle, saved sessions are editable.
+
+A paused session recovered after the app quits is saved as interrupted history. Recording cannot resume across app launches. Quitting normally waits for capture finalization and pending saves.
+
+<CardGroup cols={2}>
+  <Card title="Conversation and speakers" icon="comments" href="/meetings/conversation">Correct words and attribution without losing source links.</Card>
+  <Card title="Insights and your notes" icon="pen" href="/meetings/notes">Review drafts, protect edits, and choose what to export.</Card>
+  <Card title="References and Ask Stenox" icon="file-lines" href="/meetings/references-and-ask">Bring context and inspect cited answers.</Card>
+  <Card title="Models and data flow" icon="microchip" href="/meetings/processing">Configure speech, local insights, and subscriptions.</Card>
+</CardGroup>

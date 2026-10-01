@@ -1,197 +1,35 @@
 ---
-title: "Providers"
-description: "Choose your transcription and AI enhancement providers"
+title: "Choose your providers"
+description: "Separate speech recognition, optional text cleanup, and meeting insights."
 ---
 
-## The Stenox Pipeline
+Stenox has three independent processing choices. A local speech model does not make cloud cleanup or subscription insights local.
 
-Your voice goes through two stages:
+| Stage | Local choices | Cloud choices |
+| --- | --- | --- |
+| Speech recognition | Parakeet, Whisper (WhisperKit), Cohere Transcribe | Deepgram, AssemblyAI, OpenAI Transcribe, Gemini Transcribe |
+| Dictation Polish | Local MLX cleanup models | Gemini with your API key |
+| Meeting insights, refined notes, Ask Stenox | On-device Qwen 3.5 4B | Codex, Claude Code, Google Antigravity subscription integrations |
 
-<div className="stenox-pipeline">
-  <div className="stenox-pipeline-step">
-    <lord-icon
-      src="https://cdn.lordicon.com/laqlvddb.json"
-      trigger="loop"
-      delay="2000"
-      colors="primary:#3b82f6,secondary:#93c5fd"
-    />
-    <span className="stenox-pipeline-label">Speech</span>
-  </div>
+## Speech recognition
 
-  <span className="stenox-pipeline-arrow">→</span>
-
-  <div className="stenox-pipeline-step">
-    <lord-icon
-      src="https://cdn.lordicon.com/egmlnyku.json"
-      trigger="loop"
-      delay="2200"
-      colors="primary:#8b5cf6,secondary:#c4b5fd"
-    />
-    <span className="stenox-pipeline-label">Transcribe</span>
-  </div>
-
-  <span className="stenox-pipeline-arrow">→</span>
-
-  <div className="stenox-pipeline-step">
-    <lord-icon
-      src="https://cdn.lordicon.com/bmlkvhui.json"
-      trigger="loop"
-      delay="2400"
-      colors="primary:#f59e0b,secondary:#fcd34d"
-    />
-    <span className="stenox-pipeline-label">Enhance</span>
-  </div>
-
-  <span className="stenox-pipeline-arrow">→</span>
-
-  <div className="stenox-pipeline-step">
-    <lord-icon
-      src="https://cdn.lordicon.com/aqrzgjfy.json"
-      trigger="loop"
-      delay="2600"
-      colors="primary:#10b981,secondary:#6ee7b7"
-    />
-    <span className="stenox-pipeline-label">Output</span>
-  </div>
-</div>
-
-<Tip>
-  Each stage is **independent** — mix local and cloud providers however you like. Use WhisperKit or Parakeet (local) for transcription and Gemini (cloud) for enhancement, or go fully local with Parakeet + MLX.
-</Tip>
-
----
-
-## Privacy Options
+New installations use **Parakeet v2 (English)**. Speech is selected through the Default profile or a custom profile. Notetaker follows the active speech provider and model, including a profile selection; its quick setup model menu changes that shared selection.
 
 <CardGroup cols={2}>
-  <Card title="100% Local" icon="lock" href="/providers/local-privacy">
-    Complete privacy — nothing leaves your Mac.
-  </Card>
-  <Card title="Cloud + BYOK" icon="key" href="/providers/cloud-byok">
-    Use your own API keys for full control.
-  </Card>
+  <Card title="Parakeet" icon="microchip" href="/providers/transcription/parakeet-local">English and multilingual local speech.</Card>
+  <Card title="Whisper" icon="microchip" href="/providers/transcription/whisperkit-local">A range of local model sizes through WhisperKit.</Card>
+  <Card title="Cohere Transcribe" icon="microchip" href="/providers/transcription/cohere-local">Local MLX speech with an explicit language selection.</Card>
+  <Card title="Cloud speech" icon="cloud" href="/providers/cloud-byok">Supported audio services using your own keys.</Card>
 </CardGroup>
 
----
+## Optional text cleanup
 
-## Transcription Providers
+Stenox inserts the transcript before AI rewriting. Turn on **Polish on demand** in **Text cleanup**, select and prepare a model, then click **Polish** after dictation or file transcription. See the complete [local cleanup catalog](/providers/llm/mlx-local) and [Gemini setup](/providers/llm/google-gemini).
 
-Convert your speech to text.
+## Meeting models
 
-| Provider | Type | Speed | Best For |
-|----------|------|-------|----------|
-| [WhisperKit](/providers/transcription/whisperkit-local) | Local | Fast | Privacy, offline use |
-| [Parakeet](/providers/transcription/parakeet-local) | Local | Very Fast | Best accuracy, multilingual |
-| [DeepGram](/providers/transcription/deepgram) | Cloud | Very Fast | Real-time, high accuracy |
-| [OpenAI Whisper](/providers/transcription/openai-whisper) | Cloud | Fast | Multi-language support |
-| [AssemblyAI](/providers/transcription/assemblyai) | Cloud | Fast | Enterprise, EU compliance |
-| [Groq Whisper](/providers/transcription/groq-whisper) | Cloud | Very Fast | Ultra-fast, free tier |
+Notetaker reuses speech recognition but manages speaker separation and insights separately. [Meeting processing](/meetings/processing) explains the additional downloads, subscription setup, and privacy restrictions.
 
-### Choosing a Transcription Provider
+## Model downloads and older settings
 
-<AccordionGroup>
-  <Accordion title="Best for privacy" icon="shield-halved">
-    **WhisperKit** or **Parakeet** — Run entirely on your Mac. Audio never leaves your device. No internet required.
-  </Accordion>
-
-  <Accordion title="Best accuracy" icon="bullseye">
-    **Parakeet** — NVIDIA's Parakeet TDT achieves state-of-the-art accuracy (6% WER), running locally on your Mac's Neural Engine. For cloud, **DeepGram Nova-3** offers industry-leading accuracy with real-time processing.
-  </Accordion>
-
-  <Accordion title="Best free option" icon="gift">
-    **Parakeet** — Included with Stenox, runs locally, and has no provider quota or per-minute charge.
-  </Accordion>
-
-  <Accordion title="Best for multiple languages" icon="globe">
-    **Parakeet v3** (local, 25+ languages), **OpenAI Whisper**, or **WhisperKit (multilingual)** — Support multiple languages with automatic detection.
-  </Accordion>
-</AccordionGroup>
-
----
-
-## AI Enhancement Providers
-
-Improve your transcribed text with grammar correction, formatting, and tone adjustment.
-
-| Provider | Type | Speed | Best For |
-|----------|------|-------|----------|
-| [MLX](/providers/llm/mlx-local) | Local | Fast | Privacy, offline use |
-| [Google Gemini](/providers/llm/google-gemini) | Cloud | Very Fast | Free tier, excellent quality |
-| [Groq LLMs](/providers/llm/groq-llms) | Cloud | Very Fast | Ultra-fast processing |
-
-### Choosing an AI Enhancement Provider
-
-<AccordionGroup>
-  <Accordion title="Best for privacy" icon="shield-halved">
-    **MLX** — Runs locally on Apple Silicon. Text never leaves your Mac.
-  </Accordion>
-
-  <Accordion title="Best local default" icon="sparkles">
-    **Gemma on MLX** — Included, private, and optimized for Apple Silicon.
-  </Accordion>
-
-  <Accordion title="Best free option" icon="gift">
-    **Google Gemini** — Generous free tier (1,500 requests/day) with excellent quality. No credit card required.
-  </Accordion>
-
-  <Accordion title="Fastest processing" icon="bolt">
-    **Groq** — Powered by custom hardware for sub-second responses.
-  </Accordion>
-</AccordionGroup>
-
----
-
-## Skip AI Enhancement
-
-Don't need grammar correction? Set AI Enhancement to **None** in your profile settings. This:
-
-- Reduces processing time by 1-3 seconds
-- Inserts raw transcription directly
-- Still applies vocabulary replacements
-
-<Note>
-  Raw transcription is great for quick notes or when you'll edit the text anyway.
-</Note>
-
----
-
-## Provider Combinations
-
-Here are popular setups:
-
-<CardGroup cols={2}>
-  <Card title="100% Private" icon="lock">
-    **Parakeet + MLX** — Everything local. Best accuracy. No internet. Complete privacy.
-  </Card>
-
-  <Card title="Maximum Speed" icon="bolt">
-    **Groq Whisper + Groq LLMs** — Sub-second processing. Free tier available.
-  </Card>
-
-  <Card title="Best Quality" icon="crown">
-    **DeepGram + Gemini** — High-quality cloud transcription and enhancement using your own API keys.
-  </Card>
-
-  <Card title="Balanced Free" icon="scale-balanced">
-    **Groq Whisper + Gemini** — Fast and high-quality. Both have free tiers.
-  </Card>
-</CardGroup>
-
----
-
-## Next Steps
-
-<CardGroup cols={2}>
-  <Card title="100% Local Setup" icon="lock" href="/providers/local-privacy">
-    Complete guide to privacy-first configuration.
-  </Card>
-  <Card title="BYOK Setup" icon="key" href="/providers/cloud-byok">
-    Use your own API keys with cloud providers.
-  </Card>
-  <Card title="Create Profiles" icon="sliders" href="/profiles/creating-profiles">
-    Different providers for different contexts.
-  </Card>
-  <Card title="Free Access" icon="gift" href="/pricing/overview">
-    No license, subscription, or built-in usage limit.
-  </Card>
-</CardGroup>
+[Manage local models](/setup/models) explains downloaded versus loaded state. Retired choices may remain in migrated profiles; they are not recommendations for a new setup. Groq and Stenox-hosted cloud services are not in the current selectable catalog. Choose a listed provider if an older profile is unavailable.

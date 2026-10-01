@@ -1,178 +1,30 @@
 ---
-title: "100% Local Privacy"
-description: "Complete privacy with local-only processing"
+title: "Privacy and data flow"
+description: "Understand what stays on your Mac and what each optional provider receives."
 ---
 
-## Complete Privacy
+Local-first describes a processing choice, not a promise that every feature is offline. Configure speech, Polish, and Notetaker insights separately.
 
-Stenox can operate **100% locally** on your Mac. When using local providers, your audio and text never leave your device — perfect for sensitive content, confidential work, or anywhere privacy matters.
+| Feature choice | Processing and data flow |
+| --- | --- |
+| Parakeet, Whisper, Cohere Transcribe | Audio is processed on your Mac after model download. |
+| Local Polish | Dictated text is processed by the selected local MLX model. |
+| On-device meeting insights | Conversation and included references are processed locally with Qwen 3.5 4B. |
+| Cloud speech | Audio is sent to the selected speech provider. |
+| Gemini Polish | Text and the configured writing instructions are sent to Gemini. |
+| Subscription insights / Ask | Bounded conversation and included reference context are sent to the selected provider. |
+| Google Calendar | Event access uses the connected Google account; imported context is restricted to on-device insights. |
 
-<Tip>
-  **100% Private = Parakeet or WhisperKit (transcription) + MLX (AI enhancement)**
+## Set up local processing
 
-  No internet required. No API keys. No cloud services. Complete privacy.
-</Tip>
+Choose a local speech provider, choose **Local** for any enabled Polish, and choose **On-device** for Notetaker insights. Download required models while online, then verify they are ready before relying on offline inference. A profile can override speech or cleanup choices, so inspect the active profile too.
 
-## Local Providers
+Personal notes are excluded from Notetaker AI input. Included reference text can be part of its AI input. Excluding a reference affects future requests but does not retract earlier cloud submissions.
 
-<CardGroup cols={3}>
-  <Card title="Parakeet" icon="microphone" href="/providers/transcription/parakeet-local">
-    **Local Transcription**
+## Storage and services
 
-    NVIDIA's state-of-the-art speech model. Best accuracy with CoreML optimization on Apple Neural Engine.
-  </Card>
+History and sessions are stored locally. **Active SQLite databases are plaintext**, not encrypted by Stenox. Local storage is distinct from your Mac's access controls and disk encryption.
 
-  <Card title="WhisperKit" icon="microphone" href="/providers/transcription/whisperkit-local">
-    **Local Transcription**
+Provider API keys use macOS Keychain. Subscription runtimes own their sign-in credentials. Provider retention, usage, and account policies still apply to cloud processing; opt-out or deletion request flags are not a zero-retention guarantee.
 
-    Apple's optimized Whisper implementation. Lightweight models for fast, private speech-to-text.
-  </Card>
-
-  <Card title="MLX" icon="sparkles" href="/providers/llm/mlx-local">
-    **Local AI Enhancement**
-
-    Apple's ML framework running efficient language models. Grammar correction and formatting without cloud.
-  </Card>
-</CardGroup>
-
-## Why Go Local?
-
-<CardGroup cols={2}>
-  <Card title="Complete Confidentiality" icon="lock">
-    Healthcare, legal, financial, or any sensitive content stays on your Mac.
-  </Card>
-
-  <Card title="Offline Functionality" icon="wifi-slash">
-    Works on airplanes, in remote locations, or when internet is unavailable.
-  </Card>
-
-  <Card title="No Third Parties" icon="shield-check">
-    Your data is never sent to external services or servers.
-  </Card>
-
-  <Card title="No API Costs" icon="dollar-sign">
-    No per-minute charges or API fees. Processing happens on your Mac.
-  </Card>
-</CardGroup>
-
-## Quick Setup
-
-<Steps>
-  <Step title="Open Stenox Settings">
-    Click the Stenox menu bar icon → **Settings**
-  </Step>
-
-  <Step title="Configure Transcription">
-    Go to **Models** tab → Set **Transcription Provider** to **Parakeet** (recommended) or **WhisperKit** → Download a model
-  </Step>
-
-  <Step title="Configure AI Enhancement">
-    In the same tab → Set **AI Enhancement Provider** to **MLX** → Download a model (Gemma 3n 2B recommended)
-  </Step>
-
-  <Step title="Verify Offline">
-    Turn off Wi-Fi → Test a dictation → It works!
-  </Step>
-</Steps>
-
-## Requirements
-
-<Note>
-  **MLX requires Apple Silicon.** Intel Mac users can still use WhisperKit for local transcription, but must use cloud providers for AI enhancement.
-</Note>
-
-## Model Options
-
-### Parakeet (Transcription) — Recommended
-
-| Model | Size | Speed | Best For |
-|-------|------|-------|----------|
-| **Parakeet v2** | ~2.5 GB | Very Fast | English only, best accuracy |
-| **Parakeet v3** | ~2.5 GB | Very Fast | Multilingual (25+ languages) |
-
-### WhisperKit (Transcription)
-
-| Model | Size | Speed | Best For |
-|-------|------|-------|----------|
-| **base.en** | 142 MB | Fast | English only, quick setup |
-| **small.en** | 483 MB | Medium | English, better accuracy |
-| **base** | 142 MB | Fast | Multilingual (100+ languages) |
-| **small** | 483 MB | Medium | Multilingual, better accuracy |
-
-### MLX (AI Enhancement)
-
-| Model | Size | Speed | Best For |
-|-------|------|-------|----------|
-| **Qwen 2.5 1.5B** | ~1 GB | Fastest | Quick tasks, 8GB Macs |
-| **Gemma 3n 2B** | ~1.2 GB | Fast | Best accuracy, recommended |
-| **Phi-3 Mini** | ~2.4 GB | Medium | Balanced quality |
-| **Gemma 3n 4B** | ~2.5 GB | Slower | Higher quality |
-
-## Performance
-
-Processing times with local providers:
-
-| Configuration | Total Time |
-|---------------|------------|
-| Parakeet v2 only | ~2-3 seconds |
-| Parakeet v2 + MLX Qwen 1.5B | ~4-6 seconds |
-| WhisperKit base.en only | ~3-5 seconds |
-| WhisperKit + MLX Qwen 1.5B | ~5-7 seconds |
-| WhisperKit small.en + MLX Phi-3 | ~10-12 seconds |
-
-<Note>
-  Local processing is slower than cloud (which can be ~1-2 seconds), but provides complete privacy.
-</Note>
-
-## Privacy Use Cases
-
-<AccordionGroup>
-  <Accordion title="Healthcare & Medical" icon="heart-pulse">
-    HIPAA compliance, patient confidentiality. Use with EMR/EHR applications and custom medical vocabulary.
-  </Accordion>
-
-  <Accordion title="Legal Work" icon="scale-balanced">
-    Attorney-client privilege, confidential documents. Add legal terminology to vocabulary.
-  </Accordion>
-
-  <Accordion title="Financial Services" icon="building-columns">
-    Client confidentiality, regulatory compliance. Works offline for secure environments.
-  </Accordion>
-
-  <Accordion title="Journalism" icon="newspaper">
-    Source protection, sensitive investigations. No data leaves your device.
-  </Accordion>
-
-  <Accordion title="Personal Privacy" icon="user-lock">
-    Personal preference, data sovereignty. Complete control over your data.
-  </Accordion>
-</AccordionGroup>
-
-## Hybrid Approach
-
-Want privacy for audio but cloud quality for text enhancement?
-
-- **Transcription:** Parakeet or WhisperKit (local) — Audio stays private
-- **Enhancement:** Google Gemini or Groq (cloud) — Text enhanced with top-tier models
-
-This keeps your most sensitive data (audio recordings) local while leveraging cloud AI for better text quality.
-
-## Next Steps
-
-<CardGroup cols={2}>
-  <Card title="Parakeet Guide" icon="microphone" href="/providers/transcription/parakeet-local">
-    Best accuracy local transcription setup.
-  </Card>
-
-  <Card title="WhisperKit Guide" icon="microphone" href="/providers/transcription/whisperkit-local">
-    Lightweight local transcription setup.
-  </Card>
-
-  <Card title="MLX Guide" icon="sparkles" href="/providers/llm/mlx-local">
-    Complete local AI enhancement setup.
-  </Card>
-
-  <Card title="Create Profiles" icon="sliders" href="/profiles/creating-profiles">
-    Different providers for different contexts.
-  </Card>
-</CardGroup>
+Downloads, optional integrations, app services, and the planned paid license checks have their own network requirements. Offline local inference is separate from [app access](/pricing/overview). Read the [Stenox privacy policy](https://stenox.app/privacy) for the public policy.

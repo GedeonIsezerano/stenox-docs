@@ -1,0 +1,27 @@
+---
+title: "Cohere Transcribe"
+description: "Run Cohere Transcribe locally with MLX and an explicit language selection."
+---
+
+Cohere Transcribe is a **local speech provider**, separate from cloud API services. Stenox uses MLX on Apple Silicon to run **Cohere Transcribe 03-2026 (8-bit)**.
+
+| Model ID | Estimated download |
+| --- | --- |
+| `cohere-transcribe-03-2026-8bit` | ~2.4 GB |
+
+The pinned model repository is `beshkenadze/cohere-transcribe-03-2026-mlx-8bit`. A first download needs internet; transcription runs on the Mac afterward. No Cohere API key is required for this provider.
+
+## Choose a language
+
+The adapter accepts Arabic, German, Greek, English, Spanish, French, Italian, Japanese, Korean, Dutch, Polish, Portuguese, Vietnamese, and Chinese.
+
+Choose the spoken language explicitly. Automatic or unsupported language values normalize to English; they do not trigger multilingual auto-detection.
+
+## Set it up
+
+1. Edit Default or a custom profile in **Profiles**.
+2. Select **Cohere Transcribe (Local)**.
+3. Select a supported language and wait for the model to download and load.
+4. Try a short recording before using a long file or meeting.
+
+The model also appears in **Settings → Models**. [Model management](/setup/models) covers resource use and removal. Notetaker follows this shared speech selection and adds meeting-local speaker processing when needed.

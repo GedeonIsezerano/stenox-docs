@@ -5,13 +5,13 @@
   "seo": {
     "metatags": {
       "og:site_name": "Stenox Docs",
-      "og:description": "Documentation for Stenox - local-first voice dictation for macOS"
+      "og:description": "Guides to Stenox dictation, local models, meeting capture, and notes on Mac."
     }
   },
   "colors": {
-    "primary": "#121212",
-    "light": "#333333",
-    "dark": "#000000"
+    "primary": "#255BD9",
+    "light": "#93B4FF",
+    "dark": "#255BD9"
   },
   "favicon": "/favicon.ico",
   "navigation": {
@@ -20,75 +20,78 @@
         "tab": "Documentation",
         "groups": [
           {
-            "group": "Getting Started",
+            "group": "Get started",
             "pages": [
               "index",
               "installation",
-              "first-dictation"
+              "first-dictation",
+              "pricing/overview"
             ]
           },
           {
-            "group": "Profiles",
+            "group": "Notetaker",
+            "pages": [
+              "meetings/overview",
+              "meetings/conversation",
+              "meetings/notes",
+              "meetings/references-and-ask",
+              "meetings/calendar",
+              "meetings/processing",
+              "meetings/exports"
+            ]
+          },
+          {
+            "group": "Make it yours",
             "pages": [
               "profiles/overview",
               "profiles/creating-profiles",
               "profiles/auto-activation",
-              "profiles/system-prompts"
+              "profiles/system-prompts",
+              "setup/hotkeys",
+              "setup/vocabulary",
+              "setup/file-transcription"
             ]
           },
           {
-            "group": "Providers",
+            "group": "Models and providers",
             "pages": [
               "providers/overview",
+              "setup/models",
               "providers/local-privacy",
-              "providers/cloud-byok",
               {
-                "group": "Transcription",
+                "group": "Local speech",
                 "pages": [
-                  "providers/transcription/whisperkit-local",
                   "providers/transcription/parakeet-local",
-                  "providers/transcription/deepgram",
-                  "providers/transcription/openai-whisper",
-                  "providers/transcription/assemblyai",
-                  "providers/transcription/groq-whisper"
+                  "providers/transcription/whisperkit-local",
+                  "providers/transcription/cohere-local"
                 ]
               },
               {
-                "group": "AI Enhancement",
+                "group": "Cloud speech",
+                "pages": [
+                  "providers/cloud-byok",
+                  "setup/byok-configuration",
+                  "providers/transcription/deepgram",
+                  "providers/transcription/assemblyai",
+                  "providers/transcription/openai-whisper",
+                  "providers/transcription/gemini-transcribe"
+                ]
+              },
+              {
+                "group": "Dictation Polish",
                 "pages": [
                   "providers/llm/mlx-local",
-                  "providers/llm/google-gemini",
-                  "providers/llm/groq-llms"
+                  "providers/llm/google-gemini"
                 ]
               }
             ]
           },
           {
-            "group": "Access",
-            "pages": [
-              "pricing/overview"
-            ]
-          },
-          {
-            "group": "Stenox Setup",
-            "pages": [
-              "setup/hotkeys",
-              "setup/byok-configuration",
-              "setup/file-transcription",
-              "setup/vocabulary"
-            ]
-          },
-          {
-            "group": "Guides",
+            "group": "Help",
             "pages": [
               "guides/privacy-first-setup",
               "guides/cloud-setup",
-              "guides/troubleshooting"
-            ]
-          },
-          {
-            "group": "Support",
-            "pages": [
+              "guides/troubleshooting",
               "support/overview",
               "support/feedback"
             ]
@@ -99,14 +102,9 @@
     "global": {
       "anchors": [
         {
-          "anchor": "Download",
+          "anchor": "Stenox website",
           "href": "https://stenox.app",
-          "icon": "download"
-        },
-        {
-          "anchor": "Support",
-          "href": "https://stenox.app/support",
-          "icon": "life-ring"
+          "icon": "arrow-up-right-from-square"
         }
       ]
     }
@@ -125,7 +123,7 @@
     ],
     "primary": {
       "type": "button",
-      "label": "Get Stenox",
+      "label": "Explore Stenox",
       "href": "https://stenox.app"
     }
   },
@@ -168,9 +166,62 @@
     }
   ],
   "footer": {
+    "links": [
+      {
+        "header": "Stenox",
+        "items": [
+          {
+            "label": "Privacy",
+            "href": "https://stenox.app/privacy"
+          },
+          {
+            "label": "Terms",
+            "href": "https://stenox.app/terms"
+          },
+          {
+            "label": "Third-party licenses",
+            "href": "https://stenox.app/licenses"
+          },
+          {
+            "label": "Support",
+            "href": "https://stenox.app/support"
+          }
+        ]
+      }
+    ],
     "socials": {
-      "x": "https://x.com/stenoxapp",
-      "github": "https://github.com/stenox/stenox"
+      "x": "https://x.com/stenoxapp"
     }
-  }
+  },
+  "background": {
+    "color": {
+      "light": "#F5F3EA",
+      "dark": "#11151D"
+    }
+  },
+  "appearance": {
+    "default": "light",
+    "strict": false
+  },
+  "fonts": {
+    "heading": {
+      "family": "Satoshi",
+      "source": "/fonts/Satoshi-Medium.woff2",
+      "format": "woff2",
+      "weight": 500
+    },
+    "body": {
+      "family": "DM Sans"
+    }
+  },
+  "banner": {
+    "content": "Development build docs \u00b7 Check [release and access](/pricing/overview) for public availability.",
+    "dismissible": false
+  },
+  "ignore": [
+    "README.md",
+    "CLAUDE.md",
+    "maintenance/**",
+    "scripts/**"
+  ]
 }

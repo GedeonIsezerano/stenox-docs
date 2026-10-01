@@ -1,0 +1,39 @@
+---
+title: "Manage local models"
+description: "Download, select, load, and remove local Stenox models."
+---
+
+## Download and select
+
+Open **Settings → Models** to browse local model files and download them. Downloading a model in the background does not switch the active selection. Select speech in your [profile](/profiles/creating-profiles), and choose a language model in **Text cleanup → Local** for optional Polish.
+
+Selecting an uncached local speech model starts its download and preparation. A cached model loads from disk. Initial downloads need a network connection; inference then runs on your Mac.
+
+| State | What it means |
+| --- | --- |
+| Not downloaded | Model files are not ready on disk. |
+| Downloading | Stenox is fetching the files; keep network access and storage available. |
+| Downloaded / cached | Files exist locally, but the model may not be in memory. |
+| Loading | Stenox is preparing the model for inference. |
+| Ready | The selected runtime is loaded and can process input. |
+
+Download labels are estimates from Stenox's catalog. Actual storage includes supporting files, and runtime memory can exceed download size. Running local speech, a meeting diarizer, and meeting insights together uses more memory than speech alone. No fixed per-model RAM minimum is guaranteed here.
+
+## Loading and memory
+
+Stenox prepares the selected local speech model on startup and keeps eligible selected models ready across ordinary idle periods. It restores eligible cached models when needed; changing a selection or disabling local cleanup releases the old runtime through the model lifecycle. Do not expect a universal five-minute unload timer.
+
+Notetaker borrows the active speech model. While capture holds that model, competing jobs and model changes are guarded. Pausing retains meeting state. Ending releases the reservation and meeting-only models while keeping dictation's speech selection ready.
+
+**Polish** waits for a selected model that is already warming up, but does not silently download a missing cleanup model or use another provider. A cleanup failure leaves the dictated text available.
+
+## Remove downloaded files
+
+Use the delete control beside a downloaded model in **Settings → Models**. Read the confirmation, including any profiles that use it. Removal is guarded while a model is loading or reserved. Removing files means they must be downloaded again before use; unloading a runtime only releases memory.
+
+## Catalogs
+
+- [Parakeet](/providers/transcription/parakeet-local) and [Whisper](/providers/transcription/whisperkit-local)
+- [Cohere Transcribe](/providers/transcription/cohere-local)
+- [Local AI cleanup and legacy models](/providers/llm/mlx-local)
+- [Meeting-only processing models](/meetings/processing)

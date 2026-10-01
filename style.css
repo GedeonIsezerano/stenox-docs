@@ -1,493 +1,121 @@
-/* ==========================================================================
-   Stenox Docs — Smooth Page Transitions & Micro-interactions
-   Aesthetic: Refined minimalism with subtle, natural motion
-   ========================================================================== */
+/* Stenox docs: website typography and warm surfaces within Mintlify's layout.
+   Source: website/app/globals.css and website/app/layout.tsx (working tree).
+   Hooks are Mintlify component classes and stable element IDs; dark mode stays explicit. */
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap');
 
-/* --------------------------------------------------------------------------
-   CSS Custom Properties
-   -------------------------------------------------------------------------- */
+@font-face {
+  font-family: 'Satoshi';
+  src: url('/fonts/Satoshi-Medium.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Satoshi';
+  src: url('/fonts/Satoshi-Bold.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+
 :root {
-  --transition-swift: 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  --transition-smooth: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  --transition-natural: 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
-  --ease-out-quint: cubic-bezier(0.22, 1, 0.36, 1);
+  --stenox-paper: #f5f3ea;
+  --stenox-surface: #fffef9;
+  --stenox-ink: #101319;
+  --stenox-muted: #565e6b;
+  --stenox-blue: #255bd9;
+  --stenox-tint: #e5ebf7;
+  --stenox-lavender: #ecebf6;
+  --stenox-border: #ccd0d9;
+  --stenox-code: #eceae3;
 }
-
-/* --------------------------------------------------------------------------
-   Main Content Entrance Animation
-   Subtle fade + lift effect when page content loads
-   -------------------------------------------------------------------------- */
-@keyframes contentReveal {
-  from {
-    opacity: 0;
-    transform: translateY(12px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.dark {
+  --stenox-paper: #11151d;
+  --stenox-surface: #191f29;
+  --stenox-ink: #f5f3ed;
+  --stenox-muted: #b4bdcc;
+  --stenox-blue: #93b4ff;
+  --stenox-tint: #202d49;
+  --stenox-lavender: #27263e;
+  --stenox-border: #3b465a;
+  --stenox-code: #202733;
 }
+html { scroll-padding-top: 10rem; }
+body { color: var(--stenox-ink); background: var(--stenox-paper); font-family: 'DM Sans', system-ui, sans-serif; }
+::selection { background: color-mix(in srgb, var(--stenox-blue) 22%, transparent); }
 
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+#navbar, #sidebar { background: var(--stenox-paper); }
+#navbar { border-bottom: 1px solid var(--stenox-border); }
+#navbar-transition { background-color: var(--stenox-paper); }
+/* Mintlify sets banner descendant colors with layered !important utilities.
+   Keep its white text and use the site's deep blue for reliable contrast. */
+#navbar #banner { background: #214fba; color: #fff; }
+.dark #navbar #banner { background: #20355a; }
+#navbar #banner a { text-underline-offset: .2em; }
+#sidebar { border-right: 1px solid var(--stenox-border); }
+#sidebar a, #sidebar button { color: var(--stenox-muted); }
+#sidebar h3 { color: var(--stenox-ink); font-weight: 600; letter-spacing: 0; }
+#sidebar a:hover, #sidebar button:hover { color: var(--stenox-ink); background-color: var(--stenox-tint); }
+#sidebar a[aria-current="page"] { color: var(--stenox-blue); background: var(--stenox-tint); font-weight: 600; }
+#search-bar-entry { background: var(--stenox-surface); color: var(--stenox-muted); box-shadow: 0 0 0 1px var(--stenox-border); }
+#navbar a { text-underline-offset: .25em; }
+
+#page-title, #content h2, #content h3, #content h4, .card h2, .card h3 {
+  font-family: 'Satoshi', 'DM Sans', sans-serif;
+  color: var(--stenox-ink);
+  font-weight: 500;
+  text-wrap: balance;
+  letter-spacing: -.025em;
 }
+#page-title { font-size: clamp(2rem, 3.4vw, 2.7rem); line-height: 1.12; letter-spacing: -.04em; }
+#content { --tw-prose-body: var(--stenox-ink); --tw-prose-headings: var(--stenox-ink); --tw-prose-bold: var(--stenox-ink); color: var(--stenox-ink); line-height: 1.72; }
+#content p, #content li { text-wrap: pretty; }
+#content h2 { margin-top: 2.4rem; line-height: 1.25; }
+#content h3 { line-height: 1.35; }
+#content strong { color: var(--stenox-ink); font-weight: 600; }
+#content a:not(.card):not([aria-hidden="true"]) { color: var(--stenox-blue); text-underline-offset: .22em; text-decoration-thickness: 1px; }
+#content a:hover { text-decoration-color: currentColor; }
+#content :is(code, pre), kbd { font-family: 'JetBrains Mono', ui-monospace, monospace; font-variant-numeric: tabular-nums; }
+#content :not(pre) > code { background: var(--stenox-code); color: var(--stenox-ink); border-radius: .25rem; padding: .15em .3em; overflow-wrap: anywhere; }
+#content pre { border: 1px solid var(--stenox-border); border-radius: .75rem; }
+#content table { font-size: .875rem; }
+#content :is(th, td) { border-color: var(--stenox-border); }
+#content th { color: var(--stenox-ink); background: var(--stenox-tint); font-weight: 600; }
+#content td { color: var(--stenox-ink); }
 
-/* Main article/content area entrance */
-article,
-main > div > div {
-  animation: contentReveal 0.5s var(--ease-out-expo) forwards;
+#content .card { background: var(--stenox-surface); border-color: var(--stenox-border); border-radius: 1rem; transition: border-color 150ms, background-color 150ms; }
+#content .card:hover { background: var(--stenox-tint); border-color: var(--stenox-blue); }
+#content .card p { color: var(--stenox-muted); line-height: 1.6; }
+#content .callout { border-radius: .75rem; }
+#content .callout[data-callout-type="note"], #content .callout[aria-label="Note"] { background: var(--stenox-lavender); border-color: var(--stenox-border); color: var(--stenox-ink); }
+#content .callout p { color: inherit; }
+#content .callout a { color: inherit; }
+#pagination a { border-color: var(--stenox-border); border-radius: .75rem; }
+#pagination a:hover { background: var(--stenox-tint); }
+#footer { border-color: var(--stenox-border); color: var(--stenox-muted); }
+
+:where(a, button, input, textarea, [tabindex]):focus-visible {
+  outline: 2px solid var(--stenox-blue) !important;
+  outline-offset: 3px !important;
 }
-
-/* Prose content sections */
-.prose {
-  animation: contentReveal 0.45s var(--ease-out-expo) 0.05s both;
+@media (max-width: 640px) {
+  #page-title { font-size: 2rem; }
+  #content { overflow-wrap: anywhere; }
+  #content table { min-width: 30rem; }
 }
-
-/* --------------------------------------------------------------------------
-   Staggered Card Animations
-   Cards reveal sequentially for a polished feel
-   -------------------------------------------------------------------------- */
-@keyframes cardReveal {
-  from {
-    opacity: 0;
-    transform: translateY(16px) scale(0.98);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-}
-
-/* --------------------------------------------------------------------------
-   Card Component — Comprehensive Overflow & Clipping Fix
-   Targets all Mintlify card structures to prevent icon clipping
-   -------------------------------------------------------------------------- */
-
-/* Card group containers - ensure visible overflow for animations */
-[class*="CardGroup"],
-[class*="card-group"],
-[class*="cardgroup"],
-div:has(> [class*="Card"]),
-div:has(> a[class*="Card"]) {
-  overflow: visible !important;
-}
-
-/* All card variants - comprehensive selector coverage */
-[class*="Card"],
-[class*="card"],
-a[class*="Card"],
-a[class*="card"],
-[data-component="card"],
-[data-testid*="card"] {
-  overflow: visible !important;
-}
-
-/* Card inner containers - prevent nested clipping */
-[class*="Card"] > *,
-[class*="card"] > *,
-a[class*="Card"] > *,
-a[class*="card"] > * {
-  overflow: visible !important;
-}
-
-/* Icon containers - explicit overflow handling */
-[class*="Card"] [class*="icon"],
-[class*="Card"] [class*="Icon"],
-[class*="card"] [class*="icon"],
-[class*="card"] [class*="Icon"],
-[data-component-part="card-icon"],
-[class*="Card"] svg,
-[class*="card"] svg {
-  overflow: visible !important;
-  flex-shrink: 0;
-}
-
-/* Ensure SVG icons have proper dimensions and don't clip */
-[class*="Card"] svg,
-[class*="card"] svg,
-a[class*="Card"] svg,
-a[class*="card"] svg {
-  overflow: visible !important;
-  display: block;
-}
-
-/* Card group animation */
-[class*="CardGroup"],
-[class*="card-group"] {
-  animation: fadeIn 0.3s ease-out;
-}
-
-/* Individual cards with stagger - broader selectors */
-[class*="CardGroup"] > *:nth-child(1),
-[class*="card-group"] > *:nth-child(1) { animation: cardReveal 0.5s var(--ease-out-expo) 0.1s both; }
-[class*="CardGroup"] > *:nth-child(2),
-[class*="card-group"] > *:nth-child(2) { animation: cardReveal 0.5s var(--ease-out-expo) 0.15s both; }
-[class*="CardGroup"] > *:nth-child(3),
-[class*="card-group"] > *:nth-child(3) { animation: cardReveal 0.5s var(--ease-out-expo) 0.2s both; }
-[class*="CardGroup"] > *:nth-child(4),
-[class*="card-group"] > *:nth-child(4) { animation: cardReveal 0.5s var(--ease-out-expo) 0.25s both; }
-[class*="CardGroup"] > *:nth-child(5),
-[class*="card-group"] > *:nth-child(5) { animation: cardReveal 0.5s var(--ease-out-expo) 0.3s both; }
-[class*="CardGroup"] > *:nth-child(6),
-[class*="card-group"] > *:nth-child(6) { animation: cardReveal 0.5s var(--ease-out-expo) 0.35s both; }
-
-/* --------------------------------------------------------------------------
-   Card Hover Interactions
-   Smooth, responsive feedback on hover
-   -------------------------------------------------------------------------- */
-[class*="Card"],
-[class*="card"],
-a[class*="Card"],
-a[class*="card"] {
-  transition:
-    transform var(--transition-swift),
-    box-shadow var(--transition-swift),
-    border-color var(--transition-swift);
-  will-change: transform;
-}
-
-[class*="Card"]:hover,
-[class*="card"]:hover,
-a[class*="Card"]:hover,
-a[class*="card"]:hover {
-  transform: translateY(-3px);
-  box-shadow:
-    0 8px 24px -8px rgba(0, 0, 0, 0.12),
-    0 4px 8px -4px rgba(0, 0, 0, 0.08);
-}
-
-/* Dark mode card shadows */
-.dark [class*="Card"]:hover,
-.dark [class*="card"]:hover,
-.dark a[class*="Card"]:hover,
-.dark a[class*="card"]:hover {
-  box-shadow:
-    0 8px 24px -8px rgba(0, 0, 0, 0.4),
-    0 4px 8px -4px rgba(0, 0, 0, 0.3);
-}
-
-/* Card icon micro-interaction */
-[class*="Card"] [class*="icon"] svg,
-[class*="card"] [class*="icon"] svg,
-[data-component-part="card-icon"] svg {
-  transition: transform var(--transition-swift);
-}
-
-[class*="Card"]:hover [class*="icon"] svg,
-[class*="card"]:hover [class*="icon"] svg,
-[class*="Card"]:hover [data-component-part="card-icon"] svg,
-[class*="card"]:hover [data-component-part="card-icon"] svg {
-  transform: scale(1.1);
-}
-
-/* --------------------------------------------------------------------------
-   Sidebar Navigation Transitions
-   Smooth active states and hover effects
-   -------------------------------------------------------------------------- */
-nav a,
-[class*="sidebar"] a {
-  transition:
-    color var(--transition-swift),
-    background-color var(--transition-swift),
-    padding-left var(--transition-swift),
-    opacity var(--transition-swift);
-}
-
-nav a:hover,
-[class*="sidebar"] a:hover {
-  opacity: 1;
-}
-
-/* Active nav item indicator */
-nav a[aria-current="page"],
-[class*="sidebar"] a[aria-current="page"] {
-  transition: all var(--transition-smooth);
-}
-
-/* Expandable sections */
-[class*="accordion"],
-details {
-  transition: all var(--transition-smooth);
-}
-
-details[open] summary ~ * {
-  animation: contentReveal 0.35s var(--ease-out-expo);
-}
-
-/* --------------------------------------------------------------------------
-   Steps Component Animation
-   Sequential reveal for step-by-step guides
-   -------------------------------------------------------------------------- */
-@keyframes stepReveal {
-  from {
-    opacity: 0;
-    transform: translateX(-12px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-[class*="step"]:nth-child(1) { animation: stepReveal 0.4s var(--ease-out-expo) 0.1s both; }
-[class*="step"]:nth-child(2) { animation: stepReveal 0.4s var(--ease-out-expo) 0.2s both; }
-[class*="step"]:nth-child(3) { animation: stepReveal 0.4s var(--ease-out-expo) 0.3s both; }
-[class*="step"]:nth-child(4) { animation: stepReveal 0.4s var(--ease-out-expo) 0.4s both; }
-[class*="step"]:nth-child(5) { animation: stepReveal 0.4s var(--ease-out-expo) 0.5s both; }
-
-/* --------------------------------------------------------------------------
-   Callout Boxes (Tip, Note, Warning)
-   Subtle entrance animation
-   -------------------------------------------------------------------------- */
-@keyframes calloutReveal {
-  from {
-    opacity: 0;
-    transform: translateY(8px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-[class*="callout"],
-.tip,
-.note,
-.warning,
-[class*="Tip"],
-[class*="Note"],
-[class*="Warning"] {
-  animation: calloutReveal 0.4s var(--ease-out-expo) 0.15s both;
-}
-
-/* --------------------------------------------------------------------------
-   Code Blocks
-   Smooth transitions for copy button and focus states
-   -------------------------------------------------------------------------- */
-pre {
-  transition: box-shadow var(--transition-swift);
-}
-
-pre:focus-within {
-  box-shadow: 0 0 0 2px var(--primary, #121212);
-}
-
-/* Copy button hover */
-pre button,
-[class*="code"] button {
-  transition:
-    opacity var(--transition-swift),
-    transform var(--transition-swift);
-}
-
-pre button:hover,
-[class*="code"] button:hover {
-  transform: scale(1.05);
-}
-
-/* --------------------------------------------------------------------------
-   Table of Contents (Right Sidebar)
-   Smooth scroll indicator and hover states
-   -------------------------------------------------------------------------- */
-[class*="toc"] a,
-[class*="table-of-contents"] a {
-  transition:
-    color var(--transition-swift),
-    transform var(--transition-swift);
-}
-
-[class*="toc"] a:hover,
-[class*="table-of-contents"] a:hover {
-  transform: translateX(2px);
-}
-
-/* Active TOC item */
-[class*="toc"] a[aria-current],
-[class*="toc"] a.active {
-  transition: all var(--transition-smooth);
-}
-
-/* --------------------------------------------------------------------------
-   Buttons & Interactive Elements
-   Refined hover and click feedback
-   -------------------------------------------------------------------------- */
-button,
-[role="button"],
-a[class*="button"] {
-  transition:
-    transform var(--transition-swift),
-    box-shadow var(--transition-swift),
-    background-color var(--transition-swift),
-    border-color var(--transition-swift);
-}
-
-button:hover,
-[role="button"]:hover,
-a[class*="button"]:hover {
-  transform: translateY(-1px);
-}
-
-button:active,
-[role="button"]:active,
-a[class*="button"]:active {
-  transform: translateY(0) scale(0.98);
-  transition-duration: 0.1s;
-}
-
-/* --------------------------------------------------------------------------
-   Search Modal
-   Smooth entrance and exit
-   -------------------------------------------------------------------------- */
-@keyframes modalReveal {
-  from {
-    opacity: 0;
-    transform: scale(0.96) translateY(-8px);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1) translateY(0);
-  }
-}
-
-@keyframes backdropReveal {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-[class*="modal"],
-[class*="dialog"],
-[role="dialog"] {
-  animation: modalReveal 0.25s var(--ease-out-expo);
-}
-
-[class*="backdrop"],
-[class*="overlay"] {
-  animation: backdropReveal 0.2s ease-out;
-}
-
-/* --------------------------------------------------------------------------
-   Page Pagination (Previous/Next)
-   Smooth hover transitions
-   -------------------------------------------------------------------------- */
-#pagination a,
-[class*="pagination"] a {
-  transition:
-    color var(--transition-swift),
-    transform var(--transition-swift);
-}
-
-#pagination a:hover,
-[class*="pagination"] a:hover {
-  transform: translateX(4px);
-}
-
-#pagination a:first-child:hover {
-  transform: translateX(-4px);
-}
-
-/* --------------------------------------------------------------------------
-   Anchor Links
-   Smooth scroll behavior
-   -------------------------------------------------------------------------- */
-html {
-  scroll-behavior: smooth;
-}
-
 @media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
+}
+@media (max-width: 640px) {
+  #content [aria-label="Scrollable table"]::before {
+    content: 'Scroll table sideways →';
+    display: block;
+    position: sticky;
+    left: 1.25rem;
+    width: fit-content;
+    padding: .4rem 0;
+    color: var(--stenox-muted);
+    font-family: 'DM Sans', system-ui, sans-serif;
+    font-size: .75rem;
   }
-
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
-}
-
-/* Heading anchor links */
-h1 a,
-h2 a,
-h3 a,
-h4 a {
-  transition: opacity var(--transition-swift);
-}
-
-/* --------------------------------------------------------------------------
-   Image & Media Transitions
-   Smooth loading and hover states
-   -------------------------------------------------------------------------- */
-img {
-  transition:
-    opacity var(--transition-smooth),
-    transform var(--transition-swift);
-}
-
-article img:hover {
-  transform: scale(1.01);
-}
-
-/* --------------------------------------------------------------------------
-   Footer
-   Subtle entrance
-   -------------------------------------------------------------------------- */
-footer,
-#footer {
-  animation: fadeIn 0.5s ease-out 0.3s both;
-}
-
-footer a,
-#footer a {
-  transition:
-    color var(--transition-swift),
-    opacity var(--transition-swift);
-}
-
-/* --------------------------------------------------------------------------
-   Focus States
-   Accessible focus indicators with smooth transitions
-   -------------------------------------------------------------------------- */
-a:focus-visible,
-button:focus-visible,
-input:focus-visible,
-[tabindex]:focus-visible {
-  outline: 2px solid var(--primary, #121212);
-  outline-offset: 2px;
-  transition: outline-offset var(--transition-swift);
-}
-
-/* --------------------------------------------------------------------------
-   Loading States
-   Skeleton pulse animation
-   -------------------------------------------------------------------------- */
-@keyframes shimmer {
-  0% { background-position: -200% 0; }
-  100% { background-position: 200% 0; }
-}
-
-[class*="skeleton"],
-[class*="loading"] {
-  background: linear-gradient(
-    90deg,
-    rgba(0, 0, 0, 0.06) 25%,
-    rgba(0, 0, 0, 0.12) 50%,
-    rgba(0, 0, 0, 0.06) 75%
-  );
-  background-size: 200% 100%;
-  animation: shimmer 1.5s infinite;
-}
-
-.dark [class*="skeleton"],
-.dark [class*="loading"] {
-  background: linear-gradient(
-    90deg,
-    rgba(255, 255, 255, 0.06) 25%,
-    rgba(255, 255, 255, 0.12) 50%,
-    rgba(255, 255, 255, 0.06) 75%
-  );
-  background-size: 200% 100%;
 }

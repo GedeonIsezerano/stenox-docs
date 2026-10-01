@@ -1,53 +1,26 @@
 ---
-title: "Free Access"
-sidebarTitle: "Free Access"
-description: "Stenox is free with no license or usage limits"
+title: "Release and access"
+description: "Understand development features, the public download, and the planned paid release."
 ---
 
-## Stenox is free
+## Which build do these docs describe?
 
-Starting with version 1.0.0, Stenox has no paid plans, license activation, free-tier restrictions, or recording time limits.
+These guides follow the app's development **main** branch, reviewed on **October 1, 2026**. They cover current dictation, models, and Notetaker implementation. This is not a claim that a compatible public binary has been released.
 
-<CardGroup cols={3}>
-  <Card title="No license" icon="key">
-    Download and use Stenox without an account, purchase, or activation key.
-  </Card>
-  <Card title="No time limit" icon="timer">
-    Built-in dictation and file transcription are not limited by a Stenox plan.
-  </Card>
-  <Card title="All features" icon="sparkles">
-    Local models, profiles, vocabulary, and every built-in workflow are included.
-  </Card>
-</CardGroup>
+The existing public free build remains a separate download. Its screens and feature set can differ from these guides. Use the [download page](https://stenox.app/download) for the build actually available, and check its release notes rather than assuming every documented development feature is included.
 
-## Why the change?
+## Planned paid release
 
-Local speech and language models have improved substantially in both quality and efficiency. Stenox now uses those advances to provide a fast local-first experience without operating a paid managed model service.
-
-## Local-first defaults
-
-| Stage | Default | Where it runs |
-|---|---|---|
-| Transcription | Parakeet | On your Apple Silicon Mac |
-| Language processing | Gemma on MLX | On your Apple Silicon Mac |
-
-During onboarding, Stenox downloads and loads the required local models before your first recording. An internet connection is needed for that initial download; local use can then continue without sending your audio or text to Stenox.
-
-Existing receipts from purchases made before July 17, 2026 remain available through the legacy billing portal on the Stenox website. A previous purchase or license key is not required to use version 1.0.0 or later.
-
-## Bring your own API keys
-
-Supported third-party providers remain available. Add your own API key in Stenox settings when you want to use one.
+The website's staged offer is **C$69 once** for early adopters, with a **planned C$100 standard price**, plus applicable taxes. The offer covers two Macs and permanent access to purchased features; future major upgrades may cost extra. Optional third-party provider usage is separate.
 
 <Warning>
-  Third-party providers may apply their own prices, quotas, data policies, and terms. Stenox does not include or resell third-party usage.
+  Paid checkout is not open as part of this documentation preview. A price shown on a development website is not a live purchase offer or proof that a compatible paid app is available.
 </Warning>
 
-<CardGroup cols={2}>
-  <Card title="Local privacy" icon="shield" href="/providers/local-privacy">
-    Keep transcription and language processing on your Mac.
-  </Card>
-  <Card title="BYOK setup" icon="key" href="/setup/byok-configuration">
-    Connect a supported provider using your own account.
-  </Card>
-</CardGroup>
+The planned release describes a seven-day full-app trial started online in a compatible app, with no account or card. It is not an ongoing free tier. Paid licensing is planned around weekly verification and up to 30 days offline from the last successful check. Do not use these planned terms as setup instructions for an older public build.
+
+Current purchase, activation, trial, and refund terms belong on the [Stenox website](https://stenox.app). Previously distributed free builds and earlier purchases are separate from the upcoming offer; this page does not replace their terms.
+
+## Local processing and account access
+
+Local model inference does not require an API key after model download. Cloud transcription and Gemini cleanup use your own provider keys. Notetaker subscription insights use an eligible connected account, with that provider's usage limits. App access and provider billing are separate.

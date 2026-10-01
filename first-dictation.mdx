@@ -1,92 +1,41 @@
 ---
-title: "Your First Dictation"
-description: "Download local models and complete your first Stenox dictation"
+title: "Your first dictation"
+description: "Record and insert speech, then choose whether to polish it."
 ---
 
 ## Before you begin
 
-Make sure you have:
-
-- Installed Stenox and granted microphone and accessibility permissions
-- An Apple Silicon Mac running macOS 15 Sequoia or later
-- An internet connection and free storage for the initial local model download
-
-<Tip>
-  Stenox 1.0 is free. You do not need an account, license key, or paid plan.
-</Tip>
-
-## Prepare the local models
-
-The default experience uses:
-
-- **Parakeet** for local transcription
-- **Gemma on MLX** for local language processing, with Qwen3.5 4B available as an additional local model
-
-Onboarding downloads and loads the required models before it enables the first recording. Keep Stenox open until setup reports that the models are ready.
-
-<Note>
-  The first launch takes longer because Stenox downloads model files and macOS compiles the local transcription model. Later launches reuse the local copies.
-</Note>
-
-## Record your first dictation
+Complete [installation](/installation), enable microphone and Accessibility permissions, and wait for the selected speech model to be ready. The new-install speech default is **Parakeet v2 (English)**. Profiles and saved settings can change it.
 
 <Steps>
-  <Step title="Open a text field">
-    Open Notes, TextEdit, or another app and place the cursor where you want text to appear.
-  </Step>
-  <Step title="Check the menu bar">
-    Confirm the Stenox icon is visible and that local model setup is complete.
+  <Step title="Place your cursor">
+    Open Notes, TextEdit, your browser, or another app and click an editable field.
   </Step>
   <Step title="Start recording">
-    Press and hold your configured push-to-talk hotkey. The recording overlay and waveform should appear.
+    Hold **Fn/Globe**, or press **Option–Space** to toggle recording. Use your saved shortcut if you changed it in **Settings → General**.
   </Step>
-  <Step title="Speak naturally">
-    Try: "Hello, this is my first local dictation with Stenox."
+  <Step title="Speak and stop">
+    Say a short sentence. Release the hold shortcut, or press the toggle shortcut again. Stenox transcribes the audio and applies enabled filler removal and vocabulary replacements.
   </Step>
-  <Step title="Stop and insert">
-    Release the hotkey. Parakeet transcribes the audio, Gemma applies the selected processing, and Stenox inserts the result at your cursor.
+  <Step title="Use the result">
+    Text is inserted at the target or copied according to your output setting. The completion controls offer **Copy**, **Polish**, and **Undo** when available.
   </Step>
 </Steps>
 
-## Choose how Stenox cleans up speech
+## Polish when you want to
 
-In **Settings → Post-Processing**, Stenox 1.1 separates two cleanup options:
+Open **Text cleanup** and enable **Polish on demand** to choose a local or Gemini model. After dictation, click **Polish** to request a rewrite using that selection. With polishing disabled, the control leads you to its settings.
 
-- **Remove filler words** removes clear hesitations such as “um,” “uh,” and “erm” without using an AI model.
-- **Polish with AI** uses your selected language model to improve wording and formatting. Use the Polish preset when you want a clearer rewrite that still preserves names, numbers, links, paths, and intent.
+**Remove filler words** is independent of AI polishing. It removes clear hesitations without loading a language model. Dictation delivers this deterministic result first; it does not automatically run the selected AI model.
 
-You can enable either option independently. If optional AI polishing fails, Stenox inserts the unpolished transcription instead of blocking dictation.
+The default local cleanup selection is **Gemma 4 E4B**, with polishing initially off. [Local AI cleanup](/providers/llm/mlx-local) lists the available choices and their limits. Download and prepare a local model before using Polish; the Polish operation does not silently download a missing model or switch to a cloud provider.
 
-## Optional providers
+## Review and recover
 
-Local models are the default, but you can connect a supported third-party transcription or language provider with your own API key.
+History retains the original dictation. When Stenox can verify the inserted text, **Undo** can remove a dictation or restore its pre-polish text. If the target or clipboard changed, Stenox may offer the polished text for **Copy** instead of replacing it. Review names, numbers, and important details before using an AI rewrite.
 
-<Warning>
-  Third-party provider quotas, charges, and privacy policies apply to your account with that provider. Stenox does not resell or include that usage.
-</Warning>
+<Note>
+  Dictation and meeting capture cannot run at the same time. End the active meeting before starting a dictation.
+</Note>
 
-<CardGroup cols={2}>
-  <Card title="Local privacy" icon="shield" href="/providers/local-privacy">
-    Keep audio and text on your Mac.
-  </Card>
-  <Card title="BYOK configuration" icon="key" href="/setup/byok-configuration">
-    Connect an optional provider using your own key.
-  </Card>
-</CardGroup>
-
-## Common first-time issues
-
-<AccordionGroup>
-  <Accordion title="The first-recording button is disabled" icon="download">
-    Local model setup is still running. Keep Stenox open, verify your internet connection and free storage, and wait until Parakeet is loaded.
-  </Accordion>
-  <Accordion title="No text appears" icon="triangle-exclamation">
-    Confirm microphone and accessibility permissions, select a working input device, and make sure the cursor is in an editable field.
-  </Accordion>
-  <Accordion title="The hotkey does not work" icon="keyboard">
-    Check for conflicts with other apps. Non-Apple keyboards may not expose the fn key, so configure a different shortcut if needed.
-  </Accordion>
-  <Accordion title="A local language model does not initialize" icon="microchip">
-    Quit and reopen the installed Stenox app. If the initial download was interrupted, open model settings and retry the download.
-  </Accordion>
-</AccordionGroup>
+Next: [shortcuts](/setup/hotkeys), [profiles](/profiles/overview), or [word replacements](/setup/vocabulary).

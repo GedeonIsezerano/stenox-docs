@@ -1,151 +1,38 @@
 ---
-title: "Welcome to Stenox"
+title: "Speak. Keep the words."
 sidebarTitle: "Home"
-description: "Voice dictation for macOS with AI enhancement"
+description: "Dictate into your apps, capture meetings, and work with notes in Stenox."
 ---
 
-<div className="stenox-hero" style={{textAlign: 'center', margin: '2rem 0 3rem'}}>
-  <lord-icon
-    src="https://cdn.lordicon.com/rehjpyyh.json"
-    trigger="loop"
-    delay="1500"
-    colors="primary:#121212,secondary:#666666"
-    style={{width: '100px', height: '100px'}}
-  />
-</div>
-
-## Speed up your workflow with voice
-
-Stenox is a native macOS menu bar app that turns your voice into perfectly formatted text. **Speak naturally at 150+ WPM** — Stenox handles transcription, formatting, and insertion automatically.
-
-<CardGroup cols={2}>
-  <Card title="Download Stenox" icon="arrow-down-to-bracket" href="/installation">
-    Install and set up in under 2 minutes.
-  </Card>
-  <Card title="First Dictation" icon="circle-play" href="/first-dictation">
-    Try your first voice-to-text experience.
-  </Card>
-</CardGroup>
-
----
-
-## How Stenox Works
-
-<div className="stenox-pipeline">
-  <div className="stenox-pipeline-step">
-    <lord-icon
-      src="https://cdn.lordicon.com/laqlvddb.json"
-      trigger="loop"
-      delay="2000"
-      colors="primary:#3b82f6,secondary:#93c5fd"
-    />
-    <span className="stenox-pipeline-label">Dictate</span>
-  </div>
-
-  <span className="stenox-pipeline-arrow">→</span>
-
-  <div className="stenox-pipeline-step">
-    <lord-icon
-      src="https://cdn.lordicon.com/egmlnyku.json"
-      trigger="loop"
-      delay="2200"
-      colors="primary:#8b5cf6,secondary:#c4b5fd"
-    />
-    <span className="stenox-pipeline-label">Transcribe</span>
-  </div>
-
-  <span className="stenox-pipeline-arrow">→</span>
-
-  <div className="stenox-pipeline-step">
-    <lord-icon
-      src="https://cdn.lordicon.com/bmlkvhui.json"
-      trigger="loop"
-      delay="2400"
-      colors="primary:#f59e0b,secondary:#fcd34d"
-    />
-    <span className="stenox-pipeline-label">Enhance</span>
-  </div>
-
-  <span className="stenox-pipeline-arrow">→</span>
-
-  <div className="stenox-pipeline-step">
-    <lord-icon
-      src="https://cdn.lordicon.com/aqrzgjfy.json"
-      trigger="loop"
-      delay="2600"
-      colors="primary:#10b981,secondary:#6ee7b7"
-    />
-    <span className="stenox-pipeline-label">Insert</span>
-  </div>
-</div>
-
-<Tip>
-  Stenox works in **any application** — email, chat, code editors, documents, and more.
-</Tip>
-
----
-
-## Why Stenox?
-
-<CardGroup cols={3}>
-  <Card title="Privacy First" icon="shield-check" href="/providers/local-privacy">
-    100% local processing — no internet required.
-  </Card>
-  <Card title="Smart Profiles" icon="rectangles-mixed" href="/profiles/overview">
-    Auto-activate settings per app context.
-  </Card>
-  <Card title="Your Providers" icon="key-skeleton" href="/providers/cloud-byok">
-    BYOK for full control over your data.
-  </Card>
-</CardGroup>
-
----
-
-## Free and local-first
-
-Stenox 1.0 is free, with no license, subscription, free-tier restriction, or recording time limit. Onboarding prepares Parakeet transcription and Gemma language processing before your first recording.
-
-<CardGroup cols={2}>
-  <Card title="Free Access" icon="gift" href="/pricing/overview">
-    Every built-in feature, with no license or usage limit.
-  </Card>
-  <Card title="Local Privacy" icon="shield" href="/providers/local-privacy">
-    Parakeet and Gemma run on your Apple Silicon Mac.
-  </Card>
-</CardGroup>
+Stenox brings dictation, meeting capture, and notes to your Mac. Choose local processing or connect a supported provider for the parts of your workflow you want to run in the cloud.
 
 <Note>
-  Supported third-party providers are optional and use your own API keys.
+  These guides describe the current development build. The public download may have fewer features. See [Release and access](/pricing/overview) before installing or looking for a purchase link.
 </Note>
 
----
-
-## Explore
-
 <CardGroup cols={2}>
-  <Card title="Profiles" icon="user-pen" href="/profiles/overview">
-    Customize transcription and AI settings per context.
+  <Card title="Start dictating" icon="microphone" href="/first-dictation">
+    Speak into a text field, then polish the result when you want to.
   </Card>
-  <Card title="Providers" icon="diagram-project" href="/providers/overview">
-    Local and cloud options for transcription and AI.
+  <Card title="Capture a meeting" icon="comments" href="/meetings/overview">
+    Follow the conversation, review decisions and tasks, and keep your own notes.
   </Card>
-  <Card title="Free Access" icon="gift" href="/pricing/overview">
-    Why Stenox is free and how local-first defaults work.
+  <Card title="Choose your models" icon="microchip" href="/providers/overview">
+    Find the speech, cleanup, and meeting models available in Stenox.
   </Card>
-  <Card title="Setup Guides" icon="screwdriver-wrench" href="/setup/byok-configuration">
-    Hotkeys, local models, BYOK, and more.
+  <Card title="Make it yours" icon="sliders" href="/profiles/overview">
+    Set up profiles, shortcuts, and word replacements for your work.
   </Card>
 </CardGroup>
 
----
+## Dictation that stays in your flow
 
-## Need Help?
+Place your cursor in an editable field, use your [dictation shortcut](/setup/hotkeys), and speak. Stenox transcribes your recording, applies your enabled filler removal and word replacements, then inserts or copies the text. **Polish** is a separate action after dictation; an AI model is not required to start recording.
 
-<CardGroup cols={2}>
-  <Card title="Troubleshooting" icon="toolbox" href="/guides/troubleshooting">
-    Common issues and solutions.
-  </Card>
-  <Card title="Support" icon="comments-question" href="/support/overview">
-    Contact our team — even by voice!
-  </Card>
-</CardGroup>
+## Meetings with a source to return to
+
+[Notetaker](/meetings/overview) captures microphone and system audio, organizes a conversation by speaker, and optionally drafts takeaways, decisions, tasks, and open questions. Edit the transcript, follow citations, add reference documents, or [ask a question](/meetings/references-and-ask) about the session.
+
+## Choose where processing happens
+
+Local speech and language models run on your Apple Silicon Mac after download. Cloud speech sends audio; cloud cleanup and subscription insights send the text and context needed for the chosen feature. Your choices for speech, dictation cleanup, and meeting insights are separate. Read [Privacy and data flow](/providers/local-privacy) to set them deliberately.

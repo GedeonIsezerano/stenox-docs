@@ -1,0 +1,32 @@
+---
+title: "References and Ask Stenox"
+description: "Add readable documents, ask session questions, and inspect the cited evidence."
+---
+
+## Add reference documents
+
+Open **References** in session setup or the tracker. Use **Add files** or drag files into the reference view. Supported files are **PDF, DOCX, PPTX, UTF-8 TXT, and Markdown**.
+
+Each file is limited to 20 MB, 500 pages or slides, and 2 MB of extracted text. A batch accepts up to 20 files. Duplicate content is detected by its hash. You can preview, exclude, or remove an imported reference; removing it does not delete the original file.
+
+Only readable text is extracted. Scanned pages, images, charts, and document layout are not interpreted. DOCX body text is stored as one section; PPTX text is split by slide. A scanned PDF needs a readable text layer before its content can help the session.
+
+## What the AI receives
+
+Included references are background context, distinct from evidence of what people said. Stenox uses full text when it fits the selected model's budget and otherwise chooses relevant page excerpts. The UI indicates partial coverage. A large model context window does not guarantee every document fits.
+
+Excluded references are not included in future requests. Changes to included evidence invalidate stale replies and reset continued provider context where needed. They cannot retract text already sent to a cloud provider.
+
+[Google Calendar context](/meetings/calendar) requires on-device insights. Calendar attachment links do not grant Stenox permission to download the files automatically; open them in your browser and add a downloaded file explicitly.
+
+## Ask a question
+
+Open **Ask Stenox** from the session. It appears beside a wide workspace and in a sheet in a narrow one. Ask about the conversation or included references, then follow the answer's source links to the passage or stored reference page.
+
+Ask uses the same provider, model, account, reasoning choice, and privacy restrictions as Insights. Its input is bounded to selected or recent conversation, prior questions and answers, and included reference text. Read the coverage shown with the answer; it may not cover every part of a long meeting.
+
+## Decide what to keep
+
+An answer does not automatically change your notes. Choose **Save to personal notes** or **Add to insights** when you want to keep it. Otherwise it remains a question-and-answer result.
+
+Personal notes themselves are not supplied to the AI. Do not assume Ask can read something that exists only in that tab. Review answers against their sources before turning them into commitments or sharing them.

@@ -1,0 +1,42 @@
+---
+title: "Insights and personal notes"
+description: "Review takeaways, decisions, tasks, questions, and refined notes without losing edits."
+---
+
+## Current insights
+
+With automatic insights enabled, Stenox reviews new or corrected conversation on the meeting clock at roughly two-minute intervals, with manual refresh and a final review when the session ends. It needs at least two contributions before a review. Processing can take longer than the interval.
+
+Current insights groups **Takeaways**, **Decisions**, **Tasks**, and **Open questions**. In Conversation, it starts collapsed at the bottom with a count. The **Insights** tab also offers **Current** and **Refined** views.
+
+Add or edit an outcome, change its type, set an owner or deadline, mark completion, remove it, or inspect its sources. User edits and removals are protected from later AI updates. Unknown owners remain unassigned rather than becoming invented commitments.
+
+<Note>
+  Insights are drafts. Review their evidence, names, dates, and ownership. The model works with bounded recent and changed conversation plus existing outcomes; it does not re-read an unlimited transcript on every update.
+</Note>
+
+## Open-question prompts
+
+During recording, eligible generated questions can appear one at a time in the notch or top floating surface. Hover pauses the reading timer; **Dismiss question** clears the prompt, and **Next question** appears when another is waiting. VoiceOver uses explicit dismissal.
+
+Dismissing a prompt removes it from the session's display queue, not from the notes. Acknowledged questions do not repeat. Pausing, disabling insights, or ending the meeting suppresses the prompts; reviewing saved history does not replay them.
+
+## Refined notes
+
+After the final review, the selected insights provider can consolidate accepted outcomes into a separate Markdown draft. Refined notes do not replace the cited Current insights. A session with no user or calendar title may receive a suggested title from this pass; existing titles are preserved.
+
+Refined text is editable and autosaves. If you edit it, a later regeneration produces a suggestion that you explicitly accept or discard. It does not overwrite your writing. Evidence changes can mark an unedited draft stale; review or regenerate before sharing it.
+
+Use **Raw / Formatted** to switch the display of Current or Refined notes. Current's Raw view shows its export Markdown; edit individual insights in Formatted. Refined's Raw view is the Markdown editor. Switching display does not call AI.
+
+## Personal notes
+
+Personal notes autosave independently, including before recording starts. They are **excluded from AI inputs**. They are a place for your own observations, not another automatic summary.
+
+The editor supports Markdown headings, emphasis, lists, tasks, quotes, links, and code. Syntax appears in the paragraph you are editing and hides again when you leave it. Return continues a list or unchecked task; Return on an empty item leaves the list. Command–B and Command–I format a selection, with native undo.
+
+## Change the session prompt
+
+Open **Settings → Notetaker → Advanced** for a custom session prompt of up to 4,000 characters. Specify focus, language, tone, or detail. Save it to apply to future reviews, or choose **Use Stenox default**. Evidence and citation validation still apply.
+
+If AI is unavailable, recording and saved text continue. You can still keep personal notes and use accepted Current insights. See [processing and recovery](/meetings/processing) and [exports](/meetings/exports).

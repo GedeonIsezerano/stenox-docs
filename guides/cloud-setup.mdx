@@ -1,57 +1,17 @@
 ---
-title: "BYOK Cloud Setup"
-description: "Connect optional third-party providers with your own API keys"
+title: "Set up cloud processing"
+description: "Choose cloud features intentionally and verify a short sample."
 ---
 
-## Local first, cloud optional
+1. Decide which job you want to run remotely: speech, optional dictation Polish, or meeting insights.
+2. For speech or Gemini Polish, add the provider key in **Settings → API Keys** and select it in the relevant profile or Text cleanup controls.
+3. For subscription meeting insights, connect the provider in **Settings → Notetaker** and choose a runtime-supported model and reasoning setting.
+4. Try a short sample and check output, account access, quota, and usage before a longer session.
 
-Stenox defaults to local Parakeet transcription and Gemma language processing. You only need this guide if you prefer a supported third-party provider.
+Cloud speech sends audio; cloud cleanup and insights send required text and context. Provider usage is separate from Stenox app access. Do not rely on historical free-credit or pricing figures from older guides.
 
-## How BYOK works
+A local speech + cloud insight setup still sends meeting text. Google Calendar context requires on-device insights, even if a cloud provider is otherwise connected.
 
-Bring your own key (BYOK) means:
+If a service is unavailable, the app does not silently move the job to another account. Notetaker preserves capture and saved text when optional insight generation fails; inspect the error and explicitly retry or change the provider.
 
-- You create and manage the provider account
-- Your key is stored in the macOS Keychain
-- Requests go directly from Stenox to the selected provider
-- The provider's quotas, prices, privacy policy, and terms apply
-- Stenox does not include or resell provider usage
-
-## Configure a provider
-
-<Steps>
-  <Step title="Choose a provider">
-    Review the [provider overview](/providers/overview) and the provider's current documentation.
-  </Step>
-  <Step title="Create an API key">
-    Sign in to the provider's official console and create a key for your account.
-  </Step>
-  <Step title="Add the key in Stenox">
-    Open Settings, select the transcription or language provider, paste the key, and save it.
-  </Step>
-  <Step title="Validate before relying on it">
-    Use Stenox's provider validation and make a short test dictation. If validation fails, check the key, account quota, and selected model.
-  </Step>
-</Steps>
-
-## Common combinations
-
-| Goal | Transcription | Language processing |
-|---|---|---|
-| Fully local | Parakeet | Gemma on MLX |
-| Fast cloud | Groq Whisper | Groq LLM |
-| High-quality cloud | Deepgram | Google Gemini |
-| Local audio, cloud enhancement | Parakeet | Google Gemini or Groq |
-
-<Note>
-  Provider offerings and quotas change. Check the provider's official documentation for current models, limits, and prices.
-</Note>
-
-<CardGroup cols={2}>
-  <Card title="BYOK configuration" icon="key" href="/setup/byok-configuration">
-    Detailed key storage and provider setup.
-  </Card>
-  <Card title="Troubleshooting" icon="toolbox" href="/guides/troubleshooting">
-    Diagnose key, quota, and model errors.
-  </Card>
-</CardGroup>
+See [supported BYOK services](/providers/cloud-byok), [meeting providers](/meetings/processing), and [troubleshooting](/guides/troubleshooting).
