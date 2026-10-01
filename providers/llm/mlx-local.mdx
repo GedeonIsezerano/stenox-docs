@@ -29,7 +29,15 @@ The original dictation remains in History. If polishing fails or is cancelled, t
 
 ## Older models
 
-Migrated selections can still load **Qwen 2.5 1.5B**, **Gemma 3n 2B**, **Phi-3 Mini**, **Gemma 3n 4B**, and **Qwen 3 4B**. These are deprecated and appear only when already selected; they are not part of the normal new-selection list. **Gemma 4 12B** is not in this build's supported cleanup catalog.
+These deprecated models can still load when already selected. They are not part of the normal new-selection list.
+
+| Model | ID |
+| --- | --- |
+| Qwen 2.5 1.5B | `qwen2_5_1_5B_4bit` |
+| Phi-3 Mini | `phi3_mini_4bit` |
+| Qwen 3 4B | `qwen3_4b_4bit` |
+
+**Gemma 3n 2B and 4B have been removed.** Saved local selections for unsupported models are normalized to **Gemma 4 E4B**, the current default. Review the selection and prepare that model before polishing. **Gemma 4 12B** is not in this build's supported cleanup catalog.
 
 An older profile is not automatically a recommendation. Move to a current model deliberately and compare the result on your own text.
 

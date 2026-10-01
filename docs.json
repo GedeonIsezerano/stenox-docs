@@ -25,7 +25,8 @@
               "index",
               "installation",
               "first-dictation",
-              "pricing/overview"
+              "pricing/overview",
+              "guides/upgrading"
             ]
           },
           {
@@ -215,7 +216,7 @@
     }
   },
   "banner": {
-    "content": "Development build docs \u00b7 Check [release and access](/pricing/overview) for public availability.",
+    "content": "V2 preview docs \u00b7 V2 is unpublished; free V1.1 remains available. See [release and access](/pricing/overview).",
     "dismissible": false
   },
   "ignore": [

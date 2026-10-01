@@ -3,9 +3,25 @@ title: "Troubleshooting"
 description: "Recover permissions, model preparation, dictation, and Notetaker workflows."
 ---
 
+## V2 asks for a trial or license
+
+V2 requires an active trial or license to start new work. Open **Settings → License** to **Start 7-day trial**, **Activate** an existing key, or **Verify now** for paid access while online. Trial expiry is separate from the 30-day paid offline allowance. Viewing and exporting saved history remains available. See [Release and access](/pricing/overview).
+
+If all device slots are in use, release an old Mac through **Manage purchase and devices**. Valid existing purchased licenses keep their original allowance; if an older key is rejected, contact support before buying again. A temporary network failure does not extend the cached verification deadline.
+
+If the app says **Licensing is not configured**, it cannot start a trial or activate a key. Check that you have the intended build and contact support. Changing API keys or permissions will not configure licensing.
+
+## Permissions or Keychain prompts after upgrading
+
+Check that you opened Stenox from **Applications**. Review Microphone, Accessibility, and Screen & System Audio Recording under **System Settings → Privacy & Security**, and reopen the app if requested. Follow [Upgrading to V2](/guides/upgrading) for the publisher name and older permission entries.
+
+For a Keychain prompt, verify the requesting app before granting access. If your login Keychain is locked, unlock it. Re-enter an inaccessible provider key in **Settings → API Keys** or reconnect the affected Notetaker account. If prompts repeat, check whether another Stenox copy is running and send support the prompt wording with private details removed.
+
+Do not erase Keychain, delete saved history, or allow all applications to access a credential. If a licensing identity was already lost, activate your key again and release the old device slot through **Manage purchase and devices** if necessary.
+
 ## Recording does not start
 
-Check that Stenox is running, your input device is selected under **Microphone**, and Microphone permission is enabled in macOS. Wait for the selected speech provider to be ready. End any active meeting before dictating, or finish dictation before starting a meeting.
+Check that Stenox is running with an active trial or license in V2, your input device is selected under **Microphone**, and Microphone permission is enabled in macOS. Wait for the selected speech provider to be ready. End any active meeting before dictating, or finish dictation before starting a meeting.
 
 A language model is optional for dictation readiness. Do not troubleshoot a disabled Polish model as though it were the speech recognizer.
 

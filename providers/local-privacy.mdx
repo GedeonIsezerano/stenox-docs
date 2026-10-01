@@ -14,6 +14,7 @@ Local-first describes a processing choice, not a promise that every feature is o
 | Gemini Polish | Text and the configured writing instructions are sent to Gemini. |
 | Subscription insights / Ask | Bounded conversation and included reference context are sent to the selected provider. |
 | Google Calendar | Event access uses the connected Google account; imported context is restricted to on-device insights. |
+| V2 trial and paid activation | Online requests verify app access and the device; they do not upload audio, transcripts, or notes. |
 
 ## Set up local processing
 
@@ -27,4 +28,6 @@ History and sessions are stored locally. **Active SQLite databases are plaintext
 
 Provider API keys use macOS Keychain. Subscription runtimes own their sign-in credentials. Provider retention, usage, and account policies still apply to cloud processing; opt-out or deletion request flags are not a zero-retention guarantee.
 
-Downloads, optional integrations, app services, and the planned paid license checks have their own network requirements. Offline local inference is separate from [app access](/pricing/overview). Read the [Stenox privacy policy](https://stenox.app/privacy) for the public policy.
+V2 licensing credentials also use Keychain. Starting the trial and activating a license require internet access. Paid access refreshes weekly and can remain offline for up to 30 days from the last successful verification. The trial ends after seven days, without the paid offline allowance.
+
+Downloads, optional integrations, and app services have their own network requirements. Offline local inference is separate from [app access](/pricing/overview). Read the [Stenox privacy policy](https://stenox.app/privacy) for the public policy.

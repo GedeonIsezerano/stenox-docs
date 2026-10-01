@@ -1,5 +1,7 @@
 # Local docs consolidation — October 1, 2026
 
+This report records the completed phase-one state. Later V2 source alignment and the authorized stale-registration cleanup are recorded in `maintenance/v2-readiness-2026-10-01.md`.
+
 Phase one consolidates the existing docs refresh into local `main`. It does not establish final V2 alignment, publish documentation, or change the app, website, or licensing repositories. All public-page content and theme files from the captured refresh were retained; the additional edits clarify historical audit status and repair maintenance evidence references.
 
 ## Inventory and disposition

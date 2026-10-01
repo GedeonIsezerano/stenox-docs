@@ -1,0 +1,50 @@
+---
+title: "Upgrading to V2"
+description: "Plan an optional V1-to-V2 upgrade and recover permissions or saved credentials."
+---
+
+<Note>
+  V2 is prepared but unpublished. Free V1.1 remains available on the [download page](https://stenox.app/download). These instructions prepare you for the upgrade; a completed V1-to-V2 migration has not yet been verified for the release.
+</Note>
+
+## Choose when to upgrade
+
+Moving from free V1 to paid V2 is optional. V2 adds the workflows described in these guides and uses a **seven-day full-app trial**, followed by a license for new work. Valid earlier purchased licenses keep their original rights and device allowance; check [Release and access](/pricing/overview) before buying again.
+
+## Before installing
+
+Finish recordings and let saves complete. Export important history and make a current Mac backup before replacing the app. Keep your license receipt and access to your provider accounts available. Do not remove Stenox's saved data, models, or Keychain items to prepare for the upgrade.
+
+When V2 is available, download it from the Stenox website, quit Stenox, and install the app in **Applications**. Open that installed copy. Check your history, profiles, shortcuts, input device, and model selections before relying on it for a meeting. If something is missing, preserve your backup and [contact support](/support/overview).
+
+## Check permissions again
+
+macOS may ask again after the app's signing identity changes. In **System Settings → Privacy & Security**, check Stenox's access:
+
+| Permission | Needed for |
+| --- | --- |
+| Microphone | Recording your voice for dictation and meetings. |
+| Accessibility | Inserting dictated text into other apps. |
+| Screen & System Audio Recording | Capturing the other side of a meeting. |
+
+Grant access to the copy you opened from Applications and reopen it if macOS requests it. If Accessibility still refers to an older copy, remove that Stenox entry and add the installed app again. Follow Apple's [screen and system audio instructions](https://support.apple.com/guide/mac-help/control-access-screen-system-audio-recording-mchld6aa7d23/mac) for that permission. This is separate from activating a license.
+
+## Recognize the publisher
+
+Stenox's business name is **GKI Software Inc., formerly Sophosia Software Inc.** The expected Apple signing name for V2 is **Sophosia Software Inc.**, under Team ID **VWXR46VR26**. macOS can therefore show Sophosia in a security or credential prompt even though the website uses GKI Software Inc.
+
+Use the official download and check which app is requesting access. A matching display name alone is not a reason to approve an unexpected prompt.
+
+## Recover provider and license access
+
+An updated app can need permission to read an existing Keychain item. If macOS asks after your upgrade, confirm it is the installed Stenox app before allowing access. Apple's [Keychain guidance](https://support.apple.com/en-asia/guide/keychain-access/kyca1331/mac) explains why an updated app may ask again.
+
+If a provider still appears unconfigured, re-enter its key in **Settings → API Keys**, or reconnect the affected account in **Settings → Notetaker**. Unlock your login Keychain if it is locked. Repeated prompts are a reason to check for another Stenox copy or contact support, not to erase Keychain or allow every app to read an item.
+
+In V2, open **Settings → License** to start the trial or activate your existing key. A lost licensing Keychain identity may leave an older device activation behind; release that activation through **Manage purchase and devices** if needed. Your paid offline allowance does not recover a missing local credential.
+
+## Review changed models and Polish
+
+V2 inserts the transcript first. **Polish** is a separate action, and optional AI cleanup does not block speech-model readiness. Review **Text cleanup**, even if your older build rewrote dictation automatically.
+
+**Gemma 3n 2B and 4B are no longer supported.** Saved selections for removed local models are normalized to the current default, **Gemma 4 E4B**. Check the selected model and its download before polishing. See [Local AI cleanup](/providers/llm/mlx-local) for the current and remaining legacy choices.

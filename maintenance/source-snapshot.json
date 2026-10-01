@@ -1,8 +1,12 @@
 {
   "reviewed_on": "2026-10-01",
-  "app_commit": "9545cffb2f19f5677a98c6801cd6c0504c3d170a",
+  "app_commit": "f7d017fc7840c83abd60e9260555d134fdee9b2e",
   "app_source": "local main (committed source, not working-tree edits)",
   "origin_main_at_initial_fetch": "67ef44d69b80c3cd2403a52b56c511838837bac8",
-  "website_reference": "working tree: app/globals.css, app/layout.tsx, lib/commerce.ts, docs/paid-relaunch-brief.md; rendered at http://127.0.0.1:3011/",
-  "mint_cli": "4.2.964"
+  "website_reference": "committed lib/commerce.ts for license terms; consolidated theme retained",
+  "mint_cli": "4.2.964",
+  "keygen_commit": "1395836e27f6972a3c76b9ff3fcc950960583455",
+  "website_commit": "3c2f69dddf3633b3145e327d8ce7bf7d06d455e7",
+  "release_status": "V2 prepared and unpublished; final app release/config delta pending",
+  "audit_report": "maintenance/v2-readiness-2026-10-01.md"
 }

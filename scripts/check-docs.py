@@ -7,7 +7,9 @@ import argparse, json, re, subprocess, sys
 root = Path(__file__).resolve().parents[1]
 parser = argparse.ArgumentParser(description=__doc__)
 parser.add_argument('--app-dir', type=Path, default=root.parent / 'app')
-parser.add_argument('--allow-newer-main', action='store_true', help='Check the recorded snapshot without requiring current main to match.')
+parser.add_argument('--keygen-dir', type=Path, default=root.parent / 'keygen')
+parser.add_argument('--website-dir', type=Path, default=root.parent / 'website')
+parser.add_argument('--allow-newer-main', action='store_true', help='Check the recorded snapshots without requiring repository mains to match.')
 args = parser.parse_args()
 snapshot = json.loads((root / 'maintenance/source-snapshot.json').read_text())
 commit = snapshot['app_commit']
@@ -73,8 +75,8 @@ models = re.findall(r'LocalLLMModelConfiguration\(id: "([^"]+)", name: "([^"]+)"
 s1_id = re.search(r'static let modelID = "([^"]+)"', source('Stenox/Services/LLM/S1Correction.swift')).group(1)
 active = {mid for mid, _, old in models if old == 'false'} | {s1_id}
 check(active == ids_in_table('providers/llm/mlx-local', '## Current cleanup catalog', '## Load before polishing'), 'Cleanup table differs from runtime catalog')
-for _, name, old in models:
-    if old == 'true': check(name in doc('providers/llm/mlx-local').split('## Older models')[1], f'Missing legacy model: {name}')
+legacy = {mid for mid, _, old in models if old == 'true'}
+check(legacy == ids_in_table('providers/llm/mlx-local', '## Older models', '## Meetings are separate'), 'Legacy cleanup table differs from runtime catalog')
 for provider, page in [('Parakeet', 'parakeet-local'), ('WhisperKit', 'whisperkit-local')]:
     swift = source(f'Stenox/Services/Transcription/Providers/{provider}Provider.swift')
     catalog = swift.split('static let availableModels',1)[1].split('// MARK:',1)[0]
@@ -92,9 +94,29 @@ brief_id = re.search(r'static let modelID = "([^"]+)"', brief).group(1)
 check(brief_id in doc('meetings/processing'), 'Meeting model differs from source')
 check('Nemotron-3-Diarization-8bit' in source('Stenox/Services/Notetaker/NemotronDiarizer.swift') and 'Nemotron-3-Diarization-8bit' in doc('meetings/processing'), 'Missing diarizer model')
 check(not any('groq' in page for page in nav), 'Removed Groq provider is in active navigation')
-current = subprocess.check_output(['git','rev-parse','main'], cwd=args.app_dir, text=True).strip()
-check(args.allow_newer_main or current == commit, f'App main advanced to {current}; review delta from {commit}')
-print(f'Checked {len(files)} MDX files, {len(nav)} navigation pages, {checked} local links/assets, and current local model catalogs against {commit}.')
+def repository_source(directory, revision, path):
+    return subprocess.check_output(['git', 'show', f'{revision}:{path}'], cwd=directory, text=True)
+keygen_commit = snapshot['keygen_commit']
+website_commit = snapshot['website_commit']
+license_service = repository_source(args.keygen_dir, keygen_commit, 'src/service.ts')
+commerce = repository_source(args.website_dir, website_commit, 'lib/commerce.ts')
+terms = commerce.split('export const PURCHASE_TERMS = {', 1)[1].split('} as const', 1)[0]
+for field, expected in [('devices', 2), ('verificationDays', 7), ('trialDays', 7), ('paidOfflineDays', 30)]:
+    actual = re.search(rf'\b{field}:\s*(\d+)', terms)
+    check(actual is not None and int(actual.group(1)) == expected, f'Review documented license term: {field}')
+check('now+7*DAY' in license_service and 'refreshAfter:Math.min(now+7*DAY,exp)' in license_service,
+      'Review documented trial and weekly refresh against licensing service')
+check('Math.min(now+30*DAY,l.expires??Infinity)' in license_service,
+      'Review documented paid offline window and underlying license expiry')
+check('deviceLimit:l.limit' in license_service, 'Review original device allowance preservation')
+license_ui = source('Stenox/Views/Settings/LicensingSettingsContent.swift')
+for label in ['Start 7-day trial', 'Activate', 'Verify now', 'Deactivate this Mac', 'Manage purchase and devices']:
+    check(f'"{label}"' in license_ui and label in doc('pricing/overview'), f'License guide/UI label mismatch: {label}')
+for label, directory, revision in [('App', args.app_dir, commit), ('Keygen', args.keygen_dir, keygen_commit), ('Website', args.website_dir, website_commit)]:
+    current = subprocess.check_output(['git','rev-parse','main'], cwd=directory, text=True).strip()
+    check(args.allow_newer_main or current == revision, f'{label} main advanced to {current}; review delta from {revision}')
+print(f'Checked {len(files)} MDX files, {len(nav)} navigation pages, {checked} local links/assets, and local model catalogs against app {commit}.')
+print(f'Checked license terms and UI labels against keygen {keygen_commit} and website {website_commit}.')
 if errors:
     print('\n'.join('ERROR: ' + error for error in errors)); sys.exit(1)
 print('PASS')
