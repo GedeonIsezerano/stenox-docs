@@ -1,12 +1,12 @@
 {
   "reviewed_on": "2026-10-01",
-  "app_commit": "f7d017fc7840c83abd60e9260555d134fdee9b2e",
+  "app_commit": "8e46e4f400855354e07c2c1d848f77150fb86528",
   "app_source": "local main (committed source, not working-tree edits)",
   "origin_main_at_initial_fetch": "67ef44d69b80c3cd2403a52b56c511838837bac8",
-  "website_reference": "committed lib/commerce.ts for license terms; consolidated theme retained",
+  "website_reference": "committed lib/commerce.ts and Cloudflare build/deploy offer selection; consolidated theme retained",
   "mint_cli": "4.2.964",
-  "keygen_commit": "1395836e27f6972a3c76b9ff3fcc950960583455",
-  "website_commit": "3c2f69dddf3633b3145e327d8ce7bf7d06d455e7",
-  "release_status": "V2 prepared and unpublished; final app release/config delta pending",
+  "keygen_commit": "9c7812116f06e7e78f5a50ca3e3329b758d9e284",
+  "website_commit": "85a070853d6a77ce9391b892e1b31e8b59ed19d0",
+  "release_status": "V2 final source reviewed and unpublished; signing/notarization, production and migration acceptance pending",
   "audit_report": "maintenance/v2-readiness-2026-10-01.md"
 }

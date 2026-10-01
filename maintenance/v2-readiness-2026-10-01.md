@@ -1,16 +1,16 @@
 # V2 documentation readiness — October 1, 2026
 
-The docs are prepared locally against the consolidated source below. V2 remains unpublished; free V1.1 remains the public download. This audit does not establish successful V1-to-V2 migration, release signing/notarization, production licensing fulfillment, paid checkout availability, or a website hosting cutover.
+The docs are aligned locally with the final committed app, keygen, and website source below. V2 remains unpublished; free V1.1 remains the public download. This audit does not establish successful V1-to-V2 migration, release signing/notarization, production licensing fulfillment, paid checkout availability, or a website hosting cutover.
 
 ## Reviewed baselines
 
 | Repository | Commit | Review |
 | --- | --- | --- |
-| App | `f7d017fc7840c83abd60e9260555d134fdee9b2e` | Delta from prior docs snapshot `9545cffb2f19f5677a98c6801cd6c0504c3d170a`, plus licensing and migration source. |
-| Keygen | `1395836e27f6972a3c76b9ff3fcc950960583455` | Custom Worker/D1 implementation, API contract, provider allowance handling, and operational limits. |
-| Website | `3c2f69dddf3633b3145e327d8ce7bf7d06d455e7` | Committed offer/trial/device terms in `lib/commerce.ts`; retained consolidated theme. |
+| App | `8e46e4f400855354e07c2c1d848f77150fb86528` | Prior consolidation review through `f7d017f`, followed by the final V2 release/configuration, signing, updater, and compatibility-test delta. |
+| Keygen | `9c7812116f06e7e78f5a50ca3e3329b758d9e284` | Prior Worker/D1 contract review through `1395836`, followed by isolated cloud preparation and explicit legacy entitlement mapping. Runtime source and API contract are unchanged. |
+| Website | `85a070853d6a77ce9391b892e1b31e8b59ed19d0` | Delta from `3c2f69d`: Cloudflare preparation, guarded offer selection, and unchanged prices, trial/device terms, public version, and V1 release files. |
 
-The source snapshot was advanced only after review. The final app release/config SHA remains a coordinator dependency; re-audit its delta before declaring release alignment. `check-docs.py` now detects drift in all three repository mains. `--allow-newer-main` deliberately validates recorded commits only.
+All three local mains were clean and matched these commits at final review. The combined snapshot was advanced only after all final deltas were reviewed; no final source dependency remains for this audit. `check-docs.py` detects subsequent drift in all three repository mains. `--allow-newer-main` deliberately validates recorded commits only. Source alignment does not complete the release acceptance gates below.
 
 ## Delta and claim review
 
@@ -18,6 +18,9 @@ The source snapshot was advanced only after review. The final app release/config
 - `5f756df` removed Gemma 3n 2B/4B, normalized unsupported local selections, and repaired local runtime/checkpoint lifecycle handling. Current active model IDs are unchanged. The legacy table now contains only Qwen 2.5 1.5B, Phi-3 Mini, and Qwen 3 4B. The documentation checker compares the entire legacy ID set, so removed entries cannot silently remain documented as supported.
 - `9f16e2e` fixes provider ownership when activating a completed local-model download and removes obsolete audit files. Existing download/select/readiness guidance remains applicable.
 - `f7d017f` preserves isolated demo data and research. Demo controls are not documented as customer features or release acceptance.
+- App `8e46e4f` sets version 2.0.0, describes the optional paid upgrade, and requires the production licensing issuer/audience in release configuration. Packaging retains the bundle ID, Sparkle feed and public key, preserves the V1 appcast entries, and marks V2 as a major upgrade. Explicit Developer ID signing and resumable notarization preparation do not prove a signed or notarized candidate exists. Synthetic V1 history compatibility tests do not establish actual migration.
+- Keygen `9c78121` adds isolated staging/production configuration, guarded cloud preparation and deployment, and read-only legacy eligibility verification. `API_CONTRACT.md` and `src/` have no delta from the prior reviewed baseline, so the documented trial, refresh, offline window and allowance behavior remain applicable.
+- Website `85a0708` adds V2 offer names/campaign metadata without changing prices or purchase terms. The Cloudflare build accepts `--offer=standard` for the manual standard-price transition; deployment derives the offer and flags from the verified build marker and selects the matching checkout-link secret. Defaults keep paid visibility and checkout closed. `lib/constants.ts` and `public/updates/` are unchanged. Cloudflare privacy/hosting wording belongs to the prepared website source and is not evidence of public cutover; the docs hosting guidance remains Mintlify.
 
 | Customer guidance | Source or authority |
 | --- | --- |
@@ -30,7 +33,9 @@ The source snapshot was advanced only after review. The final app release/config
 | Publisher | Coordinator-supplied identity: GKI Software Inc., formerly Sophosia Software Inc.; expected Apple signing display Sophosia Software Inc., Team VWXR46VR26. This is not a new release-artifact signature check. |
 | Permission and Keychain reauthorization | Existing app permission flow and Apple's current support guidance linked in the upgrade guide. No live user permissions or credentials were modified. |
 
-The Worker admits entitlements through explicit organization/benefit allowlists. The source preserves an admitted license's original allowance; it does not prove every historical purchase has been admitted to production. Production release-family mapping and original purchase-rights review remain release requirements. Sandbox evidence in the keygen repository is distinct from production acceptance.
+The Worker admits entitlements through explicit organization/benefit allowlists, now including the reviewed Lifetime, Lifetime Plus and current granted Plus benefits. The licensing owner's `licensing-legacy-eligibility.json` reports that both existing production Lifetime records passed the actual provider normalization and eligibility functions using redacted read-only records. Each retains three Macs and no expiry. A separate before/after read reported unchanged keys, rights, usage and validation metadata; no customer activation occurred. This establishes reviewed mapping and code compatibility for those records, not live production activation acceptance.
+
+The licensing owner's `licensing-phase2-status.json` reports 11 successful deployed staging checks against real Polar sandbox behavior. Production D1 and public configuration are prepared, but the production Worker still awaits its scoped Polar token. Production deployment, webhook delivery, native activation and fulfillment acceptance remain open. The customer guides retain those boundaries.
 
 ## In-app upgrade path clarification
 
@@ -54,7 +59,9 @@ Mintlify 4.2.964 build validation, broken-link check, and MDX media accessibilit
 
 The initial `python3 scripts/check-docs.py` run passed against the recorded repository mains: 42 MDX files, 38 navigation pages, 122 local links/assets, exact active/legacy model IDs, licensing term constants, original device-allowance preservation, and License UI action names. `git diff --check` passes.
 
-During the focused upgrade-path clarification, app main advanced to `8e46e4f400855354e07c2c1d848f77150fb86528`. The strict check now reports that source dependency; the recorded-source check with `--allow-newer-main` passes. The snapshot remains unchanged pending the final app SHA. Build, links, whitespace, and 1440/320 px rendered checks passed again for the clarification, with no page overflow or captured console errors. Follow-up logs use the `docs-upgrade-` prefix in the evidence directory.
+During the focused upgrade-path clarification, the strict check correctly reported that repository mains had advanced; the recorded-source check with `--allow-newer-main` passed. Those dependencies are resolved by the final three-repository review above. Build, links, whitespace, and 1440/320 px rendered checks passed for the clarification, with no page overflow or captured console errors. Follow-up logs use the `docs-upgrade-` prefix in the evidence directory.
+
+The final baseline update changes only the README and maintenance records; customer MDX, navigation and styling are unchanged from that rendered check. Final strict source, Mintlify validation, broken-link and whitespace checks are recorded with the `docs-baseline-final-` prefix in the evidence directory.
 
 Rendered local checks cover the upgrade guide at 1440 × 1000 and its permission table at 320 × 740. Page width matches viewport width. The permission table scrolls within its own wrapper; keyboard Right moved it 40 px. Mobile navigation opens Release and access, and its 320 px dark layout renders correctly. A rendered price check caught unescaped dollar signs being parsed as math; both currency amounts were escaped and verified as ordinary text. Browser console errors were not observed during the final checks.
 
@@ -66,8 +73,8 @@ The missing `/private/tmp/stenox-docs-free` registration was pruned after verify
 
 ## Publication requirements
 
-1. Receive the final app release/config SHA and re-audit its delta; likewise review any changed backend contract or website terms before updating snapshots.
+1. Re-audit any source changes after the three final commits above before advancing this snapshot again.
 2. Obtain release evidence for signing/notarization and actual V1-to-V2 data, permission, and Keychain recovery before changing migration-status claims.
-3. Confirm production entitlement mapping, licensing service/configuration, compatible paid app, and checkout fulfillment before removing the staged-offer notices. Preserve original purchase rights and allowances.
+3. Complete production licensing deployment/configuration, existing-license activation and webhook acceptance, compatible paid app acceptance, and checkout fulfillment before removing the staged-offer notices. Preserve the reviewed original purchase rights and allowances.
 4. Obtain explicit authority to push/publish this docs commit, confirm the Mintlify repository/branch connection, then verify hosted routes, redirects, responsive rendering, and search. Local preview does not verify hosted search.
 5. Leave `docs.stenox.app` on Mintlify when the separate website moves to Cloudflare.
