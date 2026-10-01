@@ -22,7 +22,7 @@ See [the V2 readiness audit](maintenance/v2-readiness-2026-10-01.md) and [record
 
 `check-docs.py` checks current and legacy model IDs, license terms and UI labels, navigation, local targets, and whether a recorded repository main advanced. It expects sibling `../app`, `../keygen`, and `../website` repos; use `--app-dir`, `--keygen-dir`, and `--website-dir` elsewhere. Inspect any main delta before updating the snapshots. `--allow-newer-main` checks the recorded snapshots deliberately without accepting newer behavior.
 
-The [local consolidation report](maintenance/consolidation-2026-10-01.md) records the retained work and validation. The [V2 readiness audit](maintenance/v2-readiness-2026-10-01.md) records the final app, keygen, and website source review. Signing/notarization, production licensing and fulfillment, actual V1-to-V2 migration, and publication acceptance remain pending.
+The [local consolidation report](maintenance/consolidation-2026-10-01.md) records the retained work and validation. The [V2 readiness audit](maintenance/v2-readiness-2026-10-01.md) records the app, keygen, and website source review, verified candidate signing, and deployed production licensing smoke checks. Notarization, native trial/license acceptance, Polar-originated webhook delivery, paid fulfillment, actual V1-to-V2 migration, and publication acceptance remain pending.
 
 ## Release boundary
 
