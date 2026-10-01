@@ -22,7 +22,7 @@ The source snapshot was advanced only after review. The final app release/config
 | Customer guidance | Source or authority |
 | --- | --- |
 | Seven-day full-app trial, explicit online start, no account/card, fixed deadline | App licensing models/manager and onboarding; keygen `API_CONTRACT.md` and `src/service.ts` trial issuance. |
-| New two-Mac licenses, original allowance retained, no repurchase of already-covered access | Website `PURCHASE_TERMS` and purchase FAQ; app License settings wording; Worker uses the provider's actual `l.limit`. |
+| New two-Mac licenses; valid earlier paid licenses cover V2 without repurchase and retain original rights/allowance | User's explicit V2 entitlement decision, relayed by the coordinator; website/app allowance wording; Worker preserves the provider's actual `l.limit` and rejects inactive/revoked/expired grants. This does not promise access from refunded licenses. |
 | Weekly paid refresh and up to 30 days offline | Worker `paid()` sets refresh at seven days and expiry at 30 days, capped by any underlying grant expiry. Native signed-credential checks enforce the deadline. |
 | Temporary failures preserve the existing deadline; authoritative invalidity can block new work | Native `LicensingManager.perform`, `LicensingFailure.revokesExistingActivation`, and Worker/provider error handling. |
 | Device change or lost Keychain identity | Native deactivation clears paid access after server success; Worker operations document new-key activation and releasing the old slot. No Keychain deletion is prescribed. |
@@ -31,6 +31,12 @@ The source snapshot was advanced only after review. The final app release/config
 | Permission and Keychain reauthorization | Existing app permission flow and Apple's current support guidance linked in the upgrade guide. No live user permissions or credentials were modified. |
 
 The Worker admits entitlements through explicit organization/benefit allowlists. The source preserves an admitted license's original allowance; it does not prove every historical purchase has been admitted to production. Production release-family mapping and original purchase-rights review remain release requirements. Sandbox evidence in the keygen repository is distinct from production acceptance.
+
+## In-app upgrade path clarification
+
+The intended normal V1-to-V2 path is the existing Sparkle updater; manual download is a fallback. App `UpdateManager.swift` owns the Sparkle controller, and `MenuBarView.swift` exposes **Check for Updates...**, replaced by **Restart to Update** when a pending update is ready. The customer guide describes the update prompt and menu actions without requiring every user to download a DMG again.
+
+The coordinator's `sparkle-continuity.json`, read from `/Users/home/.codex/qa-artifacts/stenox/v2-readiness-20261001/`, reports successful Ed25519 verification of the published V1.1 archive and a retained-key signing challenge against the retained public key. It records V1.1 DMG SHA-256 `03fa5529db5924c6a1a77793f7a92a808e7c9db4fabd8aca433d860e1005d002`, with no private-key export. This establishes signing-key continuity evidence, not successful end-to-end delivery/install of V2 or data, permission, and Keychain migration. Those acceptance gates remain open until release evidence arrives.
 
 ## Public availability and hosting
 
@@ -46,7 +52,9 @@ The docs banner, home, installation, release/access, and new upgrade guide retai
 
 Mintlify 4.2.964 build validation, broken-link check, and MDX media accessibility check pass. The existing color advisory remains: primary-on-light 5.28:1 meets AA, while the CLI recommends AAA. This is not full accessibility certification.
 
-`python3 scripts/check-docs.py` passes against the recorded repository mains: 42 MDX files, 38 navigation pages, 122 local links/assets, exact active/legacy model IDs, licensing term constants, original device-allowance preservation, and License UI action names. `git diff --check` passes.
+The initial `python3 scripts/check-docs.py` run passed against the recorded repository mains: 42 MDX files, 38 navigation pages, 122 local links/assets, exact active/legacy model IDs, licensing term constants, original device-allowance preservation, and License UI action names. `git diff --check` passes.
+
+During the focused upgrade-path clarification, app main advanced to `8e46e4f400855354e07c2c1d848f77150fb86528`. The strict check now reports that source dependency; the recorded-source check with `--allow-newer-main` passes. The snapshot remains unchanged pending the final app SHA. Build, links, whitespace, and 1440/320 px rendered checks passed again for the clarification, with no page overflow or captured console errors. Follow-up logs use the `docs-upgrade-` prefix in the evidence directory.
 
 Rendered local checks cover the upgrade guide at 1440 × 1000 and its permission table at 320 × 740. Page width matches viewport width. The permission table scrolls within its own wrapper; keyboard Right moved it 40 px. Mobile navigation opens Release and access, and its 320 px dark layout renders correctly. A rendered price check caught unescaped dollar signs being parsed as math; both currency amounts were escaped and verified as ordinary text. Browser console errors were not observed during the final checks.
 
