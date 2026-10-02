@@ -7,10 +7,10 @@
   "app_manifest_sha256": "08def0575db65a1027b7b8b107df75636ec03925d4e6253dab1e61f4a2190b95",
   "release_tooling_commit": "b73e8fd517f02269312949d6369688a9357f66ec",
   "origin_main_at_initial_fetch": "67ef44d69b80c3cd2403a52b56c511838837bac8",
-  "website_reference": "Optional website-only email capture at9031c31, separately unchecked communications consent, once-per-intent download-start tracking, no email in analytics, and compact production CSS at180e577; deployed source remains separately recorded",
+  "website_reference": "Optional website-only email capture at 9031c31, separately unchecked communications consent, once-per-intent download-start tracking, no email in analytics, and compact production CSS at 180e577. Reviewed 589b6c9 adds the accepted three-file manifest, APP_VERSION 2.0.0 and fixed per-environment capture origins without changing the public contract; deployed source remains separately recorded",
   "mint_cli": "4.2.964",
   "keygen_commit": "12c5f8f901782bd79f84dc01a17f6d83ab9c4bc2",
-  "website_commit": "180e5771259d27019efff45b1efcd5039d55428d",
+  "website_commit": "589b6c9c7f5567f41d9a111b10aada16049498f8",
   "website_deployed_commit": "359e9fd8aabbf729b4c818c527cab41e461ef603",
   "publication_policy": "candidate-only",
   "public_release_assets": [
@@ -18,7 +18,7 @@
     "Stenox-2.0.0.html",
     "appcast.xml"
   ],
-  "release_status": "V2 b73e8fd candidate prepared and notarized; all six local artifact hashes independently verified by docs; real OS/native acceptance and publication remain unverified. Website release-ready copy committed at f2c4138 but deployment not inferred.",
+  "release_status": "V2 b73e8fd candidate prepared and notarized; all six local artifact hashes independently verified by docs; real OS/native acceptance and app publication remain unverified by docs. Website source reviewed through 589b6c9; production deployment is not inferred. Docs publication at 5c1bc1c and its hosted acceptance are verified separately.",
   "audit_report": "maintenance/v2-readiness-2026-10-01.md",
   "pending_source_delta": {
     "status": "final app source and prepared candidate reviewed; real OS/native acceptance and publication remain unverified",
