@@ -2,20 +2,15 @@
   "reviewed_on": "2026-10-01",
   "app_commit": "b73e8fd517f02269312949d6369688a9357f66ec",
   "app_source": "final intended local main source supplied by coordinator; replacement-candidate acceptance is recorded separately",
-  "app_build_commit": "bb165c264a785c798d5356b500fc5d3f63499fa1",
-  "app_build_status": "superseded: bb165c2 was notarized and rendered after user denied Keychain prompt; migration incomplete; replacement candidate for explicit Keychain recovery pending",
-  "app_manifest_sha256": "6115421a7d781fbc85ddd3d618b554183790f66f2e1654ccefe574238691ae43",
-  "release_tooling_commit": "bb165c264a785c798d5356b500fc5d3f63499fa1",
-  "superseded_candidate": {
-    "app_build_commit": "8e46e4f400855354e07c2c1d848f77150fb86528",
-    "release_tooling_commit": "58583d57a7892ae1856e7ecfb45f9137e0517e64",
-    "status": "historical notarized candidate; lacks current native changes and is not the release candidate"
-  },
+  "app_build_commit": "b73e8fd517f02269312949d6369688a9357f66ec",
+  "app_build_status": "prepared, notarized and signing verified; real OS/native acceptance and publication remain unverified",
+  "app_manifest_sha256": "08def0575db65a1027b7b8b107df75636ec03925d4e6253dab1e61f4a2190b95",
+  "release_tooling_commit": "b73e8fd517f02269312949d6369688a9357f66ec",
   "origin_main_at_initial_fetch": "67ef44d69b80c3cd2403a52b56c511838837bac8",
-  "website_reference": "committed personal-notes privacy disclosures, canonical changelog footer link and unchanged commerce controls; deployed source separately recorded",
+  "website_reference": "committed release-ready V2 copy, Personal notes privacy disclosures and canonical changelog footer link; commerce controls unchanged and deployed source separately recorded",
   "mint_cli": "4.2.964",
   "keygen_commit": "12c5f8f901782bd79f84dc01a17f6d83ab9c4bc2",
-  "website_commit": "16f67d50312af6b6228ddf32874b93c08b9a9473",
+  "website_commit": "f2c41383901c9a34c3fa77c5bae7876400ee997b",
   "website_deployed_commit": "359e9fd8aabbf729b4c818c527cab41e461ef603",
   "publication_policy": "candidate-only",
   "public_release_assets": [
@@ -23,10 +18,10 @@
     "Stenox-2.0.0.html",
     "appcast.xml"
   ],
-  "release_status": "V2 unpublished; bb165c2 candidate superseded pending Keychain recovery fix and replacement candidate; user denied original prompt and UI then worked; actual GUI trial/license and fresh Sparkle acceptance remain separate; Cloudflare site-only website live with downloads unavailable and checkout closed; ordinary client access recovery verified",
+  "release_status": "V2 b73e8fd candidate prepared and notarized; all six local artifact hashes independently verified by docs; real OS/native acceptance and publication remain unverified. Website release-ready copy committed at f2c4138 but deployment not inferred.",
   "audit_report": "maintenance/v2-readiness-2026-10-01.md",
   "pending_source_delta": {
-    "status": "final intended app source reviewed; replacement signed candidate and acceptance pending",
+    "status": "final app source and prepared candidate reviewed; real OS/native acceptance and publication remain unverified",
     "base_commit": "bb165c264a785c798d5356b500fc5d3f63499fa1",
     "observed_app_commit": "b73e8fd517f02269312949d6369688a9357f66ec",
     "reviewed_keychain_commit": "8006345e756faa8589c35552331cbd335f6a64d2",
@@ -34,5 +29,20 @@
     "real_macos_continuity_accepted": false
   },
   "publication_authority": "User authorizes production publication after coordinator releases readiness gates; no independent publication yet",
-  "public_copy_policy": "User requested release-ready copy with no pending-release notices; factual candidate and publication status remains internal"
+  "public_copy_policy": "User requested release-ready copy with no pending-release notices; factual candidate and publication status remains internal",
+  "superseded_candidates": [
+    {
+      "app_build_commit": "8e46e4f400855354e07c2c1d848f77150fb86528",
+      "release_tooling_commit": "58583d57a7892ae1856e7ecfb45f9137e0517e64",
+      "status": "historical notarized candidate; lacks current native changes and is not the release candidate"
+    },
+    {
+      "app_build_commit": "bb165c264a785c798d5356b500fc5d3f63499fa1",
+      "release_tooling_commit": "bb165c264a785c798d5356b500fc5d3f63499fa1",
+      "manifest_sha256": "6115421a7d781fbc85ddd3d618b554183790f66f2e1654ccefe574238691ae43",
+      "status": "historical superseded candidate; UI responded after user denial, migration incomplete"
+    }
+  ],
+  "app_manifest": "candidate-2.0.0-b73e8fd/release-manifest.json",
+  "app_notarization_submission": "d846f737-6d50-4c29-ad3c-c4538ddb60df"
 }
