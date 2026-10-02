@@ -112,8 +112,19 @@ check('deviceLimit:l.limit' in license_service, 'Review original device allowanc
 license_ui = source('Stenox/Views/Settings/LicensingSettingsContent.swift')
 for label in ['Start 7-day trial', 'Activate', 'Verify now', 'Deactivate this Mac', 'Manage purchase and devices']:
     check(f'"{label}"' in license_ui and label in doc('pricing/overview'), f'License guide/UI label mismatch: {label}')
+app_source_mode = snapshot.get('app_source_mode', 'main')
+check(app_source_mode in {'main', 'published'}, f'Unknown app source mode: {app_source_mode}')
 for label, directory, revision in [('App', args.app_dir, commit), ('Keygen', args.keygen_dir, keygen_commit), ('Website', args.website_dir, website_commit)]:
     current = subprocess.check_output(['git','rev-parse','main'], cwd=directory, text=True).strip()
+    if label == 'App' and app_source_mode == 'published':
+        check(revision == snapshot.get('app_build_commit') == snapshot.get('release_tooling_commit'),
+              'Published app source must match the recorded build and release-tooling commits')
+        check(snapshot.get('release_acceptance', {}).get('published') is True,
+              'Published app source requires recorded publication acceptance')
+        check(subprocess.run(['git', 'merge-base', '--is-ancestor', revision, current], cwd=directory).returncode == 0,
+              f'Published app source {revision} is not an ancestor of app main {current}')
+        print(f'App source is pinned to published {revision}; current main {current} is not included.')
+        continue
     check(args.allow_newer_main or current == revision, f'{label} main advanced to {current}; review delta from {revision}')
 print(f'Checked {len(files)} MDX files, {len(nav)} navigation pages, {checked} local links/assets, and local model catalogs against app {commit}.')
 print(f'Checked license terms and UI labels against keygen {keygen_commit} and website {website_commit}.')

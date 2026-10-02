@@ -1,33 +1,35 @@
 {
   "reviewed_on": "2026-10-02",
   "app_commit": "b73e8fd517f02269312949d6369688a9357f66ec",
-  "app_source": "final intended local main source supplied by coordinator; replacement-candidate acceptance is recorded separately",
+  "app_source": "Published Stenox 2.0.0 source and release tooling frozen at b73e8fd; later popup/recording commits and uncommitted work are excluded",
   "app_build_commit": "b73e8fd517f02269312949d6369688a9357f66ec",
-  "app_build_status": "prepared, notarized and signing verified; real OS/native acceptance and publication remain unverified",
+  "app_build_status": "Published artifacts verified; human Check for Updates from 1.1 installed and relaunched 2.0.0; installed executable and signature match frozen candidate",
   "app_manifest_sha256": "08def0575db65a1027b7b8b107df75636ec03925d4e6253dab1e61f4a2190b95",
   "release_tooling_commit": "b73e8fd517f02269312949d6369688a9357f66ec",
   "origin_main_at_initial_fetch": "67ef44d69b80c3cd2403a52b56c511838837bac8",
-  "website_reference": "Optional website-only email capture at 9031c31, separately unchecked communications consent, once-per-intent download-start tracking, no email in analytics, and compact production CSS at 180e577. Reviewed 589b6c9 adds the accepted three-file manifest, APP_VERSION 2.0.0 and fixed per-environment capture origins; d6753a4 adds no-transform to release artifact cache headers, targeted tests and HTTP/1 full-byte verification. The final 439e9dd delta only records owner production capture acceptance in internal documentation. Public guidance, consent and account behavior are unchanged; deployed source remains separately recorded",
+  "website_reference": "Published V2 source with optional email capture, unchecked communications consent, once-per-intent download-start tracking and no email in analytics. Release artifact no-transform headers remain at d6753a4. Reviewed 9d17b9e restores DownloadButton in paid navigation, hero, pricing and final CTA through the existing flow; PurchaseButton and checkout behavior are preserved. Final 5a3da77 removes the separate skip button; the single Download Stenox action and X/Escape/outside dismissal preserve optional email and download continuation.",
   "mint_cli": "4.2.964",
-  "keygen_commit": "12c5f8f901782bd79f84dc01a17f6d83ab9c4bc2",
-  "website_commit": "439e9dd64a9590be3f5d908580a8ee58359386fb",
-  "website_deployed_commit": "d6753a497afedd22ebc5fa7059033875fe2e56ec",
-  "website_deployment_evidence": "Coordinator reports production runtime d6753a4 at Cloudflare version e740b1f6; docs has not independently rerun production acceptance",
-  "publication_policy": "candidate-only",
+  "keygen_commit": "e8becba89c7c47e021661fe76d38d901b6151dd8",
+  "website_commit": "5a3da77e64dcb8649b7b84304d8b8f3162cd8b9b",
+  "website_deployed_commit": "5a3da77e64dcb8649b7b84304d8b8f3162cd8b9b",
+  "website_deployment_evidence": "Reviewed website/download-modal-simplification/production-provider-and-artifacts.json, production-http-verification.json and live-browser-verification.json: source 5a3da77, Cloudflare version e57d4f40-93b0-414f-9b83-038b176c9872 at 100 percent traffic. Optional email and unchecked consent preserved; exact notes/feed hashes and headers passed; unchanged complete DMG hash evidence retained.",
+  "publication_policy": "published-v2-three-artifact-release",
   "public_release_assets": [
     "Stenox-2.0.0.dmg",
     "Stenox-2.0.0.html",
     "appcast.xml"
   ],
-  "release_status": "V2 b73e8fd candidate prepared and notarized; all six local artifact hashes independently verified by docs; real OS/native acceptance and app publication remain unverified by docs. Website source reviewed through 439e9dd; coordinator reports production runtime d6753a4, with independent production acceptance not rerun by docs. Docs publication at 5c1bc1c and its hosted acceptance are verified separately.",
+  "release_status": "Stenox 2.0.0 DMG, HTML notes and appcast are published with exact hashes verified. Human live Sparkle update, install and relaunch are accepted. Saved-provider use is not separately observed; no blanket OS Keychain guarantee. Anonymous backend and shared native DEBUG-service checks passed with their stated limits.",
   "audit_report": "maintenance/v2-readiness-2026-10-01.md",
   "pending_source_delta": {
-    "status": "final app source and prepared candidate reviewed; real OS/native acceptance and publication remain unverified",
+    "status": "Final website and keygen source deltas reviewed; published app source frozen and unrelated app WIP excluded",
     "base_commit": "bb165c264a785c798d5356b500fc5d3f63499fa1",
     "observed_app_commit": "b73e8fd517f02269312949d6369688a9357f66ec",
     "reviewed_keychain_commit": "8006345e756faa8589c35552331cbd335f6a64d2",
     "reviewed_personal_notes_commit": "8de0e03c6dcf731d3d5820996d5c3793e218d84e",
-    "real_macos_continuity_accepted": false
+    "real_macos_continuity_accepted": true,
+    "acceptance_scope": "Human-observed live Sparkle install and relaunch only; saved-provider exercise not separately observed",
+    "required": false
   },
   "publication_authority": "Coordinator released docs publication gate under existing user launch authority on October 2. Non-force push to existing origin main is authorized; live content, routes, rendering and search must verify publication. Dashboard sign-in is not a prerequisite to the attempt.",
   "public_copy_policy": "User requested release-ready copy with no pending-release notices; factual candidate and publication status remains internal",
@@ -47,16 +49,17 @@
   "app_manifest": "candidate-2.0.0-b73e8fd/release-manifest.json",
   "app_notarization_submission": "d846f737-6d50-4c29-ad3c-c4538ddb60df",
   "keychain_test_deferral": {
-    "status": "user_deferred_until_after_publication",
+    "status": "update_install_and_relaunch_completed_user_directed_move_on",
     "publication_blocker": false,
     "real_keychain_persistence_verified": false,
-    "fresh_candidate_update_verified": false,
-    "evidence": "human-post-release-keychain-test-deferral.json",
-    "scope": "Normal-app Keychain recovery and relaunch test; no pre-release Others-account requirement",
-    "post_release_checks": [
-      "Keychain recovery and relaunch",
-      "Fresh-candidate update"
-    ]
+    "fresh_candidate_update_verified": true,
+    "update_install_and_relaunch_confirmed": true,
+    "saved_provider_exercise_verified": false,
+    "repeated_relaunch_handoff_required": false,
+    "evidence": "human-live-v2-update-result.json",
+    "supersedes": "human-post-release-keychain-test-deferral.json",
+    "scope": "User confirmed actual Check for Updates 1.1 to 2.0.0 install and relaunch without prompts; no separate saved-provider exercise or blanket OS Keychain acceptance",
+    "post_release_checks": []
   },
   "website_download_contract": {
     "commit": "9031c31db9ec98e8a4a0e7d23256a535cf447c0c",
@@ -68,6 +71,57 @@
     "raw_email_in_generic_analytics": false,
     "owner_local_evidence": "website/email-download-verification.json",
     "coordinator_review": "coordinator-optional-email-review.json",
-    "production_acceptance_not_inferred": true
-  }
+    "production_acceptance_not_inferred": true,
+    "production_capture_verified": true,
+    "production_evidence": "coordinator-public-v2-readback.json",
+    "production_evidence_scope": "Owner/coordinator live endpoint and D1 evidence reviewed; no production writes performed by docs; PostHog ingestion not established",
+    "homepage_download_controls_commit": "9d17b9e3e88b80b6552da34a527893609c8a88e9",
+    "production_followup_evidence": [
+      "website/download-modal-simplification/production-provider-and-artifacts.json",
+      "website/download-modal-simplification/production-http-verification.json",
+      "website/download-modal-simplification/live-browser-verification.json"
+    ],
+    "final_modal_commit": "5a3da77e64dcb8649b7b84304d8b8f3162cd8b9b",
+    "separate_skip_button_present": false,
+    "close_x_continues_download": true
+  },
+  "app_checkout_scope": {
+    "source_mode": "committed published source only",
+    "excluded_work": "Later popup/recording commits and any working-tree changes for separate user work",
+    "working_tree_clean_claimed": false,
+    "app_main_observed": "a931201105d8c8783be57e54045202c2e0878d4c",
+    "unrelated_working_tree_changes_present_at_initial_review": true
+  },
+  "release_acceptance": {
+    "published": true,
+    "public_artifact_hashes_verified": true,
+    "publication_evidence": [
+      "coordinator-public-v2-readback.json",
+      "website/production-final-provider-verification.json",
+      "website/production-final-v2-verification.log"
+    ],
+    "native_update_evidence": "human-live-v2-update-result.json",
+    "native_sparkle_update_accepted": true,
+    "install_and_relaunch_confirmed": true,
+    "installed_candidate_executable_and_signature_match": true,
+    "saved_provider_exercise_verified": false,
+    "all_os_keychain_scenarios_verified": false
+  },
+  "anonymous_trial_verification": {
+    "backend_evidence": "licensing-anonymous-trial-20261002/summary.json",
+    "backend_live_checks": 18,
+    "backend_isolated_checks": 15,
+    "production_expiry_time_travelled": false,
+    "backend_production_code_changed": false,
+    "native_evidence": "anonymous-trial-native-20261002/evidence.json",
+    "native_source_binding": "anonymous-trial-native-20261002/source-binding.json",
+    "native_live_runner": "SwiftPM DEBUG shared LicensingManager/LicensingService with installed production configuration, in-memory identity and store",
+    "native_live_runner_passed": true,
+    "release_executable_invoked_by_runner": false,
+    "fresh_human_profile_ui_test_performed": false,
+    "native_runner_d1_row_binding": "Timestamp correlation only; runner did not emit identity or JWT subject",
+    "trial_is_reinstall_proof": false
+  },
+  "keygen_source_scope": "e8becba changes README and operator docs only; backend runtime source remains 6d5b243, Worker version 30024785-dfe5-487b-814f-d708557f046f",
+  "app_source_mode": "published"
 }
