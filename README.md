@@ -28,7 +28,7 @@ The [local consolidation report](maintenance/consolidation-2026-10-01.md) preser
 
 ## Release boundary
 
-The public docs describe released Stenox 2.0 without pending-release notices. Source, deployment, human observations and test limitations remain separate in maintenance evidence. The existing release authority covers this maintenance refresh and the requested X-dismissal wording correction through origin/main without force. The final website/keygen references are reviewed; run the unflagged source check, then verify the exact Mintlify deployment. The installation and privacy wording correction has focused build, desktop/narrow and keyboard-link evidence; unchanged pages retain their earlier rendering/search evidence.
+The public docs describe Stenox 2.0 without pending-release notices. Source, deployment, human observations and test limitations remain separate in maintenance evidence. The existing release authority covers the requested download guidance update through origin/main without force: optional email submission permits occasional product updates and team check-ins, while X continues the download without an email. Review the final website source, run the unflagged source check, and verify the exact Mintlify deployment. The installation and privacy guidance has focused build, desktop/narrow and keyboard-link evidence in `docs-email-submit-consent-review.json`; unchanged pages retain their earlier rendering/search evidence.
 
 Maintenance evidence and scripts are excluded from public docs through `docs.json`. Historical image files remain in the repository, but the active guides do not use the old screenshots or animated mock UI. Replace them only with verified current imagery.
 

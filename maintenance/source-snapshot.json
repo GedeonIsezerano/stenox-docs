@@ -7,12 +7,12 @@
   "app_manifest_sha256": "08def0575db65a1027b7b8b107df75636ec03925d4e6253dab1e61f4a2190b95",
   "release_tooling_commit": "b73e8fd517f02269312949d6369688a9357f66ec",
   "origin_main_at_initial_fetch": "67ef44d69b80c3cd2403a52b56c511838837bac8",
-  "website_reference": "Published V2 source with optional email capture, unchecked communications consent, once-per-intent download-start tracking and no email in analytics. Release artifact no-transform headers remain at d6753a4. Reviewed 9d17b9e restores DownloadButton in paid navigation, hero, pricing and final CTA through the existing flow; PurchaseButton and checkout behavior are preserved. Final 5a3da77 removes the separate skip button; the single Download Stenox action and X/Escape/outside dismissal preserve optional email and download continuation.",
+  "website_reference": "Published V2 source with optional email submission for occasional product updates and team check-ins, no communications checkbox or account, and X/Escape/outside dismissal continuing without email. New forms bind affirmative permission to disclosure version 2026-10-02-email-submit-v2; cached forms retain legacy semantics and existing false records and opt-outs are preserved. Download-start recording excludes email from generic analytics. Modal motion supports reduced motion; checkout and release artifact headers are unchanged.",
   "mint_cli": "4.2.964",
   "keygen_commit": "e8becba89c7c47e021661fe76d38d901b6151dd8",
-  "website_commit": "5a3da77e64dcb8649b7b84304d8b8f3162cd8b9b",
-  "website_deployed_commit": "5a3da77e64dcb8649b7b84304d8b8f3162cd8b9b",
-  "website_deployment_evidence": "Reviewed website/download-modal-simplification/production-provider-and-artifacts.json, production-http-verification.json and live-browser-verification.json: source 5a3da77, Cloudflare version e57d4f40-93b0-414f-9b83-038b176c9872 at 100 percent traffic. Optional email and unchecked consent preserved; exact notes/feed hashes and headers passed; unchanged complete DMG hash evidence retained.",
+  "website_commit": "3d245fb0c29b468205f2cf7ec09e7060c14216bc",
+  "website_deployed_commit": "3d245fb0c29b468205f2cf7ec09e7060c14216bc",
+  "website_deployment_evidence": "Reviewed website/download-permission-motion/production-provider-and-artifacts.json and production-http-verification.json; coordinator binds deployed source 3d245fb to Cloudflare version 146fcb4d-2809-4a45-b048-2c05f83ffc22 at 100 percent traffic. Live privacy wording, notes/feed hashes, routes and artifact headers passed. Unchanged complete DMG hash evidence retained. New affirmative submission storage and legacy/refusal/opt-out protection were exercised locally; no production email submission is inferred.",
   "publication_policy": "published-v2-three-artifact-release",
   "public_release_assets": [
     "Stenox-2.0.0.dmg",
@@ -22,7 +22,7 @@
   "release_status": "Stenox 2.0.0 DMG, HTML notes and appcast are published with exact hashes verified. Human live Sparkle update, install and relaunch are accepted. Saved-provider use is not separately observed; no blanket OS Keychain guarantee. Anonymous backend and shared native DEBUG-service checks passed with their stated limits.",
   "audit_report": "maintenance/v2-readiness-2026-10-01.md",
   "pending_source_delta": {
-    "status": "Final website and keygen source deltas reviewed; published app source frozen and unrelated app WIP excluded",
+    "status": "Final website email-submission consent source reviewed and pinned; published app and keygen pins retained",
     "base_commit": "bb165c264a785c798d5356b500fc5d3f63499fa1",
     "observed_app_commit": "b73e8fd517f02269312949d6369688a9357f66ec",
     "reviewed_keychain_commit": "8006345e756faa8589c35552331cbd335f6a64d2",
@@ -32,7 +32,7 @@
     "required": false
   },
   "publication_authority": "Coordinator released docs publication gate under existing user launch authority on October 2. Non-force push to existing origin main is authorized; live content, routes, rendering and search must verify publication. Dashboard sign-in is not a prerequisite to the attempt.",
-  "public_copy_policy": "User requested release-ready copy with no pending-release notices; factual candidate and publication status remains internal",
+  "public_copy_policy": "Public docs describe Stenox 2.0 without pending-release notices; detailed publication evidence and verification limits remain internal",
   "superseded_candidates": [
     {
       "app_build_commit": "8e46e4f400855354e07c2c1d848f77150fb86528",
@@ -62,14 +62,13 @@
     "post_release_checks": []
   },
   "website_download_contract": {
-    "commit": "9031c31db9ec98e8a4a0e7d23256a535cf447c0c",
+    "commit": "3d245fb0c29b468205f2cf7ec09e7060c14216bc",
     "email_optional": true,
     "account_created": false,
     "dismissal_continues_download": true,
-    "communications_consent_default": false,
     "tracking": "website download starts, not completions or installations",
     "raw_email_in_generic_analytics": false,
-    "owner_local_evidence": "website/email-download-verification.json",
+    "owner_local_evidence": "website/download-permission-motion/local-browser-verification.json",
     "coordinator_review": "coordinator-optional-email-review.json",
     "production_acceptance_not_inferred": true,
     "production_capture_verified": true,
@@ -77,13 +76,25 @@
     "production_evidence_scope": "Owner/coordinator live endpoint and D1 evidence reviewed; no production writes performed by docs; PostHog ingestion not established",
     "homepage_download_controls_commit": "9d17b9e3e88b80b6552da34a527893609c8a88e9",
     "production_followup_evidence": [
-      "website/download-modal-simplification/production-provider-and-artifacts.json",
-      "website/download-modal-simplification/production-http-verification.json",
-      "website/download-modal-simplification/live-browser-verification.json"
+      "website/download-permission-motion/production-provider-and-artifacts.json",
+      "website/download-permission-motion/production-http-verification.json"
     ],
-    "final_modal_commit": "5a3da77e64dcb8649b7b84304d8b8f3162cd8b9b",
+    "final_modal_commit": "3d245fb0c29b468205f2cf7ec09e7060c14216bc",
     "separate_skip_button_present": false,
-    "close_x_continues_download": true
+    "close_x_continues_download": true,
+    "communications_checkbox_present": false,
+    "communications_permission_action": "Entering an optional email and submitting the download form with affirmative disclosure",
+    "anonymous_dismissal_grants_communications_permission": false,
+    "final_submission_consent_source_review": "Committed 3d245fb source, unchanged SQL conflict guards, expanded local D1 tests, owner local browser and D1 evidence reviewed",
+    "historical_false_records_and_optouts_preserved": true,
+    "original_implementation_commit": "9031c31db9ec98e8a4a0e7d23256a535cf447c0c",
+    "communications_consent_without_email_submission": false,
+    "consent_version": "2026-10-02-email-submit-v2",
+    "legacy_consent_version": "2026-10-02",
+    "legacy_cached_forms_preserve_choice": true,
+    "form_sends_disclosure_version": true,
+    "new_consent_storage_verified_environment": "Local D1; production affirmative submission not performed by docs",
+    "no_consent_backfill": true
   },
   "app_checkout_scope": {
     "source_mode": "committed published source only",
