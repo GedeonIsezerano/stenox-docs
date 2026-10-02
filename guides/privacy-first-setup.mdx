@@ -11,7 +11,7 @@ description: "Prepare local speech, optional cleanup, and meeting insights for u
     Leave Polish off if you only need transcription, filler removal, and replacements. If you want Polish, select **Local** in Text cleanup and prepare its model.
   </Step>
   <Step title="Set up Notetaker">
-    Choose **On-device** insights in Settings → Notetaker, or turn automatic insights off. Allow the separate insight and speaker models to prepare before relying on them.
+    Choose **On-device** insights in Settings → Notetaker or the session's **Insights model** menu. Allow the separate insight and speaker models to prepare before relying on them. Turning automatic insights off is separate: **Generate insights** still uses the selected provider.
   </Step>
   <Step title="Check the active configuration">
     Profiles can change speech and cleanup choices. Test a short dictation or meeting and inspect its status. Confirm all needed downloads are complete before going offline.
@@ -20,4 +20,4 @@ description: "Prepare local speech, optional cleanup, and meeting insights for u
 
 Local inference does not mean the app never connects to the network. Downloads, calendar access, optional services, and V2 trial and paid-license verification are separate. Read [Privacy and data flow](/providers/local-privacy) and [Release and access](/pricing/overview).
 
-For Google-linked sessions, on-device insights are required. Choose local speech as well if you want their recorded audio processed on your Mac.
+For Google-linked sessions, choose On-device to keep insight processing local. Choose local speech as well to process recorded audio on your Mac. Switching back from cloud processing does not recall earlier transfers or sign out the provider.

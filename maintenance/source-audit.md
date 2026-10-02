@@ -2,6 +2,8 @@
 
 This historical audit completed locally against app main **`9545cffb2f19f5677a98c6801cd6c0504c3d170a`** (`Add optional speaker diarization for file transcripts`). At the time of this audit, the changes were uncommitted, unpushed, and unpublished. The refresh is now being consolidated into local docs main; see `maintenance/consolidation-2026-10-01.md` for current integration status. This report is maintenance evidence and is excluded from the public documentation.
 
+The calendar restriction in this historical claim map is superseded by app `bb165c264a785c798d5356b500fc5d3f63499fa1`. Google-derived context now follows the selected insights provider. See `maintenance/v2-readiness-2026-10-01.md` for the events-only Google grant, explicit field selection, per-operation payloads, provider controls, and fresh-candidate acceptance boundary. The old validation results below do not establish acceptance of this newer behavior.
+
 ## Source boundary
 
 - App repository: `/Users/home/Code/Stenox/app`. Read committed source with `git show` and an initial clean archive; uncommitted app changes and synthetic preview fixtures were not treated as product behavior.

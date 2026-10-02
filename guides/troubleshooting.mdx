@@ -49,11 +49,13 @@ Confirm both Microphone and Screen & System Audio Recording access. Current meet
 
 Speaker separation is not echo cancellation. Overlap and background noise can affect words and attribution. [Edit or reassign passages](/meetings/conversation) rather than assuming the labels identify people automatically.
 
+If microphone delivery stalls after an audio-device change, Stenox can show **Reconnecting audio…** and attempt to restart capture. Recovery is limited, and missing audio is not reconstructed. If the session is interrupted, check the device and start a new session; completed text is preserved.
+
 ## Insights or Ask stopped updating
 
 Check the selected Notetaker provider, model, account, and reasoning choice. Account errors, limits, or timeouts can pause automatic reviews until explicit retry. Recording and saved text continue when optional insights fail.
 
-A very short session may not yet have enough contributions. For Google-linked context, use On-device insights. Reference import supports readable text, not OCR of scanned pages. Check the coverage label for partial reference or conversation input.
+A very short session may not yet have enough conversation: scheduled reviews need two contributions; **Generate insights** needs one and also works with **Automatic insights** off. Google-linked context uses the selected provider. After changing providers or models, pending old results are cancelled; wait for preparation and explicitly generate again if needed. Reference import supports readable text, not OCR of scanned pages. Check the coverage label for partial input.
 
 ## A saved session looks incomplete
 

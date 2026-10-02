@@ -41,10 +41,22 @@ Google Antigravity requires its official `agy` CLI installed separately. This ad
 
 Selecting another insights provider or turning insights off does not sign you out of the external provider. Stenox does not expose a separate Sign out or Disconnect control for these subscription accounts.
 
+The session's **Insights model** menu also lets you change the provider, model, reasoning choice, and **Automatic insights** setting during capture or while editing saved history. Switching cancels pending insight work and rejects stale results while capture continues. Existing insights and your edits remain. Returning to On-device affects future work; it cannot recall earlier transfers.
+
 ## Context and failures
 
-Cloud insights send conversation and included reference context. Codex and Claude can continue a conversation across Insights, refinement, and Ask for the same session and selection; provider caching is not guaranteed. Antigravity sends the selected context afresh each time. [Calendar restrictions](/meetings/calendar) still apply.
+Your selected provider handles Google-linked and manual sessions. With a cloud provider selected, the inputs below leave your Mac; **On-device** processes them locally.
 
-Automatic insight reviews use bounded changed/recent conversation and existing outcomes. Personal notes are excluded. Invalid output, account errors, timeouts, or usage limits preserve recording and saved text. They may pause automatic reviews until an explicit retry. There is no silent switch to another provider or paid API account.
+| Operation | Newly assembled input |
+| --- | --- |
+| Automatic reviews and Generate insights | Bounded changed/recent conversation, speaker IDs and names, current outcomes, elapsed duration, new contribution IDs, included reference text, and bounded selected-event context. |
+| Refined notes | Session title, whether to suggest a title, accepted visible outcomes with owner names, dates and status, and included reference text. It does not independently add the transcript or full event snapshot. |
+| Ask Stenox | Your question, session title, bounded selected conversation with speaker labels, included references, and up to three prior question/answer pairs. It does not independently add the full event snapshot. |
+
+Titles and saved content can contain information derived from [Google Calendar](/meetings/calendar). Codex and Claude Code can continue provider context across Insights, refinement, and Ask for the same session and selection; provider caching is not guaranteed. Antigravity sends the selected context afresh each time. The **Personal notes** field is excluded from these payloads; text you copy elsewhere can become part of that other input.
+
+Provider account terms, usage, retention, and training settings still apply. Selecting an integration does not establish a zero-retention or no-training guarantee.
+
+Invalid output, account errors, timeouts, or usage limits preserve recording and saved text. They may pause automatic reviews until an explicit retry. **Generate insights** remains an explicit action when automatic insights are off. There is no silent switch to another provider or paid API account.
 
 An audio capture or processing overrun can end a session; completed text is preserved. Check the status, export what is available, and resolve the input or resource problem before starting again.

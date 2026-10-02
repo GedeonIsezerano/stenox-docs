@@ -9,18 +9,20 @@ Local-first describes a processing choice, not a promise that every feature is o
 | --- | --- |
 | Parakeet, Whisper, Cohere Transcribe | Audio is processed on your Mac after model download. |
 | Local Polish | Dictated text is processed by the selected local MLX model. |
-| On-device meeting insights | Conversation and included references are processed locally with Qwen 3.5 4B. |
+| On-device meeting insights | Conversation and included calendar/reference context are processed locally with Qwen 3.5 4B. |
 | Cloud speech | Audio is sent to the selected speech provider. |
 | Gemini Polish | Text and the configured writing instructions are sent to Gemini. |
-| Subscription insights / Ask | Bounded conversation and included reference context are sent to the selected provider. |
-| Google Calendar | Event access uses the connected Google account; imported context is restricted to on-device insights. |
+| Subscription insights, refinement / Ask | The selected Codex, Claude Code, or Google Antigravity integration receives the [inputs for that operation](/meetings/processing#context-and-failures), which can include Google-derived information. |
+| Google Calendar | Read-only event access uses the connected Google account. Included context follows the selected local or cloud insights provider. |
 | V2 trial and paid activation | Online requests verify app access and the device; they do not upload audio, transcripts, or notes. |
 
 ## Set up local processing
 
 Choose a local speech provider, choose **Local** for any enabled Polish, and choose **On-device** for Notetaker insights. Download required models while online, then verify they are ready before relying on offline inference. A profile can override speech or cleanup choices, so inspect the active profile too.
 
-Personal notes are excluded from Notetaker AI input. Included reference text can be part of its AI input. Excluding a reference affects future requests but does not retract earlier cloud submissions.
+The Personal notes field is excluded from Notetaker AI input. Included reference text can be part of its AI input. Excluding a reference, disconnecting Calendar, removing an event, or switching back to On-device cannot retract earlier cloud submissions. Saved titles, outcomes, and other session content may retain derived information.
+
+Turning **Automatic insights** off stops scheduled reviews; **Generate insights** still uses the selected provider when you choose it. Switching providers does not sign out their accounts. See [Calendar context](/meetings/calendar) for Google's events-only permission, fetched fields, and bounded insight context.
 
 ## Storage and services
 

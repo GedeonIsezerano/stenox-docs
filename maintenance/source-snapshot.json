@@ -1,20 +1,28 @@
 {
   "reviewed_on": "2026-10-01",
-  "app_commit": "58583d57a7892ae1856e7ecfb45f9137e0517e64",
+  "app_commit": "bb165c264a785c798d5356b500fc5d3f63499fa1",
   "app_source": "local main (committed source, not working-tree edits)",
-  "app_build_commit": "8e46e4f400855354e07c2c1d848f77150fb86528",
-  "release_tooling_commit": "58583d57a7892ae1856e7ecfb45f9137e0517e64",
+  "app_build_commit": "bb165c264a785c798d5356b500fc5d3f63499fa1",
+  "app_build_status": "fresh candidate prepared, Apple Accepted, stapled, Gatekeeper accepted and Sparkle verified; launched, awaiting user macOS Keychain approval; rendered GUI acceptance pending",
+  "app_manifest_sha256": "6115421a7d781fbc85ddd3d618b554183790f66f2e1654ccefe574238691ae43",
+  "release_tooling_commit": "bb165c264a785c798d5356b500fc5d3f63499fa1",
+  "superseded_candidate": {
+    "app_build_commit": "8e46e4f400855354e07c2c1d848f77150fb86528",
+    "release_tooling_commit": "58583d57a7892ae1856e7ecfb45f9137e0517e64",
+    "status": "historical notarized candidate; lacks current native changes and is not the release candidate"
+  },
   "origin_main_at_initial_fetch": "67ef44d69b80c3cd2403a52b56c511838837bac8",
   "website_reference": "committed commerce terms, V2-only release controls and closed site-only recovery mode; consolidated theme retained",
   "mint_cli": "4.2.964",
   "keygen_commit": "12c5f8f901782bd79f84dc01a17f6d83ab9c4bc2",
-  "website_commit": "359e9fd8aabbf729b4c818c527cab41e461ef603",
+  "website_commit": "d5aee747e50e23725dd81e4d6542e2fbda661227",
+  "website_deployed_commit": "359e9fd8aabbf729b4c818c527cab41e461ef603",
   "publication_policy": "candidate-only",
   "public_release_assets": [
     "Stenox-2.0.0.dmg",
     "Stenox-2.0.0.html",
     "appcast.xml"
   ],
-  "release_status": "V2 unpublished; final candidate notarized, stapled, Gatekeeper accepted and Sparkle verified; native migration, native licensing, provider webhook delivery and paid fulfillment pending; site-only website recovery awaits domain attachment",
+  "release_status": "V2 unpublished; fresh bb165c2 candidate notarized and verified, old 8e46e4f candidate superseded; earlier V1-to-V2 installation user-confirmed; fresh GUI production licensing and fresh Sparkle install acceptance pending; Cloudflare site-only website live with downloads unavailable and checkout closed; ordinary Chrome, macOS HTTPS and router DNS recovery verified by coordinator",
   "audit_report": "maintenance/v2-readiness-2026-10-01.md"
 }
