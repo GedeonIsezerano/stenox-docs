@@ -15,9 +15,13 @@ If the app says **Licensing is not configured**, it cannot start a trial or acti
 
 Check that you opened Stenox from **Applications**. Review Microphone, Accessibility, and Screen & System Audio Recording under **System Settings → Privacy & Security**, and reopen the app if requested. Follow [Upgrading to V2](/guides/upgrading) for the publisher name and older permission entries.
 
-For a Keychain prompt, verify the requesting app before granting access. If your login Keychain is locked, unlock it. Re-enter an inaccessible provider key in **Settings → API Keys** or reconnect the affected Notetaker account. If prompts repeat, check whether another Stenox copy is running and send support the prompt wording with private details removed.
+If Stenox reports that a saved credential needs access, use **Allow Keychain access** for the affected provider in **Settings → API Keys**, or the same button in **Settings → License** for licensing. Unlock your login Keychain if requested, and verify that the macOS request is for your installed Stenox copy before approving it.
 
-Do not erase Keychain, delete saved history, or allow all applications to access a credential. If a licensing identity was already lost, activate your key again and release the old device slot through **Manage purchase and devices** if necessary.
+Recovery keeps the saved credential and provider/model selections. Denying or cancelling leaves the credential unchanged; retry from Settings when ready. Licensing recovery does not start a trial or create a new activation. This flow is part of the [V2 recovery guide](/guides/upgrading#recover-provider-and-license-access).
+
+Only add a provider key again if it is missing or you intend to replace it. Notetaker subscription sign-ins use their separate connection controls. If recovery fails, check for another running Stenox copy and send support the error wording with private details removed.
+
+Do not erase Keychain, delete saved history, or allow all applications to access a credential. If a licensing identity was actually deleted or lost, activate your key again and release the old device slot through **Manage purchase and devices** if necessary. A denied access request alone does not require those steps.
 
 ## Recording does not start
 

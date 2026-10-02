@@ -3,10 +3,6 @@ title: "Upgrading to V2"
 description: "Plan an optional V1-to-V2 upgrade and recover permissions or saved credentials."
 ---
 
-<Note>
-  V2 is prepared but unpublished, and downloads are temporarily unavailable. Existing V1 installations remain usable. The refreshed release is still being verified before publication.
-</Note>
-
 ## Choose when to upgrade
 
 Moving from free V1 to paid V2 is optional. V2 adds the workflows described in these guides and uses a **seven-day full-app trial**, followed by a license for new work. **Valid earlier paid Stenox licenses cover V2 without another purchase**, with original rights and device allowances preserved. Inactive, refunded, revoked, or expired licenses do not qualify; see [Release and access](/pricing/overview).
@@ -17,9 +13,9 @@ Finish recordings and let saves complete. Export important history and make a cu
 
 ## Update through Stenox
 
-Once V2 is released, **the built-in updater is the intended normal upgrade path**. Follow Stenox's update prompt, or choose **Check for Updates...** in its menu when that option is shown. If the update is already downloaded, the menu can show **Restart to Update** instead. A separate manual download is not intended to be necessary for everyone.
+**The built-in updater is the normal upgrade path**. Follow Stenox's update prompt, or choose **Check for Updates...** in its menu when that option is shown. If the update is already downloaded, the menu can show **Restart to Update** instead. A separate manual download is not intended to be necessary for everyone.
 
-If the updater cannot offer or complete the upgrade, use the manual fallback: download V2 from the Stenox website when available, quit Stenox, and install it in **Applications**. Open that installed copy.
+If the updater cannot offer or complete the upgrade, use the manual fallback: download V2 from the [Stenox website](https://stenox.app/download), quit Stenox, and install it in **Applications**. Open that installed copy.
 
 After either path, check your history, profiles, shortcuts, input device, and model selections before relying on V2 for a meeting. If something is missing, preserve your backup and [contact support](/support/overview).
 
@@ -43,11 +39,15 @@ Use the official download and check which app is requesting access. A matching d
 
 ## Recover provider and license access
 
-An updated app can need permission to read an existing Keychain item. If macOS asks after your upgrade, confirm it is the installed Stenox app before allowing access. Apple's [Keychain guidance](https://support.apple.com/en-asia/guide/keychain-access/kyca1331/mac) explains why an updated app may ask again.
+An updated app can need permission to use an existing Keychain item. If Stenox reports that a provider's saved key needs access, open **Settings → API Keys** and choose **Allow Keychain access** for that provider. Confirm the macOS request is for your installed Stenox copy, and unlock your login Keychain if requested. Apple's [Keychain guidance](https://support.apple.com/en-asia/guide/keychain-access/kyca1331/mac) explains why an updated app may ask again.
 
-If a provider still appears unconfigured, re-enter its key in **Settings → API Keys**, or reconnect the affected account in **Settings → Notetaker**. Unlock your login Keychain if it is locked. Repeated prompts are a reason to check for another Stenox copy or contact support, not to erase Keychain or allow every app to read an item.
+This action updates access to the saved credential and reloads it without replacing or deleting its value. Your provider and model selections stay in place. If you deny or cancel the request, the saved credential stays unchanged and you can retry the same button later.
 
-In V2, open **Settings → License** to start the trial or activate your existing key. A lost licensing Keychain identity may leave an older device activation behind; release that activation through **Manage purchase and devices** if needed. Your paid offline allowance does not recover a missing local credential.
+For licensing, use **Allow Keychain access** in **Settings → License** when offered. It restores access to the saved device identity and licensing state; it does not start another trial or create a new activation. Once access is restored, review the status shown there.
+
+If no provider key is saved, add it under **Settings → API Keys**. Notetaker subscription accounts use their separate connection controls in **Settings → Notetaker**. If a licensing identity was actually deleted or lost, activation may be needed again; release the old device slot through **Manage purchase and devices** if necessary. Denied access alone is not a reason to delete a credential, start another trial, or release a device slot.
+
+If recovery still fails, check whether another Stenox copy is running and [contact support](/support/overview). Do not erase Keychain or allow every application to read an item. Your paid offline allowance does not recover a missing local credential.
 
 ## Review changed models and Polish
 

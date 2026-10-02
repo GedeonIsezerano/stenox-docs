@@ -37,7 +37,7 @@ In **Settings → Notetaker**, choose **Codex**, **Claude Code**, or **Google An
 
 Codex and Claude Code use bundled runtimes; they do not require a separate Node, Bun, or CLI installation. Existing eligible coding-runtime sign-ins can be reused. These integrations require subscription authentication, not an API key. Provider limits and usage apply.
 
-Google Antigravity requires its official `agy` CLI installed separately. This adapter accepts 1.2 releases starting at 1.2.12. Its UI identifies the active CLI login source, not a verified email address. Real-account Antigravity sign-in and inference remain an acceptance limitation for this development integration.
+Google Antigravity requires its official `agy` CLI installed separately. This adapter accepts 1.2 releases starting at 1.2.12. Its UI identifies the active CLI login source, not a verified email address.
 
 Selecting another insights provider or turning insights off does not sign you out of the external provider. Stenox does not expose a separate Sign out or Disconnect control for these subscription accounts.
 
@@ -49,11 +49,13 @@ Your selected provider handles Google-linked and manual sessions. With a cloud p
 
 | Operation | Newly assembled input |
 | --- | --- |
-| Automatic reviews and Generate insights | Bounded changed/recent conversation, speaker IDs and names, current outcomes, elapsed duration, new contribution IDs, included reference text, and bounded selected-event context. |
-| Refined notes | Session title, whether to suggest a title, accepted visible outcomes with owner names, dates and status, and included reference text. It does not independently add the transcript or full event snapshot. |
-| Ask Stenox | Your question, session title, bounded selected conversation with speaker labels, included references, and up to three prior question/answer pairs. It does not independently add the full event snapshot. |
+| Automatic reviews and Generate insights | Session title, bounded changed/recent conversation, speaker IDs and names, current outcomes, elapsed duration, new contribution IDs, included reference text, bounded selected-event context, and a Personal notes excerpt. |
+| Refined notes | Session title, whether to suggest a title, accepted visible outcomes with owner names, dates and status, included reference text, and a Personal notes excerpt. It does not independently add the transcript or full event snapshot. |
+| Ask Stenox | Your question, session title, bounded selected conversation with speaker labels, included references, and up to three prior question/answer pairs. It does not independently add Personal notes or the full event snapshot. |
 
-Titles and saved content can contain information derived from [Google Calendar](/meetings/calendar). Codex and Claude Code can continue provider context across Insights, refinement, and Ask for the same session and selection; provider caching is not guaranteed. Antigravity sends the selected context afresh each time. The **Personal notes** field is excluded from these payloads; text you copy elsewhere can become part of that other input.
+Personal notes guide focus in insights and refinement. Long notes use an excerpt based on a 6,000-byte UTF-8 limit plus an omission marker; the full saved note is unchanged. Notes do not establish facts, commitments, or owners. Editing or removing them invalidates stale results and refreshes the relevant provider context.
+
+Titles and saved content can contain information derived from [Google Calendar](/meetings/calendar). Codex and Claude Code can continue provider context across Insights, refinement, and Ask for the same session and selection; that context can contain Personal notes from earlier turns. Provider caching is not guaranteed. Antigravity sends the selected context afresh each time. A request's listed inputs do not imply that a continued provider session has forgotten previous inputs.
 
 Provider account terms, usage, retention, and training settings still apply. Selecting an integration does not establish a zero-retention or no-training guarantee.
 

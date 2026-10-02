@@ -1,9 +1,9 @@
 {
   "reviewed_on": "2026-10-01",
-  "app_commit": "bb165c264a785c798d5356b500fc5d3f63499fa1",
-  "app_source": "local main (committed source, not working-tree edits)",
+  "app_commit": "b73e8fd517f02269312949d6369688a9357f66ec",
+  "app_source": "final intended local main source supplied by coordinator; replacement-candidate acceptance is recorded separately",
   "app_build_commit": "bb165c264a785c798d5356b500fc5d3f63499fa1",
-  "app_build_status": "fresh candidate prepared, Apple Accepted, stapled, Gatekeeper accepted and Sparkle verified; launched, awaiting user macOS Keychain approval; rendered GUI acceptance pending",
+  "app_build_status": "superseded: bb165c2 was notarized and rendered after user denied Keychain prompt; migration incomplete; replacement candidate for explicit Keychain recovery pending",
   "app_manifest_sha256": "6115421a7d781fbc85ddd3d618b554183790f66f2e1654ccefe574238691ae43",
   "release_tooling_commit": "bb165c264a785c798d5356b500fc5d3f63499fa1",
   "superseded_candidate": {
@@ -12,10 +12,10 @@
     "status": "historical notarized candidate; lacks current native changes and is not the release candidate"
   },
   "origin_main_at_initial_fetch": "67ef44d69b80c3cd2403a52b56c511838837bac8",
-  "website_reference": "committed commerce terms, V2-only release controls and closed site-only recovery mode; consolidated theme retained",
+  "website_reference": "committed personal-notes privacy disclosures, canonical changelog footer link and unchanged commerce controls; deployed source separately recorded",
   "mint_cli": "4.2.964",
   "keygen_commit": "12c5f8f901782bd79f84dc01a17f6d83ab9c4bc2",
-  "website_commit": "d5aee747e50e23725dd81e4d6542e2fbda661227",
+  "website_commit": "16f67d50312af6b6228ddf32874b93c08b9a9473",
   "website_deployed_commit": "359e9fd8aabbf729b4c818c527cab41e461ef603",
   "publication_policy": "candidate-only",
   "public_release_assets": [
@@ -23,6 +23,16 @@
     "Stenox-2.0.0.html",
     "appcast.xml"
   ],
-  "release_status": "V2 unpublished; fresh bb165c2 candidate notarized and verified, old 8e46e4f candidate superseded; earlier V1-to-V2 installation user-confirmed; fresh GUI production licensing and fresh Sparkle install acceptance pending; Cloudflare site-only website live with downloads unavailable and checkout closed; ordinary Chrome, macOS HTTPS and router DNS recovery verified by coordinator",
-  "audit_report": "maintenance/v2-readiness-2026-10-01.md"
+  "release_status": "V2 unpublished; bb165c2 candidate superseded pending Keychain recovery fix and replacement candidate; user denied original prompt and UI then worked; actual GUI trial/license and fresh Sparkle acceptance remain separate; Cloudflare site-only website live with downloads unavailable and checkout closed; ordinary client access recovery verified",
+  "audit_report": "maintenance/v2-readiness-2026-10-01.md",
+  "pending_source_delta": {
+    "status": "final intended app source reviewed; replacement signed candidate and acceptance pending",
+    "base_commit": "bb165c264a785c798d5356b500fc5d3f63499fa1",
+    "observed_app_commit": "b73e8fd517f02269312949d6369688a9357f66ec",
+    "reviewed_keychain_commit": "8006345e756faa8589c35552331cbd335f6a64d2",
+    "reviewed_personal_notes_commit": "8de0e03c6dcf731d3d5820996d5c3793e218d84e",
+    "real_macos_continuity_accepted": false
+  },
+  "publication_authority": "User authorizes production publication after coordinator releases readiness gates; no independent publication yet",
+  "public_copy_policy": "User requested release-ready copy with no pending-release notices; factual candidate and publication status remains internal"
 }

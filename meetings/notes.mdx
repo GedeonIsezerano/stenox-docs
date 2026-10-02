@@ -29,7 +29,7 @@ Dismissing a prompt removes it from the session's display queue, not from the no
 
 After the final review, the selected insights provider can consolidate accepted outcomes into a separate Markdown draft. Refined notes do not replace the cited Current insights. A session with no user or calendar title may receive a suggested title from this pass; existing titles are preserved.
 
-This pass uses the session title, accepted visible outcomes with owners, dates and status, and included references. It does not independently add the full transcript or calendar event. Those inputs and continued provider context can still contain calendar-derived information.
+This pass uses the session title, accepted visible outcomes with owners, dates and status, included references, and an excerpt of Personal notes. Your notes guide the order and emphasis of accepted outcomes; they are not an independent source of facts. The request does not independently add the full transcript or calendar event. Its inputs and continued provider context can still contain calendar-derived information.
 
 Refined text is editable and autosaves. If you edit it, a later regeneration produces a suggestion that you explicitly accept or discard. It does not overwrite your writing. Evidence changes can mark an unedited draft stale; review or regenerate before sharing it.
 
@@ -37,7 +37,13 @@ Use **Raw / Formatted** to switch the display of Current or Refined notes. Curre
 
 ## Personal notes
 
-Personal notes autosave independently, including before recording starts. The **Personal notes field is excluded from AI inputs**. If you copy its text into a question, reference, or insight, that copy can be processed as part of the other input.
+Personal notes autosave independently, including before recording starts. Use them for preparation questions and priorities you want insights to focus on. The editor shows **Saved on this Mac · Used to guide insights**.
+
+**Personal notes are included in insight and refinement requests to your selected provider.** On-device processes them locally; a selected cloud provider receives the included text. Long notes use an excerpt based on a 6,000-byte UTF-8 limit, followed by an omission marker. The full note stays saved on your Mac.
+
+Preparation guides relevance, not evidence: answers and task assignments still need support from the conversation. A proposal, assumption, or pasted AI answer in your notes does not establish an agreement. Refined notes emphasize relevant accepted outcomes without treating your preparation as new facts.
+
+Adding, changing, or removing notes makes prior reviews eligible for reconsideration and invalidates an unedited refined draft. Results based on older notes are rejected, and continued provider context is reset for changed input. Your accepted edits remain protected. Use **Generate insights** to request another review when ready. Removing notes cannot retract text already sent to a cloud provider.
 
 The editor supports Markdown headings, emphasis, lists, tasks, quotes, links, and code. Syntax appears in the paragraph you are editing and hides again when you leave it. Return continues a list or unchecked task; Return on an empty item leaves the list. Command–B and Command–I format a selection, with native undo.
 

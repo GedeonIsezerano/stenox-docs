@@ -21,17 +21,17 @@ Requests cover the selected calendars and date window, with an explicit event-fi
 
 The event description stays in its own context section and does not overwrite Personal notes. Starting consumes the draft event selection, so the next shortcut recording does not silently reuse it. A blocked start preserves the draft.
 
-Invitee names can help you label speakers manually. They do not prove attendance or identify voices automatically.
+Invitee names can help you label speakers manually. When a name is absent, the participant picker shows the email address instead. Assigning that participant to a speaker can save the email as the speaker label, which can then appear in conversation inputs. These labels do not prove attendance or identify voices automatically.
 
 ## Choose how context is processed
 
 <Warning>
-  Google-linked sessions and saved Google-derived context use your selected insights provider. Choose **On-device** for local insights. With **Codex**, **Claude Code**, or **Google Antigravity** selected, that provider can receive conversation, included calendar and reference context, and information derived from them.
+  Google-linked sessions and saved Google-derived context use your selected insights provider. Choose **On-device** for local insights. With **Codex**, **Claude Code**, or **Google Antigravity** selected, that provider can receive conversation, a Personal notes excerpt, included calendar and reference context, and information derived from them.
 </Warning>
 
 The speech provider is a separate choice. Select local speech too if you want meeting audio to remain on your Mac. Calendar context is background for the model, not evidence that someone said or agreed to an item.
 
-Automatic reviews and **Generate insights** include the selected event's title (up to 500 characters), agenda (6,000), scheduled start/end and time zone, organizer name (120), and up to 100 invitee names (120 characters each). Dedicated email, location, event URL, join-link, and attachment-link fields are excluded from that insight context. Free-form agenda, names, conversation, and reference text can still contain personal information or links.
+Automatic reviews and **Generate insights** include the selected event's title (up to 500 characters), agenda (6,000), scheduled start/end and time zone, organizer name (120), and up to 100 invitee names (120 characters each). Dedicated email, location, event URL, join-link, and attachment-link fields are excluded from that calendar context. This does not remove emails used as speaker labels or personal information in free-form agenda, names, conversation, Personal notes, or reference text.
 
 Refined notes and Ask use different inputs. They can include a calendar-derived session title or information already carried into outcomes, conversation, references, or provider context; they do not independently add the full event snapshot. See [the inputs for each operation](/meetings/processing#context-and-failures).
 

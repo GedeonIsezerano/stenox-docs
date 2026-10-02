@@ -26,6 +26,7 @@
               "installation",
               "first-dictation",
               "pricing/overview",
+              "changelog",
               "guides/upgrading"
             ]
           },
@@ -172,6 +173,10 @@
         "header": "Stenox",
         "items": [
           {
+            "label": "Changelog",
+            "href": "/changelog"
+          },
+          {
             "label": "Privacy",
             "href": "https://stenox.app/privacy"
           },
@@ -216,7 +221,7 @@
     }
   },
   "banner": {
-    "content": "V2 preview docs \u00b7 V2 is unpublished; downloads are temporarily unavailable. See [release and access](/pricing/overview).",
+    "content": "Stenox 2.0 \u00b7 Read [what\u2019s new](/changelog).",
     "dismissible": false
   },
   "ignore": [
