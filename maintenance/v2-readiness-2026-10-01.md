@@ -2,7 +2,7 @@
 
 V2 remains unpublished. The previous `bb165c264a785c798d5356b500fc5d3f63499fa1` candidate passed notarization, stapling, Gatekeeper and Sparkle checks, but is superseded by the prepared `b73e8fd` candidate. The user denied the original Keychain request; the app then rendered and responded, while migration remained incomplete. It is no longer waiting on an unanswered prompt. The final intended app source is `b73e8fd`, including recovery at `8006345`, Personal notes context at `8de0e03`, and canonical changelog links. The coordinator supplied this final source and its prepared, notarized candidate; real OS/native acceptance and publication remain unverified. Public docs use release-ready wording at the user’s request, while this internal report records actual release evidence. The older `8e46e4f` candidate is also historical only.
 
-The user confirmed through the coordinator that the earlier V1-to-V2 installation used V1’s actual **Check for Updates** action. This is user-observed historical Sparkle migration success. The Others-account test-kit workflow is no longer required; its launchers were removed at the user's request. Fresh Sparkle installation and actual GUI production trial/existing-license acceptance are separate gates. Cloudflare site-only recovery is complete, with downloads unavailable and checkout closed; the coordinator has also confirmed ordinary Chrome, macOS HTTPS and router DNS recovery.
+The user confirmed through the coordinator that the earlier V1-to-V2 installation used V1’s actual **Check for Updates** action. This is user-observed historical Sparkle migration success. The Others-account test-kit workflow is no longer required; its launchers were removed at the user's request. Fresh Sparkle installation remains unverified and is planned after launch; actual GUI production trial/existing-license acceptance is separately recorded. Cloudflare site-only recovery is complete, with downloads unavailable and checkout closed; the coordinator has also confirmed ordinary Chrome, macOS HTTPS and router DNS recovery.
 
 ## Reviewed source
 
@@ -74,7 +74,7 @@ The current `candidate-2.0.0-b73e8fd/release-manifest.json` binds app and releas
 | `Stenox-2.0.0.html` | `bdcbef8ecec51ad07853bb35b2402bcfb2387de4c04f31400d288a1191a66d26` |
 | `appcast.xml` | `3bce39fa293d02f924ca208ae71f6b06c962c211146cfb2299969a7957906f3a` |
 
-Real OS Keychain persistence, current-candidate native trial/license acceptance, fresh Sparkle upgrade acceptance and publication remain unverified. The user approved the exact committed release notes and matching prepared HTML, recorded in `release-notes-human-approval-b73e8fd.json` against this manifest and artifact hashes. The user also selected the existing Others account for an ordinary recovery/relaunch test; app-owner preparation is active, with no acceptance result yet. This docs task performs no native tests.
+Real OS Keychain persistence, current-candidate native trial/license acceptance, fresh Sparkle upgrade acceptance and publication remain unverified. The user approved the exact committed release notes and matching prepared HTML, recorded in `release-notes-human-approval-b73e8fd.json` against this manifest and artifact hashes. The user subsequently deferred the ordinary Keychain recovery/relaunch test until after release, explicitly declining the pre-release Others-account test. `human-post-release-keychain-test-deferral.json` binds that instruction to this source and manifest. This is a timing decision, not a passed result: real Keychain persistence and fresh-candidate update verification remain false. This docs task performs no native tests.
 
 The now-superseded `candidate-2.0.0-bb165c2/release-manifest.json` binds both app and release-tooling source to `bb165c2`, with `candidate-only` and `published: false`. Its SHA-256 is `6115421a7d781fbc85ddd3d618b554183790f66f2e1654ccefe574238691ae43`. Apple submission `c3d0ead3-6c59-48e6-83d5-bceec5097a19` is Accepted. The owner logs confirm staple validation, Gatekeeper acceptance and retained-key Ed25519 verification. `coordinator-fresh-candidate-verification.json` independently confirms strict deep codesign, Team/bundle/feed/key continuity, all manifest hashes and production licensing configuration. The docs independently rehashed the manifest and all five listed local files in `docs-provider-alignment-artifact-hashes.json`.
 
@@ -98,7 +98,7 @@ Production licensing Worker version `30024785-dfe5-487b-814f-d708557f046f` passe
 
 The publication policy remains **candidate-only**: exactly `/updates/Stenox-2.0.0.dmg`, `/updates/Stenox-2.0.0.html`, and `/updates/appcast.xml`. The single-item feed keeps the existing URL/trusted key and optional-major-upgrade framing. Retain the manual V2 download fallback; installed V1 remains usable, without a promise of public V1 installers. Manifests, signing uploads, licensing configuration and test fixtures stay local.
 
-The 119 exact task-created historical R2 objects were removed in the earlier authorized cleanup, and the bucket was verified empty. No V2 assets are published. The older test kit is not a current release prerequisite. Fresh artifact verification, native acceptance, release-note review, hash-bound publication authority, upload verification, and paid fulfillment remain separate from the user-confirmed earlier upgrade.
+The 119 exact task-created historical R2 objects were removed in the earlier authorized cleanup, and the bucket was verified empty. No V2 assets are published. The older test kit is not a current release prerequisite. Fresh artifact verification, licensing readiness, approved release notes, hash-bound publication authority, upload verification, and paid fulfillment remain separate from the user-confirmed earlier upgrade. The Keychain recovery/relaunch and fresh update checks are post-release work.
 
 ## Hosting state
 
@@ -140,8 +140,12 @@ The earlier missing worktree registration was safely pruned only after backup/an
 
 ## Remaining gates
 
-1. Complete actual macOS authorization/update-continuity acceptance for prepared candidate `b73e8fd`. Its hashes, signing and notarization are verified; `bb165c2` and `8e46e4f` remain historical only.
+1. Preserve the verified hashes, signing and notarization of prepared candidate `b73e8fd`; `bb165c2` and `8e46e4f` remain historical only. The user-deferred Keychain recovery/relaunch test is not a publication blocker.
 2. Complete actual GUI production trial/existing-license acceptance for the fresh candidate and any new-build checks required by the app owner. Preserve the user-confirmed earlier in-app installation as that specific evidence, without reimposing the removed Others workflow.
 3. Complete Polar-originated webhook delivery, compatible paid-app/fulfillment and merchant receipt acceptance before opening the staged offer. Preserve earlier purchase rights and allowances.
 4. Publish only the three accepted V2 assets with explicit authority and full hash verification; align website version/presentation to that accepted release. Website hosting recovery alone does not authorize these actions.
 5. The user has authorized docs publication after readiness. Verify Mintlify mapping and wait for the coordinator’s release gate before pushing; then verify the exact deployed commit, hosted routes, redirects, responsive behavior and search. No docs push or publication has been performed.
+
+## Post-release checks authorized by the user
+
+The user said the normal-app Keychain recovery/relaunch test will be performed after release, as recorded in `human-post-release-keychain-test-deferral.json` on October 2. Do not recreate a pre-release Others-account requirement or mark this test passed. Check real Keychain persistence and the fresh-candidate update after launch; retain the historical V1 Check for Updates success as evidence only for that earlier installation.

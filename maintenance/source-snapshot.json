@@ -44,5 +44,17 @@
     }
   ],
   "app_manifest": "candidate-2.0.0-b73e8fd/release-manifest.json",
-  "app_notarization_submission": "d846f737-6d50-4c29-ad3c-c4538ddb60df"
+  "app_notarization_submission": "d846f737-6d50-4c29-ad3c-c4538ddb60df",
+  "keychain_test_deferral": {
+    "status": "user_deferred_until_after_publication",
+    "publication_blocker": false,
+    "real_keychain_persistence_verified": false,
+    "fresh_candidate_update_verified": false,
+    "evidence": "human-post-release-keychain-test-deferral.json",
+    "scope": "Normal-app Keychain recovery and relaunch test; no pre-release Others-account requirement",
+    "post_release_checks": [
+      "Keychain recovery and relaunch",
+      "Fresh-candidate update"
+    ]
+  }
 }
