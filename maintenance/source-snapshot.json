@@ -7,18 +7,19 @@
   "app_manifest_sha256": "08def0575db65a1027b7b8b107df75636ec03925d4e6253dab1e61f4a2190b95",
   "release_tooling_commit": "b73e8fd517f02269312949d6369688a9357f66ec",
   "origin_main_at_initial_fetch": "67ef44d69b80c3cd2403a52b56c511838837bac8",
-  "website_reference": "Optional website-only email capture at 9031c31, separately unchecked communications consent, once-per-intent download-start tracking, no email in analytics, and compact production CSS at 180e577. Reviewed 589b6c9 adds the accepted three-file manifest, APP_VERSION 2.0.0 and fixed per-environment capture origins; d6753a4 adds no-transform to release artifact cache headers, targeted tests and HTTP/1 full-byte verification. Public guidance, consent and account behavior are unchanged; deployed source remains separately recorded",
+  "website_reference": "Optional website-only email capture at 9031c31, separately unchecked communications consent, once-per-intent download-start tracking, no email in analytics, and compact production CSS at 180e577. Reviewed 589b6c9 adds the accepted three-file manifest, APP_VERSION 2.0.0 and fixed per-environment capture origins; d6753a4 adds no-transform to release artifact cache headers, targeted tests and HTTP/1 full-byte verification. The final 439e9dd delta only records owner production capture acceptance in internal documentation. Public guidance, consent and account behavior are unchanged; deployed source remains separately recorded",
   "mint_cli": "4.2.964",
   "keygen_commit": "12c5f8f901782bd79f84dc01a17f6d83ab9c4bc2",
-  "website_commit": "d6753a497afedd22ebc5fa7059033875fe2e56ec",
-  "website_deployed_commit": "359e9fd8aabbf729b4c818c527cab41e461ef603",
+  "website_commit": "439e9dd64a9590be3f5d908580a8ee58359386fb",
+  "website_deployed_commit": "d6753a497afedd22ebc5fa7059033875fe2e56ec",
+  "website_deployment_evidence": "Coordinator reports production runtime d6753a4 at Cloudflare version e740b1f6; docs has not independently rerun production acceptance",
   "publication_policy": "candidate-only",
   "public_release_assets": [
     "Stenox-2.0.0.dmg",
     "Stenox-2.0.0.html",
     "appcast.xml"
   ],
-  "release_status": "V2 b73e8fd candidate prepared and notarized; all six local artifact hashes independently verified by docs; real OS/native acceptance and app publication remain unverified by docs. Website source reviewed through d6753a4; production deployment is not inferred. Docs publication at 5c1bc1c and its hosted acceptance are verified separately.",
+  "release_status": "V2 b73e8fd candidate prepared and notarized; all six local artifact hashes independently verified by docs; real OS/native acceptance and app publication remain unverified by docs. Website source reviewed through 439e9dd; coordinator reports production runtime d6753a4, with independent production acceptance not rerun by docs. Docs publication at 5c1bc1c and its hosted acceptance are verified separately.",
   "audit_report": "maintenance/v2-readiness-2026-10-01.md",
   "pending_source_delta": {
     "status": "final app source and prepared candidate reviewed; real OS/native acceptance and publication remain unverified",
