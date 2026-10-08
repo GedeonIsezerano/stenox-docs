@@ -221,7 +221,7 @@
     }
   },
   "banner": {
-    "content": "Stenox 2.0 \u00b7 Read [what\u2019s new](/changelog).",
+    "content": "Stenox \u00b7 Read [what\u2019s new](/changelog).",
     "dismissible": false
   },
   "ignore": [
