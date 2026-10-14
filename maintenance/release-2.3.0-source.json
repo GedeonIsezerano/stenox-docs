@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "kind": "docs-candidate-inputs",
+  "version": "2.3.0",
+  "app_source_mode": "candidate",
+  "app_commit": "1b232db8fd9c56f03ffe55eee0b863b3494a0bb3",
+  "app_build_commit": "1b232db8fd9c56f03ffe55eee0b863b3494a0bb3",
+  "release_tooling_commit": "1b232db8fd9c56f03ffe55eee0b863b3494a0bb3",
+  "app_manifest_sha256": "e7ee11c566173e2f88395226fa36095df41fa4c3cd3df1d500ae37c00f85fbd5",
+  "release_notes_sha256": "8b12135ba5930ae00c0e377f3633a2feb1b408075834f0b341f1b4d330ce4281",
+  "changelog_sha256": "e12d4be0ca6d742865d003ff5261dcda3c7204bc312c5df671f683cdf808e627",
+  "keygen_commit": "335e1dc6794037b8be5f2d562ccaf485d3664a2c",
+  "website_commit": "f202e455d217e83abff9191dd006d3bc93d93cc1",
+  "source_scope": "App: exact prepared unpublished candidate. Keygen: committed devices display addition with licensing terms preserved; deployment not inferred. Website: exact commerce input only; full website review/deployment not inferred.",
+  "source_files": {
+    "app": {
+      "Stenox/Core/Models/ProviderMetadata.swift": "d703c733060a75810015e568b0f84f74ba772baf0ba273555403125f9673c9f6",
+      "Stenox/Services/Notetaker/NotetakerInsightProvider.swift": "1ff9987e0a297100fb8962c8ae241fbe75a52737aed53d9a22c08976042ec962",
+      "Stenox/Views/Settings/LicensingSettingsContent.swift": "410da1b0721e57967e71e5da2c012cd55537258420054583baadc6256907b3bf",
+      "Stenox/Managers/LicensingManager.swift": "02507089295956dbabedc3a82070cd5a0be27272b34a044eb9755361e3607ca1",
+      "Stenox/Services/LLM/Providers/SubscriptionLLMProvider.swift": "53146fc7a257733c6c1ea3200516f9416662cf34daa32d24cc7358751391953f",
+      "Tools/MeetingAgentBridge/runtime-paths.mjs": "09bf129dfade8473d2e9e636ce9dfb1d3cb344394ba7078d22906e4927c4f9b1"
+    },
+    "keygen": {
+      "src/service.ts": "baf41e69a14a6ee49dea17c5c00fd9d3e69080c87205670fe6b82d81f9857dc7"
+    },
+    "website": {
+      "lib/commerce.ts": "f8f712a7aeef6473aa956bfc6d098abb63447ef241336be819fafdd5643f271f"
+    }
+  },
+  "acceptance_scope": "Source-bound docs facts, routes, model catalogs and license terms only; native, rendered, hosted and publication acceptance remain separate."
+}

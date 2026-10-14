@@ -18,6 +18,14 @@ python3 scripts/check-docs.py
 
 The preview is at `http://127.0.0.1:3022`. Local search requires a separate Mintlify CLI login; a working preview does not establish search service readiness. No login is needed for the build, route, or catalog checks above.
 
+For the prepared 2.3.0 candidate, use the separate audited input record and exact app manifest:
+
+```sh
+python3 scripts/check-docs.py --candidate-inputs maintenance/release-2.3.0-source.json --candidate-manifest /absolute/candidate-overlay-fix-2/release-manifest.json --app-dir /absolute/app-checkout --keygen-dir /absolute/keygen-checkout --website-dir /absolute/website-checkout
+```
+
+This route checks exact committed inputs, source-file hashes, prepared artifact hashes, catalogs, license terms, current controls, subscription setup and the approved changelog. It does not compare a release branch with unrelated local `main` heads. The historical published snapshot remains unchanged. `--allow-newer-main` cannot be combined with candidate validation; its historical checks do not establish candidate acceptance. Source validation does not establish native interaction, rendered docs, hosted publication or website deployment.
+
 ## Source of truth
 
 See [the V2 readiness audit](maintenance/v2-readiness-2026-10-01.md) and [recorded snapshot](maintenance/source-snapshot.json). The [original refresh audit](maintenance/source-audit.md) preserves the earlier claim map and rendering evidence. App claims come from the recorded committed source, not uncommitted experiments or synthetic UI demos. Licensing terms are checked against the recorded app, keygen, and website commits. Website styling retains the consolidated theme. Model download sizes are catalog estimates, not RAM guarantees.

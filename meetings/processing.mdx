@@ -35,13 +35,17 @@ These request settings do not promise zero provider retention. Cloud speech send
 
 In **Settings → Notetaker**, choose **Codex**, **Claude Code**, or **Google Antigravity**. Use **Sign in** if needed, then choose an available model and reasoning level. Models come from the connected runtime; Stenox does not promise a fixed list or silently replace a missing saved model.
 
-Codex and Claude Code use bundled runtimes; they do not require a separate Node, Bun, or CLI installation. Existing eligible coding-runtime sign-ins can be reused. These integrations require subscription authentication, not an API key. Provider limits and usage apply.
+Codex requires a compatible installed Codex CLI or a Codex desktop app that includes it. Claude Code requires its own installed command-line tool. Stenox discovers these installations; it does not include the full provider runtimes. Existing eligible coding-runtime sign-ins can be reused. These integrations require subscription authentication, not an API key. Provider limits and usage apply.
 
 Google Antigravity requires its official `agy` CLI installed separately. This adapter accepts 1.2 releases starting at 1.2.12. Its UI identifies the active CLI login source, not a verified email address.
 
 Selecting another insights provider or turning insights off does not sign you out of the external provider. Stenox does not expose a separate Sign out or Disconnect control for these subscription accounts.
 
 The session's **Insights model** menu also lets you change the provider, model, reasoning choice, and **Automatic insights** setting during capture or while editing saved history. Switching cancels pending insight work and rejects stale results while capture continues. Existing insights and your edits remain. Returning to On-device affects future work; it cannot recall earlier transfers.
+
+### Use subscriptions for Polish
+
+In **Text cleanup**, enable **Polish on demand** and choose **Codex**, **Claude Code**, or **Google Antigravity**. Use the selected provider's sign-in controls if needed, then choose an available Polish model and reasoning level. After installing a missing runtime, choose **Check again**. Polish and meeting model selections are separate. A Polish request sends the dictated text and configured writing instructions to the selected provider when you click **Polish**.
 
 ## Context and failures
 
