@@ -3,6 +3,24 @@ title: "Changelog"
 description: "The main features and changes in each Stenox release."
 ---
 
+## 2.3.1
+
+Faster, more natural local Polish, more flexible correction learning, and smoother dictation and search.
+
+### Enhancements
+
+- More efficient local search. Updated exact-text indexing and incremental index updates improve searching saved dictations and meeting notes.
+- Faster local Polish. Gemma 4 E4B reduces repeated processing and keeps the model ready between requests.
+- Improved local Polish wording, including context-supported corrections for misheard words and phrases.
+- A more consistent Notetaker. Saved sessions blend with the app's window backdrop, with softer edges while scrolling.
+
+### Bug fixes
+
+- Remember now offers small manual corrections even when the replacement is an ordinary word.
+- Reduced the delay before completion controls appear after dictation. Polish, Copy, and Undo become available once insertion is confirmed.
+- Pressing Return or Enter in the original text field now dismisses the completion popup without interrupting typing.
+- Fixed Ask Stenox rejecting otherwise valid answers when a model wraps its response in a JSON code block.
+
 ## 2.3.0
 
 Meet the Stenox CLI, a refreshed native interface, and faster local Polish.
