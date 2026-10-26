@@ -26,8 +26,7 @@
               "installation",
               "first-dictation",
               "pricing/overview",
-              "changelog",
-              "guides/upgrading"
+              "changelog"
             ]
           },
           {
@@ -112,8 +111,8 @@
     }
   },
   "logo": {
-    "light": "/logo/light.png",
-    "dark": "/logo/dark.png",
+    "light": "/images/stenox-icon.png",
+    "dark": "/images/stenox-icon.png",
     "href": "https://stenox.app"
   },
   "navbar": {
@@ -165,6 +164,10 @@
     {
       "source": "/providers/llm/stenox-cloud-llm",
       "destination": "/providers/overview"
+    },
+    {
+      "source": "/guides/upgrading",
+      "destination": "/guides/troubleshooting"
     }
   ],
   "footer": {
@@ -221,7 +224,7 @@
     }
   },
   "banner": {
-    "content": "Stenox \u00b7 Read [what\u2019s new](/changelog).",
+    "content": "Stenox · Read [what’s new](/changelog).",
     "dismissible": false
   },
   "ignore": [

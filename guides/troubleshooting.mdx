@@ -11,13 +11,15 @@ If all device slots are in use, release an old Mac through **Manage purchase and
 
 If the app says **Licensing is not configured**, it cannot start a trial or activate a key. Check that you have the intended build and contact support. Changing API keys or permissions will not configure licensing.
 
-## Permissions or Keychain prompts after upgrading
+## Permissions
 
-Check that you opened Stenox from **Applications**. Review Microphone, Accessibility, and Screen & System Audio Recording under **System Settings → Privacy & Security**, and reopen the app if requested. Follow [Upgrading Stenox](/guides/upgrading) for the publisher name and older permission entries.
+Check that you opened Stenox from **Applications**. Review Microphone, Accessibility, and Screen & System Audio Recording under **System Settings → Privacy & Security**, and reopen the app if requested. If Accessibility refers to an older copy, remove that entry and add the installed Stenox app again.
+
+## Recover provider and license access
 
 If Stenox reports that a saved credential needs access, use **Allow Keychain access** for the affected provider in **Settings → API Keys**, or the same button in **Settings → License** for licensing. Unlock your login Keychain if requested, and verify that the macOS request is for your installed Stenox copy before approving it.
 
-Recovery keeps the saved credential and provider/model selections. Denying or cancelling leaves the credential unchanged; retry from Settings when ready. Licensing recovery does not start a trial or create a new activation. This flow is part of the [access recovery guide](/guides/upgrading#recover-provider-and-license-access).
+Recovery keeps the saved credential and provider/model selections. Denying or cancelling leaves the credential unchanged; retry from Settings when ready. Licensing recovery does not start a trial or create a new activation.
 
 Only add a provider key again if it is missing or you intend to replace it. Notetaker subscription sign-ins use their separate connection controls. If recovery fails, check for another running Stenox copy and send support the error wording with private details removed.
 

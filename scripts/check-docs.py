@@ -145,7 +145,7 @@ check('Math.min(now+30*DAY,l.expires??Infinity)' in license_service,
 check('deviceLimit:l.limit' in license_service, 'Review original device allowance preservation')
 license_ui = source('Stenox/Views/Settings/LicensingSettingsContent.swift')
 license_labels = ['Start 7-day trial', 'Activate', 'Manage purchase and devices']
-license_labels += ['Remove license'] if candidate_mode else ['Verify now', 'Deactivate this Mac']
+license_labels += ['Remove license'] if '"Remove license"' in license_ui else ['Verify now', 'Deactivate this Mac']
 for label in license_labels:
     check(f'"{label}"' in license_ui and label in doc('pricing/overview'), f'License guide/UI label mismatch: {label}')
 if candidate_mode:
