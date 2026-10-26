@@ -30,7 +30,7 @@ This route checks exact committed inputs, source-file hashes, prepared artifact 
 
 See [the V2 readiness audit](maintenance/v2-readiness-2026-10-01.md) and [recorded snapshot](maintenance/source-snapshot.json). The [original refresh audit](maintenance/source-audit.md) preserves the earlier claim map and rendering evidence. App claims come from the recorded committed source, not uncommitted experiments or synthetic UI demos. Licensing terms are checked against the recorded app, keygen, and website commits. Website styling retains the consolidated theme. Model download sizes are catalog estimates, not RAM guarantees.
 
-The current snapshot pins the published 2.3.3 app and its release tooling. It excludes the separately prepared 2.3.4 candidate until publication. The previous snapshot is retained in [source-snapshot-2.0.0.json](maintenance/source-snapshot-2.0.0.json).
+The current snapshot pins the published 2.3.4 app and its release tooling, including the native UI enhancement. The previous snapshot is retained in [source-snapshot-2.0.0.json](maintenance/source-snapshot-2.0.0.json).
 
 ### Historical 2.0 acceptance
 
