@@ -9,7 +9,7 @@
   "app_source": "Published Stenox 2.3.4 native UI enhancement. The live updater feed matches the prepared candidate exactly.",
   "app_build_status": "Signed, notarized, stapled and publicly hash-verified. Native controls were exercised in preview and Dev; no fresh production-DMG installation claimed.",
   "keygen_commit": "335e1dc6794037b8be5f2d562ccaf485d3664a2c",
-  "website_commit": "658299bda4c5f35b854231acf3d1dc2d734d2050",
+  "website_commit": "dd46d60a5f2433f129daf447c04ee5ff9dd50660",
   "release_acceptance": {
     "published": true,
     "public_artifact_hashes_verified": true,
@@ -18,5 +18,7 @@
     "public_feed_sha256": "ee6145a9431d83bf6e68e8337a25bffe67010c854018476b3ad0ad3a926073a0"
   },
   "historical_source_snapshot": "source-snapshot-2.0.0.json",
-  "source_scope": "Committed source only; unrelated primary checkout drafts excluded. No licensing backend deployment is implied by the source pin."
+  "source_scope": "Committed source only; unrelated primary checkout drafts excluded. No licensing backend deployment is implied by the source pin.",
+  "website_release_version": "2.3.4",
+  "website_source_scope": "Published 2.3.4 metadata and retained download routes, with a planning-only release reliability brief. Unrelated website working drafts are excluded."
 }
