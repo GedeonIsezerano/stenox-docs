@@ -1,24 +1,24 @@
 {
-  "reviewed_on": "2026-10-26",
-  "app_source_mode": "published",
-  "app_commit": "eb2fe130af1f3ea19c77f6d2d5de6dc9bad35f40",
-  "app_build_commit": "eb2fe130af1f3ea19c77f6d2d5de6dc9bad35f40",
-  "release_tooling_commit": "eb2fe130af1f3ea19c77f6d2d5de6dc9bad35f40",
-  "app_manifest_sha256": "82dfa238ceebfe11cdb4860e0a48cb854875325453d537e96aaf16d36673e044",
-  "version": "2.3.4",
-  "app_source": "Published Stenox 2.3.4 native UI enhancement. The live updater feed matches the prepared candidate exactly.",
-  "app_build_status": "Signed, notarized, stapled and publicly hash-verified. Native controls were exercised in preview and Dev; no fresh production-DMG installation claimed.",
+  "reviewed_on": "2026-10-29",
+  "app_source_mode": "prepared",
+  "app_commit": "ab17c1d5754715200e5e7b9dc5353f0a02f58d01",
+  "app_build_commit": "ab17c1d5754715200e5e7b9dc5353f0a02f58d01",
+  "release_tooling_commit": "ab17c1d5754715200e5e7b9dc5353f0a02f58d01",
+  "app_manifest_sha256": "e78be19d94ab467712fb2fdbc80b4bd44ff505b93d64dd9e602504662149a05e",
+  "version": "2.3.6",
+  "app_source": "Prepared combined Stenox 2.3.6 release: optional output muting during dictation and the unpublished 2.3.5 audio-device recovery fixes.",
+  "app_build_status": "Signed, notarized, stapled and codesign/Gatekeeper/Sparkle verified. Native Microphone switch, persistence and scoped mute/restore were observed in Dev; no fresh production-DMG installation or headphone-specific physical test claimed.",
   "keygen_commit": "335e1dc6794037b8be5f2d562ccaf485d3664a2c",
-  "website_commit": "dd46d60a5f2433f129daf447c04ee5ff9dd50660",
+  "website_commit": "c0e037876cfbe71b67c4f9fd03341fac2f2deae4",
   "release_acceptance": {
-    "published": true,
-    "public_artifact_hashes_verified": true,
+    "published": false,
+    "public_artifact_hashes_verified": false,
     "fresh_native_install": false,
-    "evidence": "Native UI release 2026-10-25/26: signed candidate, public feed readback, and retained native UI acceptance.",
-    "public_feed_sha256": "ee6145a9431d83bf6e68e8337a25bffe67010c854018476b3ad0ad3a926073a0"
+    "evidence": "Approved 2.3.6 notes and shipment; candidate-bound signing, notarization, native Dev and unchanged upgrade-continuity evidence retained by release owner. Public publication remains pending.",
+    "candidate_feed_sha256": "706e7c29cbd6d77e8e3568105c3bfa3bc6c4e34298f96fd3508cf532ae370a53"
   },
   "historical_source_snapshot": "source-snapshot-2.0.0.json",
-  "source_scope": "Committed source only; unrelated primary checkout drafts excluded. No licensing backend deployment is implied by the source pin.",
+  "source_scope": "Committed release source only; unrelated primary checkout drafts excluded. No licensing backend deployment is implied by this source pin.",
   "website_release_version": "2.3.4",
-  "website_source_scope": "Published 2.3.4 metadata and retained download routes, with a planning-only release reliability brief. Unrelated website working drafts are excluded."
+  "website_source_scope": "Reviewed 2.3.4-to-2.3.6 transition retains all approved download routes. Website version and public updater feed remain 2.3.4 until guarded publication. Unrelated website drafts excluded."
 }
